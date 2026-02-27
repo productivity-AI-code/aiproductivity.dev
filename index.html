@@ -287,11 +287,11 @@
     /* ── Footer ──────────────────────────────────────────────────── */
     .mrai-footer {
       text-align: center;
-      padding: 40px 20px;
+      padding: 32px 20px;
       font-size: 13px;
       color: #999;
       border-top: 1px solid #eee;
-      margin-top: 40px;
+      margin-top: 0;
     }
 
     /* ── Responsive ─────────────────────────────────────────────── */
@@ -321,7 +321,16 @@
   <!-- ═══ Navigation Bar ═══ -->
   <nav class="mrai-nav">
     <div class="mrai-nav-inner">
-      <a href="#" class="mrai-nav-logo"><span>MedRecords</span>&nbsp;AI</a>
+      <a href="#" class="mrai-nav-logo">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="32" height="32" rx="8" fill="url(#logo-grad)"/>
+          <path d="M8 12h4v2H8v-2zm0 4h4v2H8v-2zm0 4h4v2H8v-2z" fill="#0a1628" opacity="0.5"/>
+          <path d="M14 10h10v2H14v-2zm0 4h10v2H14v-2zm0 4h8v2h-8v-2zm0 4h6v2h-6v-2z" fill="#0a1628" opacity="0.7"/>
+          <path d="M20 7l4 4-4 4" stroke="#0a1628" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+          <defs><linearGradient id="logo-grad" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#00d4aa"/><stop offset="1" stop-color="#00b894"/></linearGradient></defs>
+        </svg>
+        <span>MedRecords</span>&nbsp;AI
+      </a>
       <button class="mrai-nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
         <span></span>
         <span></span>
@@ -332,7 +341,7 @@
         <li><a href="#pricing">Pricing</a></li>
         <li><a href="#compare">Compare</a></li>
         <li><a href="#faq">FAQ</a></li>
-        <li><a href="#pricing" class="mrai-nav-cta">Get Started</a></li>
+        <li><a href="mailto:hello@aiproductivity.dev" class="mrai-nav-cta">Request Demo</a></li>
       </ul>
     </div>
   </nav>
@@ -341,14 +350,8 @@
   <div class="mrai">
 
     <!-- ═══ Announcement Bar ═══ -->
-    <div class="mrai-announce">
-      Launch Sale: Save $953 on Core License — <a href="#pricing">Claim your discount</a>
-      <span class="mrai-countdown" id="mrai-cd">
-        <span id="mrai-cd-d">--</span>d
-        <span id="mrai-cd-h">--</span>h
-        <span id="mrai-cd-m">--</span>m
-        <span id="mrai-cd-s">--</span>s
-      </span>
+    <div class="mrai-announce" style="background:linear-gradient(90deg,#00b894,#00a884);">
+      Coming Soon — <a href="mailto:hello@aiproductivity.dev">Request a Demo</a> to get early access and launch pricing
     </div>
 
     <!-- ═══ Hero ═══ -->
@@ -357,10 +360,10 @@
       <h1>Your Paralegal Reviews 50 Pages a Day.<br><em>Our AI Reviews 500 in Minutes.</em></h1>
       <p class="mrai-hero-sub">MedRecords AI transforms mountains of medical records into litigation-ready summaries, chronologies, demand packages, and case valuations — so your team can focus on winning.</p>
       <div class="mrai-hero-ctas">
-        <a href="#pricing" class="mrai-btn-lg mrai-btn-green">See Pricing &darr;</a>
-        <a href="#how" class="mrai-btn-lg mrai-btn-dark">Watch How It Works</a>
+        <a href="mailto:hello@aiproductivity.dev" class="mrai-btn-lg mrai-btn-green">Request a Demo</a>
+        <a href="#how" class="mrai-btn-lg mrai-btn-dark">See How It Works</a>
       </div>
-      <p class="mrai-hero-proof"><strong>Trusted by PI firms</strong> processing thousands of pages per week</p>
+      <p class="mrai-hero-proof"><strong>Coming Soon</strong> — Request a demo for early access</p>
     </div>
 
     <!-- ═══ Stats Bar ═══ -->
@@ -544,7 +547,7 @@
               </div>
             </div>
             <div style="margin-top:20px;">
-              <a href="#pricing" class="mrai-btn-lg mrai-btn-green" style="display:inline-flex;">Start Saving Now</a>
+              <a href="mailto:hello@aiproductivity.dev?subject=Demo%20Request" class="mrai-btn-lg mrai-btn-green" style="display:inline-flex;">Request a Demo</a>
             </div>
           </div>
         </div>
@@ -592,10 +595,10 @@
 
         <!-- Core -->
         <div class="mrai-price-card">
-          <div class="mrai-price-badge sale">Launch Sale</div>
+          <div class="mrai-price-badge sale" style="background:linear-gradient(135deg,#3b82f6,#2563eb);">Coming Soon</div>
           <div class="mrai-tier-name">Core License</div>
           <div class="mrai-price-amount"><span class="mrai-price-original">$4,950</span>$3,997</div>
-          <div class="mrai-price-note sale-note">Save $953 — Offer ends May 27, 2026</div>
+          <div class="mrai-price-note sale-note">Early access pricing — limited availability</div>
           <div class="mrai-price-note">One-time payment &bull; Unlimited cases</div>
           <ul>
             <li>AI Summarization (Fast / Auto / Thorough)</li>
@@ -608,12 +611,12 @@
             <li>HIPAA-Compliant Audit Trail</li>
             <li>Local AI (Ollama) or Cloud (Claude)</li>
           </ul>
-          <a href="https://buy.stripe.com/test_dRm5kwbUm1UB45xc2O5wI00" target="_blank" class="mrai-btn-block mrai-btn-outline">Get Core License</a>
+          <a href="mailto:hello@aiproductivity.dev?subject=Core%20License%20Demo%20Request" class="mrai-btn-block mrai-btn-outline">Request Demo</a>
         </div>
 
         <!-- Pro -->
         <div class="mrai-price-card featured">
-          <div class="mrai-price-badge popular">Most Popular</div>
+          <div class="mrai-price-badge popular">Coming Soon</div>
           <div class="mrai-tier-name">Pro License</div>
           <div class="mrai-price-amount">$7,997</div>
           <div class="mrai-price-note">One-time payment &bull; Unlimited cases</div>
@@ -627,7 +630,7 @@
             <li>Smoking Gun Detection</li>
             <li>Priority Support</li>
           </ul>
-          <a href="https://buy.stripe.com/test_00waEQcYq9n39pRc2O5wI01" target="_blank" class="mrai-btn-block mrai-btn-primary">Get Pro License</a>
+          <a href="mailto:hello@aiproductivity.dev?subject=Pro%20License%20Demo%20Request" class="mrai-btn-block mrai-btn-primary">Request Demo</a>
         </div>
       </div>
     </section>
@@ -745,14 +748,12 @@
     <!-- ═══ Final CTA ═══ -->
     <section>
       <div class="mrai-final-cta">
-        <h2>Stop Paying Per Case.<br>Start Winning More.</h2>
-        <p>Join the firms that have eliminated per-case review costs and cut medical record review time by 90%.</p>
+        <h2>Ready to See It in Action?</h2>
+        <p>Request a personalized demo and see how MedRecords AI can transform your medical record review workflow.</p>
         <div class="mrai-final-buttons">
-          <a href="https://buy.stripe.com/test_dRm5kwbUm1UB45xc2O5wI00" target="_blank" class="mrai-btn-lg mrai-btn-outline" style="color:#00d4aa;border-color:#00d4aa;">Core — <s>$4,950</s> $3,997</a>
-          <a href="https://buy.stripe.com/test_00waEQcYq9n39pRc2O5wI01" target="_blank" class="mrai-btn-lg mrai-btn-green">Pro — $7,997</a>
+          <a href="mailto:hello@aiproductivity.dev?subject=Demo%20Request%20-%20MedRecords%20AI" class="mrai-btn-lg mrai-btn-green">Request a Demo</a>
         </div>
         <div class="mrai-trust-row">
-          <span class="mrai-trust-item">&#128274; Secure Stripe Checkout</span>
           <span class="mrai-trust-item">&#9989; Perpetual License</span>
           <span class="mrai-trust-item">&#128187; Runs On Your Machine</span>
           <span class="mrai-trust-item">&#9878;&#65039; HIPAA-Ready Audit Trail</span>
@@ -765,7 +766,7 @@
 
   <!-- ═══ Footer ═══ -->
   <footer class="mrai-footer">
-    &copy; 2026 MedRecords AI. All rights reserved. &bull; <a href="https://www.aiproductivity.dev" style="color:#00b894;">aiproductivity.dev</a>
+    &copy; 2026 MedRecords AI. All rights reserved. &bull; <a href="mailto:hello@aiproductivity.dev" style="color:#00b894;">hello@aiproductivity.dev</a>
   </footer>
 
   <!-- ═══ JavaScript: ROI Calculator + FAQ Toggle + Countdown + Nav Toggle ═══ -->
@@ -819,20 +820,6 @@
       });
     });
 
-    // ── Countdown Timer (to May 27, 2026) ──
-    var end = new Date('2026-05-27T23:59:59').getTime();
-    function tick() {
-      var now = Date.now();
-      var diff = Math.max(0, end - now);
-      var d = Math.floor(diff / 86400000);
-      var h = Math.floor((diff % 86400000) / 3600000);
-      var m = Math.floor((diff % 3600000) / 60000);
-      var s = Math.floor((diff % 60000) / 1000);
-      var de = document.getElementById('mrai-cd-d');
-      if (de) { de.textContent = d; document.getElementById('mrai-cd-h').textContent = h; document.getElementById('mrai-cd-m').textContent = m; document.getElementById('mrai-cd-s').textContent = s; }
-    }
-    tick();
-    setInterval(tick, 1000);
   })();
   </script>
 
