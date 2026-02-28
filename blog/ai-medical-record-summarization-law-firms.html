@@ -261,164 +261,159 @@
 </div>
 
 <article>
-    <p>Medical record review is the most time-consuming, labor-intensive task in personal injury litigation. A single case can involve hundreds or thousands of pages of clinical notes, imaging reports, pharmacy records, and billing statements. Paralegals and nurse reviewers spend 30 to 40 hours manually reviewing a complex case, extracting relevant treatment dates, identifying key findings, and organizing everything into a coherent medical chronology. Multiply that by 50 or 100 active cases, and you have a bottleneck that slows down settlements, drives up overhead, and limits how many cases your firm can take on.</p>
+    <p>Medical record review is the single most time-consuming task in personal injury litigation. A moderately complex case can involve 500 to 2,000 pages of clinical notes, imaging reports, pharmacy records, surgical summaries, and billing statements. A paralegal reviewing that volume manually will spend 30 to 40 hours organizing, reading, and summarizing the contents into a usable chronology. At a billing rate of $75 to $150 per hour, the cost of a single case review can exceed $3,000 before an attorney even begins evaluating the claim.</p>
 
-    <p>AI medical record summarization is changing this equation. In 2026, a new generation of tools can process a 500-page medical record in 15 minutes, producing structured chronologies with source page citations, flagging critical findings, and identifying treatment gaps that strengthen case value. But not all AI summarization tools are created equal. This guide breaks down exactly how the technology works, what features matter most, and how to evaluate the options available to personal injury law firms today.</p>
+    <p>AI medical record summarization has emerged as the leading solution to this bottleneck. In 2026, a growing number of personal injury firms are using AI tools to reduce what once took days into a process that takes minutes. But not all AI summarization tools are created equal. They differ in accuracy, feature depth, privacy architecture, and&mdash;critically&mdash;pricing models that can mean the difference between thousands saved and thousands wasted.</p>
+
+    <p>This guide covers everything a law firm needs to know about AI medical record summarization in 2026: how the technology works, what features matter most, the privacy implications of cloud versus on-premise processing, how the major tools compare on pricing, and how to evaluate whether a solution is right for your practice.</p>
 
     <h2>What Is AI Medical Record Summarization?</h2>
 
-    <p>AI medical record summarization uses artificial intelligence&mdash;typically large language models combined with optical character recognition and document processing pipelines&mdash;to automatically extract, organize, and analyze medical information from clinical records. The goal is to produce the same structured output that a human reviewer would create, but in a fraction of the time.</p>
+    <p>AI medical record summarization is the process of using artificial intelligence&mdash;typically large language models (LLMs) combined with optical character recognition (OCR) and document parsing&mdash;to automatically extract, organize, and summarize the contents of medical records into structured, attorney-ready output.</p>
 
-    <p>The typical processing pipeline works in four stages:</p>
+    <p>The typical workflow follows four stages:</p>
 
     <ol>
-        <li><strong>Upload and ingestion</strong> &mdash; Raw PDF files are uploaded to the system. The software handles multi-file uploads, splitting merged documents, and identifying document types (clinical notes, lab results, imaging reports, billing records).</li>
-        <li><strong>Text extraction and OCR</strong> &mdash; Printed text is extracted directly from PDFs. Scanned documents and handwritten notes are processed through optical character recognition to convert images into machine-readable text.</li>
-        <li><strong>AI analysis and structuring</strong> &mdash; The extracted text is fed through AI models that identify medical events, providers, diagnoses (with ICD-10 codes), treatments, medications, and findings. The AI organizes this information chronologically and flags items of legal significance.</li>
-        <li><strong>Structured output generation</strong> &mdash; The system produces formatted deliverables: medical chronologies, treatment summaries, provider indexes, and narrative reports. Each entry includes page citations back to the source documents so attorneys can verify every claim.</li>
+        <li><strong>Upload and ingestion.</strong> Raw medical records are uploaded as PDFs, TIFF files, or scanned documents. The system identifies document boundaries, separates distinct records from merged files, and prepares them for processing.</li>
+        <li><strong>Extraction and OCR.</strong> The AI extracts text from typed records and uses OCR to read handwritten notes, faxed documents, and low-quality scans. Advanced systems use medical-specific OCR models trained on clinical handwriting, which dramatically improves accuracy over general-purpose OCR.</li>
+        <li><strong>Analysis and classification.</strong> The extracted text is analyzed by one or more AI models that identify providers, dates of service, diagnoses (with ICD-10 codes), procedures (with CPT codes), medications, referrals, and clinical findings. The AI classifies each entry by type and significance.</li>
+        <li><strong>Structured output.</strong> The results are compiled into a formatted medical chronology, organized by date or by provider, with page citations linking each entry back to the original source document. Many systems also generate supplementary outputs like treatment gap analyses, key finding summaries, and billing reconciliations.</li>
     </ol>
 
-    <p>The result is a comprehensive medical summary that would have taken a paralegal days to compile, delivered in minutes. But the quality and completeness of that output depends entirely on how well the tool handles each stage of the pipeline.</p>
+    <p>The entire process&mdash;from upload to finished chronology&mdash;can take as little as 10 to 20 minutes for a 500-page record set, compared to the 30 to 40 hours required for manual review.</p>
 
     <h2>Key Features to Evaluate</h2>
 
-    <p>When comparing AI medical record summarization platforms, these are the features that separate tools that actually save time from those that create more work than they eliminate.</p>
+    <p>Not every AI summarization tool offers the same capabilities. When evaluating platforms for your firm, these are the features that separate adequate tools from genuinely useful ones.</p>
 
     <h3>Chronology Generation with Source Page Citations</h3>
 
-    <p>A medical chronology is only useful if it is verifiable. Every entry in the timeline&mdash;every diagnosis, treatment, medication change, and provider visit&mdash;must include a citation pointing back to the exact page and document where that information appears. Without page citations, attorneys cannot reference the chronology in depositions, mediations, or demand letters without manually re-finding the source material, which defeats the purpose of automation.</p>
-
-    <p>Look for tools that provide clickable page references that link directly to the relevant section of the source PDF. The best systems highlight the specific passage on the cited page so verification takes seconds, not minutes.</p>
+    <p>This is the baseline requirement. Any AI summarization tool should produce a chronological timeline of medical events with the date, provider, description, and&mdash;crucially&mdash;the exact page number in the source document where each entry was found. Page citations are not optional. Without them, the chronology cannot be verified, and no attorney should rely on an unverifiable summary in litigation. Look for tools that link directly to the source page, ideally with a click-to-view feature.</p>
 
     <h3>Smoking Gun and Key Finding Detection</h3>
 
-    <p>Beyond organizing information chronologically, the most valuable AI summarization tools actively flag findings of legal significance. This includes missed diagnoses, delayed referrals, contradictory provider notes, abnormal test results that were not followed up on, and documentation of pre-existing versus accident-related conditions. These "smoking gun" findings are often buried deep in records and can be easy for human reviewers to miss when processing hundreds of pages under time pressure.</p>
+    <p>The most valuable AI summarization tools go beyond simple extraction. They flag clinically and legally significant findings: pre-existing conditions that could affect damages, inconsistencies between provider notes, sudden changes in treatment plans, mentions of non-compliance, and references to prior injuries or accidents. These "smoking gun" findings are often buried deep in records where a paralegal under time pressure might miss them. AI can surface them systematically across every page.</p>
 
     <h3>Treatment Gap Identification</h3>
 
-    <p>Insurance adjusters and defense attorneys routinely exploit gaps in treatment to argue that injuries are not as severe as claimed. AI tools that automatically identify periods where a patient did not receive treatment&mdash;and flag them for the attorney's attention&mdash;allow firms to proactively address these gaps in demand letters and settlement negotiations rather than being caught off guard.</p>
+    <p>Gaps in treatment are one of the most common issues defense attorneys exploit to reduce settlement values. A good AI tool will automatically detect periods where a plaintiff stopped seeking treatment and flag them with the duration and surrounding context. This allows your team to address gaps proactively&mdash;either by obtaining additional records or by preparing explanations before the defense raises the issue.</p>
 
     <h3>Deduplication Across Files</h3>
 
-    <p>Medical records from different providers frequently contain duplicate information. Hospital records include copies of referring physician notes. Radiology reports appear in both the imaging center's records and the treating physician's chart. Without deduplication, the chronology becomes bloated with repeated entries that obscure the actual treatment timeline. Effective AI tools identify and merge duplicate entries, producing a clean chronology that accurately reflects the patient's care.</p>
+    <p>Medical record productions are messy. The same clinical note might appear three times across different document productions: once in the hospital records, once in a records request from the treating physician, and once in a supplemental production. Without deduplication, your chronology is cluttered with redundant entries that waste review time and create confusion. Look for AI tools that identify and merge duplicate entries while preserving the most complete version.</p>
 
     <h3>OCR for Handwritten and Scanned Records</h3>
 
-    <p>A significant percentage of medical records&mdash;particularly from emergency departments, older practices, and specialist consultations&mdash;contain handwritten notes or are scanned from paper originals. If the AI tool cannot process these documents, it is only analyzing part of the record. The best platforms use specialized medical OCR models that are trained specifically on clinical handwriting and medical terminology, not generic OCR that struggles with physician shorthand.</p>
+    <p>A significant portion of medical records&mdash;especially from smaller practices, urgent care facilities, and older hospital systems&mdash;still involve handwritten notes or low-resolution scans. General-purpose OCR often produces garbled output from these documents. The best AI summarization tools use medical-specific OCR models that have been trained on clinical handwriting patterns, prescription notations, and the common abbreviations used in medical charting.</p>
 
     <h2>Cloud vs. On-Premise Processing: Privacy Implications</h2>
 
-    <p>This is where AI medical record summarization tools diverge most sharply, and where the decision has the most significant implications for your firm and your clients.</p>
+    <p>This is the most consequential architectural decision in AI medical record summarization, and it is one that most buyers do not think about carefully enough.</p>
 
-    <p>The vast majority of AI summarization platforms&mdash;EvenUp, Supio, DigitalOwl, Wisedocs, and others&mdash;operate as cloud services. You upload your client's medical records to the vendor's servers, where they are processed using the vendor's AI infrastructure. The vendor stores the records, processes them, and returns the results. Your client's protected health information (PHI) leaves your network, transits the internet, and resides on servers you do not control.</p>
+    <p>The vast majority of AI summarization tools on the market today are cloud-based. When you upload a medical record to a cloud platform, the document is transmitted to the vendor's servers (or to a third-party cloud infrastructure provider like AWS or Azure), processed there, and the results are returned to you. The vendor's servers hold your client's protected health information (PHI) for some period of time, which could range from minutes to indefinitely, depending on the vendor's data retention policies.</p>
 
-    <p>Cloud vendors typically sign Business Associate Agreements (BAAs) to comply with HIPAA requirements, but a BAA does not prevent a data breach. It simply establishes legal responsibility after one occurs. For law firms handling sensitive medical records&mdash;particularly cases involving mental health, substance abuse, HIV status, or reproductive health&mdash;the question is not whether the cloud vendor is "HIPAA compliant" on paper, but whether uploading PHI to a third party is a risk your firm and your clients are willing to accept.</p>
+    <p>This creates several risks that personal injury firms should carefully evaluate:</p>
 
-    <p>On-premise solutions eliminate this risk entirely. The software runs on your own hardware. Records are processed locally. No patient data ever leaves your network. For firms that handle high-sensitivity cases or that operate in states with stricter-than-federal privacy requirements, on-premise processing is the only approach that truly eliminates third-party data exposure. Learn more about the privacy implications on our <a href="../privacy.html">privacy and security page</a>, or read our detailed analysis of <a href="hipaa-compliant-on-premise.html">why on-premise is the only truly HIPAA-compliant approach</a>.</p>
+    <ul>
+        <li><strong>HIPAA exposure.</strong> Under HIPAA, any entity that processes PHI is a business associate. Law firms that upload PHI to cloud-based AI tools must ensure a Business Associate Agreement (BAA) is in place and that the vendor's security practices meet HIPAA requirements. A data breach at the vendor level exposes your firm to regulatory liability.</li>
+        <li><strong>Client confidentiality.</strong> Attorney-client privilege and work product protections may be implicated when PHI is transmitted to and stored on third-party servers. The legal landscape around cloud storage and privilege is still evolving, and a cautious firm should consider whether cloud processing introduces unnecessary risk.</li>
+        <li><strong>Vendor data practices.</strong> Some AI vendors use uploaded data to train or improve their models. Read the fine print. If your client's medical records are being used as training data for an AI system, the ethical implications are significant.</li>
+    </ul>
+
+    <p>The alternative is <strong>on-premise processing</strong>, where the AI software runs entirely on your own hardware. Medical records never leave your network. There are no third-party servers, no data transmission, and no vendor data retention to worry about. For firms that handle sensitive cases&mdash;medical malpractice, high-profile personal injury, cases involving minors&mdash;on-premise processing eliminates an entire category of risk. Learn more about the privacy advantages of on-premise AI on our <a href="../privacy.html">privacy page</a>, or read our detailed analysis in <a href="hipaa-compliant-on-premise.html">Why Your Medical Record AI Should Run On Your Own Computer</a>.</p>
 
     <h2>Pricing Models in the Market</h2>
 
-    <p>AI medical record summarization pricing varies widely, and the pricing model you choose can have a larger impact on your total cost than the per-unit price itself. There are four primary models in the market today:</p>
+    <p>The pricing landscape for AI medical record summarization in 2026 breaks down into four distinct models, each with different implications for your firm's budget:</p>
 
-    <ul>
-        <li><strong>Per-case pricing ($350&ndash;$1,200 per case)</strong> &mdash; Vendors like EvenUp charge a flat fee for each case processed. Simple at first, but costs scale linearly with volume and can become the single largest line item in a firm's operational budget.</li>
-        <li><strong>Per-page pricing ($0.05&ndash;$0.45 per page)</strong> &mdash; Vendors like DigitalOwl, Wisedocs, and InPractice charge based on the number of pages processed. This model can be cost-effective for shorter records but unpredictable for cases with large volumes of records.</li>
-        <li><strong>Monthly subscription ($30&ndash;$800 per user per month)</strong> &mdash; Platforms like Dodonai, CaseFleet, Anytime AI, and Legalyze charge recurring monthly fees. Costs are more predictable but still accumulate year over year with no end in sight.</li>
-        <li><strong>Perpetual license ($3,997&ndash;$7,997 one-time)</strong> &mdash; MedRecords AI is the only platform in this category. You pay once, install locally, and process unlimited cases with no recurring per-case or per-page fees.</li>
-    </ul>
+    <h3>Per-Case Pricing ($350&ndash;$1,200 per case)</h3>
 
-    <p>For a detailed breakdown of what each model costs at scale, see our <a href="medical-chronology-pricing-comparison.html">medical chronology software pricing comparison</a> or use the <a href="../stop-paying-per-case.html">interactive savings calculator</a> to see the numbers for your firm's specific volume.</p>
+    <p>Used by vendors like EvenUp and Supio. You pay a fixed fee for each case processed. This is simple to understand but scales linearly with volume&mdash;the more cases you process, the more you pay. A firm handling 50 cases per month at $500 per case spends $300,000 per year on summarization alone.</p>
+
+    <h3>Per-Page Pricing ($0.05&ndash;$0.45 per page)</h3>
+
+    <p>Used by DigitalOwl, InPractice, and Wisedocs. You pay based on the number of pages processed. This can be cost-effective for shorter records but becomes expensive for document-heavy cases. A 1,000-page record at $0.25 per page costs $250.</p>
+
+    <h3>Monthly Subscription ($30&ndash;$800 per user per month)</h3>
+
+    <p>Used by Dodonai, CaseFleet, Anytime AI, and Legalyze. You pay a flat monthly fee, sometimes with usage limits. This provides more budget predictability but still represents an ongoing cost that compounds year over year.</p>
+
+    <h3>Perpetual License ($3,997&ndash;$7,997 one-time)</h3>
+
+    <p>Used by MedRecords AI. You pay once and run the software on your own hardware with no recurring fees tied to volume. This is the only pricing model in the market where your cost per case decreases with every case you process. For a detailed breakdown of how these models compare at scale, see our <a href="stop-paying-per-case.html">pricing analysis</a> and the <a href="medical-chronology-pricing-comparison.html">comprehensive pricing comparison</a>.</p>
 
     <h2>How MedRecords AI Works</h2>
 
-    <p>MedRecords AI is designed for personal injury law firms that need professional-grade medical record summarization without ongoing per-case costs or cloud-based data exposure. The software installs on your own Windows computer and processes records entirely on your local machine.</p>
+    <p>MedRecords AI is a desktop application that installs on your Windows computer or local server. It processes medical records entirely on your hardware using a dual AI backend: a local language model for fast processing and an optional cloud AI connection (Claude or OpenAI) for maximum accuracy on complex records. You choose which backend to use on a per-case basis.</p>
 
-    <h3>Three Processing Modes</h3>
-
-    <p>Not every case requires the same level of analysis. MedRecords AI offers three processing modes to balance speed and depth:</p>
+    <p>The system offers three processing modes:</p>
 
     <ul>
-        <li><strong>Fast mode</strong> &mdash; Optimized for rapid turnaround. Processes records quickly using streamlined extraction, ideal for initial case intake and triage when you need a quick overview of what the records contain.</li>
-        <li><strong>Auto mode</strong> &mdash; The default setting for most cases. Automatically adjusts processing depth based on record complexity, applying more intensive analysis to dense clinical notes and streamlined processing to straightforward documents like billing records.</li>
-        <li><strong>Thorough mode</strong> &mdash; Full-depth analysis for complex, high-value cases. Every page receives maximum AI attention, with multiple analysis passes to ensure no relevant detail is missed. This is the mode to use for cases heading to trial or mediation.</li>
+        <li><strong>Fast Mode.</strong> Uses the local AI model exclusively. No data leaves your machine. Processing a 500-page record takes approximately 10&ndash;15 minutes. Best for straightforward cases where speed is the priority.</li>
+        <li><strong>Auto Mode.</strong> Intelligently routes each section of the record to the most appropriate AI backend based on complexity. Handwritten notes and ambiguous clinical entries are sent to the more powerful cloud model, while standard typed records are processed locally. This balances speed and accuracy.</li>
+        <li><strong>Thorough Mode.</strong> Routes all content through the most capable AI model available, with multiple analysis passes for key finding detection, treatment gap identification, and negligence screening. Processing takes longer but produces the most comprehensive output. Best for high-value cases and medical malpractice claims.</li>
     </ul>
 
-    <h3>Dual AI Backend</h3>
-
-    <p>MedRecords AI supports two AI processing backends. For firms that require absolute data isolation, the software can run entirely on local AI models with no internet connection required. For firms that want maximum accuracy on complex records, the software can also leverage cloud-based AI models (with records transmitted via encrypted API calls) for enhanced analysis. The choice is yours, and you can switch between backends on a per-case basis.</p>
-
-    <h3>Structured Output</h3>
-
-    <p>Every processed case produces a comprehensive set of deliverables:</p>
-
-    <ul>
-        <li>Chronological medical timeline with page citations</li>
-        <li>Provider index with contact information and treatment dates</li>
-        <li>Diagnosis summary with ICD-10 codes</li>
-        <li>Treatment gap analysis</li>
-        <li>Key findings and smoking gun flags</li>
-        <li>Medication history</li>
-        <li>Narrative summary suitable for demand letters</li>
-    </ul>
+    <p>Regardless of mode, MedRecords AI generates a complete medical chronology with page citations, a key findings summary, a treatment timeline, identified gaps, provider and facility lists, medication histories, and ICD-10/CPT code extraction.</p>
 
     <h2>Real Results: 500 Pages in 15 Minutes vs. 40 Hours Manual</h2>
 
-    <p>The performance difference between AI-assisted and manual medical record review is not incremental. It is transformational.</p>
-
-    <p>A typical 500-page medical record set from a moderate-severity personal injury case takes an experienced paralegal or nurse reviewer 30 to 40 hours to fully review, summarize, and organize into a medical chronology. That is an entire work week dedicated to a single case. For a firm handling 50 cases per month, that represents 2,000 hours of paralegal time per month&mdash;more than ten full-time employees working exclusively on record review.</p>
-
-    <p>MedRecords AI processes the same 500-page record set in approximately 15 minutes. The output includes a complete chronology, provider index, treatment gap analysis, and key finding flags. An attorney or paralegal then reviews the AI-generated output for accuracy and completeness, a process that typically takes 30 to 60 minutes. Total time investment: under 90 minutes per case, compared to 40 hours.</p>
-
-    <p>This is not about replacing paralegals. It is about redirecting their expertise from data extraction&mdash;a task that AI handles faster and more consistently&mdash;to case strategy, client communication, and the analytical work that actually requires human judgment.</p>
+    <p>The time savings from AI medical record summarization are not incremental&mdash;they are transformational. Consider the math for a single case with 500 pages of medical records:</p>
 
     <table class="comparison-table">
         <thead>
             <tr>
                 <th>Metric</th>
                 <th>Manual Review</th>
-                <th>MedRecords AI</th>
+                <th>AI Summarization</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>Time per 500-page record</td>
+                <td>Time to complete</td>
                 <td>30&ndash;40 hours</td>
-                <td>15 minutes + 60 min review</td>
+                <td>10&ndash;15 minutes</td>
             </tr>
             <tr>
-                <td>Cost per case (paralegal @ $35/hr)</td>
-                <td>$1,050&ndash;$1,400</td>
-                <td>~$35 (review time only)</td>
+                <td>Cost (paralegal at $100/hr)</td>
+                <td>$3,000&ndash;$4,000</td>
+                <td>$0 (perpetual license)</td>
             </tr>
             <tr>
-                <td>Consistency across cases</td>
+                <td>Consistency</td>
                 <td>Varies by reviewer</td>
                 <td>Standardized output every time</td>
+            </tr>
+            <tr>
+                <td>Key findings detected</td>
+                <td>Depends on experience</td>
+                <td>Systematic across all pages</td>
             </tr>
             <tr>
                 <td>Treatment gaps identified</td>
                 <td>Often missed under time pressure</td>
                 <td>Automatically flagged</td>
             </tr>
-            <tr>
-                <td>Source page citations</td>
-                <td>Time-consuming to add</td>
-                <td>Included on every entry</td>
-            </tr>
         </tbody>
     </table>
 
+    <p>For a firm processing 50 cases per month, the shift from manual review to AI summarization frees up approximately 1,500 to 2,000 paralegal hours per month. That is not just a cost savings&mdash;it is a capacity multiplier. Those hours can be redirected to client communication, case strategy, demand preparation, and the dozens of other tasks that directly contribute to case outcomes.</p>
+
+    <p>The accuracy question is worth addressing directly. AI summarization in 2026 is not perfect. It can occasionally misread handwritten notes, miscategorize ambiguous entries, or miss context that a highly experienced paralegal would catch. This is why the best practice is not to eliminate human review entirely but to use AI as the first pass. The AI produces a structured chronology in minutes; a paralegal then reviews and refines it in hours instead of days. The net result is faster turnaround, lower cost, and a more thorough final product.</p>
+
     <h2>Getting Started: Download the Free Demo</h2>
 
-    <p>MedRecords AI offers a free demo that lets you process up to five cases with no credit card, no account creation, and no data uploaded to any external server. The demo runs on your own computer and produces the same output as the full product, so you can evaluate the quality of the chronologies, the accuracy of the key finding detection, and the overall workflow before making any purchase decision.</p>
+    <p>The best way to evaluate whether AI medical record summarization is right for your firm is to test it on your own records. Vendor demos with curated sample data never tell the full story. You need to see how the tool performs on the messy, incomplete, handwritten records that your practice actually encounters.</p>
 
-    <p>The demo includes all three processing modes (Fast, Auto, and Thorough) and supports PDF uploads of any size. It is the fastest way to determine whether AI medical record summarization is right for your firm's workflow.</p>
+    <p>MedRecords AI offers a free demo that lets you process up to 5 complete cases with no credit card, no account creation, and no data uploaded to any external server. Download the software, point it at a set of medical records, and evaluate the output against your current workflow.</p>
 
-    <p>For a side-by-side comparison of MedRecords AI against every major competitor, see our <a href="medical-chronology-software-comparison.html">2026 medical chronology software comparison guide</a>.</p>
+    <p>If you are spending tens of thousands of dollars per year on medical record review&mdash;whether through manual paralegal hours or per-case AI vendors&mdash;it is worth 15 minutes of your time to see what a different approach looks like.</p>
+
+    <p>For a detailed side-by-side comparison of every major tool in the market, see our <a href="medical-chronology-software-comparison.html">2026 Medical Chronology Software Comparison</a>. For a deep dive into pricing at scale, read <a href="medical-chronology-pricing-comparison.html">Medical Chronology Software Pricing Comparison</a>.</p>
 
     <div class="cta-box">
         <h2>Try AI Medical Record Summarization Free</h2>
-        <p>Process up to 5 cases free. No credit card. No cloud upload. Runs entirely on your machine.</p>
+        <p>Process 5 cases free. No credit card. No cloud uploads. See results in 15 minutes.</p>
         <a href="../index.html#demo" class="cta-button">Download Free Demo</a>
     </div>
 </article>
