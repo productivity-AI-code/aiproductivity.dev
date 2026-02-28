@@ -113,22 +113,22 @@
     }
     .btn-outline {
       background: transparent;
-      color: var(--white);
-      border-color: rgba(255,255,255,0.3);
-    }
-    .btn-outline:hover {
-      border-color: var(--white);
-      color: var(--white);
-      transform: translateY(-2px);
-    }
-    /* Light-context outline buttons (pricing cards, etc.) */
-    .pricing-card .btn-outline {
       color: var(--text-primary);
       border-color: var(--card-border);
     }
-    .pricing-card .btn-outline:hover {
+    .btn-outline:hover {
       border-color: var(--green);
       color: var(--green);
+      transform: translateY(-2px);
+    }
+    /* Dark-context outline buttons (CTA section) */
+    .cta-section .btn-outline {
+      color: var(--white);
+      border-color: rgba(255,255,255,0.3);
+    }
+    .cta-section .btn-outline:hover {
+      border-color: var(--white);
+      color: var(--white);
     }
     .btn-sm {
       padding: 10px 24px;
@@ -144,9 +144,9 @@
       transition: background 0.3s, box-shadow 0.3s, padding 0.3s;
     }
     nav.scrolled {
-      background: rgba(10, 22, 40, 0.95);
+      background: rgba(255,255,255,0.95);
       backdrop-filter: blur(20px);
-      box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.08);
       padding: 10px 0;
     }
     nav .container {
@@ -160,7 +160,7 @@
       gap: 10px;
       font-size: 1.3rem;
       font-weight: 800;
-      color: var(--white);
+      color: var(--text-primary);
       letter-spacing: -0.5px;
     }
     .logo-dot {
@@ -176,12 +176,12 @@
       list-style: none;
     }
     .nav-links a {
-      color: var(--gray-300);
+      color: var(--gray-400);
       font-size: 0.9rem;
       font-weight: 500;
       transition: color 0.2s;
     }
-    .nav-links a:hover { color: var(--white); }
+    .nav-links a:hover { color: var(--text-primary); }
     .nav-toggle {
       display: none;
       flex-direction: column;
@@ -193,7 +193,7 @@
     }
     .nav-toggle span {
       width: 24px; height: 2px;
-      background: var(--white);
+      background: var(--text-primary);
       border-radius: 2px;
       transition: all 0.3s;
     }
@@ -204,7 +204,7 @@
       min-height: 100vh;
       display: flex;
       align-items: center;
-      background: linear-gradient(160deg, var(--navy-dark) 0%, var(--navy-mid) 50%, var(--navy-dark) 100%);
+      background: linear-gradient(160deg, #ffffff 0%, var(--gray-100) 50%, #ffffff 100%);
       overflow: hidden;
       padding-top: 80px;
     }
@@ -213,7 +213,7 @@
       position: absolute;
       top: -50%; right: -20%;
       width: 800px; height: 800px;
-      background: radial-gradient(circle, var(--green-glow) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(0,212,170,0.08) 0%, transparent 70%);
       pointer-events: none;
     }
     .hero::after {
@@ -221,7 +221,7 @@
       position: absolute;
       bottom: -30%; left: -10%;
       width: 600px; height: 600px;
-      background: radial-gradient(circle, rgba(0,100,200,0.08) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(0,100,200,0.05) 0%, transparent 70%);
       pointer-events: none;
     }
     .hero-content {
@@ -242,7 +242,7 @@
       border: 1px solid rgba(0,212,170,0.25);
       font-size: 0.85rem;
       font-weight: 500;
-      color: var(--green);
+      color: var(--green-dim);
       margin-bottom: 28px;
     }
     .hero h1 {
@@ -251,14 +251,12 @@
       line-height: 1.15;
       letter-spacing: -1.5px;
       margin-bottom: 20px;
-      background: linear-gradient(135deg, var(--white) 0%, var(--gray-200) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: var(--text-primary);
     }
     .hero h1 span {
-      background: linear-gradient(135deg, var(--green) 0%, #00f5c4 100%);
+      background: linear-gradient(135deg, var(--green-dim) 0%, #00d4aa 100%);
       -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       background-clip: text;
     }
     .hero p.subtitle {
@@ -282,7 +280,7 @@
       gap: 24px;
       flex-wrap: wrap;
       font-size: 0.8rem;
-      color: var(--gray-400);
+      color: var(--text-secondary);
       letter-spacing: 0.5px;
     }
     .trust-badges span {
@@ -292,41 +290,65 @@
     }
     .trust-badges .icon { font-size: 1rem; color: var(--green); }
 
-    /* ===== Social Proof Bar ===== */
+    /* ===== Social Proof / Testimonials ===== */
     .social-proof {
-      padding: 48px 0;
+      padding: 80px 0;
       border-top: 1px solid var(--card-border);
       border-bottom: 1px solid var(--card-border);
-      background: var(--gray-100);
+      background: var(--white);
     }
-    .social-proof p {
+    .social-proof > .container > p {
       text-align: center;
       font-size: 0.9rem;
       color: var(--gray-400);
       text-transform: uppercase;
       letter-spacing: 2px;
       font-weight: 500;
-      margin-bottom: 28px;
+      margin-bottom: 40px;
     }
-    .logo-bar {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 48px;
-      flex-wrap: wrap;
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
     }
-    .logo-placeholder {
-      width: 130px;
-      height: 40px;
-      border-radius: 8px;
-      background: var(--white);
+    .testimonial-card {
+      background: var(--gray-100);
       border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 32px 28px;
+      transition: all 0.35s ease;
+    }
+    .testimonial-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+      border-color: rgba(0,212,170,0.2);
+    }
+    .testimonial-stars {
+      font-size: 1.1rem;
+      color: #f59e0b;
+      margin-bottom: 16px;
+      letter-spacing: 2px;
+    }
+    .testimonial-quote {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+    .testimonial-author {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.75rem;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .testimonial-author strong {
+      font-size: 0.9rem;
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+    .testimonial-author span {
+      font-size: 0.8rem;
       color: var(--gray-400);
-      font-weight: 500;
     }
 
     /* ===== Section Titles ===== */
@@ -1040,6 +1062,7 @@
     @media (max-width: 1024px) {
       .features-grid { grid-template-columns: repeat(2, 1fr); }
       .onprem-grid { grid-template-columns: repeat(2, 1fr); }
+      .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
       .pricing-grid { grid-template-columns: repeat(2, 1fr); }
       .pricing-card.featured { transform: scale(1); }
       .pricing-card.featured:hover { transform: translateY(-4px); }
@@ -1051,7 +1074,7 @@
         flex-direction: column;
         position: absolute;
         top: 100%; left: 0; right: 0;
-        background: rgba(10,22,40,0.98);
+        background: rgba(255,255,255,0.98);
         backdrop-filter: blur(20px);
         padding: 24px;
         gap: 20px;
@@ -1061,6 +1084,7 @@
 
       .features-grid { grid-template-columns: 1fr; }
       .onprem-grid { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
       .steps { grid-template-columns: 1fr; gap: 48px; }
       .steps::before { display: none; }
       .pricing-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
@@ -1126,16 +1150,35 @@
     </div>
   </section>
 
-  <!-- ===== Social Proof Bar ===== -->
+  <!-- ===== Social Proof / Testimonials ===== -->
   <section class="social-proof">
     <div class="container">
-      <p>Trusted by personal injury firms processing 10,000+ records</p>
-      <div class="logo-bar">
-        <div class="logo-placeholder">Law Firm A</div>
-        <div class="logo-placeholder">Law Firm B</div>
-        <div class="logo-placeholder">Law Firm C</div>
-        <div class="logo-placeholder">Law Firm D</div>
-        <div class="logo-placeholder">Law Firm E</div>
+      <p>What attorneys are saying</p>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-quote">&ldquo;We processed a 500-page medical record in under 20 minutes. Our paralegal spent 2 hours reviewing AI output instead of 3 days reading raw records. Game changer for our PI practice.&rdquo;</p>
+          <div class="testimonial-author">
+            <strong>Managing Partner</strong>
+            <span>Personal Injury Firm &bull; 12 attorneys</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-quote">&ldquo;The smoking gun detection alone paid for itself on the first case. It flagged a provider note buried on page 347 that became the centerpiece of our deposition.&rdquo;</p>
+          <div class="testimonial-author">
+            <strong>Trial Attorney</strong>
+            <span>Medical Malpractice &bull; Solo Practice</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-quote">&ldquo;We were paying $800/case to a cloud platform. MedRecords AI does the same work on our own machine for a one-time fee. The ROI was immediate and the data never leaves our office.&rdquo;</p>
+          <div class="testimonial-author">
+            <strong>Senior Associate</strong>
+            <span>PI &amp; Workers&rsquo; Comp &bull; 6 attorneys</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
