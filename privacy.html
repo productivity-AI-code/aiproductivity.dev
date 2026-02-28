@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Medical Records Stay On Your Machine | MedRecords AI On-Premise AI</title>
+  <meta name="description" content="The only AI medical record analysis platform that runs entirely on your computer. Air-gapped processing, no cloud uploads, no third-party data exposure.">
+  <link rel="canonical" href="https://aiproductivity.dev/privacy.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Your Medical Records Stay On Your Machine | MedRecords AI">
+  <meta property="og:description" content="The only AI medical record analysis platform that runs entirely on your computer. Air-gapped processing, no cloud uploads, no third-party data exposure.">
+  <meta property="og:url" content="https://aiproductivity.dev/privacy.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MedRecords AI">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Your Medical Records Stay On Your Machine | MedRecords AI">
+  <meta name="twitter:description" content="The only AI medical record analysis platform that runs entirely on your computer. Air-gapped processing, no cloud uploads, no third-party data exposure.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ===== Reset & Base ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy-dark: #0a1628;
+      --navy: #0f1d35;
+      --navy-mid: #1a2d50;
+      --navy-light: #243a5e;
+      --green: #00d4aa;
+      --green-dim: #00b894;
+      --green-glow: rgba(0, 212, 170, 0.25);
+      --white: #ffffff;
+      --gray-100: #f8f9fc;
+      --gray-200: #d1d5db;
+      --gray-300: #9ca3af;
+      --gray-400: #6b7280;
+      --gray-500: #374151;
+      --text-primary: #1a1a2e;
+      --text-secondary: #555;
+      --text-muted: #888;
+      --card-bg: #ffffff;
+      --card-border: #eee;
+      --radius: 12px;
+      --radius-lg: 20px;
+      --shadow: 0 4px 24px rgba(0,0,0,0.08);
+    }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #ffffff;
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a { color: var(--green-dim); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--green); }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ===== Animations ===== */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(0,212,170,0.6); }
+      50%      { opacity: 0.8; box-shadow: 0 0 0 8px rgba(0,212,170,0); }
+    }
+
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== Buttons ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 50px;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      font-family: inherit;
+    }
+    .btn-primary {
+      background: var(--green);
+      color: var(--navy-dark);
+      border-color: var(--green);
+    }
+    .btn-primary:hover {
+      background: var(--green-dim);
+      border-color: var(--green-dim);
+      color: var(--navy-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px var(--green-glow);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--text-primary);
+      border-color: var(--card-border);
+    }
+    .btn-outline:hover {
+      border-color: var(--green);
+      color: var(--green);
+      transform: translateY(-2px);
+    }
+    .btn-outline-light {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(255,255,255,0.3);
+    }
+    .btn-outline-light:hover {
+      border-color: var(--green);
+      color: var(--green);
+      transform: translateY(-2px);
+    }
+    .btn-sm {
+      padding: 10px 24px;
+      font-size: 0.9rem;
+    }
+
+    /* ===== Navigation ===== */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 16px 0;
+      transition: background 0.3s, box-shadow 0.3s, padding 0.3s;
+    }
+    nav.scrolled {
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+      padding: 10px 0;
+    }
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: -0.5px;
+    }
+    .logo-dot {
+      width: 10px; height: 10px;
+      background: var(--green);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--gray-400);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-links a.active {
+      color: var(--green);
+      font-weight: 600;
+    }
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav-toggle span {
+      width: 24px; height: 2px;
+      background: var(--text-primary);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* ===== Hero (Dark Navy) ===== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(160deg, var(--navy-dark) 0%, var(--navy) 40%, var(--navy-mid) 100%);
+      overflow: hidden;
+      padding-top: 80px;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%; right: -20%;
+      width: 800px; height: 800px;
+      background: radial-gradient(circle, rgba(0,212,170,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -30%; left: -10%;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(0,100,200,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 850px;
+      margin: 0 auto;
+      animation: fadeInUp 0.8s ease-out;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 20px;
+      border-radius: 50px;
+      background: rgba(0,212,170,0.1);
+      border: 1px solid rgba(0,212,170,0.25);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--green);
+      margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -1.5px;
+      margin-bottom: 20px;
+      color: var(--white);
+    }
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--green-dim) 0%, #00d4aa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero p.subtitle {
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      color: rgba(255,255,255,0.7);
+      max-width: 640px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+    }
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+    .trust-badges {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.5px;
+    }
+    .trust-badges span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .trust-badges .icon { font-size: 1rem; color: var(--green); }
+    .trust-badges .separator {
+      width: 1px;
+      height: 16px;
+      background: rgba(255,255,255,0.2);
+    }
+
+    /* ===== Section Titles ===== */
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .section-title .label {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--green);
+      margin-bottom: 12px;
+    }
+    .section-title h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      letter-spacing: -1px;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .section-title p {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* ===== The Problem / Data Flow Section ===== */
+    .problem-section {
+      padding: 100px 0;
+      background: var(--white);
+    }
+    .flow-comparison {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .flow-diagram {
+      border-radius: var(--radius-lg);
+      padding: 36px 32px;
+      position: relative;
+    }
+    .flow-diagram.cloud {
+      background: rgba(239, 68, 68, 0.04);
+      border: 1px solid rgba(239, 68, 68, 0.2);
+    }
+    .flow-diagram.local {
+      background: rgba(0, 212, 170, 0.04);
+      border: 1px solid rgba(0, 212, 170, 0.2);
+    }
+    .flow-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .flow-diagram.cloud .flow-label { color: #ef4444; }
+    .flow-diagram.local .flow-label { color: var(--green); }
+    .flow-steps {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .flow-node {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      text-align: center;
+      min-width: 120px;
+      position: relative;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .flow-diagram.cloud .flow-node {
+      border: 1px solid rgba(239, 68, 68, 0.15);
+    }
+    .flow-diagram.local .flow-node {
+      border: 1px solid rgba(0, 212, 170, 0.2);
+    }
+    .flow-arrow {
+      font-size: 1.3rem;
+      padding: 0 8px;
+      flex-shrink: 0;
+    }
+    .flow-diagram.cloud .flow-arrow { color: #ef4444; }
+    .flow-diagram.local .flow-arrow { color: var(--green); }
+    .flow-warning {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #ef4444;
+      margin-top: 6px;
+      background: rgba(239, 68, 68, 0.08);
+      padding: 2px 8px;
+      border-radius: 50px;
+    }
+    .flow-check {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--green);
+      margin-top: 6px;
+      background: rgba(0, 212, 170, 0.1);
+      padding: 2px 8px;
+      border-radius: 50px;
+    }
+    .flow-result {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .flow-diagram.cloud .flow-result { color: #ef4444; }
+    .flow-diagram.local .flow-result { color: var(--green); }
+
+    /* ===== Comparison Table ===== */
+    .comparison {
+      padding: 100px 0;
+      background: var(--gray-100);
+    }
+    .comparison-table-wrap {
+      overflow-x: auto;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--card-border);
+      background: var(--card-bg);
+    }
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 600px;
+    }
+    .comparison-table thead th {
+      padding: 20px 24px;
+      text-align: left;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--gray-400);
+      border-bottom: 1px solid var(--card-border);
+      background: var(--gray-100);
+    }
+    .comparison-table thead th:first-child { border-radius: var(--radius-lg) 0 0 0; }
+    .comparison-table thead th:last-child { border-radius: 0 var(--radius-lg) 0 0; }
+    .comparison-table thead th.highlight {
+      color: var(--green);
+      background: rgba(0,212,170,0.08);
+    }
+    .comparison-table tbody td {
+      padding: 18px 24px;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      border-bottom: 1px solid var(--card-border);
+    }
+    .comparison-table tbody td.highlight {
+      color: var(--text-primary);
+      font-weight: 600;
+      background: rgba(0,212,170,0.05);
+    }
+    .comparison-table tbody tr:last-child td { border-bottom: none; }
+    .comparison-table .tag-green {
+      display: inline-block;
+      background: rgba(0,212,170,0.15);
+      color: var(--green);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 50px;
+    }
+    .comparison-table .tag-red {
+      display: inline-block;
+      background: rgba(239,68,68,0.12);
+      color: #f87171;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 50px;
+    }
+
+    /* ===== Air-Gapped Processing Section ===== */
+    .airgap-section {
+      padding: 100px 0;
+      background: var(--white);
+    }
+    .airgap-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .airgap-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 36px 28px;
+      transition: all 0.35s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .airgap-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--green), transparent);
+      opacity: 0;
+      transition: opacity 0.35s;
+    }
+    .airgap-card:hover {
+      border-color: rgba(0,212,170,0.2);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    }
+    .airgap-card:hover::before { opacity: 1; }
+    .airgap-icon {
+      width: 56px; height: 56px;
+      border-radius: 14px;
+      background: rgba(0,212,170,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+    }
+    .airgap-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--text-primary);
+    }
+    .airgap-card p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .airgap-tag {
+      display: inline-block;
+      background: rgba(0,212,170,0.12);
+      color: var(--green);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 4px 14px;
+      border-radius: 50px;
+    }
+
+    /* ===== Target Audience Section ===== */
+    .audience-section {
+      padding: 100px 0;
+      background: var(--gray-100);
+    }
+    .audience-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .audience-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 36px 28px;
+      transition: all 0.35s ease;
+      text-align: center;
+    }
+    .audience-card:hover {
+      border-color: rgba(0,212,170,0.2);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    }
+    .audience-icon {
+      width: 64px; height: 64px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      margin: 0 auto 20px;
+      background: rgba(0,212,170,0.1);
+    }
+    .audience-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+    .audience-card p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* ===== Security Features Grid ===== */
+    .security-section {
+      padding: 100px 0;
+      background: var(--white);
+    }
+    .security-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .security-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 36px 28px;
+      transition: all 0.35s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .security-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--green), transparent);
+      opacity: 0;
+      transition: opacity 0.35s;
+    }
+    .security-card:hover {
+      border-color: rgba(0,212,170,0.2);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    }
+    .security-card:hover::before { opacity: 1; }
+    .security-icon {
+      width: 52px; height: 52px;
+      border-radius: 14px;
+      background: rgba(0,212,170,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+    .security-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--text-primary);
+    }
+    .security-card p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* ===== CTA Section (Dark Navy) ===== */
+    .cta-section {
+      padding: 100px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(160deg, var(--navy-dark) 0%, var(--navy) 40%, var(--navy-mid) 100%);
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 700px; height: 400px;
+      background: radial-gradient(ellipse, rgba(0,212,170,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cta-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+    .cta-inner h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+      color: var(--white);
+    }
+    .cta-inner p {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 40px;
+      line-height: 1.7;
+    }
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      padding: 48px 0;
+      border-top: 1px solid var(--card-border);
+    }
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .footer-left .logo { margin-bottom: 8px; }
+    .footer-left p {
+      font-size: 0.8rem;
+      color: var(--gray-400);
+    }
+    .footer-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+    .footer-links a {
+      font-size: 0.85rem;
+      color: var(--gray-400);
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--text-primary); }
+    .footer-contact {
+      font-size: 0.85rem;
+      color: var(--gray-400);
+      text-align: right;
+    }
+    .footer-contact a { color: var(--green); }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 1024px) {
+      .airgap-grid { grid-template-columns: repeat(2, 1fr); }
+      .audience-grid { grid-template-columns: repeat(2, 1fr); }
+      .security-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(20px);
+        padding: 24px;
+        gap: 20px;
+        border-bottom: 1px solid var(--card-border);
+      }
+      .nav-toggle { display: flex; }
+
+      .airgap-grid { grid-template-columns: 1fr; }
+      .audience-grid { grid-template-columns: 1fr; }
+      .security-grid { grid-template-columns: 1fr; }
+
+      .flow-steps { flex-direction: column; gap: 0; }
+      .flow-arrow { transform: rotate(90deg); padding: 4px 0; }
+      .flow-node { min-width: 200px; }
+
+      .footer-content { flex-direction: column; text-align: center; }
+      .footer-contact { text-align: center; }
+
+      .hero-ctas { flex-direction: column; align-items: center; }
+      .cta-buttons { flex-direction: column; align-items: center; }
+      .btn { width: 100%; max-width: 300px; justify-content: center; }
+
+      .trust-badges .separator { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Navigation ===== -->
+  <nav id="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <span class="logo-dot"></span>
+        MedRecords AI
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#features">Features</a></li>
+        <li><a href="index.html#how-it-works">How It Works</a></li>
+        <li><a href="index.html#pricing">Pricing</a></li>
+        <li><a href="index.html#compare">Compare</a></li>
+        <li><a href="privacy.html" class="active">Security</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="index.html#demo" class="btn btn-primary btn-sm">Try It Free</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== Hero Section (Dark Navy) ===== -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="logo-dot" style="width:7px;height:7px"></span>
+          Zero Records Uploaded to External Servers
+        </div>
+        <h1>Your Records Stay On <span>Your Machine</span></h1>
+        <p class="subtitle">The only medical record AI that processes everything locally. No cloud uploads. No shared servers. No third-party access to your clients' PHI.</p>
+        <div class="hero-ctas">
+          <a href="index.html#demo" class="btn btn-primary">Download Free Demo</a>
+          <a href="#how-it-works" class="btn btn-outline-light">See How It Works</a>
+        </div>
+        <div class="trust-badges">
+          <span><span class="icon">&#128274;</span> HIPAA Compliant</span>
+          <span class="separator"></span>
+          <span><span class="icon">&#128272;</span> AES-256 Encryption</span>
+          <span class="separator"></span>
+          <span><span class="icon">&#128268;</span> Air-Gapped Option</span>
+          <span class="separator"></span>
+          <span><span class="icon">&#128203;</span> Full Audit Trail</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== The Problem Section ===== -->
+  <section class="problem-section" id="how-it-works">
+    <div class="container">
+      <div class="section-title animate-on-scroll">
+        <div class="label">The Problem</div>
+        <h2>Every Other AI Tool Does This</h2>
+        <p>Cloud-based platforms route your clients' most sensitive medical data through multiple third-party systems. MedRecords AI keeps it all on your machine.</p>
+      </div>
+      <div class="flow-comparison animate-on-scroll">
+        <!-- Cloud Platform Flow -->
+        <div class="flow-diagram cloud">
+          <div class="flow-label">&#9888;&#65039; Cloud AI Platforms</div>
+          <div class="flow-steps">
+            <div class="flow-node">
+              &#128187; Your Computer
+            </div>
+            <div class="flow-arrow">&rarr;</div>
+            <div class="flow-node">
+              &#127760; Internet
+              <span class="flow-warning">PHI exposed</span>
+            </div>
+            <div class="flow-arrow">&rarr;</div>
+            <div class="flow-node">
+              &#9729;&#65039; Cloud Server
+              <span class="flow-warning">Multi-tenant</span>
+            </div>
+            <div class="flow-arrow">&rarr;</div>
+            <div class="flow-node">
+              &#128451; Shared Infrastructure
+              <span class="flow-warning">Third-party access</span>
+            </div>
+            <div class="flow-arrow">&rarr;</div>
+            <div class="flow-node">
+              &#129302; Third-Party AI
+              <span class="flow-warning">Data retained</span>
+            </div>
+          </div>
+          <div class="flow-result">&#9888;&#65039; 5 points of exposure for your clients' PHI</div>
+        </div>
+        <!-- MedRecords AI Flow -->
+        <div class="flow-diagram local">
+          <div class="flow-label">&#9989; MedRecords AI</div>
+          <div class="flow-steps">
+            <div class="flow-node">
+              &#128187; Your Computer
+              <span class="flow-check">Records stay here</span>
+            </div>
+            <div class="flow-arrow">&harr;</div>
+            <div class="flow-node">
+              &#129302; Your Computer
+              <span class="flow-check">AI runs here</span>
+            </div>
+          </div>
+          <div class="flow-result">&#9989; Records never leave your machine</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Cloud vs On-Premise Comparison Table ===== -->
+  <section class="comparison" id="comparison">
+    <div class="container">
+      <div class="section-title animate-on-scroll">
+        <div class="label">Comparison</div>
+        <h2>Cloud vs. On-Premise: Side by Side</h2>
+        <p>See exactly how MedRecords AI's on-premise architecture protects your firm.</p>
+      </div>
+      <div class="comparison-table-wrap animate-on-scroll">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Aspect</th>
+              <th>Cloud AI Platforms</th>
+              <th class="highlight">MedRecords AI</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Where data is processed</td>
+              <td><span class="tag-red">Third-party cloud servers</span></td>
+              <td class="highlight"><span class="tag-green">Your computer</span></td>
+            </tr>
+            <tr>
+              <td>Who can access your data</td>
+              <td><span class="tag-red">Cloud provider, subprocessors</span></td>
+              <td class="highlight"><span class="tag-green">Only your firm</span></td>
+            </tr>
+            <tr>
+              <td>Data in transit</td>
+              <td><span class="tag-red">Uploaded over internet</span></td>
+              <td class="highlight"><span class="tag-green">Never leaves your network</span></td>
+            </tr>
+            <tr>
+              <td>Air-gapped option</td>
+              <td>&#10007; No</td>
+              <td class="highlight"><span class="tag-green">Yes (Ollama local AI)</span></td>
+            </tr>
+            <tr>
+              <td>BAA required</td>
+              <td><span class="tag-red">Yes (often unavailable)</span></td>
+              <td class="highlight"><span class="tag-green">No (data never leaves you)</span></td>
+            </tr>
+            <tr>
+              <td>Audit trail</td>
+              <td>Vendor-controlled</td>
+              <td class="highlight"><span class="tag-green">You control the logs</span></td>
+            </tr>
+            <tr>
+              <td>Breach risk</td>
+              <td><span class="tag-red">Shared infrastructure</span></td>
+              <td class="highlight"><span class="tag-green">Isolated to your machine</span></td>
+            </tr>
+            <tr>
+              <td>Data retention</td>
+              <td><span class="tag-red">Vendor decides</span></td>
+              <td class="highlight"><span class="tag-green">You decide</span></td>
+            </tr>
+            <tr>
+              <td>If vendor goes bankrupt</td>
+              <td><span class="tag-red">Lose access to everything</span></td>
+              <td class="highlight"><span class="tag-green">Software keeps running</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Air-Gapped Processing Section ===== -->
+  <section class="airgap-section" id="airgap">
+    <div class="container">
+      <div class="section-title animate-on-scroll">
+        <div class="label">Architecture</div>
+        <h2>Complete Air-Gapped Processing with Local AI</h2>
+        <p>Choose the AI backend that matches your firm's security requirements.</p>
+      </div>
+      <div class="airgap-grid">
+        <div class="airgap-card animate-on-scroll">
+          <div class="airgap-icon">&#9889;</div>
+          <h3>Cloud AI Mode (Claude API)</h3>
+          <p>Fast processing via Anthropic's Claude API. Data sent via encrypted TLS 1.3, processed, immediately discarded. No data retention by Anthropic.</p>
+          <span class="airgap-tag">Best for speed</span>
+        </div>
+        <div class="airgap-card animate-on-scroll">
+          <div class="airgap-icon">&#128737;</div>
+          <h3>Local AI Mode (Ollama)</h3>
+          <p>Install open-source AI models on your own hardware. Zero data touches the internet. Ever. Process medical records in a completely air-gapped environment.</p>
+          <span class="airgap-tag">Best for security</span>
+        </div>
+        <div class="airgap-card animate-on-scroll">
+          <div class="airgap-icon">&#128260;</div>
+          <h3>Hybrid Mode</h3>
+          <p>Use cloud AI for routine cases, local AI for sensitive cases. Switch per-case based on your firm's risk tolerance.</p>
+          <span class="airgap-tag">Best of both</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Target Audience Section ===== -->
+  <section class="audience-section" id="audience">
+    <div class="container">
+      <div class="section-title animate-on-scroll">
+        <div class="label">Who It's For</div>
+        <h2>Built for Firms That Take Privacy Seriously</h2>
+        <p>On-premise AI is not a feature. It's a requirement for firms handling the most sensitive records.</p>
+      </div>
+      <div class="audience-grid">
+        <div class="audience-card animate-on-scroll">
+          <div class="audience-icon">&#127963;&#65039;</div>
+          <h3>Government &amp; VA Firms</h3>
+          <p>Handle veterans' medical records with the assurance that data never leaves government-approved infrastructure. No cloud dependencies. No third-party access. Full compliance with federal data governance requirements.</p>
+        </div>
+        <div class="audience-card animate-on-scroll">
+          <div class="audience-icon">&#9879;&#65039;</div>
+          <h3>Medical Malpractice Firms</h3>
+          <p>The most sensitive PHI in litigation &mdash; patient records showing medical errors, mental health notes, substance abuse treatment. Keep it on your machine, under your control.</p>
+        </div>
+        <div class="audience-card animate-on-scroll">
+          <div class="audience-icon">&#127970;</div>
+          <h3>Enterprise &amp; Multi-Office Firms</h3>
+          <p>Deploy MedRecords AI on your internal network. Multiple attorneys and paralegals access through their browser, but data stays within your firewall. No VPN to a third party required.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Security Features Grid ===== -->
+  <section class="security-section" id="security">
+    <div class="container">
+      <div class="section-title animate-on-scroll">
+        <div class="label">Security</div>
+        <h2>Enterprise-Grade Security, On Your Terms</h2>
+        <p>Every layer of MedRecords AI is designed with security as the default, not an add-on.</p>
+      </div>
+      <div class="security-grid">
+        <div class="security-card animate-on-scroll">
+          <div class="security-icon">&#128272;</div>
+          <h3>AES-256 Encryption at Rest</h3>
+          <p>All stored data encrypted with AES-256, the same standard used by banks and government agencies. Your records are unreadable without your encryption keys.</p>
+        </div>
+        <div class="security-card animate-on-scroll">
+          <div class="security-icon">&#128274;</div>
+          <h3>TLS 1.3 in Transit</h3>
+          <p>When using cloud AI, data is encrypted with TLS 1.3 &mdash; the latest transport layer security protocol. Data is processed and immediately discarded. Never stored.</p>
+        </div>
+        <div class="security-card animate-on-scroll">
+          <div class="security-icon">&#128203;</div>
+          <h3>HIPAA-Compliant Audit Trail</h3>
+          <p>HMAC-signed audit entries with tamper-evident logging. Every access, every action, every export is recorded in a cryptographically verifiable log you control.</p>
+        </div>
+        <div class="security-card animate-on-scroll">
+          <div class="security-icon">&#128101;</div>
+          <h3>Role-Based Access Control</h3>
+          <p>Session-based authentication with rate limiting and CSRF protection. Control who can access, process, and export records within your organization.</p>
+        </div>
+        <div class="security-card animate-on-scroll">
+          <div class="security-icon">&#128268;</div>
+          <h3>Offline License Validation</h3>
+          <p>License validates without internet. No phone home. No usage reporting. Your air-gapped deployment stays air-gapped &mdash; even for license management.</p>
+        </div>
+        <div class="security-card animate-on-scroll">
+          <div class="security-icon">&#128683;</div>
+          <h3>No Telemetry</h3>
+          <p>Zero usage tracking. Zero analytics. Zero data collection. MedRecords AI does not know how you use it, what you process, or how many cases you run.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA Section (Dark Navy) ===== -->
+  <section class="cta-section" id="cta">
+    <div class="container">
+      <div class="cta-inner animate-on-scroll">
+        <h2>Try It Risk-Free</h2>
+        <p>Your data stays on your machine even during the free demo. 14 days, 3 cases, full features.</p>
+        <div class="cta-buttons">
+          <a href="index.html#demo" class="btn btn-primary">Download Free Demo</a>
+          <a href="index.html#pricing" class="btn btn-outline-light">See Pricing</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-left">
+          <a href="index.html" class="logo">
+            <span class="logo-dot"></span>
+            MedRecords AI
+          </a>
+          <p>&copy; 2026 MedRecords AI. All rights reserved.</p>
+        </div>
+        <ul class="footer-links">
+          <li><a href="index.html#features">Features</a></li>
+          <li><a href="index.html#pricing">Pricing</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="privacy.html">Security</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+        <div class="footer-contact">
+          <p>Questions? Reach out at</p>
+          <a href="mailto:dan.direnfeld@aiproductivity.dev">dan.direnfeld@aiproductivity.dev</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== JavaScript ===== -->
+  <script>
+    // --- Navbar scroll effect ---
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // --- Mobile nav toggle ---
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+    // Close mobile nav on link click
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    // --- Scroll animations (Intersection Observer) ---
+    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -40px 0px' };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

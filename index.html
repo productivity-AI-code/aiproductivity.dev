@@ -1802,6 +1802,35 @@ MedRecords AI is a trademark of Productivity AI, LLC.</div>
     });
 
     // --- Demo Download Handler ---
+    // --- Lead capture via Google Forms (silent, non-blocking) ---
+    // TO CONFIGURE: Create a Google Form with fields Name, Email, Firm Name.
+    // Then replace GOOGLE_FORM_ID and the entry.XXXXX IDs below with your form's values.
+    // To find entry IDs: open your form, click "Get pre-filled link", inspect the URL parameters.
+    const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/GOOGLE_FORM_ID/formResponse';
+    const FORM_FIELD_NAME = 'entry.XXXXX';   // Replace with your Name field entry ID
+    const FORM_FIELD_EMAIL = 'entry.YYYYY';  // Replace with your Email field entry ID
+    const FORM_FIELD_FIRM = 'entry.ZZZZZ';   // Replace with your Firm field entry ID
+
+    function captureLead(name, email, firm) {
+      try {
+        const formData = new FormData();
+        formData.append(FORM_FIELD_NAME, name);
+        formData.append(FORM_FIELD_EMAIL, email);
+        if (firm) formData.append(FORM_FIELD_FIRM, firm);
+        fetch(GOOGLE_FORM_URL, { method: 'POST', body: formData, mode: 'no-cors' });
+      } catch (e) { /* silent fail — download is more important */ }
+    }
+
+    function triggerDownload() {
+      const downloadLink = document.createElement('a');
+      downloadLink.href = 'dist/MedRecordsAI-DEMO-v2.1.0.zip';
+      downloadLink.download = 'MedRecordsAI-DEMO-v2.1.0.zip';
+      downloadLink.style.display = 'none';
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
+      document.body.removeChild(downloadLink);
+    }
+
     function handleDemoDownload(event) {
       event.preventDefault();
 
@@ -1813,31 +1842,18 @@ MedRecords AI is a trademark of Productivity AI, LLC.</div>
         return;
       }
 
-      // Send lead info via mailto (background, non-blocking)
-      const subject = encodeURIComponent('MedRecords AI Demo Download');
-      const body = encodeURIComponent('New demo download:\n\nName: ' + name + '\nEmail: ' + email + '\nFirm: ' + (firm || 'N/A'));
-      const mailtoLink = document.createElement('a');
-      mailtoLink.href = 'mailto:dan.direnfeld@aiproductivity.dev?subject=' + subject + '&body=' + body;
-      mailtoLink.style.display = 'none';
-      document.body.appendChild(mailtoLink);
-      mailtoLink.click();
-      document.body.removeChild(mailtoLink);
+      // Download first (most important action)
+      triggerDownload();
 
-      // Trigger download
-      const downloadLink = document.createElement('a');
-      downloadLink.href = 'dist/MedRecordsAI-DEMO-v2.0.1.zip';
-      downloadLink.download = 'MedRecordsAI-DEMO-v2.0.1.zip';
-      downloadLink.style.display = 'none';
-      document.body.appendChild(downloadLink);
-      downloadLink.click();
-      document.body.removeChild(downloadLink);
+      // Capture lead silently in background (non-blocking)
+      captureLead(name, email, firm);
 
       // Replace form with success message
       const formWrap = document.querySelector('.demo-form-wrap');
       formWrap.innerHTML = '<div class="demo-success">' +
         '<div class="demo-success-icon">&#10003;</div>' +
         '<h3>Download Started!</h3>' +
-        '<p>Your demo is downloading now. Check your email for setup instructions and tips to get started.</p>' +
+        '<p>Your demo is downloading now. Extract the ZIP and double-click <strong>MedRecordsAI.bat</strong> to install.</p>' +
         '</div>';
     }
 
@@ -1849,30 +1865,17 @@ MedRecords AI is a trademark of Productivity AI, LLC.</div>
 
       if (!name || !email) return;
 
-      // Capture lead
-      const subject = encodeURIComponent('MedRecords AI Demo Download');
-      const body = encodeURIComponent('New demo download (footer CTA):\n\nName: ' + name + '\nEmail: ' + email);
-      const mailtoLink = document.createElement('a');
-      mailtoLink.href = 'mailto:dan.direnfeld@aiproductivity.dev?subject=' + subject + '&body=' + body;
-      mailtoLink.style.display = 'none';
-      document.body.appendChild(mailtoLink);
-      mailtoLink.click();
-      document.body.removeChild(mailtoLink);
+      // Download first
+      triggerDownload();
 
-      // Trigger download
-      const downloadLink = document.createElement('a');
-      downloadLink.href = 'dist/MedRecordsAI-DEMO-v2.0.1.zip';
-      downloadLink.download = 'MedRecordsAI-DEMO-v2.0.1.zip';
-      downloadLink.style.display = 'none';
-      document.body.appendChild(downloadLink);
-      downloadLink.click();
-      document.body.removeChild(downloadLink);
+      // Capture lead silently
+      captureLead(name, email, '');
 
       // Replace form with confirmation
       const ctaBox = event.target.closest('.cta-box');
       ctaBox.innerHTML =
         '<h2>&#10003; Your Download Has Started</h2>' +
-        '<p>Check your downloads folder for <strong>MedRecordsAI-DEMO-v2.0.1.zip</strong>. Extract and double-click <strong>MedRecordsAI.bat</strong> to install.</p>' +
+        '<p>Check your downloads folder for <strong>MedRecordsAI-DEMO-v2.1.0.zip</strong>. Extract and double-click <strong>MedRecordsAI.bat</strong> to install.</p>' +
         '<p class="cta-note" style="margin-top:16px"><a href="#demo" style="color:var(--green)">View setup instructions &darr;</a></p>';
     }
   </script>
