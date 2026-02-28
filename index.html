@@ -21,33 +21,34 @@
       --green-dim: #00b894;
       --green-glow: rgba(0, 212, 170, 0.25);
       --white: #ffffff;
-      --gray-100: #f0f2f5;
+      --gray-100: #f8f9fc;
       --gray-200: #d1d5db;
       --gray-300: #9ca3af;
       --gray-400: #6b7280;
       --gray-500: #374151;
-      --text-primary: #e8ecf1;
-      --text-secondary: #9ca3af;
-      --card-bg: rgba(255,255,255,0.04);
-      --card-border: rgba(255,255,255,0.08);
+      --text-primary: #1a1a2e;
+      --text-secondary: #555;
+      --text-muted: #888;
+      --card-bg: #ffffff;
+      --card-border: #eee;
       --radius: 12px;
       --radius-lg: 20px;
-      --shadow: 0 4px 24px rgba(0,0,0,0.3);
+      --shadow: 0 4px 24px rgba(0,0,0,0.08);
     }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scroll-padding-top: 72px; }
 
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: var(--navy-dark);
+      background: #ffffff;
       color: var(--text-primary);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
     }
 
-    a { color: var(--green); text-decoration: none; transition: color 0.2s; }
-    a:hover { color: var(--green-dim); }
+    a { color: var(--green-dim); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--green); }
 
     .container {
       max-width: 1200px;
@@ -120,6 +121,15 @@
       color: var(--white);
       transform: translateY(-2px);
     }
+    /* Light-context outline buttons (pricing cards, etc.) */
+    .pricing-card .btn-outline {
+      color: var(--text-primary);
+      border-color: var(--card-border);
+    }
+    .pricing-card .btn-outline:hover {
+      border-color: var(--green);
+      color: var(--green);
+    }
     .btn-sm {
       padding: 10px 24px;
       font-size: 0.9rem;
@@ -166,7 +176,7 @@
       list-style: none;
     }
     .nav-links a {
-      color: var(--text-secondary);
+      color: var(--gray-300);
       font-size: 0.9rem;
       font-weight: 500;
       transition: color 0.2s;
@@ -287,7 +297,7 @@
       padding: 48px 0;
       border-top: 1px solid var(--card-border);
       border-bottom: 1px solid var(--card-border);
-      background: rgba(0,0,0,0.15);
+      background: var(--gray-100);
     }
     .social-proof p {
       text-align: center;
@@ -309,8 +319,8 @@
       width: 130px;
       height: 40px;
       border-radius: 8px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.06);
+      background: var(--white);
+      border: 1px solid var(--card-border);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -377,7 +387,7 @@
     .feature-card:hover {
       border-color: rgba(0,212,170,0.2);
       transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
     }
     .feature-card:hover::before { opacity: 1; }
     .feature-icon {
@@ -394,7 +404,7 @@
       font-size: 1.1rem;
       font-weight: 700;
       margin-bottom: 10px;
-      color: var(--white);
+      color: var(--text-primary);
     }
     .feature-card p {
       font-size: 0.9rem;
@@ -405,7 +415,7 @@
     /* ===== How It Works ===== */
     .how-it-works {
       padding: 100px 0;
-      background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, transparent 100%);
+      background: var(--gray-100);
     }
     .steps {
       display: grid;
@@ -427,7 +437,7 @@
     .step-number {
       width: 64px; height: 64px;
       border-radius: 50%;
-      background: var(--navy);
+      background: var(--white);
       border: 2px solid var(--green);
       display: flex;
       align-items: center;
@@ -447,7 +457,7 @@
       font-size: 1.15rem;
       font-weight: 700;
       margin-bottom: 10px;
-      color: var(--white);
+      color: var(--text-primary);
     }
     .step p {
       font-size: 0.9rem;
@@ -476,7 +486,7 @@
     }
     .pricing-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 16px 48px rgba(0,0,0,0.3);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.08);
     }
     .pricing-card.featured {
       border-color: var(--green);
@@ -510,7 +520,7 @@
     .pricing-card .price {
       font-size: 2.8rem;
       font-weight: 800;
-      color: var(--white);
+      color: var(--text-primary);
       margin-bottom: 4px;
       letter-spacing: -1px;
     }
@@ -549,7 +559,7 @@
     /* ===== Comparison ===== */
     .comparison {
       padding: 100px 0;
-      background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, transparent 100%);
+      background: var(--gray-100);
     }
     .comparison-table-wrap {
       overflow-x: auto;
@@ -569,15 +579,15 @@
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 1px;
-      color: var(--gray-300);
+      color: var(--gray-400);
       border-bottom: 1px solid var(--card-border);
-      background: rgba(0,0,0,0.2);
+      background: var(--gray-100);
     }
     .comparison-table thead th:first-child { border-radius: var(--radius-lg) 0 0 0; }
     .comparison-table thead th:last-child { border-radius: 0 var(--radius-lg) 0 0; }
     .comparison-table thead th.highlight {
       color: var(--green);
-      background: rgba(0,212,170,0.06);
+      background: rgba(0,212,170,0.08);
     }
     .comparison-table tbody td {
       padding: 18px 24px;
@@ -586,9 +596,9 @@
       border-bottom: 1px solid var(--card-border);
     }
     .comparison-table tbody td.highlight {
-      color: var(--white);
+      color: var(--text-primary);
       font-weight: 600;
-      background: rgba(0,212,170,0.03);
+      background: rgba(0,212,170,0.05);
     }
     .comparison-table tbody tr:last-child td { border-bottom: none; }
     .comparison-table .tag-green {
@@ -626,7 +636,7 @@
       background: var(--card-bg);
       transition: border-color 0.3s;
     }
-    .faq-item:hover { border-color: rgba(255,255,255,0.12); }
+    .faq-item:hover { border-color: rgba(0,212,170,0.2); }
     .faq-question {
       width: 100%;
       display: flex;
@@ -635,7 +645,7 @@
       padding: 22px 28px;
       background: none;
       border: none;
-      color: var(--white);
+      color: var(--text-primary);
       font-size: 1rem;
       font-weight: 600;
       cursor: pointer;
@@ -672,6 +682,8 @@
       text-align: center;
       position: relative;
       overflow: hidden;
+      background: linear-gradient(160deg, var(--navy-dark) 0%, var(--navy-mid) 50%, var(--navy-dark) 100%);
+      color: var(--white);
     }
     .cta-section::before {
       content: '';
@@ -685,8 +697,8 @@
     .cta-box {
       position: relative;
       z-index: 2;
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
       border-radius: var(--radius-lg);
       padding: 64px 48px;
       max-width: 700px;
@@ -697,10 +709,11 @@
       font-weight: 800;
       margin-bottom: 16px;
       letter-spacing: -0.5px;
+      color: var(--white);
     }
     .cta-box p {
       font-size: 1.05rem;
-      color: var(--text-secondary);
+      color: var(--gray-200);
       margin-bottom: 36px;
       max-width: 480px;
       margin-left: auto;
@@ -716,8 +729,8 @@
     .cta-form input[type="email"] {
       padding: 14px 24px;
       border-radius: 50px;
-      border: 1px solid var(--card-border);
-      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.08);
       color: var(--white);
       font-size: 0.95rem;
       font-family: inherit;
@@ -730,7 +743,7 @@
     .cta-form input[type="email"]:focus { border-color: var(--green); }
     .cta-note {
       font-size: 0.8rem;
-      color: var(--gray-400);
+      color: var(--gray-300);
     }
 
     /* ===== Footer ===== */
@@ -760,7 +773,7 @@
       color: var(--gray-400);
       transition: color 0.2s;
     }
-    .footer-links a:hover { color: var(--white); }
+    .footer-links a:hover { color: var(--text-primary); }
     .footer-contact {
       font-size: 0.85rem;
       color: var(--gray-400);
@@ -788,7 +801,7 @@
     .onprem-card:hover {
       border-color: rgba(0,212,170,0.2);
       transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
     }
     .onprem-icon {
       width: 64px; height: 64px;
@@ -802,7 +815,7 @@
     .onprem-card h3 {
       font-size: 1.15rem;
       font-weight: 700;
-      color: var(--white);
+      color: var(--text-primary);
       margin-bottom: 12px;
     }
     .onprem-card p {
@@ -826,7 +839,7 @@
     /* ===== Demo Section ===== */
     .demo-section {
       padding: 100px 0;
-      background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.1) 100%);
+      background: var(--gray-100);
     }
     .demo-box {
       background: var(--card-bg);
@@ -842,7 +855,7 @@
     .demo-info h3 {
       font-size: 1.2rem;
       font-weight: 700;
-      color: var(--white);
+      color: var(--text-primary);
       margin-bottom: 20px;
     }
     .demo-features-list {
@@ -866,7 +879,7 @@
       margin-top: 2px;
     }
     .demo-limitations {
-      background: rgba(255,255,255,0.03);
+      background: var(--gray-100);
       border: 1px solid var(--card-border);
       border-radius: var(--radius);
       padding: 20px 24px;
@@ -874,7 +887,7 @@
     .demo-limitations h4 {
       font-size: 0.9rem;
       font-weight: 600;
-      color: var(--gray-300);
+      color: var(--gray-400);
       margin-bottom: 12px;
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -897,7 +910,7 @@
       color: var(--gray-400);
     }
     .demo-form-wrap {
-      background: rgba(255,255,255,0.03);
+      background: var(--gray-100);
       border: 1px solid var(--card-border);
       border-radius: var(--radius);
       padding: 36px 32px;
@@ -905,7 +918,7 @@
     .demo-form-wrap h3 {
       font-size: 1.3rem;
       font-weight: 700;
-      color: var(--white);
+      color: var(--text-primary);
       margin-bottom: 8px;
     }
     .demo-form-subtext {
@@ -921,15 +934,15 @@
       padding: 14px 20px;
       border-radius: var(--radius);
       border: 1px solid var(--card-border);
-      background: rgba(255,255,255,0.06);
-      color: var(--white);
+      background: var(--white);
+      color: var(--text-primary);
       font-size: 0.95rem;
       font-family: inherit;
       outline: none;
       transition: border-color 0.3s;
     }
     .demo-field input::placeholder {
-      color: var(--gray-400);
+      color: #aaa;
     }
     .demo-field input:focus {
       border-color: var(--green);
@@ -960,13 +973,67 @@
     .demo-success h3 {
       font-size: 1.3rem;
       font-weight: 700;
-      color: var(--white);
+      color: var(--text-primary);
       margin-bottom: 8px;
     }
     .demo-success p {
       font-size: 0.95rem;
       color: var(--text-secondary);
       line-height: 1.6;
+    }
+
+    /* ===== EULA Modal ===== */
+    .eula-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .eula-overlay.open { display: flex; }
+    .eula-modal {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      max-width: 720px;
+      width: 100%;
+      max-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.2);
+    }
+    .eula-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 32px;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .eula-header h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+    .eula-close {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--gray-400);
+      cursor: pointer;
+      padding: 4px 8px;
+      line-height: 1;
+    }
+    .eula-close:hover { color: var(--text-primary); }
+    .eula-body {
+      padding: 32px;
+      overflow-y: auto;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      white-space: pre-wrap;
+      font-family: inherit;
     }
 
     /* ===== Responsive ===== */
@@ -1227,7 +1294,7 @@
                 <input type="text" id="demoFirm" placeholder="Law firm name (optional)">
               </div>
               <button type="submit" class="btn btn-primary demo-submit-btn">Try MedRecords AI Free &rarr;</button>
-              <p class="demo-form-note">No credit card required. 3 cases included. By downloading, you agree to our <a href="#">License Agreement</a>.</p>
+              <p class="demo-form-note">No credit card required. 3 cases included. By downloading, you agree to our <a href="#" onclick="event.preventDefault();document.getElementById('eulaOverlay').classList.add('open')">License Agreement</a>.</p>
             </form>
           </div>
         </div>
@@ -1461,7 +1528,7 @@
         <h2>Ready to Transform Your Practice?</h2>
         <p>Process your first medical record in minutes. 3 cases free, no credit card required.</p>
         <form class="cta-form" onsubmit="handleCtaDownload(event)">
-          <input type="text" id="ctaName" placeholder="Your name" required aria-label="Full name" style="border-radius:var(--radius);padding:14px 20px;border:1px solid var(--card-border);background:rgba(255,255,255,0.06);color:var(--white);font-size:1rem;">
+          <input type="text" id="ctaName" placeholder="Your name" required aria-label="Full name" style="border-radius:50px;padding:14px 24px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.08);color:var(--white);font-size:0.95rem;font-family:inherit;width:300px;max-width:100%;outline:none;">
           <input type="email" id="ctaEmail" placeholder="Work email" required aria-label="Email address">
           <button class="btn btn-primary" type="submit">Try MedRecords AI Free &rarr;</button>
         </form>
@@ -1495,6 +1562,152 @@
       </div>
     </div>
   </footer>
+
+  <!-- ===== EULA Modal ===== -->
+  <div class="eula-overlay" id="eulaOverlay">
+    <div class="eula-modal">
+      <div class="eula-header">
+        <h2>License Agreement</h2>
+        <button class="eula-close" onclick="document.getElementById('eulaOverlay').classList.remove('open')">&times;</button>
+      </div>
+      <div class="eula-body">END USER LICENSE AGREEMENT
+
+MedRecords AI - Intelligent Document Analysis Platform
+Version 2.0
+
+AI Productivity Dev
+Effective Date: February 27, 2026
+
+IMPORTANT - READ CAREFULLY: This End User License Agreement ("Agreement") is a legally binding contract between you (either an individual or a single entity, referred to herein as "Licensee" or "you") and AI Productivity Dev ("Company," "we," or "us") for the MedRecords AI software product, which includes computer software, associated media, printed materials, and electronic documentation (collectively, the "Software").
+
+BY INSTALLING, COPYING, OR OTHERWISE USING THE SOFTWARE, YOU ACKNOWLEDGE THAT YOU HAVE READ, UNDERSTOOD, AND AGREE TO BE BOUND BY THE TERMS AND CONDITIONS OF THIS AGREEMENT. IF YOU DO NOT AGREE TO THESE TERMS, DO NOT INSTALL OR USE THE SOFTWARE AND PROMPTLY RETURN IT TO THE COMPANY.
+
+
+1.  DEFINITIONS
+
+    1.1  "Demo License" means a limited, time-restricted license for evaluation purposes only, subject to the limitations described in Section 6.
+
+    1.2  "Core License" means a perpetual license to the core features of the Software, activated via a valid license key.
+
+    1.3  "Pro License" means a perpetual license to the full feature set of the Software, including all advanced and professional features, activated via a valid license key.
+
+    1.4  "License Key" means the unique alphanumeric code provided by the Company to activate a Core or Pro License.
+
+    1.5  "Authorized Users" means the individuals within Licensee's organization who are permitted to access and use the Software under this Agreement.
+
+
+2.  LICENSE GRANT
+
+    2.1  Demo License. Subject to the terms of this Agreement, the Company grants you a non-exclusive, non-transferable, revocable license to install and use the Software for evaluation purposes for a period of fourteen (14) calendar days from the date of first installation. The Demo License is limited to processing a maximum of three (3) cases.
+
+    2.2  Core/Pro License. Subject to the terms of this Agreement and upon activation with a valid License Key, the Company grants you a non-exclusive, non-transferable, perpetual license to install and use the Software on the number of systems specified in your purchase order, solely for your internal business operations. This license remains valid for as long as the License Key remains active and in good standing.
+
+    2.3  Scope. All licenses granted hereunder are limited to the Licensee's internal business use. The Software is licensed, not sold.
+
+
+3.  RESTRICTIONS
+
+    You shall NOT:
+
+    3.1  Copy, reproduce, or duplicate the Software or any portion thereof, except for a single archival backup copy;
+
+    3.2  Distribute, sublicense, lease, rent, lend, sell, resell, or otherwise transfer the Software or any rights therein to any third party;
+
+    3.3  Reverse engineer, decompile, disassemble, or otherwise attempt to derive the source code, underlying algorithms, or structure of the Software;
+
+    3.4  Modify, adapt, translate, or create derivative works based on the Software;
+
+    3.5  Remove, alter, or obscure any proprietary notices, labels, or marks on the Software;
+
+    3.6  Use a Demo License for any production, commercial, or client-facing purposes; Demo Licenses are strictly for internal evaluation only;
+
+    3.7  Circumvent or attempt to circumvent any license enforcement mechanisms, including but not limited to license key validation, demo time limits, case count restrictions, or feature gating;
+
+    3.8  Use the Software in any manner that violates applicable federal, state, or local laws and regulations, including but not limited to healthcare privacy regulations.
+
+
+4.  INTELLECTUAL PROPERTY OWNERSHIP
+
+    4.1  The Software, including all copies, modifications, enhancements, and derivative works, and all intellectual property rights therein, including but not limited to patents, copyrights, trademarks, and trade secrets, are and shall remain the sole and exclusive property of AI Productivity Dev.
+
+    4.2  This Agreement does not convey to you any interest in or to the Software, but only a limited right of use revocable in accordance with the terms of this Agreement.
+
+    4.3  All rights not expressly granted herein are reserved by the Company.
+
+
+5.  TRADE SECRETS AND CONFIDENTIALITY
+
+    5.1  The Licensee acknowledges that the Software contains valuable trade secrets and proprietary information of the Company, including but not limited to source code, algorithms, data structures, prompt engineering techniques, document processing methods, and system architecture.
+
+    5.2  The Licensee agrees to hold the Software in strict confidence and to take all reasonable precautions to protect the confidentiality of the Software, using at least the same degree of care it uses to protect its own confidential information, but in no event less than reasonable care.
+
+    5.3  The Licensee shall not disclose, publish, or otherwise disseminate source code, configuration details, or technical implementation specifics of the Software to any third party without the prior written consent of the Company.
+
+    5.4  The Licensee shall restrict access to the Software to those Authorized Users who have a need to know and who are bound by confidentiality obligations no less protective than those set forth herein.
+
+    5.5  The obligations of confidentiality under this Section shall survive termination or expiration of this Agreement.
+
+
+6.  DEMO LICENSE LIMITATIONS
+
+    6.1  Time Limit. The Demo License expires fourteen (14) calendar days after first installation. Upon expiration, the Software will cease to function and Licensee must either purchase a Core or Pro License or uninstall the Software.
+
+    6.2  Case Limit. The Demo License permits processing of a maximum of three (3) cases. Once the case limit is reached, no additional cases may be processed.
+
+    6.3  Watermarked Output. All documents and outputs generated under a Demo License will include a visible watermark indicating that they were produced by a demo version of the Software.
+
+    6.4  Feature Restrictions. Pro-tier features, including but not limited to advanced analytics, batch processing, and priority support integrations, are not available under the Demo License.
+
+    6.5  No Production Use. The Demo License is provided solely for the purpose of evaluating the Software.
+
+
+7.  HIPAA COMPLIANCE DISCLAIMER
+
+    7.1  The Software includes features designed to support compliance with HIPAA and its implementing regulations, including access controls, audit logging, and local data processing capabilities.
+
+    7.2  THE COMPANY IS NOT A BUSINESS ASSOCIATE AS DEFINED UNDER HIPAA AND DOES NOT ENTER INTO BUSINESS ASSOCIATE AGREEMENTS.
+
+    7.3  The Licensee is solely responsible for ensuring that its use of the Software complies with HIPAA and all other applicable federal, state, and local privacy and security regulations.
+
+
+8.  DATA PRIVACY AND PROCESSING
+
+    8.1  Local Processing. The Software is designed to process data locally on the Licensee's systems.
+
+    8.2  Cloud AI Services. The Software integrates with third-party cloud-based AI services. Data transmitted to these services is governed by the respective terms of those third-party providers.
+
+    8.3  The Company does not collect, store, or have access to any medical records, case data, or PHI processed by the Software.
+
+
+9.  DISCLAIMER OF WARRANTIES
+
+    THE SOFTWARE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED.
+
+
+10. LIMITATION OF LIABILITY
+
+    THE COMPANY'S TOTAL CUMULATIVE LIABILITY SHALL NOT EXCEED THE TOTAL AMOUNT OF LICENSE FEES ACTUALLY PAID BY THE LICENSEE DURING THE TWELVE (12) MONTHS PRECEDING THE EVENT.
+
+
+11. TERMINATION
+
+    The Company may terminate this Agreement immediately upon written notice if the Licensee breaches any term or condition.
+
+
+12. GOVERNING LAW
+
+    This Agreement shall be governed by the laws of the State of Delaware, United States of America.
+
+
+13. GENERAL PROVISIONS
+
+    This Agreement constitutes the entire agreement between the parties with respect to the subject matter hereof.
+
+
+Copyright (c) 2026 AI Productivity Dev. All rights reserved.
+MedRecords AI is a trademark of AI Productivity Dev.</div>
+    </div>
+  </div>
 
   <!-- ===== Minimal JavaScript ===== -->
   <script>
@@ -1539,6 +1752,11 @@
     }, observerOptions);
 
     document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+    // --- EULA modal close on overlay click ---
+    document.getElementById('eulaOverlay').addEventListener('click', function(e) {
+      if (e.target === this) this.classList.remove('open');
+    });
 
     // --- Demo Download Handler ---
     function handleDemoDownload(event) {
