@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Record AI for Solo and Small PI Firms: A Practical Guide | MedRecords AI</title>
+    <meta name="description" content="A practical guide to AI medical record software for solo attorneys and small PI firms. Compare affordable options including InPractice, Legalyze, Dodonai, CaseFleet, and MedRecords AI.">
+    <meta name="keywords" content="medical record AI small law firm, affordable medical record software solo attorney, cheap medical chronology software, PI solo practice AI tools">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --green: #00d4aa;
+            --green-dim: #00b894;
+            --text-primary: #1a1a2e;
+            --text-secondary: #555;
+            --gray-100: #f8f9fc;
+            --card-bg: #ffffff;
+            --card-border: #eee;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-primary);
+            line-height: 1.7;
+            background: #fff;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+        }
+
+        nav a { text-decoration: none; color: var(--text-primary); }
+        .logo { font-weight: 700; font-size: 1.2rem; }
+        .logo span { color: var(--green); }
+        .back-link { font-size: 0.95rem; color: var(--text-secondary); transition: color 0.2s; }
+        .back-link:hover { color: var(--green-dim); }
+
+        .hero {
+            background: var(--gray-100);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .hero h1 {
+            max-width: 800px;
+            margin: 0 auto 1rem;
+            font-size: 2.2rem;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .hero-meta { font-size: 0.9rem; color: var(--text-secondary); }
+        .hero-meta span { margin: 0 0.5rem; }
+
+        article {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        article h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 2.5rem 0 1rem;
+        }
+
+        article h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 2rem 0 0.75rem;
+        }
+
+        article p {
+            margin-bottom: 1.25rem;
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+        }
+
+        article ul, article ol {
+            margin: 0 0 1.25rem 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        article li { margin-bottom: 0.5rem; font-size: 1.05rem; }
+        article strong { color: var(--text-primary); }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0 2rem;
+            font-size: 0.9rem;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 0.7rem 0.9rem;
+            text-align: left;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .comparison-table th {
+            background: var(--gray-100);
+            font-weight: 600;
+        }
+
+        .comparison-table td { color: var(--text-secondary); }
+        .highlight-row { background: rgba(0, 212, 170, 0.06); }
+        .highlight-row td { font-weight: 500; color: var(--text-primary); }
+
+        .scenario-box {
+            background: var(--gray-100);
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .scenario-box h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .scenario-box p {
+            font-size: 0.95rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .scenario-box p:last-child { margin-bottom: 0; }
+
+        .option-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.25rem 0;
+        }
+
+        .option-card h3 {
+            margin: 0 0 0.25rem;
+            font-size: 1.1rem;
+        }
+
+        .option-meta {
+            font-size: 0.85rem;
+            color: var(--green-dim);
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+        }
+
+        .option-card p {
+            font-size: 0.98rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .option-card p:last-child { margin-bottom: 0; }
+
+        .cta-box {
+            background: var(--gray-100);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 2.5rem;
+            text-align: center;
+            margin: 3rem 0 1rem;
+        }
+
+        .cta-box h2 { margin: 0 0 0.75rem; font-size: 1.4rem; }
+        .cta-box p { margin-bottom: 1.5rem; }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--green);
+            color: #fff;
+            padding: 0.85rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background 0.2s;
+        }
+        .cta-button:hover { background: var(--green-dim); }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--card-border);
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.6rem; }
+            article { padding: 2rem 1.25rem; }
+            nav { padding: 1rem 1.25rem; }
+            .comparison-table { font-size: 0.8rem; }
+            .comparison-table th, .comparison-table td { padding: 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="../index.html" class="logo">MedRecords <span>AI</span></a>
+    <a href="../blog.html" class="back-link">&larr; Back to Blog</a>
+</nav>
+
+<div class="hero">
+    <h1>Medical Record AI for Solo and Small PI Firms: A Practical Guide</h1>
+    <div class="hero-meta">
+        <time datetime="2026-01-15">January 15, 2026</time>
+        <span>&middot;</span>
+        <span>10 min read</span>
+    </div>
+</div>
+
+<article>
+    <p>If you are a solo practitioner or a partner in a two- to five-attorney personal injury firm, you face a particular challenge when it comes to legal technology: you need the same quality tools that large firms use, but you cannot absorb the same costs. A 50-attorney firm processing 200 cases per month can negotiate volume discounts and spread technology costs across a large revenue base. You cannot.</p>
+
+    <p>This asymmetry has been especially pronounced in the medical record summarization space. The dominant platforms&mdash;EvenUp at $300 to $800 per case, Precedent at $275&mdash;were designed for high-volume firms where per-case costs are a manageable percentage of per-case revenue. For a solo attorney handling 8 to 15 cases per month, those costs represent a fundamentally different economic equation.</p>
+
+    <p>The good news: 2026 offers more affordable options than ever before. This guide is written specifically for small-firm practitioners who want to adopt AI-powered medical record analysis without committing to costs that do not make sense at their scale.</p>
+
+    <h2>The Small Firm Economics Problem</h2>
+
+    <p>Let us be specific about the numbers. Consider a solo PI attorney with the following practice profile:</p>
+
+    <div class="scenario-box">
+        <h4>Typical Solo PI Practice</h4>
+        <p><strong>Active caseload:</strong> 40&ndash;60 cases</p>
+        <p><strong>New cases per month:</strong> 8&ndash;12</p>
+        <p><strong>Cases requiring medical record summarization:</strong> 8&ndash;12 per month</p>
+        <p><strong>Average case value:</strong> $25,000&ndash;$75,000</p>
+        <p><strong>Annual gross revenue:</strong> $400,000&ndash;$800,000</p>
+        <p><strong>Technology budget:</strong> Typically 3&ndash;5% of revenue ($12,000&ndash;$40,000)</p>
+    </div>
+
+    <p>Now consider the annual cost of medical record summarization at various price points:</p>
+
+    <table class="comparison-table">
+        <thead>
+            <tr>
+                <th>Provider</th>
+                <th>Cost Model</th>
+                <th>10 Cases/Month</th>
+                <th>Annual Total</th>
+                <th>% of $500K Revenue</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>EvenUp</td>
+                <td>$500 avg/case</td>
+                <td>$5,000</td>
+                <td>$60,000</td>
+                <td>12%</td>
+            </tr>
+            <tr>
+                <td>Precedent</td>
+                <td>$275/case</td>
+                <td>$2,750</td>
+                <td>$33,000</td>
+                <td>6.6%</td>
+            </tr>
+            <tr>
+                <td>Supio</td>
+                <td>Sub + $100/case</td>
+                <td>~$1,500</td>
+                <td>~$18,000</td>
+                <td>3.6%</td>
+            </tr>
+            <tr>
+                <td>InPractice AI</td>
+                <td>$0.05/page</td>
+                <td>~$500</td>
+                <td>~$6,000</td>
+                <td>1.2%</td>
+            </tr>
+            <tr>
+                <td>Legalyze</td>
+                <td>$150/month flat</td>
+                <td>$150</td>
+                <td>$1,800</td>
+                <td>0.36%</td>
+            </tr>
+            <tr>
+                <td>Dodonai</td>
+                <td>~$30/month</td>
+                <td>$30</td>
+                <td>$360</td>
+                <td>0.07%</td>
+            </tr>
+            <tr>
+                <td>CaseFleet</td>
+                <td>$30+/month/user</td>
+                <td>$30+</td>
+                <td>$360+</td>
+                <td>0.07%</td>
+            </tr>
+            <tr class="highlight-row">
+                <td>MedRecords AI</td>
+                <td>One-time license</td>
+                <td>$0 ongoing</td>
+                <td>$0 after purchase</td>
+                <td>One-time</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>The contrast is stark. EvenUp at $60,000 per year would consume 12% of a $500,000 practice's gross revenue&mdash;an untenable figure for most solo practitioners. Even Supio at $18,000 annually is a significant expense. The result: many small firms either skip AI summarization entirely (continuing to review records manually) or use it selectively on only their highest-value cases, missing potential value on the rest.</p>
+
+    <h2>The Affordable Options, Reviewed Honestly</h2>
+
+    <div class="option-card">
+        <h3>InPractice AI</h3>
+        <div class="option-meta">$0.05 per page &middot; Cloud-based &middot; Basic summaries</div>
+        <p>InPractice offers the lowest per-page pricing in the market. For a solo attorney processing cases with an average of 1,000 pages, the $50-per-case cost is manageable. The interface is straightforward, and results are delivered quickly.</p>
+        <p><strong>Best for:</strong> Solo attorneys who want basic medical record summaries at the lowest possible per-case cost and are comfortable with cloud processing.</p>
+        <p><strong>Limitation:</strong> The output is relatively basic compared to more full-featured platforms. You get structured summaries, but limited analysis, no demand generation, and no advanced features like negligence detection or case valuation.</p>
+    </div>
+
+    <div class="option-card">
+        <h3>Legalyze</h3>
+        <div class="option-meta">~$150/month flat &middot; Cloud-based &middot; No per-case fees</div>
+        <p>Legalyze's flat monthly pricing model is appealing for small firms because it eliminates per-case cost anxiety. You pay the same amount whether you process 5 cases or 15 in a given month. The platform provides medical summaries and basic chronological organization.</p>
+        <p><strong>Best for:</strong> Small firms wanting predictable monthly costs and processing enough cases to justify the subscription.</p>
+        <p><strong>Limitation:</strong> The feature set is moderate. At $1,800 per year, it is affordable, but you may find yourself wishing for deeper analysis capabilities, customizable demand letters, or additional features that justify the ongoing expense.</p>
+    </div>
+
+    <div class="option-card">
+        <h3>Dodonai</h3>
+        <div class="option-meta">~$30/month &middot; Cloud-based &middot; AI summaries</div>
+        <p>Dodonai offers the lowest subscription price in the market. For roughly the cost of a Netflix subscription, you get AI-powered medical record summaries. The platform is functional if basic, and it represents a genuine entry point for attorneys who have never used AI summarization before.</p>
+        <p><strong>Best for:</strong> Attorneys testing AI summarization for the first time who want minimal financial commitment.</p>
+        <p><strong>Limitation:</strong> The output quality and feature depth reflect the price point. Dodonai is adequate for simple cases but may struggle with complex multi-provider records or cases requiring nuanced analysis.</p>
+    </div>
+
+    <div class="option-card">
+        <h3>CaseFleet</h3>
+        <div class="option-meta">$30+/month per user &middot; Cloud-based &middot; Timeline focus</div>
+        <p>CaseFleet is not primarily a medical record summarization tool; it is a timeline and fact management platform that has incorporated AI features. Its strength is in organizing case facts along a chronological timeline with linked evidence. For attorneys who are as much trial lawyers as settlement negotiators, the timeline and fact-linking capabilities are genuinely useful.</p>
+        <p><strong>Best for:</strong> Small firms that want a case organization tool with some AI capabilities, particularly if cases regularly go to trial.</p>
+        <p><strong>Limitation:</strong> Per-user pricing means costs increase as your team grows. The medical record AI features are a supplement to the core timeline tool, not the primary focus.</p>
+    </div>
+
+    <div class="option-card" style="border-color: var(--green); border-width: 2px;">
+        <h3>MedRecords AI</h3>
+        <div class="option-meta">One-time perpetual license &middot; On-premise &middot; Full feature set</div>
+        <p>MedRecords AI's perpetual license model is particularly well-suited to small firms for a simple reason: the economics improve the longer you use it. After the initial purchase, every case processed is free. There are no monthly fees, no per-case charges, and no per-user seats. The entire feature set&mdash;medical chronology, demand generation, negligence detection, case valuation, injury visualization, and task automation&mdash;is included.</p>
+        <p><strong>Best for:</strong> Small firms committed to long-term use of AI medical record analysis who want the most complete feature set without ongoing costs, and who value keeping patient data on their own hardware.</p>
+        <p><strong>Limitation:</strong> The initial purchase price is higher than a few months of a budget subscription service. It also requires local hardware with a capable GPU for processing. However, most modern workstations meet the minimum specifications, and the total cost of ownership drops below every competitor within the first year of use.</p>
+    </div>
+
+    <h2>What Small Firms Actually Need</h2>
+
+    <p>In conversations with small-firm PI attorneys, several needs come up repeatedly that differ from what large firms prioritize:</p>
+
+    <h3>Simplicity Over Integration</h3>
+    <p>Large firms need AI tools that integrate with Salesforce, Filevine, Litify, and a dozen other platforms. Solo attorneys typically need software that works. They do not have IT departments to manage integrations. A tool that accepts a PDF upload and produces a usable output, without requiring an API configuration or a CMS connection, is often more practical than a technically sophisticated platform that takes weeks to set up.</p>
+
+    <h3>Every Case, Not Just the Big Ones</h3>
+    <p>When per-case costs are high, small firms rationally limit AI use to their larger cases. But the value of AI summarization often shows up in unexpected places&mdash;a seemingly minor case where the AI identifies a treatment gap that elevates the claim, or a negligence pattern that transforms a $30,000 case into a $150,000 case. The ability to run every case through the AI, without worrying about the cost, changes the way attorneys evaluate their entire caseload.</p>
+
+    <h3>Demand Letters That Reflect the Firm</h3>
+    <p>Solo and small-firm attorneys have reputations within their local legal communities. The demand letters they send carry their personal brand. A generic, obviously AI-generated template can undermine years of relationship building. Small firms need AI demand tools that allow meaningful customization&mdash;adjusting tone, structure, and emphasis to match the firm's established voice.</p>
+
+    <h3>Data Privacy as a Differentiator</h3>
+    <p>Interestingly, data privacy concerns are often more acute for small firms than large ones. A small-firm attorney who handles cases involving sexual assault, mental health crises, or substance abuse may be personally uncomfortable uploading those records to a cloud service. The attorney-client relationship in a small firm is often more personal, and the obligation to protect client data feels more immediate and individual.</p>
+
+    <h2>A Practical Decision Framework</h2>
+
+    <p>If you are a small-firm PI attorney evaluating medical record AI for the first time, here is a practical framework:</p>
+
+    <ol>
+        <li><strong>If you are testing the waters</strong> and want to spend as little as possible to see if AI summarization is useful for your practice, start with Dodonai at $30/month or InPractice at $0.05/page. The low cost reduces risk.</li>
+        <li><strong>If you are ready to commit</strong> and want predictable costs, Legalyze at $150/month provides a reasonable feature set without per-case anxiety.</li>
+        <li><strong>If you want the best long-term value</strong> and plan to use AI summarization across your entire caseload for years to come, MedRecords AI's one-time license eliminates ongoing costs entirely and provides the broadest feature set in the market, including capabilities (negligence detection, injury visualization) that no subscription service offers.</li>
+        <li><strong>If case organization and trial prep</strong> are as important to you as medical record summarization, CaseFleet's timeline tools add value that pure summarization tools do not provide.</li>
+    </ol>
+
+    <h2>The Bottom Line for Small Firms</h2>
+
+    <p>The technology gap between large and small PI firms is narrowing. AI-powered medical record analysis is no longer a luxury reserved for firms with six-figure technology budgets. The range of affordable options in 2026 means that every PI attorney, regardless of firm size, can access tools that save hours of manual record review, identify case value that might otherwise be missed, and produce professional-quality work product.</p>
+
+    <p>The key is choosing the right tool for your specific situation&mdash;your volume, your budget, your privacy requirements, and your long-term plans. Do not assume that the most expensive option is the best one for your practice. And do not assume that the cheapest option will provide enough value to justify even its modest cost. Test before you commit, and focus on the tools that let you process every case without worrying about the bill.</p>
+
+    <div class="cta-box">
+        <h2>Built for Firms of Every Size</h2>
+        <p>MedRecords AI costs nothing after purchase. Run it on every case. No per-case fees. No monthly bill. No data leaves your office. Try 5 cases free.</p>
+        <a href="../index.html#demo" class="cta-button">Start Free Demo</a>
+    </div>
+</article>
+
+<footer>
+    &copy; 2026 Productivity AI, LLC. All rights reserved.
+</footer>
+
+</body>
+</html>

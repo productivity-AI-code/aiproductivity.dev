@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Demand Package Generation: What Every PI Attorney Should Know | MedRecords AI</title>
+    <meta name="description" content="Learn how AI demand letter generators work for personal injury cases. Compare approaches from EvenUp, Supio, Precedent, Tavrn, and MedRecords AI. Understand quality, customization, and jurisdiction-specific requirements.">
+    <meta name="keywords" content="AI demand letter generator, demand package automation personal injury, AI demand package, automated demand letter PI">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --green: #00d4aa;
+            --green-dim: #00b894;
+            --text-primary: #1a1a2e;
+            --text-secondary: #555;
+            --gray-100: #f8f9fc;
+            --card-bg: #ffffff;
+            --card-border: #eee;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-primary);
+            line-height: 1.7;
+            background: #fff;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+        }
+
+        nav a { text-decoration: none; color: var(--text-primary); }
+        .logo { font-weight: 700; font-size: 1.2rem; }
+        .logo span { color: var(--green); }
+        .back-link { font-size: 0.95rem; color: var(--text-secondary); transition: color 0.2s; }
+        .back-link:hover { color: var(--green-dim); }
+
+        .hero {
+            background: var(--gray-100);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .hero h1 {
+            max-width: 800px;
+            margin: 0 auto 1rem;
+            font-size: 2.2rem;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .hero-meta { font-size: 0.9rem; color: var(--text-secondary); }
+        .hero-meta span { margin: 0 0.5rem; }
+
+        article {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        article h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 2.5rem 0 1rem;
+        }
+
+        article h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 2rem 0 0.75rem;
+        }
+
+        article p {
+            margin-bottom: 1.25rem;
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+        }
+
+        article ul, article ol {
+            margin: 0 0 1.25rem 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        article li { margin-bottom: 0.5rem; font-size: 1.05rem; }
+        article strong { color: var(--text-primary); }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0 2rem;
+            font-size: 0.9rem;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 0.7rem 0.9rem;
+            text-align: left;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .comparison-table th {
+            background: var(--gray-100);
+            font-weight: 600;
+        }
+
+        .comparison-table td { color: var(--text-secondary); }
+        .highlight-row { background: rgba(0, 212, 170, 0.06); }
+        .highlight-row td { font-weight: 500; color: var(--text-primary); }
+
+        blockquote {
+            border-left: 3px solid var(--green);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            background: var(--gray-100);
+            border-radius: 0 8px 8px 0;
+        }
+
+        blockquote p {
+            margin-bottom: 0;
+            font-style: italic;
+            color: var(--text-primary);
+        }
+
+        .cta-box {
+            background: var(--gray-100);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 2.5rem;
+            text-align: center;
+            margin: 3rem 0 1rem;
+        }
+
+        .cta-box h2 { margin: 0 0 0.75rem; font-size: 1.4rem; }
+        .cta-box p { margin-bottom: 1.5rem; }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--green);
+            color: #fff;
+            padding: 0.85rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background 0.2s;
+        }
+        .cta-button:hover { background: var(--green-dim); }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--card-border);
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.6rem; }
+            article { padding: 2rem 1.25rem; }
+            nav { padding: 1rem 1.25rem; }
+            .comparison-table { font-size: 0.8rem; }
+            .comparison-table th, .comparison-table td { padding: 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="../index.html" class="logo">MedRecords <span>AI</span></a>
+    <a href="../blog.html" class="back-link">&larr; Back to Blog</a>
+</nav>
+
+<div class="hero">
+    <h1>AI Demand Package Generation: What Every PI Attorney Should Know</h1>
+    <div class="hero-meta">
+        <time datetime="2026-02-08">February 8, 2026</time>
+        <span>&middot;</span>
+        <span>10 min read</span>
+    </div>
+</div>
+
+<article>
+    <p>The demand package has always been the fulcrum of personal injury settlement negotiations. A well-constructed demand letter&mdash;supported by organized medical records, a clear injury narrative, and a defensible valuation&mdash;is often the difference between a lowball offer and a fair settlement. Historically, producing that package required hours of attorney and paralegal time: reviewing records, building chronologies, calculating damages, drafting the narrative, and assembling exhibits.</p>
+
+    <p>AI is changing this workflow faster than any other area of legal practice. As of 2026, multiple platforms can generate complete demand packages from raw medical records in minutes rather than days. But not all AI demand generators are created equal, and understanding the differences between approaches is essential before integrating one into your practice.</p>
+
+    <h2>What an AI Demand Package Actually Includes</h2>
+
+    <p>A typical AI-generated demand package for a personal injury case includes several components:</p>
+
+    <ul>
+        <li><strong>Medical chronology</strong>&mdash;a timeline of all treatments, diagnoses, providers, and procedures extracted from the medical records</li>
+        <li><strong>Injury narrative</strong>&mdash;a written description of the incident, injuries sustained, treatment course, and impact on daily life</li>
+        <li><strong>Damages calculation</strong>&mdash;an itemized listing of medical expenses (past and projected), lost wages, and pain and suffering</li>
+        <li><strong>Settlement demand</strong>&mdash;a specific dollar amount supported by the evidence and comparable case outcomes</li>
+        <li><strong>Supporting exhibits</strong>&mdash;organized medical records, billing summaries, and relevant documentation</li>
+    </ul>
+
+    <p>The quality and completeness of each component varies significantly across platforms.</p>
+
+    <h2>The Three Approaches to AI Demand Generation</h2>
+
+    <h3>1. AI-Only (Fully Automated)</h3>
+    <p>Some platforms generate the entire demand package using AI without any human review before delivery. The advantage is speed and cost: you upload records and receive a finished product within minutes at a lower price point. The risk is that AI-generated text can contain errors&mdash;wrong dates, mischaracterized injuries, hallucinated facts&mdash;that could undermine your credibility with the adjuster or opposing counsel.</p>
+
+    <h3>2. Human-Reviewed (AI + Professional Review)</h3>
+    <p>The market leader EvenUp pioneered this model. AI performs the initial processing, extraction, and drafting, and then a human reviewer (typically a paralegal or medical professional) verifies accuracy before the final product is delivered. This adds time (24&ndash;48 hours versus minutes) and cost (significantly higher per-case fees), but reduces the risk of errors reaching the insurer.</p>
+
+    <h3>3. Hybrid (AI Draft + Attorney Refinement)</h3>
+    <p>In this model, the AI generates a complete draft that the attorney or paralegal then reviews and edits before sending. The AI does the heavy lifting of extraction, organization, and initial drafting, but the firm retains full editorial control. This approach offers the best balance of speed, accuracy, and customization. It also ensures the attorney fulfills their professional responsibility to review all work product before it goes out the door.</p>
+
+    <h2>Who Offers What</h2>
+
+    <table class="comparison-table">
+        <thead>
+            <tr>
+                <th>Platform</th>
+                <th>Approach</th>
+                <th>Turnaround</th>
+                <th>Cost</th>
+                <th>State-Specific</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>EvenUp</td>
+                <td>Human-reviewed</td>
+                <td>24&ndash;48 hours</td>
+                <td>$300&ndash;$800+</td>
+                <td>Limited</td>
+            </tr>
+            <tr>
+                <td>Supio</td>
+                <td>AI-only / hybrid</td>
+                <td>Minutes</td>
+                <td>$50&ndash;$150</td>
+                <td>Basic</td>
+            </tr>
+            <tr>
+                <td>Precedent</td>
+                <td>Human-reviewed</td>
+                <td>24&ndash;72 hours</td>
+                <td>~$275</td>
+                <td>Limited</td>
+            </tr>
+            <tr>
+                <td>Tavrn</td>
+                <td>AI-only</td>
+                <td>Minutes</td>
+                <td>Subscription-based</td>
+                <td>Basic</td>
+            </tr>
+            <tr class="highlight-row">
+                <td>MedRecords AI</td>
+                <td>Hybrid</td>
+                <td>Minutes</td>
+                <td>Included (one-time license)</td>
+                <td>Yes (50 states)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>The Jurisdiction Problem</h2>
+
+    <p>This is where most AI demand generators fall short, and where the differences between platforms become practically significant.</p>
+
+    <p>Demand letter requirements and conventions vary enormously by state and even by county. Some critical variables include:</p>
+
+    <ul>
+        <li><strong>Damage cap awareness</strong>&mdash;many states impose caps on non-economic damages. An AI-generated demand that requests $500,000 in pain and suffering in a state with a $350,000 cap signals that the package was not prepared by someone who knows the jurisdiction.</li>
+        <li><strong>Statutory requirements</strong>&mdash;some states require specific language, timeframes, or notice provisions in demand letters. Missing these can have procedural consequences.</li>
+        <li><strong>Carrier-specific conventions</strong>&mdash;experienced PI attorneys know that certain insurers respond to particular demand structures. A generic template may not reflect these practical realities.</li>
+        <li><strong>Collateral source rules</strong>&mdash;the rules governing how insurance payments, write-offs, and subrogation are handled vary by state and directly affect how damages should be presented.</li>
+    </ul>
+
+    <p>Most AI demand generators use a one-size-fits-all template with minimal state-specific customization. MedRecords AI's demand generator was built with jurisdiction-specific rules for all 50 states, incorporating damage caps, statutory requirements, and formatting conventions that reflect how demands are actually structured in each jurisdiction.</p>
+
+    <h2>Quality Considerations</h2>
+
+    <p>Regardless of which platform you use, there are quality factors every PI attorney should evaluate:</p>
+
+    <h3>Accuracy of Medical Record Extraction</h3>
+    <p>The demand package is only as good as the underlying record analysis. If the AI misses a treatment, misidentifies a provider, or confuses injury laterality (left vs. right), those errors cascade through the entire package. Before adopting any platform, test it against a case where you already know the records intimately.</p>
+
+    <h3>Narrative Quality</h3>
+    <p>A demand letter tells a story. The best demand letters weave the medical facts into a compelling narrative about the client's experience&mdash;how the injuries affected their ability to work, care for their family, and enjoy their life. AI-generated narratives have improved dramatically, but they still tend toward clinical language that lacks emotional resonance. The hybrid approach&mdash;where an attorney refines the AI's draft&mdash;typically produces the most effective result.</p>
+
+    <h3>Damages Calculation Methodology</h3>
+    <p>How the platform calculates its recommended demand amount is critically important. Some use simple multiplier formulas (medical specials times a factor). Others use more sophisticated models based on comparable verdicts and settlements. Ask any vendor to explain their methodology. If they cannot or will not, that is a red flag.</p>
+
+    <h3>Customization and Firm Branding</h3>
+    <p>The demand letter represents your firm. It should reflect your letterhead, your tone, and your strategic approach. Platforms that lock you into rigid templates limit your ability to present the case the way you believe it should be presented. Look for tools that allow you to customize templates, adjust language, and maintain your firm's voice.</p>
+
+    <h2>When to Use AI Demand Generation</h2>
+
+    <p>AI demand generators are most valuable for:</p>
+
+    <ul>
+        <li><strong>High-volume, moderate-value cases</strong>&mdash;soft-tissue injuries, minor MVAs, and standard slip-and-fall cases where the demand structure is relatively predictable</li>
+        <li><strong>First drafts on complex cases</strong>&mdash;using AI to generate the initial framework, which the attorney then substantially revises for high-value or unusual cases</li>
+        <li><strong>Speeding up case resolution</strong>&mdash;reducing the time from case maturity to demand from weeks to days</li>
+    </ul>
+
+    <p>They are less appropriate as a final product (without attorney review) for catastrophic injury cases, wrongful death claims, or cases with complex liability questions where the narrative strategy requires careful, experience-driven judgment.</p>
+
+    <h2>The Ethical Dimension</h2>
+
+    <p>AI-generated demand packages raise a straightforward ethical question: does sending an AI-drafted demand letter without adequate attorney review violate the duty of competent representation?</p>
+
+    <p>The answer, under current ethics opinions, is that AI tools are permissible as assistive technology, but the attorney remains fully responsible for the accuracy and quality of every document that goes out under their name. This means that regardless of which platform you use, you or a qualified member of your staff must review the AI's output before it is sent to an insurer.</p>
+
+    <p>This reality makes the hybrid model the most ethically sound approach. The AI accelerates the process; the attorney ensures the result meets professional standards.</p>
+
+    <div class="cta-box">
+        <h2>Generate State-Specific Demand Packages in Minutes</h2>
+        <p>MedRecords AI produces jurisdiction-aware demand packages on your own computer. No cloud upload. No per-case fees. Try it free.</p>
+        <a href="../index.html#demo" class="cta-button">Start Free Demo</a>
+    </div>
+</article>
+
+<footer>
+    &copy; 2026 Productivity AI, LLC. All rights reserved.
+</footer>
+
+</body>
+</html>

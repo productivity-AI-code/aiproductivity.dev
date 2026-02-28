@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How AI Case Valuation Is Changing Personal Injury Settlements | MedRecords AI</title>
+    <meta name="description" content="Learn how AI-powered case valuation works for personal injury cases. Compare approaches from EvenUp, Supio, and MedRecords AI. Understand accuracy, limitations, and best practices.">
+    <meta name="keywords" content="AI case valuation personal injury, predictive case valuation software, AI settlement prediction, personal injury case value calculator">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --green: #00d4aa;
+            --green-dim: #00b894;
+            --text-primary: #1a1a2e;
+            --text-secondary: #555;
+            --gray-100: #f8f9fc;
+            --card-bg: #ffffff;
+            --card-border: #eee;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-primary);
+            line-height: 1.7;
+            background: #fff;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+        }
+
+        nav a { text-decoration: none; color: var(--text-primary); }
+        .logo { font-weight: 700; font-size: 1.2rem; }
+        .logo span { color: var(--green); }
+        .back-link { font-size: 0.95rem; color: var(--text-secondary); transition: color 0.2s; }
+        .back-link:hover { color: var(--green-dim); }
+
+        .hero {
+            background: var(--gray-100);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .hero h1 {
+            max-width: 800px;
+            margin: 0 auto 1rem;
+            font-size: 2.2rem;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .hero-meta { font-size: 0.9rem; color: var(--text-secondary); }
+        .hero-meta span { margin: 0 0.5rem; }
+
+        article {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        article h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 2.5rem 0 1rem;
+        }
+
+        article h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 2rem 0 0.75rem;
+        }
+
+        article p {
+            margin-bottom: 1.25rem;
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+        }
+
+        article ul, article ol {
+            margin: 0 0 1.25rem 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        article li { margin-bottom: 0.5rem; font-size: 1.05rem; }
+        article strong { color: var(--text-primary); }
+
+        .approach-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .approach-card h3 {
+            margin: 0 0 0.25rem;
+            font-size: 1.1rem;
+        }
+
+        .approach-meta {
+            font-size: 0.85rem;
+            color: var(--green-dim);
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+        }
+
+        .approach-card p {
+            font-size: 0.98rem;
+            margin-bottom: 0.75rem;
+        }
+
+        blockquote {
+            border-left: 3px solid var(--green);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            background: var(--gray-100);
+            border-radius: 0 8px 8px 0;
+        }
+
+        blockquote p {
+            margin-bottom: 0;
+            font-style: italic;
+            color: var(--text-primary);
+        }
+
+        .info-box {
+            background: var(--gray-100);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .info-box h4 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-box p { font-size: 0.95rem; margin-bottom: 0; }
+
+        .cta-box {
+            background: var(--gray-100);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 2.5rem;
+            text-align: center;
+            margin: 3rem 0 1rem;
+        }
+
+        .cta-box h2 { margin: 0 0 0.75rem; font-size: 1.4rem; }
+        .cta-box p { margin-bottom: 1.5rem; }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--green);
+            color: #fff;
+            padding: 0.85rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background 0.2s;
+        }
+        .cta-button:hover { background: var(--green-dim); }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--card-border);
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.6rem; }
+            article { padding: 2rem 1.25rem; }
+            nav { padding: 1rem 1.25rem; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="../index.html" class="logo">MedRecords <span>AI</span></a>
+    <a href="../blog.html" class="back-link">&larr; Back to Blog</a>
+</nav>
+
+<div class="hero">
+    <h1>How AI Case Valuation Is Changing Personal Injury Settlements</h1>
+    <div class="hero-meta">
+        <time datetime="2026-01-22">January 22, 2026</time>
+        <span>&middot;</span>
+        <span>10 min read</span>
+    </div>
+</div>
+
+<article>
+    <p>For decades, personal injury case valuation has been part science and part intuition. Experienced attorneys develop a feel for case values based on years of settlements, jury verdicts, and negotiations. They know that a herniated disc in Miami is worth more than the same injury in rural Kansas. They know which adjusters are aggressive and which tend to settle fairly. They know the intangible factors&mdash;the client's likeability, the defendant's conduct, the judge's tendencies&mdash;that influence outcomes in ways no formula can capture.</p>
+
+    <p>AI is not replacing that judgment. But it is providing a structured, data-driven foundation that makes the intuitive process faster and more consistent. As of 2026, several platforms offer AI-powered case valuation for personal injury claims, and understanding how each works&mdash;and what their limitations are&mdash;is increasingly important for any PI attorney making strategic decisions about case resolution.</p>
+
+    <h2>How AI Case Valuation Works</h2>
+
+    <p>At a high level, all AI case valuation systems operate on the same principle: they analyze the characteristics of a specific case and compare those characteristics against a database of prior outcomes to predict a likely settlement or verdict range.</p>
+
+    <p>The variables typically considered include:</p>
+
+    <ul>
+        <li><strong>Injury type and severity</strong>&mdash;specific diagnoses (ICD-10 codes), whether surgery was required, permanent impairment ratings, and the overall treatment trajectory</li>
+        <li><strong>Treatment history</strong>&mdash;duration of treatment, number and type of providers, whether treatment was conservative or surgical, and whether the patient reached maximum medical improvement</li>
+        <li><strong>Medical specials</strong>&mdash;total cost of medical treatment, both incurred and projected future costs</li>
+        <li><strong>Lost wages and earning capacity</strong>&mdash;documented income loss and, for severe injuries, diminished future earning capacity</li>
+        <li><strong>Jurisdiction</strong>&mdash;the county and state where the case would be tried, which significantly affects both verdict ranges and settlement patterns</li>
+        <li><strong>Liability factors</strong>&mdash;comparative fault percentages, the strength of the liability evidence, and the type of defendant (individual vs. commercial entity)</li>
+        <li><strong>Insurance policy limits</strong>&mdash;the available coverage, which caps the realistic recovery regardless of case merit</li>
+        <li><strong>Comparable outcomes</strong>&mdash;settlements and verdicts in similar cases within the same or comparable jurisdictions</li>
+    </ul>
+
+    <p>The AI model weighs these factors&mdash;and the interactions between them&mdash;to produce a predicted value range, typically expressed as a low, midpoint, and high estimate.</p>
+
+    <h2>Comparing the Major Platforms</h2>
+
+    <div class="approach-card">
+        <h3>EvenUp Case Valuation</h3>
+        <div class="approach-meta">Data-driven &middot; 250K+ case outcomes &middot; Included with demand packages</div>
+        <p>EvenUp's valuation engine is built on what they describe as a dataset of over 250,000 case outcomes. Their approach emphasizes comparable case matching&mdash;finding prior cases with similar injury profiles, treatment histories, and jurisdictions, and using those outcomes to inform the valuation. The valuation is typically delivered as part of the demand package, supporting the settlement demand amount with data-backed reasoning.</p>
+        <p><strong>Strengths:</strong> Large proprietary dataset; integrated with demand package workflow; adjusters are increasingly familiar with EvenUp's data-backed approach, which can add credibility to the demand.</p>
+        <p><strong>Limitations:</strong> The dataset's composition is not publicly disclosed. Firms cannot independently verify how comparable cases were selected or how the algorithm weights different factors. The valuation is also tied to EvenUp's per-case pricing model.</p>
+    </div>
+
+    <div class="approach-card">
+        <h3>Supio Case Economics</h3>
+        <div class="approach-meta">AI-powered &middot; Subscription model &middot; Integrated analysis</div>
+        <p>Supio's Case Economics module provides an economic analysis of each case, including treatment cost analysis, future medical cost projections, and settlement range estimates. Their approach focuses on the medical economics of the case&mdash;what was spent, what will be spent, and what comparable treatment profiles have yielded in settlements.</p>
+        <p><strong>Strengths:</strong> Strong integration with their medical record analysis; useful for understanding the economic dimensions of the case; accessible pricing for mid-size firms.</p>
+        <p><strong>Limitations:</strong> Less focused on jurisdiction-specific verdict data than EvenUp; the economic analysis may not fully account for non-economic factors (pain and suffering, loss of consortium) that significantly affect case values in many jurisdictions.</p>
+    </div>
+
+    <div class="approach-card" style="border-color: var(--green);">
+        <h3>MedRecords AI Case Valuation</h3>
+        <div class="approach-meta">On-premise &middot; Multi-factor analysis &middot; Included with license</div>
+        <p>MedRecords AI's valuation engine combines medical record analysis with jurisdiction-specific data to produce case value estimates. Because the system also performs negligence detection, it can factor potential third-party liability into its valuation&mdash;a capability that purely chronology-focused platforms cannot match. The valuation considers injury severity, treatment trajectory, jurisdictional patterns, and the presence of aggravating factors such as treatment delays or standard-of-care deviations.</p>
+        <p><strong>Strengths:</strong> Integrates negligence detection findings into valuation; processes entirely on-premise (no case data uploaded); no per-case fees; jurisdiction-specific analysis for all 50 states.</p>
+        <p><strong>Limitations:</strong> As a newer platform, the proprietary dataset is smaller than EvenUp's. The on-premise model means the system relies on its embedded data rather than continuously updated cloud datasets.</p>
+    </div>
+
+    <h2>How Accurate Is AI Case Valuation?</h2>
+
+    <p>This is the question every PI attorney should be asking, and the honest answer is: it depends on the case type.</p>
+
+    <p>AI case valuation performs best on high-frequency, moderate-complexity cases where there is abundant comparable data. A soft-tissue whiplash case from a rear-end collision in a major metro area has thousands of comparable outcomes in any decent dataset. For these cases, AI valuations tend to be reasonably accurate, often falling within 15&ndash;25% of actual settlement outcomes.</p>
+
+    <p>Accuracy degrades significantly for:</p>
+
+    <ul>
+        <li><strong>Catastrophic injuries</strong>&mdash;cases involving traumatic brain injuries, spinal cord injuries, or amputations are relatively rare and highly variable. The difference between a $2 million and $20 million outcome often depends on factors (plaintiff presentation, defense strategy, jury composition) that AI cannot model.</li>
+        <li><strong>Unusual liability scenarios</strong>&mdash;product liability, premises liability with complex notice issues, or multi-party accidents with disputed fault present variables that do not map neatly onto standardized models.</li>
+        <li><strong>Jurisdictions with thin data</strong>&mdash;rural counties or jurisdictions with limited published verdict data provide less reliable comparisons.</li>
+        <li><strong>Cases with significant non-economic damages</strong>&mdash;loss of consortium, disfigurement, emotional distress, and loss of enjoyment of life are inherently subjective and difficult for any algorithm to quantify.</li>
+    </ul>
+
+    <div class="info-box">
+        <h4>A Practical Benchmark</h4>
+        <p>Think of AI case valuation the way you think of a Zestimate for real estate. It gives you a data-informed starting point based on comparable properties and market conditions. You would never list a house based solely on the Zestimate without a broker's analysis of the specific property's condition, location nuances, and current market dynamics. Similarly, AI case valuation provides a starting point, not a final answer.</p>
+    </div>
+
+    <h2>How Attorneys Should Use AI Valuations</h2>
+
+    <p>The firms getting the most value from AI case valuation are using it strategically in several specific ways:</p>
+
+    <h3>Intake Screening</h3>
+    <p>Running a quick valuation on incoming cases during intake helps prioritize case acceptance decisions. If the AI estimates a case value of $15,000 in a jurisdiction where your minimum threshold is $25,000, that information&mdash;while not dispositive&mdash;is useful in the triage process.</p>
+
+    <h3>Settlement Negotiation Anchoring</h3>
+    <p>Data-backed valuations can serve as effective anchors in settlement negotiations. When a demand letter includes a valuation supported by comparable case data, it shifts the conversation from subjective opinions to objective benchmarks. Some firms report that adjusters are more receptive to demands that include this type of analysis.</p>
+
+    <h3>Client Communication</h3>
+    <p>Managing client expectations about case value is one of the more challenging aspects of PI practice. AI valuations provide an objective reference point for those conversations. Instead of saying "I think your case is worth between X and Y based on my experience," you can say "here is what the data shows cases like yours settle for, and here is where I think your specific circumstances fall within that range."</p>
+
+    <h3>Internal Case Reviews</h3>
+    <p>For firms with multiple attorneys handling similar case types, AI valuations help calibrate internal assessments. If one attorney consistently values cases 40% higher or lower than the AI's prediction, that disparity warrants a conversation&mdash;not because the AI is necessarily right, but because significant deviations from data-driven benchmarks should be conscious, explainable decisions.</p>
+
+    <h3>Trial vs. Settlement Decisions</h3>
+    <p>When deciding whether to accept a settlement offer or proceed to trial, having a data-backed valuation range provides useful context. If the current offer falls within the AI's predicted range, the risk-adjusted calculus of going to trial looks different than if the offer is significantly below the predicted range.</p>
+
+    <h2>The Future of AI Case Valuation</h2>
+
+    <p>This technology will improve substantially over the next several years as datasets grow and models become more sophisticated. Expect to see:</p>
+
+    <ul>
+        <li><strong>Real-time market adjustments</strong>&mdash;models that account for current insurance carrier behavior, recent jury verdict trends, and changing statutory landscapes</li>
+        <li><strong>Attorney-specific calibration</strong>&mdash;systems that learn from a specific firm's outcomes and adjust predictions based on the firm's historical settlement patterns</li>
+        <li><strong>Pre-litigation case tracking</strong>&mdash;dynamic valuations that update as treatment progresses and new records are added, giving attorneys a continuously updated view of case value</li>
+    </ul>
+
+    <p>The firms that develop comfort with AI valuation tools now will be better positioned to integrate these more advanced capabilities as they emerge. The alternative&mdash;ignoring the technology until it is ubiquitous&mdash;risks falling behind competitors who are already using data-driven insights to make faster and more informed strategic decisions.</p>
+
+    <div class="cta-box">
+        <h2>See AI Case Valuation on Your Own Cases</h2>
+        <p>MedRecords AI includes case valuation with every analysis, running entirely on your computer. No data leaves your network. Try it free.</p>
+        <a href="../index.html#demo" class="cta-button">Start Free Demo</a>
+    </div>
+</article>
+
+<footer>
+    &copy; 2026 Productivity AI, LLC. All rights reserved.
+</footer>
+
+</body>
+</html>

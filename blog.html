@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | MedRecords AI - AI Medical Record Summarization for Law Firms</title>
+    <meta name="description" content="Insights on AI medical record summarization, demand package generation, case valuation, and practice management for personal injury attorneys.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --green: #00d4aa;
+            --green-dim: #00b894;
+            --text-primary: #1a1a2e;
+            --text-secondary: #555;
+            --gray-100: #f8f9fc;
+            --gray-400: #999;
+            --card-bg: #ffffff;
+            --card-border: #eee;
+            --white: #fff;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text-primary); background: var(--gray-100); }
+        a { text-decoration: none; color: inherit; }
+
+        /* Nav */
+        nav {
+            background: var(--white);
+            border-bottom: 1px solid var(--card-border);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+        .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+        .logo { display: flex; align-items: center; gap: 10px; font-size: 1.15rem; font-weight: 700; }
+        .logo-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--green); }
+        .nav-links { display: flex; gap: 24px; align-items: center; }
+        .nav-links a { font-size: 0.9rem; color: var(--text-secondary); font-weight: 500; }
+        .nav-links a:hover { color: var(--green); }
+        .btn { display: inline-block; padding: 10px 24px; border-radius: 50px; font-weight: 600; font-size: 0.9rem; cursor: pointer; transition: all 0.3s; border: none; }
+        .btn-primary { background: var(--green); color: var(--text-primary); }
+        .btn-primary:hover { background: var(--green-dim); transform: translateY(-1px); }
+
+        /* Hero */
+        .blog-hero {
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+        .blog-hero h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 16px;
+        }
+        .blog-hero p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Blog Grid */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 24px;
+            padding-bottom: 80px;
+        }
+        .blog-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .blog-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+        }
+        .blog-card-body { padding: 28px; }
+        .blog-card-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+        .tag-pricing { background: #e8faf5; color: #00a88a; }
+        .tag-security { background: #eef0ff; color: #4a5bc7; }
+        .tag-comparison { background: #fff3e6; color: #d4760a; }
+        .tag-feature { background: #f0e8ff; color: #7c3aed; }
+        .tag-guide { background: #fef2f2; color: #dc2626; }
+        .blog-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            line-height: 1.4;
+            margin-bottom: 10px;
+            letter-spacing: -0.3px;
+        }
+        .blog-card p {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+        .blog-card-meta {
+            font-size: 0.75rem;
+            color: var(--gray-400);
+            display: flex;
+            gap: 16px;
+        }
+        .read-link {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--green-dim);
+            margin-top: 8px;
+        }
+        .read-link:hover { color: var(--green); }
+
+        /* Footer */
+        footer {
+            background: var(--text-primary);
+            color: rgba(255,255,255,0.5);
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            .blog-grid { grid-template-columns: 1fr; }
+            .nav-links { gap: 16px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="nav-inner">
+                <a href="index.html" class="logo"><span class="logo-dot"></span>MedRecords AI</a>
+                <div class="nav-links">
+                    <a href="index.html#features">Features</a>
+                    <a href="index.html#pricing">Pricing</a>
+                    <a href="blog.html" style="color: var(--green);">Blog</a>
+                    <a href="index.html#demo" class="btn btn-primary">Try Free</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="blog-hero">
+        <div class="container">
+            <h1>MedRecords AI Blog</h1>
+            <p>Insights on AI-powered medical record analysis, case valuation, and practice management for personal injury attorneys.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="blog-grid">
+
+            <a href="blog/stop-paying-per-case.html" class="blog-card">
+                <div class="blog-card-body">
+                    <span class="blog-card-tag tag-pricing">Pricing</span>
+                    <h3>Stop Paying $300-$800 Per Case for Medical Record Summaries</h3>
+                    <p>Compare the true cost of per-case pricing from EvenUp, Supio, and others. See how a one-time license eliminates escalating costs for PI firms.</p>
+                    <div class="blog-card-meta">
+                        <span>Feb 28, 2026</span>
+                        <span>8 min read</span>
+                    </div>
+                    <span class="read-link">Read article &rarr;</span>
+                </div>
+            </a>
+
+            <a href="blog/hipaa-compliant-on-premise.html" class="blog-card">
+                <div class="blog-card-body">
+                    <span class="blog-card-tag tag-security">Security</span>
+                    <h3>Why Your Medical Record AI Should Run On Your Own Computer</h3>
+                    <p>Every other AI medical record tool uploads PHI to the cloud. Here's why on-premise is the only truly HIPAA-compliant approach.</p>
+                    <div class="blog-card-meta">
+                        <span>Feb 28, 2026</span>
+                        <span>7 min read</span>
+                    </div>
+                    <span class="read-link">Read article &rarr;</span>
+                </div>
+            </a>
+
+            <a href="blog/medical-chronology-software-comparison.html" class="blog-card">
+                <div class="blog-card-body">
+                    <span class="blog-card-tag tag-comparison">Comparison</span>
+                    <h3>Medical Chronology Software Compared: 2026 Buyer's Guide</h3>
+                    <p>Side-by-side comparison of 15+ medical chronology tools for law firms. Features, pricing, and which is right for your practice size.</p>
+                    <div class="blog-card-meta">
+                        <span>Feb 28, 2026</span>
+                        <span>10 min read</span>
+                    </div>
+                    <span class="read-link">Read article &rarr;</span>
+                </div>
+            </a>
+
+            <a href="blog/evenup-alternative.html" class="blog-card">
+                <div class="blog-card-body">
+                    <span class="blog-card-tag tag-comparison">Comparison</span>
+                    <h3>Looking for an EvenUp Alternative? Here's What to Consider</h3>
+                    <p>EvenUp's per-case pricing is a pain point for growing firms. We break down the alternatives and what matters most in switching.</p>
+                    <div class="blog-card-meta">
+                        <span>Feb 28, 2026</span>
+                        <span>8 min read</span>
+                    </div>
+                    <span class="read-link">Read article &rarr;</span>
+                </div>
+            </a>
+
+            <a href="blog/demand-package-generator-ai.html" class="blog-card">
+                <div class="blog-card-body">
+                    <span class="blog-card-tag tag-feature">Feature</span>
+                    <h3>AI Demand Package Generation: What Every PI Attorney Should Know</h3>
+                    <p>How AI is transforming demand letter creation from a 10-hour task to a 10-minute workflow, and what to look for in a demand generator.</p>
+                    <div class="blog-card-meta">
+                        <span>Feb 28, 2026</span>
+                        <span>7 min read</span>
+                    </div>
+                    <span class="read-link">Read article &rarr;</span>
+                </div>
+            </a>
+
+            <a href="blog/negligence-detection-ai.html" class="blog-card">
+                <div class="blog-card-body">
+                    <span class="blog-card-tag tag-feature">Feature</span>
+                    <h3>AI-Powered Negligence Detection: A Feature No Other Legal AI Offers</h3>
+                    <p>Standard-of-care deviation analysis is a game-changer for med-mal and PI cases. Learn how AI flags what human reviewers miss.</p>
+                    <div class="blog-card-meta">
+                        <span>Feb 28, 2026</span>
+                        <span>6 min read</span>
+                    </div>
+                    <span class="read-link">Read article &rarr;</span>
+                </div>
+            </a>
+
+            <a href="blog/case-valuation-ai-personal-injury.html" class="blog-card">
+                <div class="blog-card-body">
+                    <span class="blog-card-tag tag-feature">Feature</span>
+                    <h3>How AI Case Valuation Is Changing Personal Injury Settlements</h3>
+                    <p>Data-driven case valuation helps attorneys negotiate from a position of strength. Here's how AI makes it possible.</p>
+                    <div class="blog-card-meta">
+                        <span>Feb 28, 2026</span>
+                        <span>7 min read</span>
+                    </div>
+                    <span class="read-link">Read article &rarr;</span>
+                </div>
+            </a>
+
+            <a href="blog/medical-record-ai-for-small-firms.html" class="blog-card">
+                <div class="blog-card-body">
+                    <span class="blog-card-tag tag-guide">Guide</span>
+                    <h3>Medical Record AI for Solo and Small PI Firms: A Practical Guide</h3>
+                    <p>You don't need a big budget to use AI for medical records. A practical guide for solo practitioners and small PI firms.</p>
+                    <div class="blog-card-meta">
+                        <span>Feb 28, 2026</span>
+                        <span>9 min read</span>
+                    </div>
+                    <span class="read-link">Read article &rarr;</span>
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Productivity AI, LLC. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Paying $300-$800 Per Case for Medical Record Summaries | MedRecords AI</title>
+    <meta name="description" content="Compare the true cost of per-case medical record summary pricing from EvenUp, Precedent, Supio, and Lexitas. See how a one-time license from MedRecords AI eliminates escalating costs for PI firms.">
+    <meta name="keywords" content="medical record summary cost, EvenUp alternative, affordable medical chronology, medical record summarization pricing">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --green: #00d4aa;
+            --green-dim: #00b894;
+            --text-primary: #1a1a2e;
+            --text-secondary: #555;
+            --gray-100: #f8f9fc;
+            --card-bg: #ffffff;
+            --card-border: #eee;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-primary);
+            line-height: 1.7;
+            background: #fff;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .logo span {
+            color: var(--green);
+        }
+
+        .back-link {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--green-dim);
+        }
+
+        .hero {
+            background: var(--gray-100);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .hero h1 {
+            max-width: 800px;
+            margin: 0 auto 1rem;
+            font-size: 2.2rem;
+            font-weight: 700;
+            line-height: 1.3;
+            color: var(--text-primary);
+        }
+
+        .hero-meta {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .hero-meta span {
+            margin: 0 0.5rem;
+        }
+
+        article {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        article h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 2.5rem 0 1rem;
+            color: var(--text-primary);
+        }
+
+        article h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 2rem 0 0.75rem;
+            color: var(--text-primary);
+        }
+
+        article p {
+            margin-bottom: 1.25rem;
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+        }
+
+        article ul, article ol {
+            margin: 0 0 1.25rem 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        article li {
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+
+        article strong {
+            color: var(--text-primary);
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0 2rem;
+            font-size: 0.95rem;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .comparison-table th {
+            background: var(--gray-100);
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .comparison-table td {
+            color: var(--text-secondary);
+        }
+
+        .comparison-table tr:hover {
+            background: var(--gray-100);
+        }
+
+        .highlight-row {
+            background: rgba(0, 212, 170, 0.06);
+        }
+
+        .highlight-row td {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .cta-box {
+            background: var(--gray-100);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 2.5rem;
+            text-align: center;
+            margin: 3rem 0 1rem;
+        }
+
+        .cta-box h2 {
+            margin: 0 0 0.75rem;
+            font-size: 1.4rem;
+        }
+
+        .cta-box p {
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--green);
+            color: #fff;
+            padding: 0.85rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background 0.2s;
+        }
+
+        .cta-button:hover {
+            background: var(--green-dim);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--card-border);
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            article {
+                padding: 2rem 1.25rem;
+            }
+
+            .comparison-table {
+                font-size: 0.8rem;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 0.5rem;
+            }
+
+            nav {
+                padding: 1rem 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="../index.html" class="logo">MedRecords <span>AI</span></a>
+    <a href="../blog.html" class="back-link">&larr; Back to Blog</a>
+</nav>
+
+<div class="hero">
+    <h1>Stop Paying $300&ndash;$800 Per Case for Medical Record Summaries</h1>
+    <div class="hero-meta">
+        <time datetime="2026-02-15">February 15, 2026</time>
+        <span>&middot;</span>
+        <span>9 min read</span>
+    </div>
+</div>
+
+<article>
+    <p>If you run a personal injury practice, you already know the pain: every case requires a thorough medical record summary, and every summary costs money. A lot of money. Whether you outsource to a human-staffed vendor or use one of the newer AI-powered platforms, the per-case pricing model has become the industry default. And for firms processing more than a handful of cases per month, those costs compound into a line item that quietly devours profit margins.</p>
+
+    <p>This article breaks down exactly what the leading medical chronology and record summarization services charge, shows what those numbers look like at scale, and presents an alternative pricing model that a growing number of firms are adopting.</p>
+
+    <h2>The Current Per-Case Pricing Landscape</h2>
+
+    <p>Let us start with the facts. Here is what the major medical record summarization providers charge as of early 2026:</p>
+
+    <table class="comparison-table">
+        <thead>
+            <tr>
+                <th>Provider</th>
+                <th>Pricing Model</th>
+                <th>Typical Cost per Case</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>EvenUp</td>
+                <td>Per demand package</td>
+                <td>$300 &ndash; $800+</td>
+            </tr>
+            <tr>
+                <td>Precedent</td>
+                <td>Per demand package</td>
+                <td>~$275</td>
+            </tr>
+            <tr>
+                <td>Supio</td>
+                <td>Monthly subscription + per-case</td>
+                <td>$50 &ndash; $150</td>
+            </tr>
+            <tr>
+                <td>Lexitas / traditional vendors</td>
+                <td>Per page</td>
+                <td>$0.25/page (~$250 for 1,000 pages)</td>
+            </tr>
+            <tr>
+                <td>Wisedocs</td>
+                <td>Per page</td>
+                <td>$0.10 &ndash; $0.35/page</td>
+            </tr>
+            <tr>
+                <td>InPractice AI</td>
+                <td>Per page</td>
+                <td>$0.05/page</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>These numbers may seem manageable in isolation. A single $300 EvenUp report feels reasonable when a case could settle for $50,000. But personal injury firms rarely handle one case at a time.</p>
+
+    <h2>How Per-Case Costs Scale</h2>
+
+    <p>Consider a mid-size PI firm handling 50 active cases per month. Here is what the annual spend looks like with each provider, assuming average-complexity cases:</p>
+
+    <table class="comparison-table">
+        <thead>
+            <tr>
+                <th>Cases/Month</th>
+                <th>EvenUp ($500 avg)</th>
+                <th>Precedent ($275)</th>
+                <th>Supio ($100 avg)</th>
+                <th>Lexitas ($250 avg)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>25</td>
+                <td>$150,000/yr</td>
+                <td>$82,500/yr</td>
+                <td>$30,000/yr</td>
+                <td>$75,000/yr</td>
+            </tr>
+            <tr>
+                <td>50</td>
+                <td>$300,000/yr</td>
+                <td>$165,000/yr</td>
+                <td>$60,000/yr</td>
+                <td>$150,000/yr</td>
+            </tr>
+            <tr>
+                <td>100</td>
+                <td>$600,000/yr</td>
+                <td>$330,000/yr</td>
+                <td>$120,000/yr</td>
+                <td>$300,000/yr</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>At 100 cases per month, a firm using EvenUp is spending more than half a million dollars annually on record summaries and demand packages alone. Even the most cost-effective option in this group, Supio, runs $120,000 per year. These are not small numbers. They directly reduce what the firm takes home from every settlement.</p>
+
+    <h2>The Hidden Problems with Per-Case Pricing</h2>
+
+    <p>Beyond the raw dollar amounts, per-case pricing creates several operational problems that compound over time:</p>
+
+    <h3>1. Disincentive to Use the Tool</h3>
+    <p>When every case processed costs money, paralegals and attorneys start rationing. They skip summarization on smaller cases, or they delay processing until a case reaches a certain threshold. This means potential value&mdash;a missed treatment gap, an overlooked provider, a negligence pattern&mdash;goes undetected simply because someone made a cost-based triage decision.</p>
+
+    <h3>2. Unpredictable Budgeting</h3>
+    <p>Case volume fluctuates month to month. A good marketing month might bring in 30% more intakes than projected, and suddenly your record summarization budget is blown. With per-case pricing, your costs are directly correlated to your case volume, making annual budgeting an exercise in guesswork.</p>
+
+    <h3>3. Price Escalation</h3>
+    <p>Several firms have reported that their per-case costs with major vendors have increased over time. EvenUp, for example, has been known to raise its base pricing after the initial contract period. What starts at $300 per case can creep toward $500 or $800 as vendors introduce premium tiers and additional features that used to be included.</p>
+
+    <h3>4. Vendor Lock-In</h3>
+    <p>Once your workflow revolves around a per-case vendor, switching becomes painful. Your staff is trained on one interface, your templates are configured, and the vendor knows it. This leverage allows vendors to raise prices with relatively little pushback.</p>
+
+    <h2>The Alternative: One-Time Purchase, Unlimited Use</h2>
+
+    <p>MedRecords AI takes a fundamentally different approach. Instead of charging per case, per page, or per month, the software is available as a perpetual license. You purchase it once. You install it on your own hardware. And you run it on as many cases as you want, forever, with no recurring fees tied to volume.</p>
+
+    <p>Here is how the economics compare over a three-year period for a firm processing 50 cases per month:</p>
+
+    <table class="comparison-table">
+        <thead>
+            <tr>
+                <th>Provider</th>
+                <th>Year 1</th>
+                <th>Year 2</th>
+                <th>Year 3</th>
+                <th>3-Year Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>EvenUp ($500 avg)</td>
+                <td>$300,000</td>
+                <td>$300,000</td>
+                <td>$300,000</td>
+                <td>$900,000</td>
+            </tr>
+            <tr>
+                <td>Precedent ($275)</td>
+                <td>$165,000</td>
+                <td>$165,000</td>
+                <td>$165,000</td>
+                <td>$495,000</td>
+            </tr>
+            <tr>
+                <td>Supio ($100 avg)</td>
+                <td>$60,000</td>
+                <td>$60,000</td>
+                <td>$60,000</td>
+                <td>$180,000</td>
+            </tr>
+            <tr class="highlight-row">
+                <td>MedRecords AI</td>
+                <td>One-time license</td>
+                <td>$0</td>
+                <td>$0</td>
+                <td>One-time license</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>The math is not subtle. Even compared to the most affordable per-case competitors, a one-time perpetual license pays for itself within the first few months of use. Every case processed after that point is pure savings.</p>
+
+    <h2>What You Get Beyond Cost Savings</h2>
+
+    <p>The pricing advantage alone is compelling, but MedRecords AI is not a stripped-down product trading features for a lower price point. The platform includes:</p>
+
+    <ul>
+        <li><strong>Full medical chronology generation</strong> with provider-organized timelines, ICD-10 coding, and treatment gap identification</li>
+        <li><strong>AI-powered demand package drafting</strong> with state-specific formatting and legal standards</li>
+        <li><strong>Negligence detection</strong> that flags deviations from standard-of-care protocols&mdash;a feature no cloud competitor currently offers</li>
+        <li><strong>Case valuation modeling</strong> based on injury severity, treatment patterns, and jurisdiction data</li>
+        <li><strong>On-premise processing</strong> so patient data never leaves your network</li>
+    </ul>
+
+    <h2>Who This Model Works Best For</h2>
+
+    <p>The perpetual license model is especially advantageous for:</p>
+
+    <ul>
+        <li><strong>High-volume firms</strong> processing 25+ cases per month, where per-case fees become the dominant operational cost</li>
+        <li><strong>Cost-conscious small firms</strong> that have been priced out of tools like EvenUp but still need professional-grade summarization</li>
+        <li><strong>Privacy-focused practices</strong> that want to keep all patient data on their own machines rather than uploading it to third-party cloud servers</li>
+        <li><strong>Multi-office firms</strong> that can install the software across locations without additional per-seat licensing fees</li>
+    </ul>
+
+    <h2>The Bottom Line</h2>
+
+    <p>The per-case pricing model was designed to benefit vendors, not law firms. It ensures that as your practice grows, your costs grow with it&mdash;often faster than your revenue. The firms that have made the switch to a one-time-purchase model consistently report that medical record summarization has gone from one of their largest operational expenses to a negligible one.</p>
+
+    <p>If you are currently spending $50,000 or more per year on medical record summaries, demand packages, or medical chronologies, it is worth doing the comparison. The numbers tend to speak for themselves.</p>
+
+    <div class="cta-box">
+        <h2>See the Savings for Your Firm</h2>
+        <p>Try MedRecords AI free for 5 cases. No credit card required. No data leaves your computer.</p>
+        <a href="../index.html#demo" class="cta-button">Start Free Demo</a>
+    </div>
+</article>
+
+<footer>
+    &copy; 2026 Productivity AI, LLC. All rights reserved.
+</footer>
+
+</body>
+</html>

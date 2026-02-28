@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Your Medical Record AI Should Run On Your Own Computer | MedRecords AI</title>
+    <meta name="description" content="Understand the HIPAA and ethical risks of uploading protected health information to cloud AI platforms. Learn why on-premise medical record analysis is the safer choice for law firms.">
+    <meta name="keywords" content="HIPAA compliant medical record AI, on-premise medical record analysis, local medical record software, PHI data privacy law firms">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --green: #00d4aa;
+            --green-dim: #00b894;
+            --text-primary: #1a1a2e;
+            --text-secondary: #555;
+            --gray-100: #f8f9fc;
+            --card-bg: #ffffff;
+            --card-border: #eee;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-primary);
+            line-height: 1.7;
+            background: #fff;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+        }
+
+        nav a { text-decoration: none; color: var(--text-primary); }
+
+        .logo { font-weight: 700; font-size: 1.2rem; }
+        .logo span { color: var(--green); }
+
+        .back-link {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--green-dim); }
+
+        .hero {
+            background: var(--gray-100);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .hero h1 {
+            max-width: 800px;
+            margin: 0 auto 1rem;
+            font-size: 2.2rem;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .hero-meta {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        .hero-meta span { margin: 0 0.5rem; }
+
+        article {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        article h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 2.5rem 0 1rem;
+        }
+
+        article h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 2rem 0 0.75rem;
+        }
+
+        article p {
+            margin-bottom: 1.25rem;
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+        }
+
+        article ul, article ol {
+            margin: 0 0 1.25rem 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        article li {
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+
+        article strong { color: var(--text-primary); }
+
+        blockquote {
+            border-left: 3px solid var(--green);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            background: var(--gray-100);
+            border-radius: 0 8px 8px 0;
+        }
+
+        blockquote p {
+            margin-bottom: 0;
+            font-style: italic;
+            color: var(--text-primary);
+        }
+
+        .info-box {
+            background: var(--gray-100);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .info-box h4 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .info-box p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        .cta-box {
+            background: var(--gray-100);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 2.5rem;
+            text-align: center;
+            margin: 3rem 0 1rem;
+        }
+
+        .cta-box h2 { margin: 0 0 0.75rem; font-size: 1.4rem; }
+        .cta-box p { margin-bottom: 1.5rem; }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--green);
+            color: #fff;
+            padding: 0.85rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background 0.2s;
+        }
+        .cta-button:hover { background: var(--green-dim); }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--card-border);
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.6rem; }
+            article { padding: 2rem 1.25rem; }
+            nav { padding: 1rem 1.25rem; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="../index.html" class="logo">MedRecords <span>AI</span></a>
+    <a href="../blog.html" class="back-link">&larr; Back to Blog</a>
+</nav>
+
+<div class="hero">
+    <h1>Why Your Medical Record AI Should Run On Your Own Computer</h1>
+    <div class="hero-meta">
+        <time datetime="2026-02-10">February 10, 2026</time>
+        <span>&middot;</span>
+        <span>10 min read</span>
+    </div>
+</div>
+
+<article>
+    <p>Every AI-powered medical record summarization tool on the market today&mdash;EvenUp, Supio, Wisedocs, Precedent, Superinsight, and the rest&mdash;operates the same way. You upload your client's protected health information to their cloud servers. Their AI processes it on their infrastructure. Then you download the result.</p>
+
+    <p>This workflow has become so normalized that most firms never pause to consider what they are actually doing: transmitting the most sensitive category of personally identifiable information across the internet to servers they do not control, cannot audit, and have no physical access to.</p>
+
+    <p>There is a better way. And as both HIPAA enforcement and state bar ethics opinions tighten around cloud-stored client data, the argument for on-premise processing is becoming harder to ignore.</p>
+
+    <h2>What Happens When You Upload Medical Records to the Cloud</h2>
+
+    <p>When you send a PDF of medical records to a cloud-based AI platform, the following things occur:</p>
+
+    <ol>
+        <li>The file is transmitted over the internet, typically encrypted in transit via TLS.</li>
+        <li>It is received by the vendor's servers&mdash;usually hosted on AWS, Google Cloud, or Azure.</li>
+        <li>The records are processed by one or more AI models, often including third-party models from OpenAI, Anthropic, or Google.</li>
+        <li>Extracted text and structured data may be stored temporarily or permanently on the vendor's infrastructure.</li>
+        <li>In some cases, your data may be used to improve the vendor's AI models, unless you have explicitly opted out.</li>
+    </ol>
+
+    <p>Each step in this chain introduces a point of risk. Not theoretical risk&mdash;the kind of risk that has already resulted in data breaches affecting millions of healthcare records.</p>
+
+    <h2>The HIPAA Question</h2>
+
+    <p>HIPAA's Security Rule requires covered entities and their business associates to implement safeguards protecting the confidentiality, integrity, and availability of electronic protected health information (ePHI). Law firms processing medical records typically fall under the business associate umbrella.</p>
+
+    <p>Cloud-based AI vendors generally address HIPAA compliance by executing Business Associate Agreements (BAAs) with their customers. However, a BAA is a contractual instrument, not a technical one. It does not prevent a breach. It merely establishes liability after one occurs.</p>
+
+    <div class="info-box">
+        <h4>Key HIPAA Consideration</h4>
+        <p>Under the HIPAA Security Rule (45 CFR 164.312), entities must implement access controls, audit controls, integrity controls, and transmission security. When data resides on a third-party cloud platform, the law firm is relying entirely on the vendor's implementation of these controls&mdash;controls they cannot independently verify.</p>
+    </div>
+
+    <h3>The Sub-Processor Problem</h3>
+
+    <p>Most cloud AI platforms do not run their own AI models. They call APIs from providers like OpenAI, Anthropic, or Google. This means your client's medical records may traverse multiple third-party systems, each with its own data handling policies, retention schedules, and security posture.</p>
+
+    <p>When you signed a BAA with your medical chronology vendor, did that BAA extend to every sub-processor in the chain? In many cases, the answer is unclear. And "unclear" is not a comfortable position when a state bar disciplinary committee is reviewing your data handling practices.</p>
+
+    <h2>State Bar Ethics and Cloud Storage of Client Data</h2>
+
+    <p>The American Bar Association's Formal Opinion 477R (revised 2017) addresses a lawyer's duty to protect client communications and data. While it acknowledges that cloud computing is permissible, it imposes a duty of competence that requires lawyers to understand the technology they use and its associated risks.</p>
+
+    <blockquote>
+        <p>"A lawyer generally may transmit information relating to the representation of a client over the internet without violating the Model Rules of Professional Conduct where the lawyer has undertaken reasonable efforts to prevent inadvertent or unauthorized access."</p>
+    </blockquote>
+
+    <p>The phrase "reasonable efforts" is the operative standard. What constitutes "reasonable" is evolving, and it is evolving toward more stringent requirements. Several state bar associations have issued opinions expanding on this duty:</p>
+
+    <ul>
+        <li><strong>California Formal Opinion 2010-179</strong> requires lawyers to consider the sensitivity of the data when choosing technology solutions. Medical records containing PHI fall into the highest sensitivity category.</li>
+        <li><strong>New York State Bar Association Opinion 842</strong> permits cloud storage but requires lawyers to ensure they can access the data, know where it is stored, and understand how it is protected.</li>
+        <li><strong>Florida Bar Opinion 12-3</strong> states that attorneys must exercise due diligence before using cloud services, including understanding the provider's security practices.</li>
+    </ul>
+
+    <p>The direction of these opinions is clear: the more sensitive the data, the greater the burden on the attorney to justify the chosen method of storage and processing. Medical records&mdash;containing diagnoses, treatments, mental health history, substance abuse records, and other deeply personal information&mdash;represent the highest tier of sensitivity.</p>
+
+    <h2>The On-Premise Alternative</h2>
+
+    <p>On-premise processing eliminates the entire cloud risk chain. When medical record AI runs locally on your own hardware:</p>
+
+    <ul>
+        <li><strong>No data transmission</strong>&mdash;PHI never leaves your network. There is no internet upload, no third-party server, no sub-processor chain.</li>
+        <li><strong>No vendor access</strong>&mdash;the software vendor has zero access to your data. They cannot see it, copy it, or use it for model training.</li>
+        <li><strong>Full audit control</strong>&mdash;your IT team controls the environment. You know where the data is, who can access it, and exactly what happens to it.</li>
+        <li><strong>No BAA complexity</strong>&mdash;since no PHI is shared with an external party, the business associate relationship (and its attendant regulatory burden) is simplified dramatically.</li>
+        <li><strong>Compliance by architecture</strong>&mdash;rather than relying on contracts and trust, your compliance posture is built into the system design itself.</li>
+    </ul>
+
+    <h2>Why Every Competitor Is Cloud-Only</h2>
+
+    <p>You may be wondering: if on-premise is clearly the more secure option, why does every other medical record AI vendor operate exclusively in the cloud?</p>
+
+    <p>The answer is business model, not technology. Cloud-based delivery allows vendors to:</p>
+
+    <ul>
+        <li>Charge per-case or per-page fees, generating recurring revenue from every transaction</li>
+        <li>Maintain control over the software, preventing customers from using it independently</li>
+        <li>Aggregate data from all customers to train and improve their models</li>
+        <li>Avoid the engineering challenge of packaging AI models for local deployment</li>
+    </ul>
+
+    <p>These are advantages for the vendor, not the customer. The cloud model exists because it is more profitable for the company selling the service, not because it is better or safer for the firm using it.</p>
+
+    <h2>Practical Requirements for On-Premise AI</h2>
+
+    <p>Running AI models locally does require some baseline hardware. Modern medical record analysis models need a computer with a capable GPU (graphics processing unit) and sufficient RAM. However, the hardware requirements have decreased significantly as AI models have become more efficient.</p>
+
+    <p>A workstation-class machine suitable for on-premise medical record AI processing typically costs between $2,000 and $5,000&mdash;a one-time capital expense that is trivial compared to the annual cost of cloud-based per-case services. Many firms already have hardware that meets or exceeds these specifications.</p>
+
+    <h2>The Trajectory of Enforcement</h2>
+
+    <p>HIPAA enforcement has intensified steadily over the past five years. The HHS Office for Civil Rights collected over $4 million in penalties in 2024 alone for violations related to inadequate ePHI protections. State attorneys general have also begun pursuing independent actions under state health privacy laws.</p>
+
+    <p>Simultaneously, AI-specific data privacy regulations are emerging at both the state and federal level. The intersection of AI processing and healthcare data is receiving particular scrutiny. Firms that proactively adopt architectures that keep PHI under their direct control will be better positioned as this regulatory landscape continues to develop.</p>
+
+    <h2>The Bottom Line</h2>
+
+    <p>Cloud-based AI is convenient. It requires no installation, no hardware, and no technical overhead. But convenience has a cost, and in this case, that cost is measured in regulatory risk, ethical exposure, and the fundamental loss of control over your clients' most sensitive information.</p>
+
+    <p>On-premise medical record AI is not merely a privacy-conscious choice. It is increasingly becoming the professionally responsible one.</p>
+
+    <div class="cta-box">
+        <h2>Process Medical Records Without Sending Data Anywhere</h2>
+        <p>MedRecords AI runs entirely on your own computer. No cloud. No uploads. No third-party access to patient data. Try it free.</p>
+        <a href="../index.html#demo" class="cta-button">Start Free Demo</a>
+    </div>
+</article>
+
+<footer>
+    &copy; 2026 Productivity AI, LLC. All rights reserved.
+</footer>
+
+</body>
+</html>
