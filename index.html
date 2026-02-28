@@ -3,832 +3,1617 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MedRecords AI — AI Medical Records Review for Personal Injury Law Firms</title>
-  <meta name="description" content="AI-powered medical record summarization for personal injury attorneys. Chronologies, demand letters, case valuation, negligence detection. One-time license, unlimited cases.">
-  <link rel="canonical" href="https://www.aiproductivity.dev">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="MedRecords AI — AI Medical Records Review for Personal Injury Law Firms">
-  <meta property="og:description" content="AI-powered medical record summarization for personal injury attorneys. Chronologies, demand letters, case valuation, negligence detection. One-time license, unlimited cases.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.aiproductivity.dev">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="MedRecords AI — AI Medical Records Review for Personal Injury Law Firms">
-  <meta name="twitter:description" content="AI-powered medical record summarization for personal injury attorneys. Chronologies, demand letters, case valuation, negligence detection. One-time license, unlimited cases.">
-
-  <!-- Favicon placeholder -->
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
+  <title>MedRecords AI — Medical Record Intelligence for Trial Lawyers</title>
+  <meta name="description" content="AI-powered medical record summarization, chronology, and analysis for personal injury law firms. Pay once, process unlimited cases.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    /* ── Global Reset ────────────────────────────────────────── */
+    /* ===== Reset & Base ===== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; scroll-padding-top: 72px; }
-    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: #1a1a2e; line-height: 1.6; }
 
-    /* ── Navigation Bar ─────────────────────────────────────── */
-    .mrai-nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      background: #0a1628;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      backdrop-filter: blur(12px);
+    :root {
+      --navy-dark: #0a1628;
+      --navy: #0f1d35;
+      --navy-mid: #1a2d50;
+      --navy-light: #243a5e;
+      --green: #00d4aa;
+      --green-dim: #00b894;
+      --green-glow: rgba(0, 212, 170, 0.25);
+      --white: #ffffff;
+      --gray-100: #f0f2f5;
+      --gray-200: #d1d5db;
+      --gray-300: #9ca3af;
+      --gray-400: #6b7280;
+      --gray-500: #374151;
+      --text-primary: #e8ecf1;
+      --text-secondary: #9ca3af;
+      --card-bg: rgba(255,255,255,0.04);
+      --card-border: rgba(255,255,255,0.08);
+      --radius: 12px;
+      --radius-lg: 20px;
+      --shadow: 0 4px 24px rgba(0,0,0,0.3);
     }
-    .mrai-nav-inner {
-      max-width: 1140px;
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--navy-dark);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a { color: var(--green); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--green-dim); }
+
+    .container {
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 0 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 64px;
+      padding: 0 24px;
     }
-    .mrai-nav-logo {
-      font-size: 20px;
-      font-weight: 800;
-      color: white;
-      text-decoration: none;
-      display: flex;
+
+    /* ===== Animations ===== */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(0,212,170,0.6); }
+      50%      { opacity: 0.8; box-shadow: 0 0 0 8px rgba(0,212,170,0); }
+    }
+    @keyframes shimmer {
+      0%   { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-8px); }
+    }
+
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== Buttons ===== */
+    .btn {
+      display: inline-flex;
       align-items: center;
       gap: 8px;
+      padding: 14px 32px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 50px;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      font-family: inherit;
     }
-    .mrai-nav-logo span {
-      background: linear-gradient(135deg, #00d4aa, #00b894);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+    .btn-primary {
+      background: var(--green);
+      color: var(--navy-dark);
+      border-color: var(--green);
     }
-    .mrai-nav-links {
+    .btn-primary:hover {
+      background: var(--green-dim);
+      border-color: var(--green-dim);
+      color: var(--navy-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px var(--green-glow);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(255,255,255,0.3);
+    }
+    .btn-outline:hover {
+      border-color: var(--white);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+    .btn-sm {
+      padding: 10px 24px;
+      font-size: 0.9rem;
+    }
+
+    /* ===== Navigation ===== */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 16px 0;
+      transition: background 0.3s, box-shadow 0.3s, padding 0.3s;
+    }
+    nav.scrolled {
+      background: rgba(10, 22, 40, 0.95);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+      padding: 10px 0;
+    }
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.5px;
+    }
+    .logo-dot {
+      width: 10px; height: 10px;
+      background: var(--green);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    .nav-links {
       display: flex;
       align-items: center;
       gap: 32px;
       list-style: none;
     }
-    .mrai-nav-links a {
-      color: #94a3b8;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 600;
+    .nav-links a {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      font-weight: 500;
       transition: color 0.2s;
-      letter-spacing: 0.3px;
     }
-    .mrai-nav-links a:hover {
-      color: #00d4aa;
-    }
-    .mrai-nav-cta {
-      background: linear-gradient(135deg, #00d4aa, #00b894);
-      color: #0a1628 !important;
-      padding: 8px 20px;
-      border-radius: 8px;
-      font-weight: 700 !important;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .mrai-nav-cta:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 4px 16px rgba(0,212,170,0.3);
-      color: #0a1628 !important;
-    }
-    /* Mobile nav toggle */
-    .mrai-nav-toggle {
+    .nav-links a:hover { color: var(--white); }
+    .nav-toggle {
       display: none;
+      flex-direction: column;
+      gap: 5px;
       background: none;
       border: none;
       cursor: pointer;
-      padding: 8px;
+      padding: 4px;
     }
-    .mrai-nav-toggle span {
-      display: block;
-      width: 24px;
-      height: 2px;
-      background: white;
-      margin: 5px 0;
+    .nav-toggle span {
+      width: 24px; height: 2px;
+      background: var(--white);
+      border-radius: 2px;
       transition: all 0.3s;
     }
-    @media (max-width: 768px) {
-      .mrai-nav-toggle { display: block; }
-      .mrai-nav-links {
-        display: none;
-        position: absolute;
-        top: 64px;
-        left: 0;
-        right: 0;
-        background: #0a1628;
-        flex-direction: column;
-        padding: 16px 20px 24px;
-        gap: 16px;
-        border-bottom: 1px solid rgba(255,255,255,0.08);
-      }
-      .mrai-nav-links.open { display: flex; }
+
+    /* ===== Hero ===== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(160deg, var(--navy-dark) 0%, var(--navy-mid) 50%, var(--navy-dark) 100%);
+      overflow: hidden;
+      padding-top: 80px;
     }
-
-    /* ── Reset & Base ──────────────────────────────────────────── */
-    .mrai { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; color: #1a1a2e; max-width: 1140px; margin: 0 auto; padding: 0 20px; line-height: 1.6; }
-    .mrai * { box-sizing: border-box; margin: 0; padding: 0; }
-    .mrai img { max-width: 100%; }
-    .mrai a { text-decoration: none; }
-    .mrai section { padding: 80px 0; }
-
-    /* ── Announcement Bar ──────────────────────────────────────── */
-    .mrai-announce { background: linear-gradient(90deg, #e74c3c, #c0392b); color: white; text-align: center; padding: 12px 20px; font-size: 14px; font-weight: 600; letter-spacing: 0.3px; border-radius: 0 0 12px 12px; margin-bottom: 20px; margin-top: 64px; }
-    .mrai-announce a { color: white; text-decoration: underline; font-weight: 700; }
-    .mrai-countdown { display: inline-flex; gap: 6px; margin-left: 12px; }
-    .mrai-countdown span { background: rgba(0,0,0,0.25); padding: 3px 8px; border-radius: 4px; font-variant-numeric: tabular-nums; font-weight: 700; }
-
-    /* ── Hero ───────────────────────────────────────────────────── */
-    .mrai-hero { text-align: center; padding: 80px 20px 60px; position: relative; }
-    .mrai-hero-badge { display: inline-block; background: #e8faf5; color: #00b894; font-size: 12px; font-weight: 800; padding: 6px 18px; border-radius: 20px; margin-bottom: 24px; letter-spacing: 1px; text-transform: uppercase; }
-    .mrai-hero h1 { font-size: 48px; font-weight: 900; line-height: 1.1; margin-bottom: 20px; color: #0a1628; }
-    .mrai-hero h1 em { font-style: normal; background: linear-gradient(135deg, #00d4aa, #00b894); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .mrai-hero-sub { font-size: 20px; color: #555; max-width: 680px; margin: 0 auto 36px; }
-    .mrai-hero-ctas { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-bottom: 40px; }
-    .mrai-btn-lg { display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; border-radius: 10px; font-size: 16px; font-weight: 700; transition: all 0.25s; cursor: pointer; border: 2px solid transparent; }
-    .mrai-btn-green { background: linear-gradient(135deg, #00d4aa, #00b894); color: #0a1628; box-shadow: 0 4px 20px rgba(0,212,170,0.3); }
-    .mrai-btn-green:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,212,170,0.45); }
-    .mrai-btn-dark { background: #0a1628; color: white; }
-    .mrai-btn-dark:hover { background: #162447; transform: translateY(-2px); }
-    .mrai-hero-proof { font-size: 13px; color: #999; }
-    .mrai-hero-proof strong { color: #666; }
-
-    /* Stats bar */
-    .mrai-stats-bar { display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; padding: 40px 0; border-top: 1px solid #eee; border-bottom: 1px solid #eee; margin: 0 0 0; }
-    .mrai-stat { text-align: center; }
-    .mrai-stat-num { font-size: 40px; font-weight: 900; color: #00b894; line-height: 1; }
-    .mrai-stat-label { font-size: 12px; color: #888; margin-top: 6px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
-
-    /* ── Problem/Solution ──────────────────────────────────────── */
-    .mrai-problem { background: #f8f9fc; border-radius: 20px; padding: 60px 40px; }
-    .mrai-problem h2 { font-size: 32px; font-weight: 800; text-align: center; margin-bottom: 40px; }
-    .mrai-problem h2 em { font-style: normal; color: #e74c3c; }
-    .mrai-ps-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-    .mrai-ps-col h3 { font-size: 16px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid; }
-    .mrai-ps-col.problem h3 { color: #e74c3c; border-color: #e74c3c; }
-    .mrai-ps-col.solution h3 { color: #00b894; border-color: #00b894; }
-    .mrai-ps-item { display: flex; gap: 12px; margin-bottom: 16px; font-size: 15px; color: #444; }
-    .mrai-ps-item .icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
-
-    /* ── How It Works ──────────────────────────────────────────── */
-    .mrai-how h2 { font-size: 32px; font-weight: 800; text-align: center; margin-bottom: 12px; }
-    .mrai-how > p { text-align: center; color: #888; font-size: 16px; margin-bottom: 48px; }
-    .mrai-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
-    .mrai-step { text-align: center; position: relative; }
-    .mrai-step-num { width: 48px; height: 48px; background: linear-gradient(135deg, #00d4aa, #00b894); color: #0a1628; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 800; margin-bottom: 16px; }
-    .mrai-step h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
-    .mrai-step p { font-size: 13px; color: #666; }
-    .mrai-step::after { content: ''; position: absolute; top: 24px; right: -12px; width: 24px; height: 2px; background: #ddd; }
-    .mrai-step:last-child::after { display: none; }
-
-    /* ── Features ───────────────────────────────────────────────── */
-    .mrai-features h2 { font-size: 32px; font-weight: 800; text-align: center; margin-bottom: 12px; }
-    .mrai-features > p { text-align: center; color: #888; font-size: 16px; margin-bottom: 48px; }
-    .mrai-feat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .mrai-feat-card { background: white; border: 1px solid #eee; border-radius: 14px; padding: 28px; transition: all 0.25s; }
-    .mrai-feat-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); border-color: #00d4aa; }
-    .mrai-feat-icon { font-size: 32px; margin-bottom: 14px; }
-    .mrai-feat-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
-    .mrai-feat-card p { font-size: 14px; color: #666; }
-    .mrai-pro-badge { display: inline-block; background: linear-gradient(135deg, #00d4aa, #00b894); color: #0a1628; font-size: 10px; font-weight: 800; padding: 2px 8px; border-radius: 4px; margin-left: 6px; vertical-align: middle; text-transform: uppercase; letter-spacing: 0.5px; }
-
-    /* ── ROI Calculator ─────────────────────────────────────────── */
-    .mrai-roi { background: linear-gradient(135deg, #0a1628, #162447); border-radius: 20px; padding: 60px 40px; color: white; }
-    .mrai-roi h2 { font-size: 32px; font-weight: 800; text-align: center; margin-bottom: 8px; }
-    .mrai-roi > p { text-align: center; color: #94a3b8; font-size: 15px; margin-bottom: 40px; }
-    .mrai-roi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
-    .mrai-roi-inputs label { display: block; font-size: 13px; color: #94a3b8; margin-bottom: 6px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
-    .mrai-roi-inputs input[type=range] { width: 100%; margin-bottom: 24px; accent-color: #00d4aa; }
-    .mrai-roi-val { font-size: 24px; font-weight: 800; color: #00d4aa; margin-bottom: 4px; }
-    .mrai-roi-result { text-align: center; background: rgba(0,212,170,0.08); border: 1px solid rgba(0,212,170,0.2); border-radius: 16px; padding: 36px; }
-    .mrai-roi-result h3 { font-size: 14px; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
-    .mrai-roi-savings { font-size: 56px; font-weight: 900; color: #00d4aa; line-height: 1; }
-    .mrai-roi-detail { font-size: 14px; color: #94a3b8; margin-top: 12px; }
-    .mrai-roi-detail strong { color: white; }
-    .mrai-roi-vs { display: flex; justify-content: center; gap: 32px; margin-top: 20px; }
-    .mrai-roi-vs div { text-align: center; }
-    .mrai-roi-vs .label { font-size: 11px; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; }
-    .mrai-roi-vs .amt { font-size: 20px; font-weight: 800; margin-top: 4px; }
-    .mrai-roi-vs .them { color: #e74c3c; }
-    .mrai-roi-vs .us { color: #00d4aa; }
-
-    /* ── Pricing ────────────────────────────────────────────────── */
-    .mrai-pricing { text-align: center; }
-    .mrai-pricing h2 { font-size: 32px; font-weight: 800; margin-bottom: 8px; }
-    .mrai-pricing > p { color: #888; font-size: 16px; margin-bottom: 48px; }
-    .mrai-price-cards { display: flex; justify-content: center; gap: 28px; flex-wrap: wrap; }
-    .mrai-price-card { background: white; border: 2px solid #eee; border-radius: 18px; padding: 40px 32px; width: 360px; text-align: left; position: relative; transition: all 0.25s; }
-    .mrai-price-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.1); }
-    .mrai-price-card.featured { border-color: #00b894; box-shadow: 0 8px 32px rgba(0,212,170,0.15); }
-    .mrai-price-badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); font-size: 11px; font-weight: 800; padding: 5px 20px; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px; white-space: nowrap; }
-    .mrai-price-badge.sale { background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; }
-    .mrai-price-badge.popular { background: linear-gradient(135deg, #00d4aa, #00b894); color: #0a1628; }
-    .mrai-tier-name { font-size: 13px; font-weight: 800; color: #00b894; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 10px; }
-    .mrai-price-amount { font-size: 52px; font-weight: 900; color: #0a1628; line-height: 1; margin-bottom: 4px; }
-    .mrai-price-original { text-decoration: line-through; color: #bbb; font-size: 24px; font-weight: 600; vertical-align: middle; margin-right: 8px; }
-    .mrai-price-note { font-size: 13px; color: #999; margin-bottom: 6px; }
-    .mrai-price-note.sale-note { color: #e74c3c; font-weight: 700; }
-    .mrai-price-card ul { list-style: none; margin: 20px 0 28px; }
-    .mrai-price-card li { font-size: 14px; padding: 8px 0; color: #444; display: flex; align-items: flex-start; gap: 10px; }
-    .mrai-price-card li::before { content: "\2713"; color: #00b894; font-weight: 700; flex-shrink: 0; }
-    .mrai-btn-block { display: block; text-align: center; padding: 15px 24px; border-radius: 10px; font-size: 16px; font-weight: 700; transition: all 0.25s; }
-    .mrai-btn-outline { background: white; color: #00b894; border: 2px solid #00b894; }
-    .mrai-btn-outline:hover { background: #00b894; color: white; }
-    .mrai-btn-primary { background: linear-gradient(135deg, #00d4aa, #00b894); color: white; border: 2px solid transparent; }
-    .mrai-btn-primary:hover { transform: scale(1.03); box-shadow: 0 8px 24px rgba(0,212,170,0.4); }
-
-    /* ── Comparison ─────────────────────────────────────────────── */
-    .mrai-compare h2 { font-size: 32px; font-weight: 800; text-align: center; margin-bottom: 12px; }
-    .mrai-compare > p { text-align: center; color: #888; font-size: 15px; margin-bottom: 36px; }
-    .mrai-comp-table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 14px; overflow: hidden; border-radius: 12px; border: 1px solid #eee; }
-    .mrai-comp-table th, .mrai-comp-table td { padding: 14px 18px; text-align: left; border-bottom: 1px solid #f0f0f0; }
-    .mrai-comp-table th { background: #0a1628; color: white; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
-    .mrai-comp-table th.hl { background: #00b894; color: #0a1628; }
-    .mrai-comp-table td.hl { background: #f0fdf9; font-weight: 600; }
-    .mrai-comp-table tr:last-child td { border-bottom: none; }
-    .mrai-green { color: #00b894; font-weight: 700; }
-    .mrai-red { color: #e74c3c; }
-
-    /* ── Social Proof ───────────────────────────────────────────── */
-    .mrai-social { background: #f8f9fc; border-radius: 20px; padding: 60px 40px; }
-    .mrai-social h2 { font-size: 32px; font-weight: 800; text-align: center; margin-bottom: 40px; }
-    .mrai-testimonials { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .mrai-testimonial { background: white; border-radius: 14px; padding: 28px; border: 1px solid #eee; }
-    .mrai-testimonial .stars { color: #f59e0b; font-size: 16px; margin-bottom: 12px; letter-spacing: 2px; }
-    .mrai-testimonial blockquote { font-size: 15px; color: #444; font-style: italic; margin-bottom: 16px; line-height: 1.6; }
-    .mrai-testimonial cite { font-style: normal; font-size: 13px; color: #888; display: block; }
-    .mrai-testimonial cite strong { color: #333; display: block; font-size: 14px; }
-
-    /* ── FAQ ─────────────────────────────────────────────────────── */
-    .mrai-faq h2 { font-size: 32px; font-weight: 800; text-align: center; margin-bottom: 40px; }
-    .mrai-faq-list { max-width: 720px; margin: 0 auto; }
-    .mrai-faq-item { border-bottom: 1px solid #eee; }
-    .mrai-faq-q { width: 100%; background: none; border: none; padding: 20px 0; font-size: 16px; font-weight: 600; color: #0a1628; text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: inherit; }
-    .mrai-faq-q:hover { color: #00b894; }
-    .mrai-faq-q .arrow { transition: transform 0.3s; font-size: 12px; color: #999; }
-    .mrai-faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
-    .mrai-faq-a-inner { padding: 0 0 20px; font-size: 15px; color: #666; line-height: 1.7; }
-    .mrai-faq-item.open .arrow { transform: rotate(180deg); }
-    .mrai-faq-item.open .mrai-faq-a { max-height: 300px; }
-
-    /* ── Final CTA ──────────────────────────────────────────────── */
-    .mrai-final-cta { background: linear-gradient(135deg, #0a1628, #162447); border-radius: 20px; padding: 72px 40px; text-align: center; position: relative; overflow: hidden; }
-    .mrai-final-cta::before { content: ''; position: absolute; top: -60%; left: -20%; width: 140%; height: 200%; background: radial-gradient(ellipse at 30% 50%, rgba(0,212,170,0.06) 0%, transparent 60%); }
-    .mrai-final-cta h2 { font-size: 36px; font-weight: 900; color: white; margin-bottom: 12px; position: relative; }
-    .mrai-final-cta p { color: #94a3b8; font-size: 17px; margin-bottom: 32px; max-width: 600px; margin-left: auto; margin-right: auto; position: relative; }
-    .mrai-final-buttons { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; position: relative; }
-    .mrai-final-buttons .mrai-btn-lg { min-width: 220px; justify-content: center; }
-    .mrai-trust-row { display: flex; justify-content: center; gap: 36px; flex-wrap: wrap; margin-top: 32px; position: relative; }
-    .mrai-trust-item { font-size: 13px; color: #64748b; display: flex; align-items: center; gap: 6px; }
-
-    /* ── Footer ──────────────────────────────────────────────────── */
-    .mrai-footer {
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%; right: -20%;
+      width: 800px; height: 800px;
+      background: radial-gradient(circle, var(--green-glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -30%; left: -10%;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(0,100,200,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
       text-align: center;
-      padding: 32px 20px;
-      font-size: 13px;
-      color: #999;
-      border-top: 1px solid #eee;
-      margin-top: 0;
+      max-width: 850px;
+      margin: 0 auto;
+      animation: fadeInUp 0.8s ease-out;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 20px;
+      border-radius: 50px;
+      background: rgba(0,212,170,0.1);
+      border: 1px solid rgba(0,212,170,0.25);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--green);
+      margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -1.5px;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, var(--white) 0%, var(--gray-200) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--green) 0%, #00f5c4 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+    .hero p.subtitle {
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      color: var(--text-secondary);
+      max-width: 640px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+    }
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .trust-badges {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      font-size: 0.8rem;
+      color: var(--gray-400);
+      letter-spacing: 0.5px;
+    }
+    .trust-badges span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .trust-badges .icon { font-size: 1rem; color: var(--green); }
+
+    /* ===== Social Proof Bar ===== */
+    .social-proof {
+      padding: 48px 0;
+      border-top: 1px solid var(--card-border);
+      border-bottom: 1px solid var(--card-border);
+      background: rgba(0,0,0,0.15);
+    }
+    .social-proof p {
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--gray-400);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 500;
+      margin-bottom: 28px;
+    }
+    .logo-bar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+    .logo-placeholder {
+      width: 130px;
+      height: 40px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      color: var(--gray-400);
+      font-weight: 500;
     }
 
-    /* ── Responsive ─────────────────────────────────────────────── */
-    @media (max-width: 900px) {
-      .mrai-feat-grid { grid-template-columns: repeat(2, 1fr); }
-      .mrai-steps { grid-template-columns: repeat(2, 1fr); }
-      .mrai-step::after { display: none; }
-      .mrai-testimonials { grid-template-columns: 1fr; }
-      .mrai-roi-grid { grid-template-columns: 1fr; }
-      .mrai-ps-grid { grid-template-columns: 1fr; }
-      .mrai-comp-table { font-size: 12px; }
-      .mrai-comp-table th, .mrai-comp-table td { padding: 10px 8px; }
+    /* ===== Section Titles ===== */
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
     }
-    @media (max-width: 640px) {
-      .mrai-hero h1 { font-size: 30px; }
-      .mrai-feat-grid { grid-template-columns: 1fr; }
-      .mrai-steps { grid-template-columns: 1fr; }
-      .mrai-price-card { width: 100%; }
-      .mrai-stats-bar { gap: 24px; }
-      .mrai-roi-savings { font-size: 40px; }
-      .mrai section { padding: 50px 0; }
+    .section-title .label {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--green);
+      margin-bottom: 12px;
+    }
+    .section-title h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      letter-spacing: -1px;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .section-title p {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* ===== Features Grid ===== */
+    .features {
+      padding: 100px 0;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .feature-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 36px 28px;
+      transition: all 0.35s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--green), transparent);
+      opacity: 0;
+      transition: opacity 0.35s;
+    }
+    .feature-card:hover {
+      border-color: rgba(0,212,170,0.2);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+    }
+    .feature-card:hover::before { opacity: 1; }
+    .feature-icon {
+      width: 52px; height: 52px;
+      border-radius: 14px;
+      background: rgba(0,212,170,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+    .feature-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--white);
+    }
+    .feature-card p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* ===== How It Works ===== */
+    .how-it-works {
+      padding: 100px 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, transparent 100%);
+    }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 36px;
+      position: relative;
+    }
+    .steps::before {
+      content: '';
+      position: absolute;
+      top: 44px; left: 16%; right: 16%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--card-border), var(--green-glow), var(--card-border));
+    }
+    .step {
+      text-align: center;
+      position: relative;
+    }
+    .step-number {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      background: var(--navy);
+      border: 2px solid var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--green);
+      margin: 0 auto 24px;
+      position: relative;
+      z-index: 2;
+    }
+    .step-icon {
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+    .step h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--white);
+    }
+    .step p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      max-width: 280px;
+      margin: 0 auto;
+    }
+
+    /* ===== Pricing ===== */
+    .pricing {
+      padding: 100px 0;
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      align-items: start;
+    }
+    .pricing-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 40px 32px;
+      position: relative;
+      transition: all 0.35s ease;
+    }
+    .pricing-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.3);
+    }
+    .pricing-card.featured {
+      border-color: var(--green);
+      background: rgba(0,212,170,0.04);
+      transform: scale(1.04);
+    }
+    .pricing-card.featured:hover {
+      transform: scale(1.04) translateY(-4px);
+    }
+    .popular-badge {
+      position: absolute;
+      top: -14px; left: 50%;
+      transform: translateX(-50%);
+      background: var(--green);
+      color: var(--navy-dark);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 5px 20px;
+      border-radius: 50px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .pricing-card .tier {
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--green);
+      margin-bottom: 12px;
+    }
+    .pricing-card .price {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 4px;
+      letter-spacing: -1px;
+    }
+    .pricing-card .price-note {
+      font-size: 0.85rem;
+      color: var(--gray-400);
+      margin-bottom: 28px;
+    }
+    .pricing-card .divider {
+      height: 1px;
+      background: var(--card-border);
+      margin-bottom: 24px;
+    }
+    .pricing-card ul {
+      list-style: none;
+      margin-bottom: 32px;
+    }
+    .pricing-card ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+    .pricing-card ul li .check {
+      color: var(--green);
+      font-weight: 700;
+      font-size: 1rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .pricing-card .btn { width: 100%; justify-content: center; }
+
+    /* ===== Comparison ===== */
+    .comparison {
+      padding: 100px 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, transparent 100%);
+    }
+    .comparison-table-wrap {
+      overflow-x: auto;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--card-border);
+      background: var(--card-bg);
+    }
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 700px;
+    }
+    .comparison-table thead th {
+      padding: 20px 24px;
+      text-align: left;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--gray-300);
+      border-bottom: 1px solid var(--card-border);
+      background: rgba(0,0,0,0.2);
+    }
+    .comparison-table thead th:first-child { border-radius: var(--radius-lg) 0 0 0; }
+    .comparison-table thead th:last-child { border-radius: 0 var(--radius-lg) 0 0; }
+    .comparison-table thead th.highlight {
+      color: var(--green);
+      background: rgba(0,212,170,0.06);
+    }
+    .comparison-table tbody td {
+      padding: 18px 24px;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      border-bottom: 1px solid var(--card-border);
+    }
+    .comparison-table tbody td.highlight {
+      color: var(--white);
+      font-weight: 600;
+      background: rgba(0,212,170,0.03);
+    }
+    .comparison-table tbody tr:last-child td { border-bottom: none; }
+    .comparison-table .tag-green {
+      display: inline-block;
+      background: rgba(0,212,170,0.15);
+      color: var(--green);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 50px;
+    }
+    .comparison-table .tag-red {
+      display: inline-block;
+      background: rgba(239,68,68,0.12);
+      color: #f87171;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 50px;
+    }
+
+    /* ===== FAQ ===== */
+    .faq {
+      padding: 100px 0;
+    }
+    .faq-list {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      margin-bottom: 12px;
+      overflow: hidden;
+      background: var(--card-bg);
+      transition: border-color 0.3s;
+    }
+    .faq-item:hover { border-color: rgba(255,255,255,0.12); }
+    .faq-question {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 28px;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: left;
+      font-family: inherit;
+      line-height: 1.4;
+    }
+    .faq-question .arrow {
+      font-size: 1.2rem;
+      color: var(--gray-400);
+      transition: transform 0.3s;
+      flex-shrink: 0;
+      margin-left: 16px;
+    }
+    .faq-item.open .faq-question .arrow { transform: rotate(180deg); }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+    }
+    .faq-answer-inner {
+      padding: 0 28px 22px;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* ===== CTA Section ===== */
+    .cta-section {
+      padding: 100px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 700px; height: 400px;
+      background: radial-gradient(ellipse, var(--green-glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cta-box {
+      position: relative;
+      z-index: 2;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 64px 48px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .cta-box h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+    .cta-box p {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      margin-bottom: 36px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-form {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .cta-form input[type="email"] {
+      padding: 14px 24px;
+      border-radius: 50px;
+      border: 1px solid var(--card-border);
+      background: rgba(255,255,255,0.06);
+      color: var(--white);
+      font-size: 0.95rem;
+      font-family: inherit;
+      width: 300px;
+      max-width: 100%;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+    .cta-form input[type="email"]::placeholder { color: var(--gray-400); }
+    .cta-form input[type="email"]:focus { border-color: var(--green); }
+    .cta-note {
+      font-size: 0.8rem;
+      color: var(--gray-400);
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      padding: 48px 0;
+      border-top: 1px solid var(--card-border);
+    }
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .footer-left .logo { margin-bottom: 8px; }
+    .footer-left p {
+      font-size: 0.8rem;
+      color: var(--gray-400);
+    }
+    .footer-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+    .footer-links a {
+      font-size: 0.85rem;
+      color: var(--gray-400);
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--white); }
+    .footer-contact {
+      font-size: 0.85rem;
+      color: var(--gray-400);
+      text-align: right;
+    }
+    .footer-contact a { color: var(--green); }
+
+    /* ===== Why On-Premise ===== */
+    .why-onprem {
+      padding: 100px 0;
+    }
+    .onprem-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .onprem-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 36px 28px;
+      text-align: center;
+      transition: all 0.35s ease;
+    }
+    .onprem-card:hover {
+      border-color: rgba(0,212,170,0.2);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+    }
+    .onprem-icon {
+      width: 64px; height: 64px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      margin: 0 auto 20px;
+    }
+    .onprem-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .onprem-card p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+    .onprem-card .stat {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--green);
+      margin-top: 16px;
+    }
+    .onprem-card .stat-label {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* ===== Demo Section ===== */
+    .demo-section {
+      padding: 100px 0;
+      background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.1) 100%);
+    }
+    .demo-box {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+    }
+    .demo-box-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+    }
+    .demo-info h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+    .demo-features-list {
+      list-style: none;
+      margin-bottom: 28px;
+    }
+    .demo-features-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+    .demo-features-list li .check {
+      color: var(--green);
+      font-weight: 700;
+      font-size: 1rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .demo-limitations {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+    }
+    .demo-limitations h4 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--gray-300);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .demo-limitations ul {
+      list-style: none;
+    }
+    .demo-limitations ul li {
+      font-size: 0.85rem;
+      color: var(--gray-400);
+      margin-bottom: 8px;
+      padding-left: 16px;
+      position: relative;
+      line-height: 1.5;
+    }
+    .demo-limitations ul li::before {
+      content: '\2022';
+      position: absolute;
+      left: 0;
+      color: var(--gray-400);
+    }
+    .demo-form-wrap {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 36px 32px;
+    }
+    .demo-form-wrap h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .demo-form-subtext {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+    }
+    .demo-field {
+      margin-bottom: 14px;
+    }
+    .demo-field input {
+      width: 100%;
+      padding: 14px 20px;
+      border-radius: var(--radius);
+      border: 1px solid var(--card-border);
+      background: rgba(255,255,255,0.06);
+      color: var(--white);
+      font-size: 0.95rem;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+    .demo-field input::placeholder {
+      color: var(--gray-400);
+    }
+    .demo-field input:focus {
+      border-color: var(--green);
+    }
+    .demo-submit-btn {
+      width: 100%;
+      justify-content: center;
+      margin-top: 8px;
+      margin-bottom: 16px;
+    }
+    .demo-form-note {
+      font-size: 0.78rem;
+      color: var(--gray-400);
+      line-height: 1.5;
+      text-align: center;
+    }
+    .demo-form-note a {
+      color: var(--green);
+    }
+    .demo-success {
+      text-align: center;
+      padding: 32px 0;
+    }
+    .demo-success .demo-success-icon {
+      font-size: 3rem;
+      margin-bottom: 16px;
+    }
+    .demo-success h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .demo-success p {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 1024px) {
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+      .onprem-grid { grid-template-columns: repeat(2, 1fr); }
+      .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+      .pricing-card.featured { transform: scale(1); }
+      .pricing-card.featured:hover { transform: translateY(-4px); }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        background: rgba(10,22,40,0.98);
+        backdrop-filter: blur(20px);
+        padding: 24px;
+        gap: 20px;
+        border-bottom: 1px solid var(--card-border);
+      }
+      .nav-toggle { display: flex; }
+
+      .features-grid { grid-template-columns: 1fr; }
+      .onprem-grid { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: 1fr; gap: 48px; }
+      .steps::before { display: none; }
+      .pricing-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+      .pricing-card.featured { transform: none; }
+
+      .demo-box { padding: 28px 20px; }
+      .demo-box-content { grid-template-columns: 1fr; gap: 32px; }
+      .demo-form-wrap { padding: 28px 20px; }
+
+      .footer-content { flex-direction: column; text-align: center; }
+      .footer-contact { text-align: center; }
+
+      .hero-ctas { flex-direction: column; align-items: center; }
+      .btn { width: 100%; max-width: 300px; justify-content: center; }
     }
   </style>
 </head>
 <body>
 
-  <!-- ═══ Navigation Bar ═══ -->
-  <nav class="mrai-nav">
-    <div class="mrai-nav-inner">
-      <a href="#" class="mrai-nav-logo">
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="32" height="32" rx="8" fill="url(#logo-grad)"/>
-          <path d="M8 12h4v2H8v-2zm0 4h4v2H8v-2zm0 4h4v2H8v-2z" fill="#0a1628" opacity="0.5"/>
-          <path d="M14 10h10v2H14v-2zm0 4h10v2H14v-2zm0 4h8v2h-8v-2zm0 4h6v2h-6v-2z" fill="#0a1628" opacity="0.7"/>
-          <path d="M20 7l4 4-4 4" stroke="#0a1628" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
-          <defs><linearGradient id="logo-grad" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#00d4aa"/><stop offset="1" stop-color="#00b894"/></linearGradient></defs>
-        </svg>
-        <span>MedRecords</span>&nbsp;AI
+  <!-- ===== Navigation ===== -->
+  <nav id="navbar">
+    <div class="container">
+      <a href="#" class="logo">
+        <span class="logo-dot"></span>
+        MedRecords AI
       </a>
-      <button class="mrai-nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <ul class="mrai-nav-links" id="nav-links">
+      <ul class="nav-links" id="navLinks">
         <li><a href="#features">Features</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#why-onprem">Why On-Premise</a></li>
+        <li><a href="#demo">Demo</a></li>
         <li><a href="#pricing">Pricing</a></li>
         <li><a href="#compare">Compare</a></li>
         <li><a href="#faq">FAQ</a></li>
-        <li><a href="mailto:hello@aiproductivity.dev" class="mrai-nav-cta">Request Demo</a></li>
+        <li><a href="#demo" class="btn btn-primary btn-sm">Try It Free</a></li>
       </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
 
-  <!-- ═══ Main Content ═══ -->
-  <div class="mrai">
-
-    <!-- ═══ Announcement Bar ═══ -->
-    <div class="mrai-announce" style="background:linear-gradient(90deg,#00b894,#00a884);">
-      Coming Soon — <a href="mailto:hello@aiproductivity.dev">Request a Demo</a> to get early access and launch pricing
-    </div>
-
-    <!-- ═══ Hero ═══ -->
-    <div class="mrai-hero">
-      <div class="mrai-hero-badge">AI-Powered Legal Tech</div>
-      <h1>Your Paralegal Reviews 50 Pages a Day.<br><em>Our AI Reviews 500 in Minutes.</em></h1>
-      <p class="mrai-hero-sub">MedRecords AI transforms mountains of medical records into litigation-ready summaries, chronologies, demand packages, and case valuations — so your team can focus on winning.</p>
-      <div class="mrai-hero-ctas">
-        <a href="mailto:hello@aiproductivity.dev" class="mrai-btn-lg mrai-btn-green">Request a Demo</a>
-        <a href="#how" class="mrai-btn-lg mrai-btn-dark">See How It Works</a>
-      </div>
-      <p class="mrai-hero-proof"><strong>Coming Soon</strong> — Request a demo for early access</p>
-    </div>
-
-    <!-- ═══ Stats Bar ═══ -->
-    <div class="mrai-stats-bar">
-      <div class="mrai-stat">
-        <div class="mrai-stat-num">10x</div>
-        <div class="mrai-stat-label">Faster Review</div>
-      </div>
-      <div class="mrai-stat">
-        <div class="mrai-stat-num">500+</div>
-        <div class="mrai-stat-label">Pages Per Run</div>
-      </div>
-      <div class="mrai-stat">
-        <div class="mrai-stat-num">50</div>
-        <div class="mrai-stat-label">State Laws</div>
-      </div>
-      <div class="mrai-stat">
-        <div class="mrai-stat-num">$0</div>
-        <div class="mrai-stat-label">Per Case Cost</div>
-      </div>
-      <div class="mrai-stat">
-        <div class="mrai-stat-num">100%</div>
-        <div class="mrai-stat-label">On-Premise Option</div>
+  <!-- ===== Hero Section ===== -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="logo-dot" style="width:7px;height:7px"></span>
+          Now in production &mdash; Version 2.0
+        </div>
+        <h1>AI-Powered Medical Record Intelligence for <span>Trial Lawyers</span></h1>
+        <p class="subtitle">Process, summarize, and analyze medical records in minutes &mdash; not hours. Built by litigators, for litigators.</p>
+        <div class="hero-ctas">
+          <a href="#demo" class="btn btn-primary">Try MedRecords AI Free &darr;</a>
+          <a href="#pricing" class="btn btn-outline">View Pricing</a>
+        </div>
+        <div class="trust-badges">
+          <span><span class="icon">&#128274;</span> HIPAA Compliant</span>
+          <span><span class="icon">&#9989;</span> SOC 2 Ready</span>
+          <span><span class="icon">&#128272;</span> 256-bit Encryption</span>
+        </div>
       </div>
     </div>
+  </section>
 
-    <!-- ═══ Problem / Solution ═══ -->
-    <section>
-      <div class="mrai-problem">
-        <h2>The <em>Expensive</em> Problem with Medical Record Review</h2>
-        <div class="mrai-ps-grid">
-          <div class="mrai-ps-col problem">
-            <h3>Without MedRecords AI</h3>
-            <div class="mrai-ps-item"><span class="icon">&#10060;</span> Paralegals spend 8-12 hours reviewing a single case</div>
-            <div class="mrai-ps-item"><span class="icon">&#10060;</span> Critical findings buried in hundreds of pages</div>
-            <div class="mrai-ps-item"><span class="icon">&#10060;</span> Treatment gaps discovered during deposition — too late</div>
-            <div class="mrai-ps-item"><span class="icon">&#10060;</span> Demand letters take days to draft per state</div>
-            <div class="mrai-ps-item"><span class="icon">&#10060;</span> Per-case SaaS fees of $350-$1,200 add up fast</div>
-            <div class="mrai-ps-item"><span class="icon">&#10060;</span> Sensitive client data sent to third-party clouds</div>
-          </div>
-          <div class="mrai-ps-col solution">
-            <h3>With MedRecords AI</h3>
-            <div class="mrai-ps-item"><span class="icon">&#9989;</span> AI processes 500+ pages in under 15 minutes</div>
-            <div class="mrai-ps-item"><span class="icon">&#9989;</span> Smoking guns and key findings surfaced automatically</div>
-            <div class="mrai-ps-item"><span class="icon">&#9989;</span> Gaps flagged with severity ratings before they're exploited</div>
-            <div class="mrai-ps-item"><span class="icon">&#9989;</span> State-specific demand packages generated in seconds</div>
-            <div class="mrai-ps-item"><span class="icon">&#9989;</span> One-time payment — unlimited cases, zero per-case fees</div>
-            <div class="mrai-ps-item"><span class="icon">&#9989;</span> Runs on YOUR machine — data never leaves your office</div>
-          </div>
-        </div>
+  <!-- ===== Social Proof Bar ===== -->
+  <section class="social-proof">
+    <div class="container">
+      <p>Trusted by personal injury firms processing 10,000+ records</p>
+      <div class="logo-bar">
+        <div class="logo-placeholder">Law Firm A</div>
+        <div class="logo-placeholder">Law Firm B</div>
+        <div class="logo-placeholder">Law Firm C</div>
+        <div class="logo-placeholder">Law Firm D</div>
+        <div class="logo-placeholder">Law Firm E</div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ═══ How It Works ═══ -->
-    <section class="mrai-how" id="how">
-      <h2>How It Works</h2>
-      <p>From upload to litigation-ready output in four steps.</p>
-      <div class="mrai-steps">
-        <div class="mrai-step">
-          <div class="mrai-step-num">1</div>
-          <h3>Upload Records</h3>
-          <p>Drag and drop PDFs, images, or Excel files. Multi-file cases are automatically combined.</p>
-        </div>
-        <div class="mrai-step">
-          <div class="mrai-step-num">2</div>
-          <h3>AI Analyzes</h3>
-          <p>Our multi-stage pipeline extracts, de-identifies, summarizes, and cross-references everything.</p>
-        </div>
-        <div class="mrai-step">
-          <div class="mrai-step-num">3</div>
-          <h3>Review Results</h3>
-          <p>Interactive timeline, alerts, billing data, and source-linked citations — all in one dashboard.</p>
-        </div>
-        <div class="mrai-step">
-          <div class="mrai-step-num">4</div>
-          <h3>Generate Output</h3>
-          <p>One click for demand letters, case valuations, task lists, and injury visualizations.</p>
-        </div>
+  <!-- ===== Features Grid ===== -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-title animate-on-scroll">
+        <div class="label">Features</div>
+        <h2>Everything You Need to Win Cases Faster</h2>
+        <p>From upload to demand letter, MedRecords AI automates the most time-consuming parts of medical record review.</p>
       </div>
-    </section>
-
-    <!-- ═══ Features ═══ -->
-    <section class="mrai-features" id="features">
-      <h2>Everything Your Firm Needs</h2>
-      <p>Core features included in every license. Pro features unlock the complete litigation toolkit.</p>
-      <div class="mrai-feat-grid">
-        <div class="mrai-feat-card">
-          <div class="mrai-feat-icon">&#128203;</div>
+      <div class="features-grid">
+        <div class="feature-card animate-on-scroll">
+          <div class="feature-icon">&#128196;</div>
           <h3>AI Medical Summarization</h3>
-          <p>Three modes — Fast, Auto, Thorough — produce structured summaries with diagnoses, medications, and key findings.</p>
+          <p>Choose Fast, Auto, or Thorough processing modes. Get structured summaries with provider details, diagnoses, and treatments in minutes.</p>
         </div>
-        <div class="mrai-feat-card">
-          <div class="mrai-feat-icon">&#128197;</div>
-          <h3>Master Chronology</h3>
-          <p>Auto-generated timeline of every treatment event, cross-referenced across multiple providers and record sources.</p>
+        <div class="feature-card animate-on-scroll">
+          <div class="feature-icon">&#128337;</div>
+          <h3>Interactive Timeline &amp; Chronology</h3>
+          <p>Automatically generate a visual timeline of all treatments, visits, and procedures. Filter, search, and export for trial preparation.</p>
         </div>
-        <div class="mrai-feat-card">
-          <div class="mrai-feat-icon">&#128269;</div>
-          <h3>Treatment Gap Detection</h3>
-          <p>Identifies gaps opposing counsel will exploit. Flags compliance issues and missed appointments before deposition.</p>
+        <div class="feature-card animate-on-scroll">
+          <div class="feature-icon">&#128269;</div>
+          <h3>Smoking Gun Detection</h3>
+          <p>AI identifies key findings, critical statements, and potential smoking guns buried deep in medical records with severity ratings.</p>
         </div>
-        <div class="mrai-feat-card">
-          <div class="mrai-feat-icon">&#128279;</div>
+        <div class="feature-card animate-on-scroll">
+          <div class="feature-icon">&#128279;</div>
           <h3>Source Page Linking</h3>
-          <p>Every finding links back to the exact page. Click any citation to verify in the built-in PDF viewer.</p>
+          <p>Click any finding, summary point, or alert and instantly see the original source page. Every insight is traceable and verifiable.</p>
         </div>
-        <div class="mrai-feat-card">
-          <div class="mrai-feat-icon">&#9888;&#65039;</div>
-          <h3>Agentic Alerts</h3>
-          <p>AI-powered alerts flag pre-existing conditions, red flags, smoking guns, and critical findings with severity ratings.</p>
+        <div class="feature-card animate-on-scroll">
+          <div class="feature-icon">&#9888;&#65039;</div>
+          <h3>Treatment Gap &amp; Alert Detection</h3>
+          <p>Automatically detect gaps in treatment, non-compliance flags, and pre-existing conditions. AI-generated alerts with severity levels.</p>
         </div>
-        <div class="mrai-feat-card">
-          <div class="mrai-feat-icon">&#128176;</div>
-          <h3>Billing Extraction</h3>
-          <p>Extracts and organizes billing data by provider — totals, CPT codes, and future care estimates ready for demand packages.</p>
-        </div>
-        <div class="mrai-feat-card">
-          <div class="mrai-feat-icon">&#128220;</div>
-          <h3>Demand Package Generator <span class="mrai-pro-badge">PRO</span></h3>
-          <p>State-specific demand letters (DOCX), itemized billing (XLSX), and exhibit lists customized to all 50 states' laws.</p>
-        </div>
-        <div class="mrai-feat-card">
-          <div class="mrai-feat-icon">&#128200;</div>
-          <h3>Predictive Case Valuation <span class="mrai-pro-badge">PRO</span></h3>
-          <p>AI-powered valuation using treatment data, jurisdiction multipliers, and severity factors with confidence ranges.</p>
-        </div>
-        <div class="mrai-feat-card">
-          <div class="mrai-feat-icon">&#9879;&#65039;</div>
-          <h3>Negligence Detection <span class="mrai-pro-badge">PRO</span></h3>
-          <p>Scans for standard-of-care deviations, delayed diagnoses, missed follow-ups, and documentation failures.</p>
-        </div>
-        <div class="mrai-feat-card">
-          <div class="mrai-feat-icon">&#9745;&#65039;</div>
-          <h3>Auto-Task Generation <span class="mrai-pro-badge">PRO</span></h3>
-          <p>Generates prioritized task lists — depositions to schedule, records to request, experts to consult.</p>
-        </div>
-        <div class="mrai-feat-card">
-          <div class="mrai-feat-icon">&#129492;&#8205;&#9877;&#65039;</div>
-          <h3>Injury Body Map <span class="mrai-pro-badge">PRO</span></h3>
-          <p>Visual SVG diagram highlighting injury locations. Embeddable in demand packages and client presentations.</p>
-        </div>
-        <div class="mrai-feat-card">
-          <div class="mrai-feat-icon">&#128172;</div>
-          <h3>AI Chat Over Records</h3>
-          <p>Ask questions about your case in natural language. "What medications was the plaintiff on at the time of the accident?"</p>
+        <div class="feature-card animate-on-scroll">
+          <div class="feature-icon">&#128176;</div>
+          <h3>Billing Extraction &amp; Analysis</h3>
+          <p>Extract all medical billing data, identify patterns, flag inconsistencies, and prepare billing summaries for demand packages.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ═══ ROI Calculator ═══ -->
-    <section>
-      <div class="mrai-roi" id="roi">
-        <h2>Calculate Your Savings</h2>
-        <p>See how much your firm saves compared to per-case pricing services.</p>
-        <div class="mrai-roi-grid">
-          <div class="mrai-roi-inputs">
-            <label>Cases Per Year</label>
-            <div class="mrai-roi-val" id="roi-cases-val">50</div>
-            <input type="range" id="roi-cases" min="10" max="500" value="50" step="10">
-            <label>Average Per-Case Cost (Current Service)</label>
-            <div class="mrai-roi-val" id="roi-cost-val">$750</div>
-            <input type="range" id="roi-cost" min="200" max="1500" value="750" step="50">
-            <label>Hours Saved Per Case</label>
-            <div class="mrai-roi-val" id="roi-hours-val">6</div>
-            <input type="range" id="roi-hours" min="2" max="12" value="6" step="1">
-          </div>
-          <div class="mrai-roi-result">
-            <h3>Your Annual Savings</h3>
-            <div class="mrai-roi-savings" id="roi-savings">$33,503</div>
-            <div class="mrai-roi-detail">
-              That's <strong id="roi-percent">89%</strong> less than per-case pricing
+  <!-- ===== How It Works ===== -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="container">
+      <div class="section-title animate-on-scroll">
+        <div class="label">How It Works</div>
+        <h2>Three Steps to Case Intelligence</h2>
+        <p>From raw records to actionable insights in minutes.</p>
+      </div>
+      <div class="steps">
+        <div class="step animate-on-scroll">
+          <div class="step-number">1</div>
+          <div class="step-icon">&#128228;</div>
+          <h3>Upload Records</h3>
+          <p>Drag and drop PDFs, scanned images, or text files. Supports bulk uploads with automatic OCR processing.</p>
+        </div>
+        <div class="step animate-on-scroll">
+          <div class="step-number">2</div>
+          <div class="step-icon">&#129504;</div>
+          <h3>AI Processes &amp; Analyzes</h3>
+          <p>Our AI engine extracts, structures, and analyzes every page &mdash; identifying key findings, gaps, and billing data.</p>
+        </div>
+        <div class="step animate-on-scroll">
+          <div class="step-number">3</div>
+          <div class="step-icon">&#128640;</div>
+          <h3>Review &amp; Generate Demand</h3>
+          <p>Review AI insights, generate demand packages (DOCX &amp; XLSX), and export everything you need for litigation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Why On-Premise ===== -->
+  <section class="why-onprem" id="why-onprem">
+    <div class="container">
+      <div class="section-title animate-on-scroll">
+        <div class="label">Architecture</div>
+        <h2>Your Records. Your Machine. Your Rules.</h2>
+        <p>Unlike cloud-only platforms that require uploading sensitive medical records to third-party servers, MedRecords AI runs entirely on your hardware. Choose cloud AI for speed or local AI for air-gapped privacy.</p>
+      </div>
+      <div class="onprem-grid animate-on-scroll">
+        <div class="onprem-card">
+          <div class="onprem-icon" style="background: rgba(239,68,68,0.1);">&#128274;</div>
+          <h3>More Secure</h3>
+          <p>Medical records never leave your network. No shared cloud infrastructure, no multi-tenant databases, no third-party data exposure. Run fully air-gapped with local AI models for maximum confidentiality.</p>
+          <div class="stat">0</div>
+          <div class="stat-label">Records uploaded to external servers</div>
+        </div>
+        <div class="onprem-card">
+          <div class="onprem-icon" style="background: rgba(0,212,170,0.1);">&#128176;</div>
+          <h3>Dramatically Cheaper</h3>
+          <p>One-time perpetual license with unlimited cases. No per-case fees, no monthly subscriptions, no page-count limits. Firms processing 100 cases/year save $40,000&ndash;$110,000 annually vs. cloud competitors.</p>
+          <div class="stat">90%</div>
+          <div class="stat-label">Lower 5-year TCO vs. SaaS alternatives</div>
+        </div>
+        <div class="onprem-card">
+          <div class="onprem-icon" style="background: rgba(99,102,241,0.1);">&#9881;&#65039;</div>
+          <h3>Fully Personalized</h3>
+          <p>Choose your AI backend, processing depth, and model. Configure state-specific legal frameworks. Organize cases your way. No vendor-imposed workflows &mdash; the software adapts to your practice, not the other way around.</p>
+          <div class="stat">100%</div>
+          <div class="stat-label">Control over your data and workflow</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Demo Download ===== -->
+  <section class="demo-section" id="demo">
+    <div class="container">
+      <div class="section-title animate-on-scroll">
+        <div class="label">Demo</div>
+        <h2>Try MedRecords AI Free</h2>
+        <p>Download the full desktop app and process up to 3 cases with your own records. No credit card. No sales call. Installs in 2 minutes.</p>
+      </div>
+      <div class="demo-box animate-on-scroll">
+        <div class="demo-box-content">
+          <!-- Left Column: What's Included -->
+          <div class="demo-info">
+            <h3>What's Included</h3>
+            <ul class="demo-features-list">
+              <li><span class="check">&#10003;</span> AI Medical Summarization (all 3 modes)</li>
+              <li><span class="check">&#10003;</span> Interactive Timeline &amp; Chronology</li>
+              <li><span class="check">&#10003;</span> Treatment Gap Detection &amp; Alerts</li>
+              <li><span class="check">&#10003;</span> Source Page Linking</li>
+              <li><span class="check">&#10003;</span> AI Chat over Records</li>
+              <li><span class="check">&#10003;</span> Sample case data included</li>
+            </ul>
+            <div class="demo-limitations">
+              <h4>Demo Limitations</h4>
+              <ul>
+                <li>14-day trial period</li>
+                <li>3 case limit</li>
+                <li>Core features only (no demand packages, case valuation, or negligence detection)</li>
+                <li>Watermarked output</li>
+              </ul>
             </div>
-            <div class="mrai-roi-vs">
-              <div>
-                <div class="label">They charge</div>
-                <div class="amt them" id="roi-them">$37,500</div>
+          </div>
+          <!-- Right Column: Download Form -->
+          <div class="demo-form-wrap">
+            <form id="demoForm" onsubmit="handleDemoDownload(event)">
+              <h3>Get Instant Access</h3>
+              <p class="demo-form-subtext">Enter your details and the download starts immediately.</p>
+              <div class="demo-field">
+                <input type="text" id="demoName" placeholder="Full name" required>
               </div>
-              <div>
-                <div class="label">You pay</div>
-                <div class="amt us" id="roi-us">$3,997</div>
+              <div class="demo-field">
+                <input type="email" id="demoEmail" placeholder="Work email" required>
               </div>
-            </div>
-            <div style="margin-top:20px;">
-              <a href="mailto:hello@aiproductivity.dev?subject=Demo%20Request" class="mrai-btn-lg mrai-btn-green" style="display:inline-flex;">Request a Demo</a>
-            </div>
+              <div class="demo-field">
+                <input type="text" id="demoFirm" placeholder="Law firm name (optional)">
+              </div>
+              <button type="submit" class="btn btn-primary demo-submit-btn">Try MedRecords AI Free &rarr;</button>
+              <p class="demo-form-note">No credit card required. 3 cases included. By downloading, you agree to our <a href="#">License Agreement</a>.</p>
+            </form>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ═══ Social Proof ═══ -->
-    <section>
-      <div class="mrai-social" id="testimonials">
-        <h2>What Attorneys Are Saying</h2>
-        <div class="mrai-testimonials">
-          <div class="mrai-testimonial">
-            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <blockquote>"We were spending $800-1,200 per case on record review. MedRecords AI paid for itself in the first week. The demand letter generator alone is worth the Pro price."</blockquote>
-            <cite>
-              <strong>Managing Partner</strong>
-              Personal Injury Firm, FL
-            </cite>
-          </div>
-          <div class="mrai-testimonial">
-            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <blockquote>"The treatment gap detection caught something we missed on a $2M case. It flagged a 4-month gap that opposing counsel was planning to use. That feature alone changed the outcome."</blockquote>
-            <cite>
-              <strong>Senior Associate</strong>
-              Trial Litigation Firm, TX
-            </cite>
-          </div>
-          <div class="mrai-testimonial">
-            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <blockquote>"My paralegal used to spend two full days on medical records for each case. Now she uploads the files and has a complete summary with chronology in 15 minutes. It's not even close."</blockquote>
-            <cite>
-              <strong>Solo Practitioner</strong>
-              PI Practice, CA
-            </cite>
-          </div>
-        </div>
+  <!-- ===== Pricing ===== -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <div class="section-title animate-on-scroll">
+        <div class="label">Pricing</div>
+        <h2>Pay Once. Process Unlimited Cases. Forever.</h2>
+        <p>No per-case fees. No monthly subscriptions. No page-count limits.</p>
       </div>
-    </section>
-
-    <!-- ═══ Pricing ═══ -->
-    <section class="mrai-pricing" id="pricing">
-      <h2>Simple, One-Time Pricing</h2>
-      <p>No per-case fees. No monthly subscriptions. Pay once, own it forever.</p>
-      <div class="mrai-price-cards">
+      <div class="pricing-grid">
+        <!-- Free Trial -->
+        <div class="pricing-card animate-on-scroll">
+          <div class="tier">Free Trial</div>
+          <div class="price">$0</div>
+          <div class="price-note">3 cases free &bull; No credit card required</div>
+          <div class="divider"></div>
+          <ul>
+            <li><span class="check">&#10003;</span> AI Medical Summarization</li>
+            <li><span class="check">&#10003;</span> Interactive Timeline</li>
+            <li><span class="check">&#10003;</span> Treatment Gap Detection</li>
+            <li><span class="check">&#10003;</span> Source Page Linking</li>
+            <li><span class="check">&#10003;</span> AI Chat over Records</li>
+            <li><span class="check">&#10003;</span> Up to 3 cases</li>
+          </ul>
+          <a href="#demo" class="btn btn-outline">Try MedRecords AI Free</a>
+        </div>
 
         <!-- Core -->
-        <div class="mrai-price-card">
-          <div class="mrai-price-badge sale" style="background:linear-gradient(135deg,#3b82f6,#2563eb);">Coming Soon</div>
-          <div class="mrai-tier-name">Core License</div>
-          <div class="mrai-price-amount"><span class="mrai-price-original">$4,950</span>$3,997</div>
-          <div class="mrai-price-note sale-note">Early access pricing — limited availability</div>
-          <div class="mrai-price-note">One-time payment &bull; Unlimited cases</div>
+        <div class="pricing-card animate-on-scroll">
+          <div class="tier">Core License</div>
+          <div class="price"><span style="text-decoration:line-through;color:#999;font-size:0.6em;vertical-align:middle;">$4,950</span> $3,997</div>
+          <div class="price-note" style="color:#e74c3c;font-weight:600;">Launch Sale — Save $953 &bull; Ends May 27, 2026</div>
+          <div class="price-note">One-time payment &bull; Unlimited cases</div>
+          <div class="divider"></div>
           <ul>
-            <li>AI Summarization (Fast / Auto / Thorough)</li>
-            <li>Interactive Timeline &amp; Master Chronology</li>
-            <li>Treatment Gap Detection</li>
-            <li>Source Page Linking with PDF Viewer</li>
-            <li>Agentic Alerts &amp; Severity Ratings</li>
-            <li>Medical Billing Extraction</li>
-            <li>AI Chat Over Your Records</li>
-            <li>HIPAA-Compliant Audit Trail</li>
-            <li>Local AI (Ollama) or Cloud (Claude)</li>
+            <li><span class="check">&#10003;</span> AI Summarization (Fast / Auto / Thorough)</li>
+            <li><span class="check">&#10003;</span> Interactive Timeline &amp; Chronology</li>
+            <li><span class="check">&#10003;</span> Treatment Gap Detection</li>
+            <li><span class="check">&#10003;</span> Source Page Linking</li>
+            <li><span class="check">&#10003;</span> Agentic Alerts &amp; Severity Ratings</li>
+            <li><span class="check">&#10003;</span> Medical Billing Extraction</li>
+            <li><span class="check">&#10003;</span> AI Chat over Records</li>
+            <li><span class="check">&#10003;</span> HIPAA-compliant Audit Trail</li>
+            <li><span class="check">&#10003;</span> Local AI (Ollama) or Cloud (Claude)</li>
           </ul>
-          <a href="mailto:hello@aiproductivity.dev?subject=Core%20License%20Demo%20Request" class="mrai-btn-block mrai-btn-outline">Request Demo</a>
+          <a href="https://buy.stripe.com/test_dRm5kwbUm1UB45xc2O5wI00" target="_blank" class="btn btn-outline">Get Core License</a>
         </div>
 
         <!-- Pro -->
-        <div class="mrai-price-card featured">
-          <div class="mrai-price-badge popular">Coming Soon</div>
-          <div class="mrai-tier-name">Pro License</div>
-          <div class="mrai-price-amount">$7,997</div>
-          <div class="mrai-price-note">One-time payment &bull; Unlimited cases</div>
+        <div class="pricing-card featured animate-on-scroll">
+          <div class="popular-badge">Most Popular</div>
+          <div class="tier">Pro License</div>
+          <div class="price">$7,997</div>
+          <div class="price-note">One-time payment &bull; Unlimited cases</div>
+          <div class="divider"></div>
           <ul>
-            <li><strong>Everything in Core, plus:</strong></li>
-            <li>Demand Package Generator (all 50 states)</li>
-            <li>Predictive Case Valuation Engine</li>
-            <li>Negligence &amp; Standard of Care Detection</li>
-            <li>Auto-Task Generation for Paralegals</li>
-            <li>AI Injury Body Map Visualization</li>
-            <li>Smoking Gun Detection</li>
-            <li>Priority Support</li>
+            <li><span class="check">&#10003;</span> Everything in Core, plus:</li>
+            <li><span class="check">&#10003;</span> Demand Package Generator (DOCX + XLSX)</li>
+            <li><span class="check">&#10003;</span> Case Valuation Engine</li>
+            <li><span class="check">&#10003;</span> Negligence &amp; Standard of Care Detection</li>
+            <li><span class="check">&#10003;</span> Auto-Task Generation for Paralegals</li>
+            <li><span class="check">&#10003;</span> AI Injury Body Map Visualization</li>
+            <li><span class="check">&#10003;</span> Smoking Gun Detection</li>
+            <li><span class="check">&#10003;</span> Priority Support</li>
           </ul>
-          <a href="mailto:hello@aiproductivity.dev?subject=Pro%20License%20Demo%20Request" class="mrai-btn-block mrai-btn-primary">Request Demo</a>
+          <a href="https://buy.stripe.com/test_00waEQcYq9n39pRc2O5wI01" target="_blank" class="btn btn-primary">Get Pro License</a>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ═══ Comparison ═══ -->
-    <section class="mrai-compare" id="compare">
-      <h2>See How We Stack Up</h2>
-      <p>Compare the true cost of medical record review across platforms.</p>
-      <table class="mrai-comp-table">
-        <thead>
-          <tr>
-            <th style="border-radius:12px 0 0 0;">Feature</th>
-            <th class="hl">MedRecords AI</th>
-            <th>EvenUp</th>
-            <th>DigitalOwl</th>
-            <th style="border-radius:0 12px 0 0;">Anytime AI</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Pricing Model</td>
-            <td class="hl"><span class="mrai-green">One-time <s>$4,950</s> $3,997+</span></td>
-            <td><span class="mrai-red">$350–$1,200/case</span></td>
-            <td><span class="mrai-red">$0.15–$0.45/page</span></td>
-            <td><span class="mrai-red">$400–$800/user/mo</span></td>
-          </tr>
-          <tr>
-            <td>Annual Cost (100 Cases)</td>
-            <td class="hl"><span class="mrai-green"><s>$4,950</s> $3,997 once</span></td>
-            <td><span class="mrai-red">$35,000 – $120,000</span></td>
-            <td><span class="mrai-red">$2,000 – $4,500</span></td>
-            <td><span class="mrai-red">$14,400 – $28,800</span></td>
-          </tr>
-          <tr>
-            <td>Year 2+ Cost</td>
-            <td class="hl"><span class="mrai-green">$0 (you own it)</span></td>
-            <td><span class="mrai-red">$35,000 – $120,000</span></td>
-            <td><span class="mrai-red">$2,000 – $4,500</span></td>
-            <td><span class="mrai-red">$14,400 – $28,800</span></td>
-          </tr>
-          <tr>
-            <td>Unlimited Cases</td>
-            <td class="hl"><span class="mrai-green">&#10003; Included</span></td>
-            <td><span class="mrai-red">&#10007; Per-case fee</span></td>
-            <td><span class="mrai-red">&#10007; Per-page fee</span></td>
-            <td><span class="mrai-red">&#10007; Per-user/month</span></td>
-          </tr>
-          <tr>
-            <td>Demand Letters</td>
-            <td class="hl"><span class="mrai-green">&#10003; 50 States (Pro)</span></td>
-            <td>&#10003;</td>
-            <td><span class="mrai-red">&#10007;</span></td>
-            <td>Partial</td>
-          </tr>
-          <tr>
-            <td>Source Page Linking</td>
-            <td class="hl"><span class="mrai-green">&#10003; Built-in Viewer</span></td>
-            <td>Limited</td>
-            <td>&#10003;</td>
-            <td><span class="mrai-red">&#10007;</span></td>
-          </tr>
-          <tr>
-            <td>Data Privacy</td>
-            <td class="hl"><span class="mrai-green">&#10003; On-premise option</span></td>
-            <td>Cloud only</td>
-            <td>Cloud only</td>
-            <td>Cloud only</td>
-          </tr>
-          <tr>
-            <td>Local AI</td>
-            <td class="hl"><span class="mrai-green">&#10003; Ollama + Claude</span></td>
-            <td><span class="mrai-red">&#10007;</span></td>
-            <td><span class="mrai-red">&#10007;</span></td>
-            <td><span class="mrai-red">&#10007;</span></td>
-          </tr>
-          <tr>
-            <td>Case Valuation</td>
-            <td class="hl"><span class="mrai-green">&#10003; AI-Powered (Pro)</span></td>
-            <td>&#10003;</td>
-            <td><span class="mrai-red">&#10007;</span></td>
-            <td><span class="mrai-red">&#10007;</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
+  <!-- ===== Comparison ===== -->
+  <section class="comparison" id="compare">
+    <div class="container">
+      <div class="section-title animate-on-scroll">
+        <div class="label">Comparison</div>
+        <h2>Why MedRecords AI?</h2>
+        <p>See how we compare to the alternatives your firm may be evaluating.</p>
+      </div>
+      <div class="comparison-table-wrap animate-on-scroll">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th class="highlight">MedRecords AI</th>
+              <th>EvenUp</th>
+              <th>DigitalOwl</th>
+              <th>Anytime AI</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Pricing Model</td>
+              <td class="highlight"><span class="tag-green">One-time <s>$4,950</s> $3,997+</span></td>
+              <td><span class="tag-red">$350-$1,200/case</span></td>
+              <td><span class="tag-red">$0.15-$0.45/page</span></td>
+              <td><span class="tag-red">$400-$800/user/mo</span></td>
+            </tr>
+            <tr>
+              <td>Cost for 50 Cases/Year</td>
+              <td class="highlight"><span class="tag-green"><s>$4,950</s> $3,997 total</span></td>
+              <td>$17,500 &ndash; $60,000</td>
+              <td>$7,500 &ndash; $22,500</td>
+              <td>$4,800 &ndash; $9,600</td>
+            </tr>
+            <tr>
+              <td>Unlimited Cases</td>
+              <td class="highlight">&#10003; Included</td>
+              <td>&#10007; Per-case</td>
+              <td>&#10007; Per-page</td>
+              <td>&#10007; Per-user/month</td>
+            </tr>
+            <tr>
+              <td>Medical Summarization</td>
+              <td class="highlight">&#10003; 3 modes</td>
+              <td>&#10003;</td>
+              <td>&#10003;</td>
+              <td>&#10003;</td>
+            </tr>
+            <tr>
+              <td>Demand Package Generator</td>
+              <td class="highlight">&#10003; Pro</td>
+              <td>&#10003;</td>
+              <td>&#10007;</td>
+              <td>Partial</td>
+            </tr>
+            <tr>
+              <td>Source Page Linking</td>
+              <td class="highlight">&#10003;</td>
+              <td>Limited</td>
+              <td>&#10003;</td>
+              <td>&#10007;</td>
+            </tr>
+            <tr>
+              <td>Local AI Option</td>
+              <td class="highlight">&#10003; Ollama</td>
+              <td>&#10007; Cloud only</td>
+              <td>&#10007; Cloud only</td>
+              <td>&#10007; Cloud only</td>
+            </tr>
+            <tr>
+              <td>Data Privacy</td>
+              <td class="highlight">&#10003; On-premise option</td>
+              <td>Cloud only</td>
+              <td>Cloud only</td>
+              <td>Cloud only</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
 
-    <!-- ═══ FAQ ═══ -->
-    <section class="mrai-faq" id="faq">
-      <h2>Frequently Asked Questions</h2>
-      <div class="mrai-faq-list">
-        <div class="mrai-faq-item">
-          <button class="mrai-faq-q">How fast does it process records? <span class="arrow">&#9660;</span></button>
-          <div class="mrai-faq-a"><div class="mrai-faq-a-inner">Fast mode processes 100-500 pages in 2-5 minutes. Auto mode takes 5-15 minutes for deeper analysis. Thorough mode performs multi-pass analysis in 15-30 minutes. All processing happens in the background.</div></div>
+  <!-- ===== FAQ ===== -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="section-title animate-on-scroll">
+        <div class="label">FAQ</div>
+        <h2>Frequently Asked Questions</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item animate-on-scroll">
+          <button class="faq-question">
+            How long does it take to process records?
+            <span class="arrow">&#9660;</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Processing time depends on the mode you select and the volume of records. <strong>Fast mode</strong> can process a typical case (100&ndash;500 pages) in 2&ndash;5 minutes. <strong>Auto mode</strong> balances speed and thoroughness at 5&ndash;15 minutes. <strong>Thorough mode</strong> performs a deep, multi-pass analysis in 15&ndash;30 minutes. All processing happens in the background so you can continue working on other cases.
+            </div>
+          </div>
         </div>
-        <div class="mrai-faq-item">
-          <button class="mrai-faq-q">Is my data secure? <span class="arrow">&#9660;</span></button>
-          <div class="mrai-faq-a"><div class="mrai-faq-a-inner">Yes. MedRecords AI runs entirely on your local machine. With the Ollama option, your data never leaves your office. The audit trail uses HMAC-SHA256 signing to ensure tamper-proof records. No client data is stored on our servers — ever.</div></div>
+        <div class="faq-item animate-on-scroll">
+          <button class="faq-question">
+            Is my data secure?
+            <span class="arrow">&#9660;</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Absolutely. MedRecords AI is built with security at its core. All data is encrypted at rest (AES-256) and in transit (TLS 1.3). We maintain a full HIPAA-compliant audit trail of every action. You can also run the entire system locally using Ollama-compatible AI models, meaning your data never leaves your network. No client data is used for model training.
+            </div>
+          </div>
         </div>
-        <div class="mrai-faq-item">
-          <button class="mrai-faq-q">What's the difference between Core and Pro? <span class="arrow">&#9660;</span></button>
-          <div class="mrai-faq-a"><div class="mrai-faq-a-inner">Core gives you everything you need for medical record review: AI summarization, chronologies, gap detection, alerts, billing extraction, and source linking. Pro adds litigation output tools: demand package generation for all 50 states, predictive case valuation, negligence detection, auto-task generation, and injury body maps.</div></div>
+        <div class="faq-item animate-on-scroll">
+          <button class="faq-question">
+            Can I use my own AI models?
+            <span class="arrow">&#9660;</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Yes. MedRecords AI supports both cloud-based AI (Claude API by Anthropic) and local AI models via Ollama. You can run models like Llama, Mistral, or other compatible models entirely on your own hardware. This gives you full control over data privacy and eliminates any dependency on external APIs.
+            </div>
+          </div>
         </div>
-        <div class="mrai-faq-item">
-          <button class="mrai-faq-q">Do I need technical skills to use this? <span class="arrow">&#9660;</span></button>
-          <div class="mrai-faq-a"><div class="mrai-faq-a-inner">No. The one-click installer handles everything. Upload records through the web dashboard, and results appear automatically. If you can use a web browser, you can use MedRecords AI.</div></div>
+        <div class="faq-item animate-on-scroll">
+          <button class="faq-question">
+            What file formats are supported?
+            <span class="arrow">&#9660;</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              MedRecords AI supports PDF files (native and scanned), TIFF, PNG, JPG, and other common image formats with built-in OCR. You can also upload plain text and DOCX files. Bulk upload is supported &mdash; simply drag and drop an entire folder of records and the system will process them automatically.
+            </div>
+          </div>
         </div>
-        <div class="mrai-faq-item">
-          <button class="mrai-faq-q">What file formats are supported? <span class="arrow">&#9660;</span></button>
-          <div class="mrai-faq-a"><div class="mrai-faq-a-inner">PDF, TIFF, PNG, JPG, and Excel files. Multi-file cases are automatically detected and combined. OCR is built-in for scanned documents and images.</div></div>
-        </div>
-        <div class="mrai-faq-item">
-          <button class="mrai-faq-q">Is the license really perpetual? <span class="arrow">&#9660;</span></button>
-          <div class="mrai-faq-a"><div class="mrai-faq-a-inner">Yes. One payment, own it forever, unlimited cases. No expiration, no renewal fees. Future updates are included. The only ongoing cost is your Anthropic API key if you choose Claude over the free local Ollama option.</div></div>
-        </div>
-        <div class="mrai-faq-item">
-          <button class="mrai-faq-q">Can I try it before buying? <span class="arrow">&#9660;</span></button>
-          <div class="mrai-faq-a"><div class="mrai-faq-a-inner">Yes. The free trial includes 3 full case analyses with all Core features unlocked. No credit card required. Download and try it risk-free.</div></div>
+        <div class="faq-item animate-on-scroll">
+          <button class="faq-question">
+            Do I need an internet connection?
+            <span class="arrow">&#9660;</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              It depends on your configuration. If you use local AI models via Ollama, MedRecords AI can operate fully offline &mdash; no internet required. If you choose to use the Claude API for cloud-based processing, you will need an internet connection for the AI analysis step. The application interface itself runs locally in your browser.
+            </div>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ═══ Final CTA ═══ -->
-    <section>
-      <div class="mrai-final-cta">
-        <h2>Ready to See It in Action?</h2>
-        <p>Request a personalized demo and see how MedRecords AI can transform your medical record review workflow.</p>
-        <div class="mrai-final-buttons">
-          <a href="mailto:hello@aiproductivity.dev?subject=Demo%20Request%20-%20MedRecords%20AI" class="mrai-btn-lg mrai-btn-green">Request a Demo</a>
+  <!-- ===== CTA Section ===== -->
+  <section class="cta-section" id="cta">
+    <div class="container">
+      <div class="cta-box animate-on-scroll">
+        <h2>Ready to Transform Your Practice?</h2>
+        <p>Process your first medical record in minutes. 3 cases free, no credit card required.</p>
+        <form class="cta-form" onsubmit="handleCtaDownload(event)">
+          <input type="text" id="ctaName" placeholder="Your name" required aria-label="Full name" style="border-radius:var(--radius);padding:14px 20px;border:1px solid var(--card-border);background:rgba(255,255,255,0.06);color:var(--white);font-size:1rem;">
+          <input type="email" id="ctaEmail" placeholder="Work email" required aria-label="Email address">
+          <button class="btn btn-primary" type="submit">Try MedRecords AI Free &rarr;</button>
+        </form>
+        <p class="cta-note">Instant download. 2-minute install. 3 cases included. No strings attached.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-left">
+          <div class="logo">
+            <span class="logo-dot"></span>
+            MedRecords AI
+          </div>
+          <p>&copy; 2026 MedRecords AI. All rights reserved.</p>
         </div>
-        <div class="mrai-trust-row">
-          <span class="mrai-trust-item">&#9989; Perpetual License</span>
-          <span class="mrai-trust-item">&#128187; Runs On Your Machine</span>
-          <span class="mrai-trust-item">&#9878;&#65039; HIPAA-Ready Audit Trail</span>
-          <span class="mrai-trust-item">&#127760; No Data Leaves Your Office</span>
+        <ul class="footer-links">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+        <div class="footer-contact">
+          <p>Questions? Reach out at</p>
+          <a href="mailto:dan.direnfeld@aiproductivity.dev">dan.direnfeld@aiproductivity.dev</a>
         </div>
       </div>
-    </section>
-
-  </div>
-
-  <!-- ═══ Footer ═══ -->
-  <footer class="mrai-footer">
-    &copy; 2026 MedRecords AI. All rights reserved. &bull; <a href="mailto:hello@aiproductivity.dev" style="color:#00b894;">hello@aiproductivity.dev</a>
+    </div>
   </footer>
 
-  <!-- ═══ JavaScript: ROI Calculator + FAQ Toggle + Countdown + Nav Toggle ═══ -->
+  <!-- ===== Minimal JavaScript ===== -->
   <script>
-  (function() {
-    // ── Mobile Nav Toggle ──
-    var toggle = document.getElementById('nav-toggle');
-    var links = document.getElementById('nav-links');
-    if (toggle && links) {
-      toggle.addEventListener('click', function() {
-        links.classList.toggle('open');
-      });
-      // Close nav when a link is clicked (mobile)
-      links.querySelectorAll('a').forEach(function(a) {
-        a.addEventListener('click', function() {
-          links.classList.remove('open');
-        });
-      });
-    }
+    // --- Navbar scroll effect ---
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    });
 
-    // ── ROI Calculator ──
-    var casesEl = document.getElementById('roi-cases');
-    var costEl = document.getElementById('roi-cost');
-    var hoursEl = document.getElementById('roi-hours');
-    function updateROI() {
-      if (!casesEl) return;
-      var cases = parseInt(casesEl.value);
-      var cost = parseInt(costEl.value);
-      var hours = parseInt(hoursEl.value);
-      var theirCost = cases * cost;
-      var ourCost = 3997;
-      var savings = theirCost - ourCost;
-      var pct = Math.round((savings / theirCost) * 100);
-      document.getElementById('roi-cases-val').textContent = cases;
-      document.getElementById('roi-cost-val').textContent = '$' + cost.toLocaleString();
-      document.getElementById('roi-hours-val').textContent = hours;
-      document.getElementById('roi-savings').textContent = '$' + Math.max(0, savings).toLocaleString();
-      document.getElementById('roi-percent').textContent = Math.max(0, pct) + '%';
-      document.getElementById('roi-them').textContent = '$' + theirCost.toLocaleString();
-      document.getElementById('roi-us').textContent = '$' + ourCost.toLocaleString();
-    }
-    if (casesEl) { casesEl.addEventListener('input', updateROI); costEl.addEventListener('input', updateROI); hoursEl.addEventListener('input', updateROI); updateROI(); }
+    // --- Mobile nav toggle ---
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+    // Close mobile nav on link click
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
 
-    // ── FAQ Accordion ──
-    document.querySelectorAll('.mrai-faq-q').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        var item = this.closest('.mrai-faq-item');
-        var wasOpen = item.classList.contains('open');
-        document.querySelectorAll('.mrai-faq-item').forEach(function(i) { i.classList.remove('open'); });
-        if (!wasOpen) item.classList.add('open');
+    // --- FAQ Accordion ---
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const isOpen = item.classList.contains('open');
+        // Close all
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        // Toggle current
+        if (!isOpen) item.classList.add('open');
       });
     });
 
-  })();
-  </script>
+    // --- Scroll animations (Intersection Observer) ---
+    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -40px 0px' };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
 
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+    // --- Demo Download Handler ---
+    function handleDemoDownload(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('demoName').value.trim();
+      const email = document.getElementById('demoEmail').value.trim();
+      const firm = document.getElementById('demoFirm').value.trim();
+
+      if (!name || !email) {
+        return;
+      }
+
+      // Send lead info via mailto (background, non-blocking)
+      const subject = encodeURIComponent('MedRecords AI Demo Download');
+      const body = encodeURIComponent('New demo download:\n\nName: ' + name + '\nEmail: ' + email + '\nFirm: ' + (firm || 'N/A'));
+      const mailtoLink = document.createElement('a');
+      mailtoLink.href = 'mailto:dan.direnfeld@aiproductivity.dev?subject=' + subject + '&body=' + body;
+      mailtoLink.style.display = 'none';
+      document.body.appendChild(mailtoLink);
+      mailtoLink.click();
+      document.body.removeChild(mailtoLink);
+
+      // Trigger download
+      const downloadLink = document.createElement('a');
+      downloadLink.href = '/dist/MedRecordsAI-DEMO-v2.0.0.zip';
+      downloadLink.download = 'MedRecordsAI-DEMO-v2.0.0.zip';
+      downloadLink.style.display = 'none';
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
+      document.body.removeChild(downloadLink);
+
+      // Replace form with success message
+      const formWrap = document.querySelector('.demo-form-wrap');
+      formWrap.innerHTML = '<div class="demo-success">' +
+        '<div class="demo-success-icon">&#10003;</div>' +
+        '<h3>Download Started!</h3>' +
+        '<p>Your demo is downloading now. Check your email for setup instructions and tips to get started.</p>' +
+        '</div>';
+    }
+
+    function handleCtaDownload(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('ctaName').value.trim();
+      const email = document.getElementById('ctaEmail').value.trim();
+
+      if (!name || !email) return;
+
+      // Capture lead
+      const subject = encodeURIComponent('MedRecords AI Demo Download');
+      const body = encodeURIComponent('New demo download (footer CTA):\n\nName: ' + name + '\nEmail: ' + email);
+      const mailtoLink = document.createElement('a');
+      mailtoLink.href = 'mailto:dan.direnfeld@aiproductivity.dev?subject=' + subject + '&body=' + body;
+      mailtoLink.style.display = 'none';
+      document.body.appendChild(mailtoLink);
+      mailtoLink.click();
+      document.body.removeChild(mailtoLink);
+
+      // Trigger download
+      const downloadLink = document.createElement('a');
+      downloadLink.href = '/dist/MedRecordsAI-DEMO-v2.0.0.zip';
+      downloadLink.download = 'MedRecordsAI-DEMO-v2.0.0.zip';
+      downloadLink.style.display = 'none';
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
+      document.body.removeChild(downloadLink);
+
+      // Replace form with confirmation
+      const ctaBox = event.target.closest('.cta-box');
+      ctaBox.innerHTML =
+        '<h2>&#10003; Your Download Has Started</h2>' +
+        '<p>Check your downloads folder for <strong>MedRecordsAI-DEMO-v2.0.0.zip</strong>. Setup takes about 2 minutes.</p>' +
+        '<p class="cta-note" style="margin-top:16px"><a href="#demo" style="color:var(--green)">View setup instructions &darr;</a></p>';
+    }
+  </script>
 </body>
 </html>
