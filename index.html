@@ -121,15 +121,6 @@
       color: var(--green);
       transform: translateY(-2px);
     }
-    /* Dark-context outline buttons (CTA section) */
-    .cta-section .btn-outline {
-      color: var(--white);
-      border-color: rgba(255,255,255,0.3);
-    }
-    .cta-section .btn-outline:hover {
-      border-color: var(--white);
-      color: var(--white);
-    }
     .btn-sm {
       padding: 10px 24px;
       font-size: 0.9rem;
@@ -704,8 +695,7 @@
       text-align: center;
       position: relative;
       overflow: hidden;
-      background: linear-gradient(160deg, var(--navy-dark) 0%, var(--navy-mid) 50%, var(--navy-dark) 100%);
-      color: var(--white);
+      background: var(--gray-100);
     }
     .cta-section::before {
       content: '';
@@ -713,14 +703,14 @@
       top: 50%; left: 50%;
       transform: translate(-50%, -50%);
       width: 700px; height: 400px;
-      background: radial-gradient(ellipse, var(--green-glow) 0%, transparent 70%);
+      background: radial-gradient(ellipse, rgba(0,212,170,0.06) 0%, transparent 70%);
       pointer-events: none;
     }
     .cta-box {
       position: relative;
       z-index: 2;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.1);
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
       border-radius: var(--radius-lg);
       padding: 64px 48px;
       max-width: 700px;
@@ -731,11 +721,11 @@
       font-weight: 800;
       margin-bottom: 16px;
       letter-spacing: -0.5px;
-      color: var(--white);
+      color: var(--text-primary);
     }
     .cta-box p {
       font-size: 1.05rem;
-      color: var(--gray-200);
+      color: var(--text-secondary);
       margin-bottom: 36px;
       max-width: 480px;
       margin-left: auto;
@@ -748,12 +738,12 @@
       flex-wrap: wrap;
       margin-bottom: 20px;
     }
-    .cta-form input[type="email"] {
+    .cta-form input {
       padding: 14px 24px;
       border-radius: 50px;
-      border: 1px solid rgba(255,255,255,0.2);
-      background: rgba(255,255,255,0.08);
-      color: var(--white);
+      border: 1px solid var(--card-border);
+      background: var(--white);
+      color: var(--text-primary);
       font-size: 0.95rem;
       font-family: inherit;
       width: 300px;
@@ -761,11 +751,11 @@
       outline: none;
       transition: border-color 0.3s;
     }
-    .cta-form input[type="email"]::placeholder { color: var(--gray-400); }
-    .cta-form input[type="email"]:focus { border-color: var(--green); }
+    .cta-form input::placeholder { color: var(--gray-400); }
+    .cta-form input:focus { border-color: var(--green); }
     .cta-note {
       font-size: 0.8rem;
-      color: var(--gray-300);
+      color: var(--gray-400);
     }
 
     /* ===== Footer ===== */
@@ -1571,7 +1561,7 @@
         <h2>Ready to Transform Your Practice?</h2>
         <p>Process your first medical record in minutes. 3 cases free, no credit card required.</p>
         <form class="cta-form" onsubmit="handleCtaDownload(event)">
-          <input type="text" id="ctaName" placeholder="Your name" required aria-label="Full name" style="border-radius:50px;padding:14px 24px;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.08);color:var(--white);font-size:0.95rem;font-family:inherit;width:300px;max-width:100%;outline:none;">
+          <input type="text" id="ctaName" placeholder="Your name" required aria-label="Full name">
           <input type="email" id="ctaEmail" placeholder="Work email" required aria-label="Email address">
           <button class="btn btn-primary" type="submit">Try MedRecords AI Free &rarr;</button>
         </form>
