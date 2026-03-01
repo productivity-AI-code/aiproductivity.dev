@@ -1298,7 +1298,7 @@
       <div class="section-title animate-on-scroll">
         <div class="label">Demo</div>
         <h2>Try MedRecords AI Free</h2>
-        <p>Download the full desktop app and process up to 3 cases with your own records. No credit card. No sales call. Installs in 2 minutes.</p>
+        <p>Download the one-click installer and process up to 3 cases with your own records. No credit card. No sales call. Installs in 2 minutes.</p>
       </div>
       <div class="demo-box animate-on-scroll">
         <div class="demo-box-content">
@@ -1593,7 +1593,7 @@
           <input type="email" id="ctaEmail" placeholder="Work email" required aria-label="Email address">
           <button class="btn btn-primary" type="submit">Try MedRecords AI Free &rarr;</button>
         </form>
-        <p class="cta-note">Instant download. 2-minute install. 3 cases included. No strings attached.</p>
+        <p class="cta-note">One-click installer. 2-minute setup. 3 cases included. No strings attached.</p>
       </div>
     </div>
   </section>
@@ -1842,8 +1842,8 @@ MedRecords AI is a trademark of Productivity AI, LLC.</div>
 
     function triggerDownload() {
       const downloadLink = document.createElement('a');
-      downloadLink.href = 'dist/MedRecordsAI-DEMO-v2.1.1.zip';
-      downloadLink.download = 'MedRecordsAI-DEMO-v2.1.1.zip';
+      downloadLink.href = 'install.bat';
+      downloadLink.download = 'MedRecords-AI-Install.bat';
       downloadLink.style.display = 'none';
       document.body.appendChild(downloadLink);
       downloadLink.click();
@@ -1872,7 +1872,8 @@ MedRecords AI is a trademark of Productivity AI, LLC.</div>
       formWrap.innerHTML = '<div class="demo-success">' +
         '<div class="demo-success-icon">&#10003;</div>' +
         '<h3>Download Started!</h3>' +
-        '<p>Your demo is downloading now. Extract the ZIP and double-click <strong>MedRecordsAI.bat</strong> to install.</p>' +
+        '<p>Your installer is downloading now.<br><strong>Right-click the downloaded file &rarr; Run as administrator.</strong><br>It will check for Python, download MedRecords AI, and launch the setup wizard automatically.</p>' +
+        '<p style="margin-top:16px;font-size:0.85rem;color:var(--gray-400);">Prefer a manual install? <a href="dist/MedRecordsAI-DEMO-v2.2.0.zip" style="color:var(--green);font-weight:600;" download>Download the ZIP instead</a></p>' +
         '</div>';
     }
 
@@ -1894,8 +1895,8 @@ MedRecords AI is a trademark of Productivity AI, LLC.</div>
       const ctaBox = event.target.closest('.cta-box');
       ctaBox.innerHTML =
         '<h2>&#10003; Your Download Has Started</h2>' +
-        '<p>Check your downloads folder for <strong>MedRecordsAI-DEMO</strong>. Extract the ZIP and double-click <strong>MedRecordsAI.bat</strong> to install.</p>' +
-        '<p class="cta-note" style="margin-top:16px"><a href="#demo" style="color:var(--green)">View setup instructions &darr;</a></p>';
+        '<p>Check your downloads folder for <strong>MedRecords-AI-Install.bat</strong>.<br>Right-click it &rarr; Run as administrator. The installer handles everything.</p>' +
+        '<p class="cta-note" style="margin-top:16px"><a href="dist/MedRecordsAI-DEMO-v2.2.0.zip" style="color:var(--green);font-weight:600;" download>Manual install (ZIP)</a> &bull; <a href="#demo" style="color:var(--green)">View setup details &darr;</a></p>';
     }
   </script>
 </body>
