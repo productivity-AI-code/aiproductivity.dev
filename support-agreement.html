@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Priority Support Service Agreement | MedRecords AI</title>
+  <meta name="description" content="Software Support Service Agreement for MedRecords AI Priority Support by Productivity AI, LLC. Review the terms, service levels, and scope of the $1,000/year annual support plan.">
+  <link rel="canonical" href="https://aiproductivity.dev/support-agreement.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Priority Support Service Agreement | MedRecords AI">
+  <meta property="og:description" content="Software Support Service Agreement for MedRecords AI Priority Support. Review terms, SLAs, and scope of service.">
+  <meta property="og:url" content="https://aiproductivity.dev/support-agreement.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MedRecords AI">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Priority Support Service Agreement | MedRecords AI">
+  <meta name="twitter:description" content="Software Support Service Agreement for MedRecords AI Priority Support. Review terms, SLAs, and scope of service.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ===== Reset & Base ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy-dark: #0a1628;
+      --navy: #0f1d35;
+      --navy-mid: #1a2d50;
+      --navy-light: #243a5e;
+      --green: #00d4aa;
+      --green-dim: #00b894;
+      --green-glow: rgba(0, 212, 170, 0.25);
+      --white: #ffffff;
+      --gray-100: #f8f9fc;
+      --gray-200: #d1d5db;
+      --gray-300: #9ca3af;
+      --gray-400: #6b7280;
+      --gray-500: #374151;
+      --text-primary: #1a1a2e;
+      --text-secondary: #555;
+      --text-muted: #888;
+      --card-bg: #ffffff;
+      --card-border: #eee;
+      --radius: 12px;
+      --radius-lg: 20px;
+      --shadow: 0 4px 24px rgba(0,0,0,0.08);
+    }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #ffffff;
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a { color: var(--green-dim); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--green); }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ===== Animations ===== */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(0,212,170,0.6); }
+      50%      { opacity: 0.8; box-shadow: 0 0 0 8px rgba(0,212,170,0); }
+    }
+
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== Buttons ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 50px;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      font-family: inherit;
+    }
+    .btn-primary {
+      background: var(--green);
+      color: var(--navy-dark);
+      border-color: var(--green);
+    }
+    .btn-primary:hover {
+      background: var(--green-dim);
+      border-color: var(--green-dim);
+      color: var(--navy-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px var(--green-glow);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--text-primary);
+      border-color: var(--card-border);
+    }
+    .btn-outline:hover {
+      border-color: var(--green);
+      color: var(--green);
+      transform: translateY(-2px);
+    }
+    .btn-outline-light {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(255,255,255,0.3);
+    }
+    .btn-outline-light:hover {
+      border-color: var(--green);
+      color: var(--green);
+      transform: translateY(-2px);
+    }
+    .btn-sm {
+      padding: 10px 24px;
+      font-size: 0.9rem;
+    }
+
+    /* ===== Navigation ===== */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 16px 0;
+      transition: background 0.3s, box-shadow 0.3s, padding 0.3s;
+    }
+    nav.scrolled {
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+      padding: 10px 0;
+    }
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: -0.5px;
+    }
+    .logo-dot {
+      width: 10px; height: 10px;
+      background: var(--green);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--gray-400);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-links a.active {
+      color: var(--green);
+      font-weight: 600;
+    }
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav-toggle span {
+      width: 24px; height: 2px;
+      background: var(--text-primary);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* ===== Hero (Light Background) ===== */
+    .hero {
+      position: relative;
+      display: flex;
+      align-items: center;
+      background: var(--gray-100);
+      overflow: hidden;
+      padding: 160px 0 80px;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%; right: -20%;
+      width: 800px; height: 800px;
+      background: radial-gradient(circle, rgba(0,212,170,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 850px;
+      margin: 0 auto;
+      animation: fadeInUp 0.8s ease-out;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 20px;
+      border-radius: 50px;
+      background: rgba(0,212,170,0.1);
+      border: 1px solid rgba(0,212,170,0.25);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--green-dim);
+      margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -1.5px;
+      margin-bottom: 20px;
+      color: var(--text-primary);
+    }
+    .hero p.subtitle {
+      font-size: clamp(1.05rem, 2vw, 1.15rem);
+      color: var(--text-secondary);
+      max-width: 640px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+    }
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ===== Agreement Section ===== */
+    .agreement-section {
+      padding: 80px 0 100px;
+      background: var(--white);
+    }
+    .agreement-container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .agreement-notice {
+      background: rgba(0,212,170,0.04);
+      border: 1px solid rgba(0,212,170,0.15);
+      border-radius: var(--radius-lg);
+      padding: 28px 36px;
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .agreement-notice p {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+    .agreement-notice strong {
+      color: var(--text-primary);
+      font-weight: 700;
+    }
+    .agreement-notice a {
+      color: var(--green);
+      font-weight: 600;
+    }
+
+    .agreement-header {
+      text-align: center;
+      margin-bottom: 48px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .agreement-header h2 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .agreement-header .agreement-meta {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+    .agreement-header .agreement-meta strong {
+      color: var(--text-primary);
+    }
+
+    .agreement-body h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 40px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid rgba(0,212,170,0.2);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .agreement-body h3 .section-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: rgba(0,212,170,0.1);
+      color: var(--green);
+      font-size: 0.85rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .agreement-body p {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+
+    .agreement-body ol {
+      padding-left: 20px;
+      margin-bottom: 16px;
+    }
+    .agreement-body ol li {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 8px;
+    }
+    .agreement-body ol li strong {
+      color: var(--text-primary);
+    }
+
+    .agreement-body ul {
+      list-style: none;
+      margin-bottom: 16px;
+      padding-left: 0;
+    }
+    .agreement-body ul li {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 8px;
+      padding-left: 24px;
+      position: relative;
+    }
+    .agreement-body ul li::before {
+      content: '';
+      position: absolute;
+      left: 4px;
+      top: 11px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(0,212,170,0.4);
+    }
+
+    /* SLA Table */
+    .sla-table-wrap {
+      overflow-x: auto;
+      border-radius: var(--radius);
+      border: 1px solid var(--card-border);
+      margin: 20px 0 24px;
+    }
+    .sla-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 600px;
+    }
+    .sla-table thead th {
+      padding: 14px 18px;
+      text-align: left;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--gray-400);
+      border-bottom: 1px solid var(--card-border);
+      background: var(--gray-100);
+    }
+    .sla-table tbody td {
+      padding: 14px 18px;
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      border-bottom: 1px solid var(--card-border);
+      line-height: 1.6;
+    }
+    .sla-table tbody tr:last-child td { border-bottom: none; }
+    .sla-table tbody td:first-child { font-weight: 600; color: var(--text-primary); }
+    .severity-critical {
+      display: inline-block;
+      background: rgba(239,68,68,0.12);
+      color: #ef4444;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 2px 10px;
+      border-radius: 50px;
+    }
+    .severity-high {
+      display: inline-block;
+      background: rgba(245,158,11,0.12);
+      color: #d97706;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 2px 10px;
+      border-radius: 50px;
+    }
+    .severity-medium {
+      display: inline-block;
+      background: rgba(59,130,246,0.12);
+      color: #3b82f6;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 2px 10px;
+      border-radius: 50px;
+    }
+    .severity-low {
+      display: inline-block;
+      background: rgba(0,212,170,0.12);
+      color: var(--green);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 2px 10px;
+      border-radius: 50px;
+    }
+
+    /* Contact card */
+    .contact-card {
+      background: var(--gray-100);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin: 20px 0 24px;
+    }
+    .contact-card p {
+      margin-bottom: 6px;
+    }
+    .contact-card strong {
+      color: var(--text-primary);
+    }
+
+    /* Signature block */
+    .signature-block {
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1px solid var(--card-border);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+    .signature-party h4 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+    }
+    .signature-line {
+      border-bottom: 1px solid var(--gray-200);
+      margin-bottom: 6px;
+      height: 40px;
+    }
+    .signature-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    /* ===== CTA Section (Dark Navy) ===== */
+    .cta-section {
+      padding: 100px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(160deg, var(--navy-dark) 0%, var(--navy) 40%, var(--navy-mid) 100%);
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 700px; height: 400px;
+      background: radial-gradient(ellipse, rgba(0,212,170,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cta-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+    .cta-inner h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+      color: var(--white);
+    }
+    .cta-inner p {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 40px;
+      line-height: 1.7;
+    }
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      padding: 48px 0;
+      border-top: 1px solid var(--card-border);
+    }
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .footer-left .logo { margin-bottom: 8px; }
+    .footer-left p {
+      font-size: 0.8rem;
+      color: var(--gray-400);
+    }
+    .footer-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+    .footer-links a {
+      font-size: 0.85rem;
+      color: var(--gray-400);
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--text-primary); }
+    .footer-contact {
+      font-size: 0.85rem;
+      color: var(--gray-400);
+      text-align: right;
+    }
+    .footer-contact a { color: var(--green); }
+
+    /* ===== Print Styles ===== */
+    @media print {
+      nav, .hero, .cta-section, footer { display: none; }
+      .agreement-section { padding: 0; }
+      .agreement-container { max-width: 100%; }
+      .agreement-notice { border: 1px solid #ccc; }
+      body { font-size: 11pt; color: #000; }
+      .agreement-body h3 { border-bottom-color: #ccc; }
+      .sla-table-wrap { border-color: #ccc; }
+      .sla-table thead th { background: #f5f5f5; }
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(20px);
+        padding: 24px;
+        gap: 20px;
+        border-bottom: 1px solid var(--card-border);
+      }
+      .nav-toggle { display: flex; }
+
+      .footer-content { flex-direction: column; text-align: center; }
+      .footer-contact { text-align: center; }
+      .footer-links { flex-wrap: wrap; justify-content: center; }
+
+      .hero-ctas { flex-direction: column; align-items: center; }
+      .cta-buttons { flex-direction: column; align-items: center; }
+      .btn { width: 100%; max-width: 300px; justify-content: center; }
+
+      .agreement-notice { padding: 20px 20px; }
+      .agreement-body h3 { font-size: 1.1rem; }
+
+      .signature-block { grid-template-columns: 1fr; gap: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Navigation ===== -->
+  <nav id="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <span class="logo-dot"></span>
+        MedRecords AI
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#features">Features</a></li>
+        <li><a href="index.html#how-it-works">How It Works</a></li>
+        <li><a href="index.html#pricing">Pricing</a></li>
+        <li><a href="support.html" class="active">Support</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="index.html#demo" class="btn btn-primary btn-sm">Try It Free</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== Hero Section (Light Background) ===== -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          PRIORITY SUPPORT AGREEMENT
+        </div>
+        <h1>Software Support Service Agreement</h1>
+        <p class="subtitle">MedRecords AI Priority Support &mdash; $1,000 per year. Read the complete terms of service for the Priority Support plan below.</p>
+        <div class="hero-ctas">
+          <a href="support.html" class="btn btn-outline">&larr; Back to Support</a>
+          <a href="#agreement" class="btn btn-primary">Read Agreement</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Agreement Section ===== -->
+  <section class="agreement-section" id="agreement">
+    <div class="container">
+      <div class="agreement-container">
+
+        <!-- Notice -->
+        <div class="agreement-notice animate-on-scroll">
+          <p><strong>By purchasing Priority Support, you agree to the following terms.</strong><br>
+          This Software Support Service Agreement governs the Priority Support services provided with your MedRecords AI license. If you have questions about this agreement, please contact us at <a href="mailto:support@aiproductivity.dev">support@aiproductivity.dev</a> before purchasing.</p>
+          <p style="margin-top:12px;"><a href="support.html">&larr; Return to Support &amp; Resources</a></p>
+        </div>
+
+        <!-- Agreement Header -->
+        <div class="agreement-header animate-on-scroll">
+          <h2>SOFTWARE SUPPORT SERVICE AGREEMENT</h2>
+          <div class="agreement-meta">
+            <strong>MedRecords AI Priority Support</strong><br>
+            Productivity AI, LLC<br>
+            Effective Date: March 1, 2026<br>
+            Version 1.0
+          </div>
+        </div>
+
+        <!-- Agreement Body -->
+        <div class="agreement-body">
+
+          <!-- Section 1: Definitions -->
+          <h3 class="animate-on-scroll"><span class="section-num">1</span> Definitions</h3>
+          <p>For the purposes of this Software Support Service Agreement ("Agreement"), the following terms shall have the meanings set forth below:</p>
+          <ol>
+            <li><strong>"Provider"</strong> means Productivity AI, LLC, a limited liability company organized under the laws of the State of Delaware, with its principal place of business at the address set forth in the contact information section of this Agreement.</li>
+            <li><strong>"Customer"</strong> means the individual or entity that has purchased a Priority Support subscription for the Software, as identified in the applicable order, invoice, or purchase confirmation.</li>
+            <li><strong>"Software"</strong> means MedRecords AI, an intelligent document analysis platform developed and distributed by Provider, including all modules, components, and associated documentation, in any version or release provided to Customer during the Service Period.</li>
+            <li><strong>"Support Services"</strong> means the technical support, maintenance, upgrade, and advisory services described in Section 2 of this Agreement, provided by Provider to Customer during the Service Period.</li>
+            <li><strong>"Service Period"</strong> means the twelve (12) month period commencing on the date of activation of the Priority Support subscription and each subsequent twelve (12) month renewal period thereafter, unless terminated in accordance with Section 7.</li>
+            <li><strong>"Authorized Contact(s)"</strong> means up to two (2) designated individuals within Customer's organization who are authorized to submit support requests and communicate with Provider's support team on behalf of Customer. Customer may change Authorized Contacts by providing written notice to Provider.</li>
+            <li><strong>"Business Hours"</strong> means 9:00 AM to 5:00 PM Eastern Standard Time (EST) / Eastern Daylight Time (EDT), Monday through Friday, excluding United States federal holidays.</li>
+            <li><strong>"Business Day"</strong> means any day on which Business Hours apply.</li>
+            <li><strong>"Response Time"</strong> means the elapsed time between Provider's receipt of a support request and Provider's initial substantive response acknowledging the issue and providing an initial assessment or action plan.</li>
+            <li><strong>"Resolution"</strong> means the provision of a fix, workaround, patch, configuration change, or other remedy that restores the affected functionality of the Software to a materially operational state or otherwise addresses the reported issue.</li>
+            <li><strong>"Incident"</strong> means a support request submitted by an Authorized Contact that describes a malfunction, error, defect, or question relating to the Software.</li>
+            <li><strong>"Update"</strong> means a minor release of the Software (e.g., version 2.1 to 2.2) that includes bug fixes, performance improvements, and minor feature enhancements.</li>
+            <li><strong>"Upgrade"</strong> means a major release of the Software (e.g., version 2.x to 3.0) that includes significant new features, architectural changes, or major functionality additions.</li>
+          </ol>
+
+          <!-- Section 2: Scope of Services -->
+          <h3 class="animate-on-scroll"><span class="section-num">2</span> Scope of Services</h3>
+          <p>During the Service Period, Provider shall furnish Customer with the following Support Services:</p>
+
+          <p><strong>2.1 Priority Email Support.</strong> Customer's Authorized Contacts may submit Incidents via email to <a href="mailto:support@aiproductivity.dev">support@aiproductivity.dev</a> at any time. Provider shall respond to all email Incidents within twenty-four (24) hours of receipt, measured during Business Hours. Priority Support email Incidents shall be prioritized above community and best-effort support requests.</p>
+
+          <p><strong>2.2 Phone Support.</strong> Provider shall make telephone support available to Customer's Authorized Contacts during Business Hours (9:00 AM &ndash; 5:00 PM EST, Monday &ndash; Friday, excluding United States federal holidays). A dedicated phone number shall be provided to Customer upon activation of the Priority Support subscription. Phone support is intended for real-time troubleshooting, guidance, and consultation regarding the Software.</p>
+
+          <p><strong>2.3 Critical Issue Response.</strong> For Incidents classified as Severity 1 (Critical) in accordance with Section 3, Provider shall use commercially reasonable efforts to provide an initial Response within four (4) hours of receipt, including outside of Business Hours for issues that render the Software completely inoperable. Critical issue reports may be submitted via email or phone.</p>
+
+          <p><strong>2.4 Software Updates and Upgrades.</strong> During the Service Period, Customer shall receive all Updates and Upgrades to the Software at no additional charge. This includes all minor releases, major releases, patches, hotfixes, and security updates published by Provider during the Service Period. Customer is responsible for installing Updates and Upgrades in accordance with Provider's published instructions.</p>
+
+          <p><strong>2.5 Dedicated Onboarding Call.</strong> Within thirty (30) days of activation of the Priority Support subscription, Provider shall schedule and conduct a one (1) hour dedicated onboarding call with Customer's Authorized Contacts. The onboarding call shall cover initial setup and configuration of the Software, best practices for the Customer's use case, walkthrough of key features and workflows, and configuration of AI backend preferences. The onboarding call shall be scheduled at a mutually agreeable time during Business Hours.</p>
+
+          <p><strong>2.6 Quarterly Check-In Calls.</strong> Provider shall schedule and conduct quarterly check-in calls (approximately once every three (3) months) with Customer during the Service Period, for a total of up to four (4) check-in calls per Service Period. Each check-in call shall be approximately thirty (30) minutes in duration and shall cover review of any outstanding Incidents, discussion of upcoming releases and features, collection of Customer feedback, and guidance on optimizing Customer's use of the Software. Quarterly calls shall be scheduled at mutually agreeable times during Business Hours.</p>
+
+          <p><strong>2.7 Remote Diagnostic Support.</strong> With Customer's express consent, Provider may offer remote diagnostic assistance to help resolve complex Incidents. Remote diagnostics may include review of log files, configuration files, or error reports provided by Customer. Provider shall not access Customer's medical records, case data, or any Protected Health Information (PHI) under any circumstances.</p>
+
+          <!-- Section 3: Service Level Commitments -->
+          <h3 class="animate-on-scroll"><span class="section-num">3</span> Service Level Commitments</h3>
+          <p>Incidents reported by Customer shall be classified according to the following severity levels. Provider shall use commercially reasonable efforts to meet the Response Time and Resolution targets specified below:</p>
+
+          <div class="sla-table-wrap animate-on-scroll">
+            <table class="sla-table">
+              <thead>
+                <tr>
+                  <th>Severity Level</th>
+                  <th>Description</th>
+                  <th>Response Time</th>
+                  <th>Resolution Target</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="severity-critical">Critical</span> Severity 1</td>
+                  <td>The Software is completely inoperable, crashes on launch, or experiences total data loss. No workaround is available. Production use is entirely blocked.</td>
+                  <td><strong>4 hours</strong></td>
+                  <td><strong>1 Business Day</strong></td>
+                </tr>
+                <tr>
+                  <td><span class="severity-high">High</span> Severity 2</td>
+                  <td>A major feature is severely impaired or produces incorrect results. The Software is operational but a core workflow (e.g., summarization, timeline generation, demand package creation) is materially degraded. Limited or no workaround is available.</td>
+                  <td><strong>8 hours</strong></td>
+                  <td><strong>2 Business Days</strong></td>
+                </tr>
+                <tr>
+                  <td><span class="severity-medium">Medium</span> Severity 3</td>
+                  <td>A minor feature or non-critical function is impaired. A reasonable workaround exists. The issue does not prevent production use of the Software but causes inconvenience or reduced efficiency.</td>
+                  <td><strong>24 hours</strong></td>
+                  <td><strong>5 Business Days</strong></td>
+                </tr>
+                <tr>
+                  <td><span class="severity-low">Low</span> Severity 4</td>
+                  <td>General questions, how-to inquiries, feature requests, cosmetic issues, documentation clarifications, or enhancement suggestions that do not affect the functionality of the Software.</td>
+                  <td><strong>48 hours</strong></td>
+                  <td><strong>Best Effort</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p><strong>3.1 Severity Classification.</strong> Provider shall make the initial severity classification in good faith based on the information provided in the Incident report. Customer may request reclassification of an Incident by providing additional information demonstrating the business impact. Provider shall consider such requests promptly and in good faith.</p>
+
+          <p><strong>3.2 Response Time Measurement.</strong> Response Time is measured from the time Provider receives the Incident report. For Severity 1 (Critical) Incidents, Response Time is measured in clock hours (24/7). For all other severity levels, Response Time is measured in Business Hours only. Incidents submitted outside of Business Hours (other than Severity 1) shall be deemed received at the start of the next Business Day.</p>
+
+          <p><strong>3.3 Resolution Targets.</strong> Resolution targets represent commercially reasonable goals and are not guarantees. Certain issues may require longer resolution times due to complexity, third-party dependencies, or the need to develop and test a software patch. In such cases, Provider shall keep Customer informed of progress and provide interim workarounds where possible.</p>
+
+          <p><strong>3.4 Customer Cooperation.</strong> Meeting Response Time and Resolution targets is contingent upon Customer's timely cooperation, including providing accurate descriptions of the Incident, system configuration details, log files, and other information reasonably requested by Provider. Delays caused by Customer's failure to provide requested information shall not be counted against Provider's Response Time or Resolution targets.</p>
+
+          <!-- Section 4: Exclusions -->
+          <h3 class="animate-on-scroll"><span class="section-num">4</span> Exclusions</h3>
+          <p>Support Services under this Agreement do not cover and Provider shall have no obligation to provide support for the following:</p>
+          <ul>
+            <li><strong>Third-Party Software Issues.</strong> Problems arising from or related to third-party software, libraries, APIs, operating systems, or hardware not developed or distributed by Provider, including but not limited to issues with Ollama, Python, Claude API, web browsers, or operating system configurations.</li>
+            <li><strong>Custom Development and Modifications.</strong> Custom software development, custom integrations, bespoke feature development, scripting, or modifications to the Software beyond its standard configuration options. Custom development services may be available under a separate statement of work at Provider's then-current rates.</li>
+            <li><strong>Unauthorized Modifications.</strong> Issues caused by Customer's or any third party's modification, alteration, reverse engineering, decompilation, or disassembly of the Software, or any use of the Software in a manner inconsistent with the End User License Agreement or Provider's published documentation.</li>
+            <li><strong>Training Beyond Onboarding.</strong> Training services beyond the dedicated onboarding call described in Section 2.5. Additional training sessions, workshops, or on-site training may be arranged under a separate agreement at Provider's then-current rates.</li>
+            <li><strong>Hardware and Infrastructure Issues.</strong> Issues arising from Customer's hardware, network infrastructure, internet connectivity, server configuration, storage devices, or other infrastructure components. Provider may assist with diagnosing whether an issue is Software-related or infrastructure-related, but remediation of infrastructure issues is Customer's sole responsibility.</li>
+            <li><strong>Data Recovery.</strong> Recovery of lost or corrupted data, except to the extent that data loss was directly caused by a confirmed defect in the Software. Customer is solely responsible for maintaining adequate backups of all data processed by the Software.</li>
+            <li><strong>End-of-Life Versions.</strong> Support for versions of the Software that have been designated as end-of-life by Provider, provided that Provider gives Customer at least ninety (90) days written notice before discontinuing support for any major version of the Software.</li>
+            <li><strong>Force Majeure.</strong> Delays or failures in performance caused by events beyond Provider's reasonable control, including but not limited to natural disasters, acts of government, epidemics, pandemics, civil unrest, war, terrorism, internet outages, or power failures.</li>
+          </ul>
+
+          <!-- Section 5: Subscription Terms -->
+          <h3 class="animate-on-scroll"><span class="section-num">5</span> Subscription Terms and Payment</h3>
+
+          <p><strong>5.1 Subscription Fee.</strong> The annual subscription fee for Priority Support is One Thousand United States Dollars ($1,000.00 USD) per Service Period. All fees are exclusive of applicable taxes, levies, and duties, which shall be Customer's sole responsibility.</p>
+
+          <p><strong>5.2 Billing and Payment.</strong> The subscription fee is due and payable in full at the commencement of each Service Period. Payment shall be made via the payment method specified at the time of purchase (credit card, ACH, or wire transfer). Provider shall issue an invoice or purchase confirmation for each payment received.</p>
+
+          <p><strong>5.3 Auto-Renewal.</strong> The Priority Support subscription shall automatically renew for successive twelve (12) month Service Periods at the then-current subscription rate, unless either party provides written notice of non-renewal at least thirty (30) days prior to the expiration of the current Service Period. Provider shall use commercially reasonable efforts to notify Customer of any price changes at least sixty (60) days prior to the renewal date.</p>
+
+          <p><strong>5.4 Cancellation.</strong> Customer may cancel the Priority Support subscription by providing written notice to Provider at least thirty (30) days prior to the expiration of the current Service Period. Cancellation shall be effective at the end of the then-current Service Period. No refunds shall be provided for partial Service Periods. Upon cancellation, Customer's support level shall revert to Community Support (best-effort email, documentation, and community forum).</p>
+
+          <p><strong>5.5 Pro License Inclusion.</strong> Customers who purchase a MedRecords AI Pro License receive the first year of Priority Support at no additional charge. The Priority Support subscription shall automatically activate upon activation of the Pro License. Upon expiration of the included first year, the subscription shall auto-renew as described in Section 5.3 unless Customer provides notice of non-renewal.</p>
+
+          <p><strong>5.6 Late Payment.</strong> If payment is not received within fifteen (15) days of the due date, Provider may, upon written notice to Customer, suspend Support Services until payment is received. Suspension of Support Services does not relieve Customer of its obligation to pay outstanding fees.</p>
+
+          <!-- Section 6: Limitation of Liability -->
+          <h3 class="animate-on-scroll"><span class="section-num">6</span> Limitation of Liability</h3>
+
+          <p><strong>6.1 Cap on Liability.</strong> TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, PROVIDER'S TOTAL CUMULATIVE LIABILITY ARISING OUT OF OR RELATED TO THIS AGREEMENT, WHETHER IN CONTRACT, TORT (INCLUDING NEGLIGENCE), STRICT LIABILITY, OR ANY OTHER LEGAL THEORY, SHALL NOT EXCEED THE TOTAL AMOUNT OF SUPPORT SERVICE FEES ACTUALLY PAID BY CUSTOMER TO PROVIDER DURING THE TWELVE (12) MONTH PERIOD IMMEDIATELY PRECEDING THE EVENT GIVING RISE TO THE CLAIM.</p>
+
+          <p><strong>6.2 Exclusion of Consequential Damages.</strong> IN NO EVENT SHALL PROVIDER BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, PUNITIVE, OR EXEMPLARY DAMAGES, INCLUDING BUT NOT LIMITED TO DAMAGES FOR LOSS OF PROFITS, REVENUE, GOODWILL, DATA, BUSINESS OPPORTUNITIES, OR ANTICIPATED SAVINGS, EVEN IF PROVIDER HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
+
+          <p><strong>6.3 No Liability for Data.</strong> Provider shall have no liability for loss, corruption, or unauthorized access to Customer's data, medical records, case files, or any Protected Health Information (PHI) processed by the Software. Customer is solely responsible for maintaining appropriate data backups, access controls, and security measures for its data and computing environment.</p>
+
+          <p><strong>6.4 Resolution Targets Are Not Guarantees.</strong> The Response Time and Resolution targets set forth in Section 3 represent commercially reasonable goals and do not constitute warranties or guarantees of performance. Provider's failure to meet a Response Time or Resolution target shall not, by itself, constitute a material breach of this Agreement.</p>
+
+          <p><strong>6.5 Disclaimer of Warranties.</strong> SUPPORT SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE." PROVIDER MAKES NO WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, OR NON-INFRINGEMENT, WITH RESPECT TO THE SUPPORT SERVICES OR ANY ADVICE, GUIDANCE, OR INFORMATION PROVIDED HEREUNDER.</p>
+
+          <!-- Section 7: Term and Termination -->
+          <h3 class="animate-on-scroll"><span class="section-num">7</span> Term and Termination</h3>
+
+          <p><strong>7.1 Initial Term.</strong> This Agreement shall commence on the date of activation of the Priority Support subscription and shall continue for an initial term of twelve (12) months ("Initial Term").</p>
+
+          <p><strong>7.2 Renewal.</strong> Following the Initial Term, this Agreement shall automatically renew for successive twelve (12) month periods ("Renewal Terms"), subject to the auto-renewal and cancellation provisions set forth in Section 5.</p>
+
+          <p><strong>7.3 Termination for Cause.</strong> Either party may terminate this Agreement immediately upon written notice if the other party: (a) materially breaches any term or condition of this Agreement and fails to cure such breach within thirty (30) days after receiving written notice thereof; or (b) becomes insolvent, files for bankruptcy, or ceases to conduct business in the ordinary course.</p>
+
+          <p><strong>7.4 Termination by Provider.</strong> Provider may terminate this Agreement immediately upon written notice if Customer: (a) uses the Software in violation of the End User License Agreement; (b) engages in conduct that is abusive, threatening, or harassing toward Provider's support personnel; or (c) fails to pay the subscription fee within thirty (30) days of the due date.</p>
+
+          <p><strong>7.5 Effect of Termination.</strong> Upon termination or expiration of this Agreement: (a) Provider's obligation to provide Support Services shall immediately cease; (b) Customer's support level shall revert to Community Support; (c) Customer shall retain its license to the Software in accordance with the End User License Agreement; and (d) all provisions of this Agreement that by their nature should survive termination shall survive, including but not limited to Sections 6, 8, and 9.</p>
+
+          <p><strong>7.6 Refunds Upon Termination for Cause by Customer.</strong> If Customer terminates this Agreement for cause pursuant to Section 7.3 due to Provider's uncured material breach, Provider shall refund a pro-rata portion of the subscription fee for the unused remainder of the then-current Service Period.</p>
+
+          <!-- Section 8: General Provisions -->
+          <h3 class="animate-on-scroll"><span class="section-num">8</span> General Provisions</h3>
+
+          <p><strong>8.1 Governing Law.</strong> This Agreement shall be governed by, and construed in accordance with, the laws of the State of Delaware, United States of America, without regard to its conflict of laws principles.</p>
+
+          <p><strong>8.2 Dispute Resolution.</strong> Any dispute arising out of or relating to this Agreement shall first be submitted to good-faith negotiation between the parties. If the dispute is not resolved within thirty (30) days, either party may pursue resolution through binding arbitration administered by the American Arbitration Association in accordance with its Commercial Arbitration Rules, with the arbitration to take place in the State of Delaware.</p>
+
+          <p><strong>8.3 Entire Agreement.</strong> This Agreement, together with the End User License Agreement for the Software, constitutes the entire agreement between the parties with respect to the subject matter hereof and supersedes all prior and contemporaneous agreements, proposals, negotiations, representations, and communications, whether oral or written, relating to the subject matter of this Agreement.</p>
+
+          <p><strong>8.4 Amendment.</strong> Provider reserves the right to modify the terms of this Agreement upon sixty (60) days written notice to Customer. If Customer does not agree to the modified terms, Customer may terminate this Agreement effective as of the date the modified terms would take effect, and Provider shall refund a pro-rata portion of the subscription fee for the unused remainder of the then-current Service Period.</p>
+
+          <p><strong>8.5 Assignment.</strong> Customer may not assign or transfer this Agreement, in whole or in part, without the prior written consent of Provider. Provider may assign this Agreement in connection with a merger, acquisition, or sale of all or substantially all of its assets. Any purported assignment in violation of this Section shall be void.</p>
+
+          <p><strong>8.6 Severability.</strong> If any provision of this Agreement is held to be invalid, illegal, or unenforceable, the remaining provisions shall remain in full force and effect. The invalid provision shall be modified to the minimum extent necessary to make it valid and enforceable while preserving the original intent of the parties.</p>
+
+          <p><strong>8.7 Waiver.</strong> The failure of either party to enforce any right or provision of this Agreement shall not constitute a waiver of such right or provision. Any waiver of any provision of this Agreement must be in writing and signed by the waiving party.</p>
+
+          <p><strong>8.8 Notices.</strong> All notices required or permitted under this Agreement shall be in writing and shall be deemed duly given when sent via email to the addresses specified in this Agreement, or to such other address as either party may designate by written notice to the other party.</p>
+
+          <p><strong>8.9 Independent Contractors.</strong> The parties are independent contractors. Nothing in this Agreement shall be construed to create a partnership, joint venture, agency, or employment relationship between the parties.</p>
+
+          <!-- Section 9: Contact Information -->
+          <h3 class="animate-on-scroll"><span class="section-num">9</span> Contact Information</h3>
+          <p>All support requests, notices, and communications under this Agreement shall be directed to:</p>
+
+          <div class="contact-card animate-on-scroll">
+            <p><strong>Provider:</strong></p>
+            <p>Productivity AI, LLC</p>
+            <p>Email: <a href="mailto:support@aiproductivity.dev">support@aiproductivity.dev</a></p>
+            <p>Web: <a href="https://aiproductivity.dev/support.html">https://aiproductivity.dev/support.html</a></p>
+            <p style="margin-top: 16px;"><strong>Support Hours:</strong></p>
+            <p>Monday &ndash; Friday, 9:00 AM &ndash; 5:00 PM EST</p>
+            <p>Critical issues (Severity 1): 24/7 via email</p>
+          </div>
+
+          <p>Customer contact information shall be as provided in the applicable purchase order, invoice, or subscription activation form.</p>
+
+          <!-- Signature Block -->
+          <div class="signature-block animate-on-scroll">
+            <div class="signature-party">
+              <h4>Provider</h4>
+              <p style="font-size:0.9rem;color:var(--text-secondary);margin-bottom:16px;">Productivity AI, LLC</p>
+              <div class="signature-line"></div>
+              <div class="signature-label">Authorized Signature</div>
+              <div class="signature-line"></div>
+              <div class="signature-label">Printed Name &amp; Title</div>
+              <div class="signature-line"></div>
+              <div class="signature-label">Date</div>
+            </div>
+            <div class="signature-party">
+              <h4>Customer</h4>
+              <p style="font-size:0.9rem;color:var(--text-secondary);margin-bottom:16px;">&nbsp;</p>
+              <div class="signature-line"></div>
+              <div class="signature-label">Authorized Signature</div>
+              <div class="signature-line"></div>
+              <div class="signature-label">Printed Name &amp; Title</div>
+              <div class="signature-line"></div>
+              <div class="signature-label">Date</div>
+            </div>
+          </div>
+
+          <p style="text-align:center;margin-top:48px;font-size:0.82rem;color:var(--text-muted);">
+            Copyright &copy; 2026 Productivity AI, LLC. All rights reserved.<br>
+            MedRecords AI is a trademark of Productivity AI, LLC.
+          </p>
+
+        </div><!-- /agreement-body -->
+      </div><!-- /agreement-container -->
+    </div>
+  </section>
+
+  <!-- ===== CTA Section (Dark Navy) ===== -->
+  <section class="cta-section" id="cta">
+    <div class="container">
+      <div class="cta-inner animate-on-scroll">
+        <h2>Ready for Priority Support?</h2>
+        <p>Get guaranteed response times, phone support, all upgrades, and a dedicated onboarding call for $1,000 per year.</p>
+        <div class="cta-buttons">
+          <a href="support.html#tiers" class="btn btn-primary">View Support Plans</a>
+          <a href="mailto:support@aiproductivity.dev" class="btn btn-outline-light">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-left">
+          <a href="index.html" class="logo">
+            <span class="logo-dot"></span>
+            MedRecords AI
+          </a>
+          <p>&copy; 2026 MedRecords AI. All rights reserved.</p>
+        </div>
+        <ul class="footer-links">
+          <li><a href="index.html#features">Features</a></li>
+          <li><a href="index.html#pricing">Pricing</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="privacy.html">Security</a></li>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+        <div class="footer-contact">
+          <p>Questions? Reach out at</p>
+          <a href="mailto:dan.direnfeld@aiproductivity.dev">dan.direnfeld@aiproductivity.dev</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== JavaScript ===== -->
+  <script>
+    // --- Navbar scroll effect ---
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // --- Mobile nav toggle ---
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    // --- Scroll animations (Intersection Observer) ---
+    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -40px 0px' };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
