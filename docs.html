@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentation & Knowledge Base | MedRecords AI</title>
+  <meta name="description" content="Complete documentation for MedRecords AI. Installation guides, feature walkthroughs, configuration reference, and troubleshooting for medical record summarization software.">
+  <link rel="canonical" href="https://aiproductivity.dev/docs.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Documentation & Knowledge Base | MedRecords AI">
+  <meta property="og:description" content="Complete documentation for MedRecords AI. Installation guides, feature walkthroughs, configuration reference, and troubleshooting for medical record summarization software.">
+  <meta property="og:url" content="https://aiproductivity.dev/docs.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MedRecords AI">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Documentation & Knowledge Base | MedRecords AI">
+  <meta name="twitter:description" content="Complete documentation for MedRecords AI. Installation guides, feature walkthroughs, configuration reference, and troubleshooting for medical record summarization software.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ===== Reset & Base ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy-dark: #0a1628;
+      --navy: #0f1d35;
+      --navy-mid: #1a2d50;
+      --navy-light: #243a5e;
+      --green: #00d4aa;
+      --green-dim: #00b894;
+      --green-glow: rgba(0, 212, 170, 0.25);
+      --white: #ffffff;
+      --gray-100: #f8f9fc;
+      --gray-200: #d1d5db;
+      --gray-300: #9ca3af;
+      --gray-400: #6b7280;
+      --gray-500: #374151;
+      --text-primary: #1a1a2e;
+      --text-secondary: #555;
+      --text-muted: #888;
+      --card-bg: #ffffff;
+      --card-border: #eee;
+      --radius: 12px;
+      --radius-lg: 20px;
+      --shadow: 0 4px 24px rgba(0,0,0,0.08);
+    }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #ffffff;
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a { color: var(--green-dim); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--green); }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ===== Animations ===== */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(0,212,170,0.6); }
+      50%      { opacity: 0.8; box-shadow: 0 0 0 8px rgba(0,212,170,0); }
+    }
+
+    /* ===== Buttons ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 50px;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      font-family: inherit;
+    }
+    .btn-primary {
+      background: var(--green);
+      color: var(--navy-dark);
+      border-color: var(--green);
+    }
+    .btn-primary:hover {
+      background: var(--green-dim);
+      border-color: var(--green-dim);
+      color: var(--navy-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px var(--green-glow);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--text-primary);
+      border-color: var(--card-border);
+    }
+    .btn-outline:hover {
+      border-color: var(--green);
+      color: var(--green);
+      transform: translateY(-2px);
+    }
+    .btn-outline-light {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(255,255,255,0.3);
+    }
+    .btn-outline-light:hover {
+      border-color: var(--green);
+      color: var(--green);
+      transform: translateY(-2px);
+    }
+    .btn-sm {
+      padding: 10px 24px;
+      font-size: 0.9rem;
+    }
+
+    /* ===== Navigation ===== */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 16px 0;
+      transition: background 0.3s, box-shadow 0.3s, padding 0.3s;
+    }
+    nav.scrolled {
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+      padding: 10px 0;
+    }
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: -0.5px;
+    }
+    .logo-dot {
+      width: 10px; height: 10px;
+      background: var(--green);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--gray-400);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-links a.active {
+      color: var(--green);
+      font-weight: 600;
+    }
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav-toggle span {
+      width: 24px; height: 2px;
+      background: var(--text-primary);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* ===== Compact Hero (Dark Navy) ===== */
+    .hero-compact {
+      position: relative;
+      padding: 120px 0 60px;
+      background: linear-gradient(160deg, var(--navy-dark) 0%, var(--navy) 40%, var(--navy-mid) 100%);
+      overflow: hidden;
+    }
+    .hero-compact::before {
+      content: '';
+      position: absolute;
+      top: -50%; right: -20%;
+      width: 800px; height: 800px;
+      background: radial-gradient(circle, rgba(0,212,170,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-compact .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto;
+      animation: fadeInUp 0.8s ease-out;
+    }
+    .breadcrumb {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 20px;
+    }
+    .breadcrumb a {
+      color: rgba(255,255,255,0.5);
+      transition: color 0.2s;
+    }
+    .breadcrumb a:hover { color: var(--green); }
+    .breadcrumb .sep { color: rgba(255,255,255,0.3); }
+    .hero-compact h1 {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -1.5px;
+      margin-bottom: 16px;
+      color: var(--white);
+    }
+    .hero-compact .subtitle {
+      font-size: clamp(1rem, 1.8vw, 1.15rem);
+      color: rgba(255,255,255,0.7);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ===== Docs Layout ===== */
+    .docs-section {
+      padding: 48px 0 80px;
+    }
+    .docs-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    /* ===== Sidebar ===== */
+    .docs-sidebar {
+      position: sticky;
+      top: 80px;
+      max-height: calc(100vh - 100px);
+      overflow-y: auto;
+      padding-right: 16px;
+    }
+    .docs-sidebar::-webkit-scrollbar { width: 4px; }
+    .docs-sidebar::-webkit-scrollbar-track { background: transparent; }
+    .docs-sidebar::-webkit-scrollbar-thumb { background: var(--gray-200); border-radius: 4px; }
+
+    .sidebar-group {
+      margin-bottom: 28px;
+    }
+    .sidebar-group-title {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--gray-300);
+      margin-bottom: 10px;
+      padding-left: 14px;
+    }
+    .sidebar-group ul {
+      list-style: none;
+    }
+    .sidebar-group ul li a {
+      display: block;
+      padding: 6px 14px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--gray-400);
+      border-left: 2px solid transparent;
+      transition: all 0.2s;
+      line-height: 1.5;
+    }
+    .sidebar-group ul li a:hover {
+      color: var(--text-primary);
+      border-left-color: var(--gray-200);
+    }
+    .sidebar-group ul li a.active {
+      color: var(--green);
+      border-left-color: var(--green);
+      font-weight: 600;
+      background: rgba(0, 212, 170, 0.04);
+    }
+
+    /* ===== Content ===== */
+    .docs-content {
+      min-width: 0;
+    }
+    .docs-content .content-section {
+      margin-bottom: 56px;
+    }
+    .docs-content .content-section h2 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--text-primary);
+      padding-top: 32px;
+      margin-bottom: 24px;
+      border-top: 1px solid var(--card-border);
+    }
+    .docs-content .content-section:first-child h2 {
+      border-top: none;
+      padding-top: 0;
+    }
+    .docs-content h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-top: 32px;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .docs-content h3 .pro-badge {
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      background: rgba(0, 212, 170, 0.15);
+      color: var(--green);
+      padding: 3px 10px;
+      border-radius: 50px;
+      line-height: 1;
+    }
+    .docs-content p {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .docs-content ul, .docs-content ol {
+      margin-bottom: 16px;
+      padding-left: 24px;
+    }
+    .docs-content ul li, .docs-content ol li {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 6px;
+    }
+    .docs-content ul li strong, .docs-content ol li strong,
+    .docs-content p strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+    .docs-content code {
+      font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+      font-size: 0.85em;
+      background: var(--gray-100);
+      color: var(--text-primary);
+      padding: 2px 8px;
+      border-radius: 6px;
+      border: 1px solid var(--card-border);
+    }
+    .docs-content pre {
+      background: var(--gray-100);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin-bottom: 16px;
+      overflow-x: auto;
+    }
+    .docs-content pre code {
+      background: none;
+      border: none;
+      padding: 0;
+      font-size: 0.85rem;
+      line-height: 1.7;
+      color: var(--text-primary);
+    }
+    .docs-content .info-box {
+      background: rgba(0, 212, 170, 0.06);
+      border: 1px solid rgba(0, 212, 170, 0.2);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin-bottom: 16px;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+    .docs-content .info-box strong {
+      color: var(--green-dim);
+    }
+    .docs-content .requirements-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 16px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--card-border);
+    }
+    .docs-content .requirements-table th,
+    .docs-content .requirements-table td {
+      padding: 12px 16px;
+      text-align: left;
+      font-size: 0.9rem;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .docs-content .requirements-table th {
+      background: var(--gray-100);
+      font-weight: 600;
+      color: var(--text-primary);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .docs-content .requirements-table td {
+      color: var(--text-secondary);
+    }
+    .docs-content .requirements-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      padding: 48px 0;
+      border-top: 1px solid var(--card-border);
+    }
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .footer-left .logo { margin-bottom: 8px; }
+    .footer-left p {
+      font-size: 0.8rem;
+      color: var(--gray-400);
+    }
+    .footer-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+    .footer-links a {
+      font-size: 0.85rem;
+      color: var(--gray-400);
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--text-primary); }
+    .footer-contact {
+      font-size: 0.85rem;
+      color: var(--gray-400);
+      text-align: right;
+    }
+    .footer-contact a { color: var(--green); }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(20px);
+        padding: 24px;
+        gap: 20px;
+        border-bottom: 1px solid var(--card-border);
+      }
+      .nav-toggle { display: flex; }
+
+      .docs-layout {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+      .docs-sidebar {
+        position: static;
+        max-height: none;
+        overflow-y: visible;
+        padding-right: 0;
+        padding-bottom: 32px;
+        margin-bottom: 32px;
+        border-bottom: 1px solid var(--card-border);
+      }
+
+      .footer-content { flex-direction: column; text-align: center; }
+      .footer-contact { text-align: center; }
+      .footer-links { flex-wrap: wrap; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Navigation ===== -->
+  <nav id="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <span class="logo-dot"></span>
+        MedRecords AI
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#features">Features</a></li>
+        <li><a href="index.html#how-it-works">How It Works</a></li>
+        <li><a href="index.html#pricing">Pricing</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="index.html#demo" class="btn btn-primary btn-sm">Try It Free</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== Compact Hero ===== -->
+  <section class="hero-compact">
+    <div class="container">
+      <div class="hero-content">
+        <div class="breadcrumb">
+          <a href="support.html">Support</a>
+          <span class="sep">/</span>
+          <span>Knowledge Base</span>
+        </div>
+        <h1>MedRecords AI Documentation</h1>
+        <p class="subtitle">Everything you need to set up, configure, and get the most out of MedRecords AI.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Docs Layout ===== -->
+  <section class="docs-section">
+    <div class="container">
+      <div class="docs-layout">
+
+        <!-- Sidebar -->
+        <aside class="docs-sidebar" id="docsSidebar">
+          <div class="sidebar-group">
+            <div class="sidebar-group-title">Getting Started</div>
+            <ul>
+              <li><a href="#system-requirements">System Requirements</a></li>
+              <li><a href="#quick-start">Quick Start Guide</a></li>
+              <li><a href="#first-case">Your First Case</a></li>
+            </ul>
+          </div>
+          <div class="sidebar-group">
+            <div class="sidebar-group-title">Installation</div>
+            <ul>
+              <li><a href="#windows-install">Windows Installation</a></li>
+              <li><a href="#license-activation">License Activation</a></li>
+              <li><a href="#claude-api">Claude API Setup</a></li>
+              <li><a href="#ollama-setup">Ollama Local AI Setup</a></li>
+            </ul>
+          </div>
+          <div class="sidebar-group">
+            <div class="sidebar-group-title">Features</div>
+            <ul>
+              <li><a href="#summarization">AI Summarization</a></li>
+              <li><a href="#timeline">Timeline &amp; Chronology</a></li>
+              <li><a href="#treatment-gaps">Treatment Gap Detection</a></li>
+              <li><a href="#smoking-gun">Smoking Gun Detection</a></li>
+              <li><a href="#source-linking">Source Page Linking</a></li>
+              <li><a href="#ai-chat">AI Chat</a></li>
+              <li><a href="#demand-packages">Demand Packages</a></li>
+              <li><a href="#case-valuation">Case Valuation</a></li>
+              <li><a href="#billing">Billing Extraction</a></li>
+            </ul>
+          </div>
+          <div class="sidebar-group">
+            <div class="sidebar-group-title">Configuration</div>
+            <ul>
+              <li><a href="#config-reference">config.yaml Reference</a></li>
+              <li><a href="#backend-selection">AI Backend Selection</a></li>
+              <li><a href="#processing-defaults">Processing Defaults</a></li>
+            </ul>
+          </div>
+          <div class="sidebar-group">
+            <div class="sidebar-group-title">Troubleshooting</div>
+            <ul>
+              <li><a href="#common-issues">Common Issues</a></li>
+              <li><a href="#log-files">Log Files</a></li>
+              <li><a href="#reporting-bugs">Reporting Bugs</a></li>
+            </ul>
+          </div>
+        </aside>
+
+        <!-- Content -->
+        <main class="docs-content">
+
+          <!-- ==================== GETTING STARTED ==================== -->
+          <div class="content-section" id="getting-started-section">
+            <h2>Getting Started</h2>
+
+            <h3 id="system-requirements">System Requirements</h3>
+            <table class="requirements-table">
+              <thead>
+                <tr>
+                  <th>Component</th>
+                  <th>Minimum</th>
+                  <th>Recommended</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Operating System</strong></td>
+                  <td>Windows 10 (64-bit)</td>
+                  <td>Windows 10 or later (64-bit)</td>
+                </tr>
+                <tr>
+                  <td><strong>RAM</strong></td>
+                  <td>8 GB</td>
+                  <td>16 GB (for local AI)</td>
+                </tr>
+                <tr>
+                  <td><strong>Disk Space</strong></td>
+                  <td>2 GB for installation</td>
+                  <td>Plus space for medical records</td>
+                </tr>
+                <tr>
+                  <td><strong>Python</strong></td>
+                  <td>3.10 or later</td>
+                  <td>Installer will guide you</td>
+                </tr>
+                <tr>
+                  <td><strong>GPU</strong></td>
+                  <td>Not required</td>
+                  <td>Optional NVIDIA GPU accelerates local AI models</td>
+                </tr>
+                <tr>
+                  <td><strong>Internet</strong></td>
+                  <td>Required for Claude API</td>
+                  <td>Optional for Ollama local processing</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h3 id="quick-start">Quick Start Guide</h3>
+            <p>Get MedRecords AI running in under five minutes:</p>
+            <ol>
+              <li><strong>Download</strong> the demo from <a href="index.html#demo">aiproductivity.dev</a></li>
+              <li><strong>Extract</strong> the ZIP to any folder (e.g., <code>C:\MedRecordsAI</code>)</li>
+              <li><strong>Launch</strong> by double-clicking <code>MedRecordsAI.bat</code></li>
+              <li><strong>Follow</strong> the setup wizard in your browser</li>
+              <li><strong>Log in</strong> with your credentials and start processing records</li>
+            </ol>
+            <div class="info-box">
+              <strong>Tip:</strong> The setup wizard will walk you through API key configuration, credential setup, and email preferences on first launch.
+            </div>
+
+            <h3 id="first-case">Your First Case</h3>
+            <p>Once you are logged in, follow these steps to process your first set of medical records:</p>
+            <ol>
+              <li>Click the <strong>"Files" tab</strong> in the dashboard</li>
+              <li><strong>Drag and drop</strong> your medical records (PDF, images, text files)</li>
+              <li>Records are automatically organized and queued for processing</li>
+              <li>Click <strong>"Summarize"</strong> to process &mdash; choose <strong>Fast</strong>, <strong>Auto</strong>, or <strong>Thorough</strong> mode</li>
+              <li>Review the generated summary, timeline, and detected issues</li>
+              <li>Use <strong>AI Chat</strong> to ask questions about the records</li>
+            </ol>
+          </div>
+
+          <!-- ==================== INSTALLATION ==================== -->
+          <div class="content-section" id="installation-section">
+            <h2>Installation</h2>
+
+            <h3 id="windows-install">Windows Installation</h3>
+            <p>Follow this step-by-step walkthrough to install MedRecords AI on your Windows machine:</p>
+            <ol>
+              <li><strong>Download</strong> the latest release ZIP from <a href="index.html#demo">aiproductivity.dev</a></li>
+              <li><strong>Extract</strong> the archive to your preferred directory (e.g., <code>C:\MedRecordsAI</code>)</li>
+              <li><strong>Run</strong> <code>MedRecordsAI.bat</code> &mdash; this launches the application and opens your default browser</li>
+              <li>The <strong>Setup Wizard</strong> appears on first launch:
+                <ul>
+                  <li>Accept the End User License Agreement (EULA)</li>
+                  <li>Enter your Claude API key or configure Ollama for local AI</li>
+                  <li>Set your login credentials (username and password)</li>
+                  <li>Configure email settings (optional, for automated record retrieval)</li>
+                </ul>
+              </li>
+              <li>After setup completes, MedRecords AI opens the <strong>dashboard</strong> and is ready for use</li>
+            </ol>
+            <div class="info-box">
+              <strong>Note:</strong> If Python 3.10+ is not detected, the installer will prompt you to download and install it. Make sure "Add Python to PATH" is checked during Python installation.
+            </div>
+
+            <h3 id="license-activation">License Activation</h3>
+            <p>After purchasing MedRecords AI, activate your license to unlock your tier:</p>
+            <ul>
+              <li>After purchasing, you receive a <strong>license key</strong> via email</li>
+              <li>Navigate to <strong>Settings &rarr; License</strong> in the dashboard</li>
+              <li>Enter your license key and click <strong>Activate</strong></li>
+              <li>Your tier (<strong>Core</strong> or <strong>Pro</strong>) unlocks immediately</li>
+              <li>License is tied to one machine &mdash; contact support for transfers</li>
+            </ul>
+
+            <h3 id="claude-api">Claude API Setup</h3>
+            <p>MedRecords AI uses Anthropic's Claude API for cloud-based AI processing:</p>
+            <ol>
+              <li>Sign up at <a href="https://console.anthropic.com" target="_blank" rel="noopener">console.anthropic.com</a></li>
+              <li>Navigate to <strong>API Keys</strong> and generate a new key</li>
+              <li>Enter the key during the setup wizard or later in <strong>Settings &rarr; AI Backend</strong></li>
+              <li>Costs approximately <strong>$1&ndash;2 per case</strong> depending on record size</li>
+            </ol>
+            <div class="info-box">
+              <strong>Model:</strong> MedRecords AI uses <code>claude-sonnet-4-6</code> for optimal accuracy and cost balance. This is configured automatically.
+            </div>
+
+            <h3 id="ollama-setup">Ollama Local AI Setup</h3>
+            <p>For fully air-gapped processing with no internet dependency:</p>
+            <ol>
+              <li>Download Ollama from <a href="https://ollama.com" target="_blank" rel="noopener">ollama.com</a></li>
+              <li>Install Ollama and pull the recommended model:
+                <pre><code>ollama pull qwen2.5:7b</code></pre>
+              </li>
+              <li>In MedRecords AI, select <strong>"Local AI (Ollama)"</strong> during setup or in <strong>Settings &rarr; AI Backend</strong></li>
+              <li>No internet required after the model download</li>
+            </ol>
+            <div class="info-box">
+              <strong>Security:</strong> With Ollama, your medical records are processed entirely on your machine. No data touches the internet &mdash; ever. This is the recommended option for maximum security.
+            </div>
+          </div>
+
+          <!-- ==================== FEATURES ==================== -->
+          <div class="content-section" id="features-section">
+            <h2>Features</h2>
+
+            <h3 id="summarization">AI Medical Summarization</h3>
+            <p>MedRecords AI offers three processing modes to match your needs:</p>
+            <ul>
+              <li><strong>Fast (1&ndash;2 minutes):</strong> Quick overview, key findings, and basic timeline. Ideal for initial case assessment.</li>
+              <li><strong>Auto (2&ndash;5 minutes):</strong> Balanced analysis with treatment gap detection and alerts. The default for most cases.</li>
+              <li><strong>Thorough (5&ndash;15 minutes):</strong> Deep analysis with cross-referencing, smoking gun detection, and comprehensive timeline. Recommended for complex cases.</li>
+            </ul>
+
+            <h3 id="timeline">Timeline &amp; Chronology</h3>
+            <p>Automatically generates a chronological timeline from all medical records:</p>
+            <ul>
+              <li>Each entry is linked to the <strong>source page</strong> in the original document</li>
+              <li>Filterable by <strong>date range</strong>, <strong>provider</strong>, and <strong>event type</strong></li>
+              <li>Export to <strong>PDF</strong> or <strong>Excel</strong> for inclusion in case files</li>
+            </ul>
+
+            <h3 id="treatment-gaps">Treatment Gap Detection</h3>
+            <p>Identifies gaps and inconsistencies in the patient's treatment history:</p>
+            <ul>
+              <li>Identifies gaps between recommended follow-up and actual visits</li>
+              <li>Highlights missed appointments and delayed treatments</li>
+              <li>Flags inconsistencies between provider recommendations and patient actions</li>
+            </ul>
+
+            <h3 id="smoking-gun">Smoking Gun Detection <span class="pro-badge">PRO</span></h3>
+            <p>Advanced analysis that surfaces critical findings across the entire record set:</p>
+            <ul>
+              <li>Detects critical findings that may have been overlooked</li>
+              <li>Identifies contradictions between records from different providers</li>
+              <li>Flags pre-existing conditions and prior injuries</li>
+              <li>Highlights documentation inconsistencies that may impact the case</li>
+            </ul>
+
+            <h3 id="source-linking">Source Page Linking</h3>
+            <p>Every finding in the summary is traceable back to the original document:</p>
+            <ul>
+              <li>Every finding linked back to the <strong>exact source page</strong></li>
+              <li>Click any citation to view the original document</li>
+              <li>Page numbers match the original medical records</li>
+            </ul>
+
+            <h3 id="ai-chat">AI Chat</h3>
+            <p>Ask questions about the medical records in natural language:</p>
+            <ul>
+              <li><em>"What medications was the patient prescribed after the surgery?"</em></li>
+              <li><em>"Were there any gaps in physical therapy?"</em></li>
+              <li><em>"Summarize all radiology findings."</em></li>
+            </ul>
+            <p>The AI is <strong>context-aware</strong> &mdash; it has read all processed records for the case and can answer questions across the entire document set.</p>
+
+            <h3 id="demand-packages">Demand Package Generation <span class="pro-badge">PRO</span></h3>
+            <p>Generate formatted demand packages ready for opposing counsel:</p>
+            <ul>
+              <li>Includes medical chronology, treatment summary, and damages analysis</li>
+              <li>Customizable templates per state and case type</li>
+              <li>Export to <strong>Word</strong> or <strong>PDF</strong></li>
+            </ul>
+
+            <h3 id="case-valuation">Case Valuation <span class="pro-badge">PRO</span></h3>
+            <p>AI-powered case value estimation to support settlement decisions:</p>
+            <ul>
+              <li>Based on jurisdiction, injury type, and treatment duration</li>
+              <li>Comparable verdict and settlement data</li>
+              <li>Range estimate with confidence level</li>
+            </ul>
+
+            <h3 id="billing">Billing Extraction</h3>
+            <p>Automatically extracts and organizes billing data from medical records:</p>
+            <ul>
+              <li>Identifies CPT codes, charges, payments, and adjustments</li>
+              <li>Generates a summary of total medical costs</li>
+              <li>Export to <strong>Excel</strong> for review and inclusion in demand packages</li>
+            </ul>
+          </div>
+
+          <!-- ==================== CONFIGURATION ==================== -->
+          <div class="content-section" id="configuration-section">
+            <h2>Configuration</h2>
+
+            <h3 id="config-reference">config.yaml Reference</h3>
+            <p>The <code>config.yaml</code> file in your installation directory controls core application settings:</p>
+            <pre><code># AI Backend
+llm_backend: claude          # claude | ollama
+
+# Claude API Settings
+claude:
+  model: claude-sonnet-4-6
+  timeout: 180               # seconds
+
+# Ollama Local AI Settings
+ollama:
+  endpoint: http://localhost:11434
+  model: qwen2.5:7b</code></pre>
+            <div class="info-box">
+              <strong>Tip:</strong> Changes to <code>config.yaml</code> take effect after restarting MedRecords AI.
+            </div>
+
+            <h3 id="backend-selection">AI Backend Selection</h3>
+            <p>MedRecords AI supports two AI backends that you can switch between at any time:</p>
+            <ul>
+              <li><strong>Claude API:</strong> Fastest and most accurate. Requires internet connection and API key. Best for firms that prioritize speed and output quality.</li>
+              <li><strong>Ollama (Local AI):</strong> Fully local and air-gapped. Free after initial setup. Slightly slower than Claude but offers maximum data security.</li>
+            </ul>
+            <p>Switch between backends in <strong>Settings &rarr; AI Backend</strong> or by editing the <code>llm_backend</code> value in <code>config.yaml</code>.</p>
+
+            <h3 id="processing-defaults">Processing Defaults</h3>
+            <p>Configure how MedRecords AI processes cases by default:</p>
+            <ul>
+              <li>The <strong>default processing mode</strong> (Fast, Auto, or Thorough) can be set in <code>config.yaml</code></li>
+              <li>Per-case overrides are available in the UI when clicking "Summarize"</li>
+              <li>Batch processing uses the default mode unless overridden</li>
+            </ul>
+          </div>
+
+          <!-- ==================== TROUBLESHOOTING ==================== -->
+          <div class="content-section" id="troubleshooting-section">
+            <h2>Troubleshooting</h2>
+
+            <h3 id="common-issues">Common Issues</h3>
+
+            <p><strong>Port 8080 already in use</strong></p>
+            <p>Another application is using port 8080. Either change the port in <code>config.yaml</code> or close the conflicting application. On Windows, you can identify the process with:</p>
+            <pre><code>netstat -aon | findstr :8080</code></pre>
+
+            <p><strong>Python not found</strong></p>
+            <p>Install Python 3.10 or later from <a href="https://python.org" target="_blank" rel="noopener">python.org</a>. During installation, make sure <strong>"Add Python to PATH"</strong> is checked. Restart your terminal after installation.</p>
+
+            <p><strong>OCR not working</strong></p>
+            <p>Tesseract OCR is included in the MedRecords AI setup. If OCR fails, verify that Tesseract is installed and accessible in your system PATH.</p>
+
+            <p><strong>Slow processing</strong></p>
+            <p>If processing is slow with Ollama, consider upgrading to the Claude API for faster results, or try a smaller/faster Ollama model. Ensure your system meets the recommended 16 GB RAM for local AI processing.</p>
+
+            <h3 id="log-files">Log Files</h3>
+            <p>MedRecords AI maintains detailed logs for debugging. All log files are located in the <code>logs/</code> directory:</p>
+            <table class="requirements-table">
+              <thead>
+                <tr>
+                  <th>Log File</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>logs/medical-ui.log</code></td>
+                  <td>Application logs (web UI and API)</td>
+                </tr>
+                <tr>
+                  <td><code>logs/medical_app_errors.log</code></td>
+                  <td>Error logs and stack traces</td>
+                </tr>
+                <tr>
+                  <td><code>logs/summarization-watcher.log</code></td>
+                  <td>AI processing pipeline logs</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>Logs are automatically rotated to prevent excessive disk usage.</p>
+
+            <h3 id="reporting-bugs">Reporting Bugs</h3>
+            <p>If you encounter a bug, please send the following information to our support team:</p>
+            <ul>
+              <li><strong>Email:</strong> <a href="mailto:dan.direnfeld@aiproductivity.dev">dan.direnfeld@aiproductivity.dev</a></li>
+              <li>Include: the <strong>error message</strong>, relevant <strong>log excerpts</strong>, and <strong>steps to reproduce</strong> the issue</li>
+              <li><strong>Priority Support</strong> subscribers receive guaranteed response times</li>
+            </ul>
+            <div class="info-box">
+              <strong>Tip:</strong> Before reporting, check the <a href="#common-issues">Common Issues</a> section above &mdash; your problem may already have a known solution.
+            </div>
+          </div>
+
+        </main>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-left">
+          <a href="index.html" class="logo">
+            <span class="logo-dot"></span>
+            MedRecords AI
+          </a>
+          <p>&copy; 2026 MedRecords AI. All rights reserved.</p>
+        </div>
+        <ul class="footer-links">
+          <li><a href="index.html#features">Features</a></li>
+          <li><a href="index.html#pricing">Pricing</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="privacy.html">Security</a></li>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+        <div class="footer-contact">
+          <p>Questions? Reach out at</p>
+          <a href="mailto:dan.direnfeld@aiproductivity.dev">dan.direnfeld@aiproductivity.dev</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== JavaScript ===== -->
+  <script>
+    // --- Navbar scroll effect ---
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    });
+    // Start scrolled since hero is compact
+    navbar.classList.add('scrolled');
+
+    // --- Mobile nav toggle ---
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    // --- Sidebar active link tracking via IntersectionObserver ---
+    const sidebarLinks = document.querySelectorAll('.docs-sidebar a[href^="#"]');
+    const sections = [];
+
+    sidebarLinks.forEach(link => {
+      const id = link.getAttribute('href').substring(1);
+      const section = document.getElementById(id);
+      if (section) sections.push({ id, el: section, link });
+    });
+
+    const observerOptions = {
+      rootMargin: '-80px 0px -60% 0px',
+      threshold: 0
+    };
+
+    let currentActive = null;
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          const match = sections.find(s => s.id === id);
+          if (match) {
+            if (currentActive) currentActive.classList.remove('active');
+            match.link.classList.add('active');
+            currentActive = match.link;
+          }
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(s => sectionObserver.observe(s.el));
+  </script>
+</body>
+</html>

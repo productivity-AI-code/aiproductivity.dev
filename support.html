@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support & Resources | MedRecords AI</title>
+  <meta name="description" content="Get help with MedRecords AI. Browse documentation, join the community forum, search our FAQ database, or upgrade to Priority Support for guaranteed response times.">
+  <link rel="canonical" href="https://aiproductivity.dev/support.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Support & Resources | MedRecords AI">
+  <meta property="og:description" content="Get help with MedRecords AI. Browse documentation, join the community forum, search our FAQ database, or upgrade to Priority Support for guaranteed response times.">
+  <meta property="og:url" content="https://aiproductivity.dev/support.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MedRecords AI">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Support & Resources | MedRecords AI">
+  <meta name="twitter:description" content="Get help with MedRecords AI. Browse documentation, join the community forum, search our FAQ database, or upgrade to Priority Support for guaranteed response times.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ===== Reset & Base ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy-dark: #0a1628;
+      --navy: #0f1d35;
+      --navy-mid: #1a2d50;
+      --navy-light: #243a5e;
+      --green: #00d4aa;
+      --green-dim: #00b894;
+      --green-glow: rgba(0, 212, 170, 0.25);
+      --white: #ffffff;
+      --gray-100: #f8f9fc;
+      --gray-200: #d1d5db;
+      --gray-300: #9ca3af;
+      --gray-400: #6b7280;
+      --gray-500: #374151;
+      --text-primary: #1a1a2e;
+      --text-secondary: #555;
+      --text-muted: #888;
+      --card-bg: #ffffff;
+      --card-border: #eee;
+      --radius: 12px;
+      --radius-lg: 20px;
+      --shadow: 0 4px 24px rgba(0,0,0,0.08);
+    }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #ffffff;
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a { color: var(--green-dim); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--green); }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ===== Animations ===== */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(0,212,170,0.6); }
+      50%      { opacity: 0.8; box-shadow: 0 0 0 8px rgba(0,212,170,0); }
+    }
+
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== Buttons ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 50px;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      font-family: inherit;
+    }
+    .btn-primary {
+      background: var(--green);
+      color: var(--navy-dark);
+      border-color: var(--green);
+    }
+    .btn-primary:hover {
+      background: var(--green-dim);
+      border-color: var(--green-dim);
+      color: var(--navy-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px var(--green-glow);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--text-primary);
+      border-color: var(--card-border);
+    }
+    .btn-outline:hover {
+      border-color: var(--green);
+      color: var(--green);
+      transform: translateY(-2px);
+    }
+    .btn-outline-light {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(255,255,255,0.3);
+    }
+    .btn-outline-light:hover {
+      border-color: var(--green);
+      color: var(--green);
+      transform: translateY(-2px);
+    }
+    .btn-sm {
+      padding: 10px 24px;
+      font-size: 0.9rem;
+    }
+
+    /* ===== Navigation ===== */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 16px 0;
+      transition: background 0.3s, box-shadow 0.3s, padding 0.3s;
+    }
+    nav.scrolled {
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+      padding: 10px 0;
+    }
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: -0.5px;
+    }
+    .logo-dot {
+      width: 10px; height: 10px;
+      background: var(--green);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--gray-400);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-links a.active {
+      color: var(--green);
+      font-weight: 600;
+    }
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav-toggle span {
+      width: 24px; height: 2px;
+      background: var(--text-primary);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* ===== Hero (Light Background) ===== */
+    .hero {
+      position: relative;
+      display: flex;
+      align-items: center;
+      background: var(--gray-100);
+      overflow: hidden;
+      padding: 160px 0 100px;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%; right: -20%;
+      width: 800px; height: 800px;
+      background: radial-gradient(circle, rgba(0,212,170,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 850px;
+      margin: 0 auto;
+      animation: fadeInUp 0.8s ease-out;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 20px;
+      border-radius: 50px;
+      background: rgba(0,212,170,0.1);
+      border: 1px solid rgba(0,212,170,0.25);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--green-dim);
+      margin-bottom: 28px;
+    }
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -1.5px;
+      margin-bottom: 20px;
+      color: var(--text-primary);
+    }
+    .hero p.subtitle {
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      color: var(--text-secondary);
+      max-width: 640px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+    }
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ===== Section Titles ===== */
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .section-title .label {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--green);
+      margin-bottom: 12px;
+    }
+    .section-title h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      letter-spacing: -1px;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .section-title p {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* ===== Support Tiers Section ===== */
+    .tiers-section {
+      padding: 100px 0;
+      background: var(--white);
+    }
+    .tiers-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .tier-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 40px 32px;
+      transition: all 0.35s ease;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .tier-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--green), transparent);
+      opacity: 0;
+      transition: opacity 0.35s;
+    }
+    .tier-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    }
+    .tier-card:hover::before { opacity: 1; }
+    .tier-card.featured {
+      border-color: var(--green);
+      border-width: 2px;
+    }
+    .tier-card.featured::before {
+      opacity: 1;
+    }
+    .tier-badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: var(--green);
+      color: var(--navy-dark);
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 4px 12px;
+      border-radius: 50px;
+    }
+    .tier-card h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+    .tier-price {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+    .tier-price-note {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .tier-features {
+      list-style: none;
+      margin-bottom: 32px;
+      flex-grow: 1;
+    }
+    .tier-features li {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      padding: 8px 0;
+      border-bottom: 1px solid var(--gray-100);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .tier-features li:last-child { border-bottom: none; }
+    .tier-features .check {
+      color: var(--green);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .tier-separator {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--green);
+      padding: 12px 0 4px;
+      border-bottom: 1px solid var(--gray-100);
+    }
+    .tier-cta {
+      margin-top: auto;
+    }
+    .tier-cta .btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .value-callout {
+      max-width: 900px;
+      margin: 40px auto 0;
+      background: rgba(0,212,170,0.04);
+      border: 1px solid rgba(0,212,170,0.15);
+      border-radius: var(--radius-lg);
+      padding: 28px 36px;
+      text-align: center;
+    }
+    .value-callout p {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+    .value-callout strong {
+      color: var(--text-primary);
+      font-weight: 700;
+    }
+
+    /* ===== Resources Grid ===== */
+    .resources-section {
+      padding: 100px 0;
+      background: var(--gray-100);
+    }
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .resource-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 36px 28px;
+      transition: all 0.35s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .resource-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--green), transparent);
+      opacity: 0;
+      transition: opacity 0.35s;
+    }
+    .resource-card:hover {
+      border-color: rgba(0,212,170,0.2);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    }
+    .resource-card:hover::before { opacity: 1; }
+    .resource-icon {
+      width: 56px; height: 56px;
+      border-radius: 14px;
+      background: rgba(0,212,170,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+    }
+    .resource-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--text-primary);
+    }
+    .resource-card p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .resource-link {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--green-dim);
+      transition: color 0.2s;
+    }
+    .resource-link:hover { color: var(--green); }
+    .badge-coming-soon {
+      display: inline-block;
+      background: rgba(245, 158, 11, 0.12);
+      color: #d97706;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 50px;
+    }
+    .badge-green {
+      display: inline-block;
+      background: rgba(0,212,170,0.12);
+      color: var(--green);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 50px;
+    }
+
+    /* ===== FAQ Section ===== */
+    .faq-section {
+      padding: 100px 0;
+      background: var(--white);
+    }
+    .faq-controls {
+      max-width: 800px;
+      margin: 0 auto 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+    .faq-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+    }
+    .faq-filter-btn {
+      padding: 8px 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      border: 1px solid var(--card-border);
+      border-radius: 50px;
+      background: var(--white);
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+    .faq-filter-btn:hover {
+      border-color: var(--green);
+      color: var(--green);
+    }
+    .faq-filter-btn.active {
+      background: var(--green);
+      border-color: var(--green);
+      color: var(--navy-dark);
+      font-weight: 600;
+    }
+    .faq-search-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 500px;
+    }
+    .faq-search-wrap .search-icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1rem;
+      color: var(--gray-300);
+      pointer-events: none;
+    }
+    .faq-search {
+      width: 100%;
+      padding: 12px 20px 12px 44px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      border: 1px solid var(--card-border);
+      border-radius: 50px;
+      background: var(--white);
+      color: var(--text-primary);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .faq-search:focus {
+      border-color: var(--green);
+      box-shadow: 0 0 0 3px rgba(0,212,170,0.1);
+    }
+    .faq-search::placeholder {
+      color: var(--gray-300);
+    }
+    .faq-list {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .faq-item {
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      background: var(--card-bg);
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .faq-item:hover {
+      border-color: rgba(0,212,170,0.3);
+    }
+    .faq-question {
+      width: 100%;
+      padding: 20px 24px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      font-family: inherit;
+      transition: color 0.2s;
+    }
+    .faq-question:hover {
+      color: var(--green-dim);
+    }
+    .faq-toggle {
+      flex-shrink: 0;
+      width: 24px; height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: var(--gray-300);
+      transition: transform 0.3s, color 0.2s;
+    }
+    .faq-item.open .faq-toggle {
+      transform: rotate(45deg);
+      color: var(--green);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+    }
+    .faq-answer-inner {
+      padding: 0 24px 20px;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+    .faq-item.hidden {
+      display: none;
+    }
+    .faq-no-results {
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      display: none;
+    }
+    .faq-no-results.visible {
+      display: block;
+    }
+
+    /* ===== Video Tutorials Section ===== */
+    .videos-section {
+      padding: 100px 0;
+      background: var(--gray-100);
+    }
+    .videos-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .video-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: all 0.35s ease;
+    }
+    .video-card:hover {
+      border-color: rgba(0,212,170,0.2);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    }
+    .video-placeholder {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%; /* 16:9 aspect ratio */
+      background: #e5e7eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .video-play-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px; height: 60px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.85);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      color: var(--gray-400);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    }
+    .video-info {
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .video-info h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    .badge-pro {
+      display: inline-block;
+      background: rgba(0,212,170,0.12);
+      color: var(--green);
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 3px 10px;
+      border-radius: 50px;
+      flex-shrink: 0;
+    }
+
+    /* ===== CTA Section (Dark Navy) ===== */
+    .cta-section {
+      padding: 100px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(160deg, var(--navy-dark) 0%, var(--navy) 40%, var(--navy-mid) 100%);
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 700px; height: 400px;
+      background: radial-gradient(ellipse, rgba(0,212,170,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cta-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+    .cta-inner h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+      color: var(--white);
+    }
+    .cta-inner p {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 40px;
+      line-height: 1.7;
+    }
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      padding: 48px 0;
+      border-top: 1px solid var(--card-border);
+    }
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .footer-left .logo { margin-bottom: 8px; }
+    .footer-left p {
+      font-size: 0.8rem;
+      color: var(--gray-400);
+    }
+    .footer-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+    .footer-links a {
+      font-size: 0.85rem;
+      color: var(--gray-400);
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--text-primary); }
+    .footer-contact {
+      font-size: 0.85rem;
+      color: var(--gray-400);
+      text-align: right;
+    }
+    .footer-contact a { color: var(--green); }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 1024px) {
+      .resources-grid { grid-template-columns: repeat(2, 1fr); }
+      .tiers-grid { grid-template-columns: repeat(2, 1fr); }
+      .videos-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(20px);
+        padding: 24px;
+        gap: 20px;
+        border-bottom: 1px solid var(--card-border);
+      }
+      .nav-toggle { display: flex; }
+
+      .resources-grid { grid-template-columns: 1fr; }
+      .tiers-grid { grid-template-columns: 1fr; }
+      .videos-grid { grid-template-columns: 1fr; }
+
+      .footer-content { flex-direction: column; text-align: center; }
+      .footer-contact { text-align: center; }
+      .footer-links { flex-wrap: wrap; justify-content: center; }
+
+      .hero-ctas { flex-direction: column; align-items: center; }
+      .cta-buttons { flex-direction: column; align-items: center; }
+      .btn { width: 100%; max-width: 300px; justify-content: center; }
+
+      .faq-filters { gap: 6px; }
+      .faq-filter-btn { padding: 6px 14px; font-size: 0.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Navigation ===== -->
+  <nav id="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <span class="logo-dot"></span>
+        MedRecords AI
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#features">Features</a></li>
+        <li><a href="index.html#how-it-works">How It Works</a></li>
+        <li><a href="index.html#pricing">Pricing</a></li>
+        <li><a href="support.html" class="active">Support</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="index.html#demo" class="btn btn-primary btn-sm">Try It Free</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== Hero Section (Light Background) ===== -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          SUPPORT &amp; RESOURCES
+        </div>
+        <h1>Get Help When You Need It</h1>
+        <p class="subtitle">From self-serve docs and community forums to priority phone support &mdash; we have you covered at every stage.</p>
+        <div class="hero-ctas">
+          <a href="docs.html" class="btn btn-primary">Browse Knowledge Base</a>
+          <a href="https://github.com/productivity-AI-code/Medical-Record-System/discussions" class="btn btn-outline">Join Community</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Support Tier Comparison ===== -->
+  <section class="tiers-section" id="tiers">
+    <div class="container">
+      <div class="section-title animate-on-scroll">
+        <div class="label">Support Plans</div>
+        <h2>Choose Your Support Level</h2>
+      </div>
+      <div class="tiers-grid animate-on-scroll">
+        <!-- Community Support -->
+        <div class="tier-card">
+          <h3>Community Support</h3>
+          <div class="tier-price">Included</div>
+          <div class="tier-price-note">With every Core and Pro license</div>
+          <ul class="tier-features">
+            <li><span class="check">&#10003;</span> Knowledge base &amp; documentation</li>
+            <li><span class="check">&#10003;</span> Community forum (GitHub Discussions)</li>
+            <li><span class="check">&#10003;</span> FAQ database</li>
+            <li><span class="check">&#10003;</span> Video tutorials</li>
+            <li><span class="check">&#10003;</span> Email support (best-effort, no SLA)</li>
+          </ul>
+          <div class="tier-cta">
+            <a href="#resources" class="btn btn-outline btn-sm">Browse Resources</a>
+          </div>
+        </div>
+        <!-- Priority Support -->
+        <div class="tier-card featured">
+          <span class="tier-badge">RECOMMENDED</span>
+          <h3>Priority Support</h3>
+          <div class="tier-price">$1,000</div>
+          <div class="tier-price-note">per year &mdash; add to any license</div>
+          <ul class="tier-features">
+            <li class="tier-separator">Everything in Community, plus:</li>
+            <li><span class="check">&#10003;</span> Priority email (24-hour response)</li>
+            <li><span class="check">&#10003;</span> Phone support (business hours)</li>
+            <li><span class="check">&#10003;</span> Critical issue response (4-hour guarantee)</li>
+            <li><span class="check">&#10003;</span> All version upgrades included</li>
+            <li><span class="check">&#10003;</span> Dedicated onboarding call (1 hour)</li>
+            <li><span class="check">&#10003;</span> Quarterly check-in calls</li>
+          </ul>
+          <div class="tier-cta">
+            <a href="mailto:dan.direnfeld@aiproductivity.dev?subject=Priority%20Support" class="btn btn-primary btn-sm">Add Priority Support</a>
+          </div>
+        </div>
+      </div>
+      <!-- Value Callout -->
+      <div class="value-callout animate-on-scroll">
+        <p><strong>Priority Support pays for itself.</strong> One critical-issue response at 4 hours instead of 48 can save a case deadline &mdash; a $1,000 investment protecting your $4,000&ndash;$8,000 software investment.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Self-Serve Resources Grid ===== -->
+  <section class="resources-section" id="resources">
+    <div class="container">
+      <div class="section-title animate-on-scroll">
+        <div class="label">Self-Serve</div>
+        <h2>Resources at Your Fingertips</h2>
+      </div>
+      <div class="resources-grid">
+        <div class="resource-card animate-on-scroll">
+          <div class="resource-icon">&#128214;</div>
+          <h3>Knowledge Base</h3>
+          <p>Step-by-step guides, configuration references, and best practices for every feature in MedRecords AI.</p>
+          <a href="docs.html" class="resource-link">Browse Docs &rarr;</a>
+        </div>
+        <div class="resource-card animate-on-scroll">
+          <div class="resource-icon">&#127909;</div>
+          <h3>Video Tutorials</h3>
+          <p>Watch walkthroughs covering installation, processing modes, demand packages, and local AI setup.</p>
+          <span class="badge-coming-soon">Coming Soon</span>
+        </div>
+        <div class="resource-card animate-on-scroll">
+          <div class="resource-icon">&#128101;</div>
+          <h3>Community Forum</h3>
+          <p>Ask questions, share tips, and connect with other MedRecords AI users on GitHub Discussions.</p>
+          <a href="https://github.com/productivity-AI-code/Medical-Record-System/discussions" class="resource-link">Join Discussion &rarr;</a>
+        </div>
+        <div class="resource-card animate-on-scroll">
+          <div class="resource-icon">&#10067;</div>
+          <h3>FAQ Database</h3>
+          <p>Quick answers to the most common questions about installation, features, billing, and troubleshooting.</p>
+          <a href="#faq" class="resource-link">Search FAQ &rarr;</a>
+        </div>
+        <div class="resource-card animate-on-scroll">
+          <div class="resource-icon">&#10024;</div>
+          <h3>Setup Wizard</h3>
+          <p>A guided walkthrough built right into the app that configures your AI backend, database, and first case.</p>
+          <span class="badge-green">Built into the app</span>
+        </div>
+        <div class="resource-card animate-on-scroll">
+          <div class="resource-icon">&#9993;</div>
+          <h3>Email Support</h3>
+          <p>Reach our team directly for questions, feedback, or issues that aren't covered in the docs or FAQ.</p>
+          <a href="mailto:dan.direnfeld@aiproductivity.dev" class="resource-link">Email Us &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ Section ===== -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="section-title animate-on-scroll">
+        <div class="label">FAQ Database</div>
+        <h2>Frequently Asked Questions</h2>
+      </div>
+
+      <div class="faq-controls animate-on-scroll">
+        <div class="faq-filters" id="faqFilters">
+          <button class="faq-filter-btn active" data-filter="all">All</button>
+          <button class="faq-filter-btn" data-filter="getting-started">Getting Started</button>
+          <button class="faq-filter-btn" data-filter="features">Features</button>
+          <button class="faq-filter-btn" data-filter="billing">Billing</button>
+          <button class="faq-filter-btn" data-filter="security">Security</button>
+          <button class="faq-filter-btn" data-filter="troubleshooting">Troubleshooting</button>
+        </div>
+        <div class="faq-search-wrap">
+          <span class="search-icon">&#128269;</span>
+          <input type="text" class="faq-search" id="faqSearch" placeholder="Search FAQ...">
+        </div>
+      </div>
+
+      <div class="faq-list" id="faqList">
+        <!-- Getting Started -->
+        <div class="faq-item animate-on-scroll" data-cat="getting-started">
+          <button class="faq-question">
+            <span>How do I install MedRecords AI?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Download the ZIP file from your purchase confirmation email, extract it to any folder on your computer, double-click <strong>MedRecordsAI.bat</strong>, and follow the built-in setup wizard. The wizard will configure your AI backend, initialize the database, and walk you through your first case.</div>
+          </div>
+        </div>
+        <div class="faq-item animate-on-scroll" data-cat="getting-started">
+          <button class="faq-question">
+            <span>What are the system requirements?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Windows 10 or later, 8 GB RAM minimum (16 GB recommended if running local AI models via Ollama), and Python 3.10 or newer. The application runs entirely in your browser at localhost &mdash; no additional software installation is required beyond Python.</div>
+          </div>
+        </div>
+        <div class="faq-item animate-on-scroll" data-cat="getting-started">
+          <button class="faq-question">
+            <span>How do I activate my license key?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">After launching MedRecords AI, navigate to <strong>Settings &rarr; License</strong> and paste your license key into the activation field. Your key was sent to the email address used during purchase. The license activates instantly &mdash; no internet connection is required for validation.</div>
+          </div>
+        </div>
+        <div class="faq-item animate-on-scroll" data-cat="getting-started">
+          <button class="faq-question">
+            <span>Can I install on multiple computers?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Each license covers one machine. If you need to run MedRecords AI on multiple computers, contact us at <a href="mailto:dan.direnfeld@aiproductivity.dev">dan.direnfeld@aiproductivity.dev</a> for multi-seat pricing. We offer volume discounts for firms with multiple workstations.</div>
+          </div>
+        </div>
+
+        <!-- Features -->
+        <div class="faq-item animate-on-scroll" data-cat="features">
+          <button class="faq-question">
+            <span>How do I process my first medical record?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Upload your document via the <strong>Files</strong> tab, select a processing mode (Fast, Auto, or Thorough), and click <strong>Summarize</strong>. MedRecords AI will extract, analyze, and organize the medical records into a structured summary with timeline, source linking, and gap detection.</div>
+          </div>
+        </div>
+        <div class="faq-item animate-on-scroll" data-cat="features">
+          <button class="faq-question">
+            <span>What file formats are supported?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">MedRecords AI supports PDF (both native text and scanned documents via OCR), TIFF, PNG, JPG, DOCX, TXT, CSV, and XML. Scanned PDFs and image files are automatically processed through the built-in OCR engine before analysis.</div>
+          </div>
+        </div>
+        <div class="faq-item animate-on-scroll" data-cat="features">
+          <button class="faq-question">
+            <span>What is the difference between processing modes?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner"><strong>Fast</strong> (1&ndash;2 min) provides a quick overview suitable for initial case screening. <strong>Auto</strong> (2&ndash;5 min) offers a balanced analysis with timeline and gap detection. <strong>Thorough</strong> (5&ndash;15 min) performs deep analysis with detailed findings, cross-referencing, and comprehensive source linking &mdash; ideal for demand packages and trial preparation.</div>
+          </div>
+        </div>
+        <div class="faq-item animate-on-scroll" data-cat="features">
+          <button class="faq-question">
+            <span>Can I use my own AI models?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Yes. MedRecords AI integrates with Ollama, allowing you to run open-source AI models locally on your own hardware. Popular options include Llama, Mistral, Qwen, and other models. This enables fully air-gapped processing where no data ever leaves your machine.</div>
+          </div>
+        </div>
+
+        <!-- Billing -->
+        <div class="faq-item animate-on-scroll" data-cat="billing">
+          <button class="faq-question">
+            <span>What is included in the one-time license fee?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Your one-time license fee includes the complete MedRecords AI software, community support (knowledge base, forum, FAQ, and best-effort email), and all features available at the time of purchase. There are no recurring charges for the software itself.</div>
+          </div>
+        </div>
+        <div class="faq-item animate-on-scroll" data-cat="billing">
+          <button class="faq-question">
+            <span>Are there any recurring fees?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">The only optional recurring costs are Priority Support ($1,000 per year) and Claude API usage if you choose cloud AI processing (typically $1&ndash;$2 per case). You can avoid all recurring costs entirely by using Ollama for free local AI processing.</div>
+          </div>
+        </div>
+        <div class="faq-item animate-on-scroll" data-cat="billing">
+          <button class="faq-question">
+            <span>What is the difference between Core and Pro?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner"><strong>Core</strong> includes summarization, timeline generation, gap detection, source linking, and AI chat. <strong>Pro</strong> adds everything in Core plus demand package generation, case valuation, negligence detection, task generation, injury body map visualization, and the first year of Priority Support included at no extra cost.</div>
+          </div>
+        </div>
+        <div class="faq-item animate-on-scroll" data-cat="billing">
+          <button class="faq-question">
+            <span>What is Priority Support and is it worth it?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Priority Support costs $1,000 per year and includes a 24-hour email response SLA, phone support during business hours, a 4-hour critical issue response guarantee, all version upgrades, a dedicated onboarding call, and quarterly check-in calls. Pro license holders get the first year of Priority Support included free. It is especially valuable for firms where downtime directly impacts case deadlines.</div>
+          </div>
+        </div>
+
+        <!-- Security -->
+        <div class="faq-item animate-on-scroll" data-cat="security">
+          <button class="faq-question">
+            <span>Is my data secure?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Yes. All medical records stay on your machine and are never uploaded to external servers. If you use the Claude API for processing, data is transmitted via encrypted TLS 1.3, processed, and immediately discarded &mdash; Anthropic does not store your data. All local data is protected with AES-256 encryption, and a HIPAA-compliant audit trail logs every access and action.</div>
+          </div>
+        </div>
+        <div class="faq-item animate-on-scroll" data-cat="security">
+          <button class="faq-question">
+            <span>Do I need an internet connection?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Only if you choose to use the Claude API for cloud-based AI processing. If you use Ollama for local AI, MedRecords AI operates in a fully air-gapped environment with zero internet connectivity required &mdash; ideal for high-security and government environments.</div>
+          </div>
+        </div>
+        <div class="faq-item animate-on-scroll" data-cat="security">
+          <button class="faq-question">
+            <span>Does MedRecords AI comply with HIPAA?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Yes. MedRecords AI is designed for HIPAA compliance through on-premise processing (data never leaves your machine), AES-256 encrypted storage, HMAC-signed audit logging with tamper-evident entries, and role-based access controls. Because data stays on your infrastructure, many traditional HIPAA concerns around cloud vendors and BAAs are eliminated entirely.</div>
+          </div>
+        </div>
+
+        <!-- Troubleshooting -->
+        <div class="faq-item animate-on-scroll" data-cat="troubleshooting">
+          <button class="faq-question">
+            <span>The app won't start &mdash; what should I check?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">First, ensure Python 3.10 or later is installed and available in your system PATH. Next, run <strong>MedRecordsAI.bat</strong> from a command prompt to see any error messages. Common issues include port 8080 already being in use by another application &mdash; check with <code>netstat -aon | findstr :8080</code> and close any conflicting processes.</div>
+          </div>
+        </div>
+        <div class="faq-item animate-on-scroll" data-cat="troubleshooting">
+          <button class="faq-question">
+            <span>How do I update to the latest version?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Download the latest version from your account or purchase confirmation, then extract the files over your existing installation directory. Your data, settings, and license key are preserved automatically &mdash; only the application code is updated. No reinstallation or reconfiguration is needed.</div>
+          </div>
+        </div>
+        <div class="faq-item animate-on-scroll" data-cat="troubleshooting">
+          <button class="faq-question">
+            <span>License key is not being accepted</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Ensure there are no extra spaces before or after the key when pasting. Verify that the key matches your license tier (Core keys will not activate Pro features, and vice versa). If the issue persists, contact support at <a href="mailto:dan.direnfeld@aiproductivity.dev">dan.direnfeld@aiproductivity.dev</a> with your order confirmation and we will resolve it promptly.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-no-results" id="faqNoResults">No matching questions found. Try a different search term or category.</div>
+    </div>
+  </section>
+
+  <!-- ===== Video Tutorials Section ===== -->
+  <section class="videos-section" id="videos">
+    <div class="container">
+      <div class="section-title animate-on-scroll">
+        <div class="label">Video Tutorials</div>
+        <h2>Watch &amp; Learn</h2>
+        <p>Video walkthroughs are coming soon. Subscribe to be notified.</p>
+      </div>
+      <div class="videos-grid">
+        <div class="video-card animate-on-scroll">
+          <div class="video-placeholder">
+            <div class="video-play-icon">&#9654;</div>
+          </div>
+          <div class="video-info">
+            <h3>Getting Started: Install &amp; First Case</h3>
+            <span class="badge-coming-soon">Coming Soon</span>
+          </div>
+        </div>
+        <div class="video-card animate-on-scroll">
+          <div class="video-placeholder">
+            <div class="video-play-icon">&#9654;</div>
+          </div>
+          <div class="video-info">
+            <h3>Processing Modes Explained</h3>
+            <span class="badge-coming-soon">Coming Soon</span>
+          </div>
+        </div>
+        <div class="video-card animate-on-scroll">
+          <div class="video-placeholder">
+            <div class="video-play-icon">&#9654;</div>
+          </div>
+          <div class="video-info">
+            <h3>Demand Package Generation</h3>
+            <div style="display:flex;gap:6px;align-items:center;flex-shrink:0;">
+              <span class="badge-pro">Pro</span>
+              <span class="badge-coming-soon">Coming Soon</span>
+            </div>
+          </div>
+        </div>
+        <div class="video-card animate-on-scroll">
+          <div class="video-placeholder">
+            <div class="video-play-icon">&#9654;</div>
+          </div>
+          <div class="video-info">
+            <h3>Setting Up Local AI with Ollama</h3>
+            <span class="badge-coming-soon">Coming Soon</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA Section (Dark Navy) ===== -->
+  <section class="cta-section" id="cta">
+    <div class="container">
+      <div class="cta-inner animate-on-scroll">
+        <h2>Need Help Getting Started?</h2>
+        <p>Download the free demo or reach out for a guided walkthrough.</p>
+        <div class="cta-buttons">
+          <a href="index.html#demo" class="btn btn-primary">Download Free Demo</a>
+          <a href="mailto:dan.direnfeld@aiproductivity.dev" class="btn btn-outline-light">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-left">
+          <a href="index.html" class="logo">
+            <span class="logo-dot"></span>
+            MedRecords AI
+          </a>
+          <p>&copy; 2026 MedRecords AI. All rights reserved.</p>
+        </div>
+        <ul class="footer-links">
+          <li><a href="index.html#features">Features</a></li>
+          <li><a href="index.html#pricing">Pricing</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="privacy.html">Security</a></li>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+        <div class="footer-contact">
+          <p>Questions? Reach out at</p>
+          <a href="mailto:dan.direnfeld@aiproductivity.dev">dan.direnfeld@aiproductivity.dev</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== JavaScript ===== -->
+  <script>
+    // --- Navbar scroll effect ---
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // --- Mobile nav toggle ---
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    // --- Scroll animations (Intersection Observer) ---
+    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -40px 0px' };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+    // --- FAQ Category Filter ---
+    const filterBtns = document.querySelectorAll('.faq-filter-btn');
+    const faqItems = document.querySelectorAll('.faq-item');
+    const faqSearch = document.getElementById('faqSearch');
+    const faqNoResults = document.getElementById('faqNoResults');
+    let activeFilter = 'all';
+
+    function applyFilters() {
+      const searchTerm = faqSearch.value.toLowerCase().trim();
+      let visibleCount = 0;
+
+      faqItems.forEach(item => {
+        const cat = item.getAttribute('data-cat');
+        const questionText = item.querySelector('.faq-question span').textContent.toLowerCase();
+        const matchesFilter = activeFilter === 'all' || cat === activeFilter;
+        const matchesSearch = !searchTerm || questionText.includes(searchTerm);
+
+        if (matchesFilter && matchesSearch) {
+          item.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+
+      if (visibleCount === 0) {
+        faqNoResults.classList.add('visible');
+      } else {
+        faqNoResults.classList.remove('visible');
+      }
+    }
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeFilter = btn.getAttribute('data-filter');
+        applyFilters();
+      });
+    });
+
+    faqSearch.addEventListener('input', applyFilters);
+
+    // --- FAQ Accordion Toggle ---
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-question');
+      question.addEventListener('click', () => {
+        const isOpen = item.classList.contains('open');
+        // Close all other items
+        faqItems.forEach(other => other.classList.remove('open'));
+        // Toggle current
+        if (!isOpen) {
+          item.classList.add('open');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
