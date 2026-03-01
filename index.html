@@ -1823,8 +1823,8 @@ MedRecords AI is a trademark of Productivity AI, LLC.</div>
 
     function triggerDownload() {
       const downloadLink = document.createElement('a');
-      downloadLink.href = 'dist/MedRecordsAI-DEMO-v2.1.0.zip';
-      downloadLink.download = 'MedRecordsAI-DEMO-v2.1.0.zip';
+      downloadLink.href = 'dist/MedRecordsAI-Setup-DEMO-v2.1.1.exe';
+      downloadLink.download = 'MedRecordsAI-Setup-DEMO-v2.1.1.exe';
       downloadLink.style.display = 'none';
       document.body.appendChild(downloadLink);
       downloadLink.click();
@@ -1853,7 +1853,7 @@ MedRecords AI is a trademark of Productivity AI, LLC.</div>
       formWrap.innerHTML = '<div class="demo-success">' +
         '<div class="demo-success-icon">&#10003;</div>' +
         '<h3>Download Started!</h3>' +
-        '<p>Your demo is downloading now. Extract the ZIP and double-click <strong>MedRecordsAI.bat</strong> to install.</p>' +
+        '<p>Your demo is downloading now. Double-click <strong>MedRecordsAI-Setup</strong> to install.</p>' +
         '</div>';
     }
 
@@ -1875,7 +1875,7 @@ MedRecords AI is a trademark of Productivity AI, LLC.</div>
       const ctaBox = event.target.closest('.cta-box');
       ctaBox.innerHTML =
         '<h2>&#10003; Your Download Has Started</h2>' +
-        '<p>Check your downloads folder for <strong>MedRecordsAI-DEMO-v2.1.0.zip</strong>. Extract and double-click <strong>MedRecordsAI.bat</strong> to install.</p>' +
+        '<p>Check your downloads folder for <strong>MedRecordsAI-Setup</strong>. Double-click to install.</p>' +
         '<p class="cta-note" style="margin-top:16px"><a href="#demo" style="color:var(--green)">View setup instructions &darr;</a></p>';
     }
   </script>
