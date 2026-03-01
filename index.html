@@ -1327,6 +1327,12 @@
           <div class="demo-form-wrap">
             <form id="demoForm" onsubmit="handleDemoDownload(event)">
               <h3>Get Instant Access</h3>
+              <div id="os-toggle" style="display:flex;gap:6px;margin:8px 0 4px;">
+                <button type="button" class="os-btn" data-os="windows" onclick="selectOS('windows')"
+                  style="padding:4px 14px;border-radius:20px;border:1px solid #d1d5db;font-size:0.82rem;cursor:pointer;transition:all .2s;">Windows</button>
+                <button type="button" class="os-btn" data-os="mac" onclick="selectOS('mac')"
+                  style="padding:4px 14px;border-radius:20px;border:1px solid #d1d5db;font-size:0.82rem;cursor:pointer;transition:all .2s;">macOS</button>
+              </div>
               <p class="demo-form-subtext">Enter your details and the download starts immediately.</p>
               <div class="demo-field">
                 <input type="text" id="demoName" placeholder="Full name" required>
@@ -1593,7 +1599,7 @@
           <input type="email" id="ctaEmail" placeholder="Work email" required aria-label="Email address">
           <button class="btn btn-primary" type="submit">Try MedRecords AI Free &rarr;</button>
         </form>
-        <p class="cta-note">One-click installer. 2-minute setup. 3 cases included. No strings attached.</p>
+        <p class="cta-note">One-click installer for Windows &amp; Mac. 2-minute setup. 3 cases included. No strings attached.</p>
       </div>
     </div>
   </section>
@@ -1840,22 +1846,76 @@ MedRecords AI is a trademark of Productivity AI, LLC.</div>
       } catch (e) { /* silent fail — download is more important */ }
     }
 
+    // ── OS Detection & Platform Toggle ──────────────────────────────
+    var selectedOS = 'windows';
+
+    function getOS() {
+      var p = navigator.platform || '';
+      var ua = navigator.userAgent || '';
+      if (/Mac/i.test(p) || /Macintosh/i.test(ua)) return 'mac';
+      return 'windows';
+    }
+
+    function selectOS(os) {
+      selectedOS = os;
+      document.querySelectorAll('.os-btn').forEach(function(btn) {
+        if (btn.getAttribute('data-os') === os) {
+          btn.style.background = '#1e3a5f';
+          btn.style.color = '#fff';
+          btn.style.borderColor = '#1e3a5f';
+        } else {
+          btn.style.background = '#fff';
+          btn.style.color = '#374151';
+          btn.style.borderColor = '#d1d5db';
+        }
+      });
+    }
+
+    // Auto-detect OS on page load
+    (function() {
+      selectedOS = getOS();
+      // Defer toggle highlighting until DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() { selectOS(selectedOS); });
+      } else {
+        setTimeout(function() { selectOS(selectedOS); }, 0);
+      }
+    })();
+
     function triggerDownload() {
-      const downloadLink = document.createElement('a');
-      downloadLink.href = 'install.bat';
-      downloadLink.download = 'MedRecords-AI-Install.bat';
+      var downloadLink = document.createElement('a');
+      if (selectedOS === 'mac') {
+        downloadLink.href = 'install-mac.sh';
+        downloadLink.download = 'MedRecords-AI-Install.sh';
+      } else {
+        downloadLink.href = 'install.bat';
+        downloadLink.download = 'MedRecords-AI-Install.bat';
+      }
       downloadLink.style.display = 'none';
       document.body.appendChild(downloadLink);
       downloadLink.click();
       document.body.removeChild(downloadLink);
     }
 
+    function getSuccessInstructions() {
+      if (selectedOS === 'mac') {
+        return '<p>Your installer is downloading now.<br>' +
+          '<strong>Open Terminal</strong> in your Downloads folder and run:</p>' +
+          '<pre style="background:#1e293b;color:#e2e8f0;padding:10px 14px;border-radius:8px;font-size:0.85rem;margin:10px 0;overflow-x:auto;">' +
+          'chmod +x MedRecords-AI-Install.sh &amp;&amp; ./MedRecords-AI-Install.sh</pre>' +
+          '<p style="font-size:0.85rem;color:var(--gray-400);">It will check for Python, download MedRecords AI, and launch the setup wizard.</p>';
+      }
+      return '<p>Your installer is downloading now.<br>' +
+        '<strong>Right-click the downloaded file &rarr; Run as administrator.</strong><br>' +
+        'It will check for Python, download MedRecords AI, and launch the setup wizard automatically.</p>';
+    }
+
     function handleDemoDownload(event) {
       event.preventDefault();
 
-      const name = document.getElementById('demoName').value.trim();
-      const email = document.getElementById('demoEmail').value.trim();
-      const firm = document.getElementById('demoFirm').value.trim();
+      var name = document.getElementById('demoName').value.trim();
+      var email = document.getElementById('demoEmail').value.trim();
+      var firm = document.getElementById('demoFirm').value.trim();
 
       if (!name || !email) {
         return;
@@ -1868,11 +1928,11 @@ MedRecords AI is a trademark of Productivity AI, LLC.</div>
       captureLead(name, email, firm);
 
       // Replace form with success message
-      const formWrap = document.querySelector('.demo-form-wrap');
+      var formWrap = document.querySelector('.demo-form-wrap');
       formWrap.innerHTML = '<div class="demo-success">' +
         '<div class="demo-success-icon">&#10003;</div>' +
         '<h3>Download Started!</h3>' +
-        '<p>Your installer is downloading now.<br><strong>Right-click the downloaded file &rarr; Run as administrator.</strong><br>It will check for Python, download MedRecords AI, and launch the setup wizard automatically.</p>' +
+        getSuccessInstructions() +
         '<p style="margin-top:16px;font-size:0.85rem;color:var(--gray-400);">Prefer a manual install? <a href="dist/MedRecordsAI-DEMO-v2.2.0.zip" style="color:var(--green);font-weight:600;" download>Download the ZIP instead</a></p>' +
         '</div>';
     }
@@ -1880,8 +1940,8 @@ MedRecords AI is a trademark of Productivity AI, LLC.</div>
     function handleCtaDownload(event) {
       event.preventDefault();
 
-      const name = document.getElementById('ctaName').value.trim();
-      const email = document.getElementById('ctaEmail').value.trim();
+      var name = document.getElementById('ctaName').value.trim();
+      var email = document.getElementById('ctaEmail').value.trim();
 
       if (!name || !email) return;
 
@@ -1892,10 +1952,14 @@ MedRecords AI is a trademark of Productivity AI, LLC.</div>
       captureLead(name, email, '');
 
       // Replace form with confirmation
-      const ctaBox = event.target.closest('.cta-box');
+      var fileName = selectedOS === 'mac' ? 'MedRecords-AI-Install.sh' : 'MedRecords-AI-Install.bat';
+      var runInstr = selectedOS === 'mac'
+        ? 'Open Terminal and run: <code>chmod +x ' + fileName + ' && ./' + fileName + '</code>'
+        : 'Right-click it &rarr; Run as administrator. The installer handles everything.';
+      var ctaBox = event.target.closest('.cta-box');
       ctaBox.innerHTML =
         '<h2>&#10003; Your Download Has Started</h2>' +
-        '<p>Check your downloads folder for <strong>MedRecords-AI-Install.bat</strong>.<br>Right-click it &rarr; Run as administrator. The installer handles everything.</p>' +
+        '<p>Check your downloads folder for <strong>' + fileName + '</strong>.<br>' + runInstr + '</p>' +
         '<p class="cta-note" style="margin-top:16px"><a href="dist/MedRecordsAI-DEMO-v2.2.0.zip" style="color:var(--green);font-weight:600;" download>Manual install (ZIP)</a> &bull; <a href="#demo" style="color:var(--green)">View setup details &darr;</a></p>';
     }
   </script>
