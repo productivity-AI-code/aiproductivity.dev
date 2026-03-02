@@ -752,9 +752,12 @@
             <p>MedRecords AI offers three processing modes to match your needs:</p>
             <ul>
               <li><strong>Fast (1&ndash;2 minutes):</strong> Quick overview, key findings, and basic timeline. Ideal for initial case assessment.</li>
-              <li><strong>Auto (2&ndash;5 minutes):</strong> Balanced analysis with treatment gap detection and alerts. The default for most cases.</li>
-              <li><strong>Thorough (5&ndash;15 minutes):</strong> Deep analysis with cross-referencing, smoking gun detection, and comprehensive timeline. Recommended for complex cases.</li>
+              <li><strong>Auto (2&ndash;5 minutes):</strong> Balanced analysis with treatment gap detection and alerts. The default for most cases. Automatically upgrades to Thorough mode for large cases.</li>
+              <li><strong>Thorough (5&ndash;15+ minutes):</strong> Deep analysis with cross-referencing, smoking gun detection, and comprehensive timeline. Handles cases up to <strong>500+ pages</strong> by processing in intelligent chunks. If a chunk fails, remaining chunks still complete &mdash; you can retry only the failed portions.</li>
             </ul>
+            <div class="info-box">
+              <strong>Large Cases:</strong> Cases with more than 10 files or 5 MB of content are automatically routed to Thorough mode, which splits the documents into manageable chunks for reliable processing. A real-time progress bar tracks each stage. If the pipeline encounters an error, it fails gracefully with a clear message and a <strong>Retry</strong> button.
+            </div>
 
             <h3 id="timeline">Timeline &amp; Chronology</h3>
             <p>Automatically generates a chronological timeline from all medical records:</p>
@@ -835,12 +838,22 @@ llm_backend: claude          # claude | ollama
 # Claude API Settings
 claude:
   model: claude-sonnet-4-6
-  timeout: 180               # seconds
+  timeout: 300               # seconds per API call
+  combined_timeout: 600      # seconds for multi-file cases
+  retries: 3                 # retry attempts on failure
+
+# Pipeline Safety
+pipeline:
+  max_duration_fast: 1800    # 30 min watchdog limit (fast/combined)
+  max_duration_thorough: 5400 # 90 min watchdog limit (thorough)
 
 # Ollama Local AI Settings
 ollama:
   endpoint: http://localhost:11434
   model: qwen2.5:7b</code></pre>
+            <div class="info-box">
+              <strong>Adaptive Timeouts:</strong> MedRecords AI automatically scales API timeouts based on document size. Large cases receive extended timeouts (up to 30 minutes per stage) so processing completes without interruption. A built-in watchdog monitors all running pipelines and safely terminates any that exceed the configured limits.
+            </div>
             <div class="info-box">
               <strong>Tip:</strong> Changes to <code>config.yaml</code> take effect after restarting MedRecords AI.
             </div>
@@ -880,6 +893,18 @@ ollama:
 
             <p><strong>Slow processing</strong></p>
             <p>If processing is slow with Ollama, consider upgrading to the Claude API for faster results, or try a smaller/faster Ollama model. Ensure your system meets the recommended 16 GB RAM for local AI processing.</p>
+
+            <p><strong>Pipeline timed out on large case</strong></p>
+            <p>Very large cases (500+ pages, 10+ files) may exceed default timeout limits. MedRecords AI automatically scales timeouts for large inputs, but if you still see timeouts:</p>
+            <ul style="margin-top:8px;margin-bottom:16px;">
+              <li>Click <strong>Retry</strong> &mdash; the pipeline resumes from the last completed stage (no lost work)</li>
+              <li>Try processing fewer files at once, then merge the results</li>
+              <li>Increase <code>combined_timeout</code> in <code>config.yaml</code> (default: 600 seconds)</li>
+              <li>Use <strong>Thorough</strong> mode, which chunks documents automatically for reliable processing</li>
+            </ul>
+
+            <p><strong>Pipeline stuck at "Processing"</strong></p>
+            <p>A built-in watchdog automatically detects pipelines stuck for longer than 30 minutes (fast mode) or 90 minutes (thorough mode) and marks them as failed with a Retry button. If a pipeline appears stuck, wait a moment for the watchdog to intervene, or restart the application.</p>
 
             <h3 id="log-files">Log Files</h3>
             <p>MedRecords AI maintains detailed logs for debugging. All log files are located in the <code>logs/</code> directory:</p>

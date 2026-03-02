@@ -1208,6 +1208,35 @@
             <div class="faq-answer-inner">Ensure there are no extra spaces before or after the key when pasting. Verify that the key matches your license tier (Core keys will not activate Pro features, and vice versa). If the issue persists, contact support at <a href="mailto:dan.direnfeld@aiproductivity.dev">dan.direnfeld@aiproductivity.dev</a> with your order confirmation and we will resolve it promptly.</div>
           </div>
         </div>
+        <div class="faq-item animate-on-scroll" data-cat="troubleshooting">
+          <button class="faq-question">
+            <span>My large case (500+ pages) timed out or failed</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">MedRecords AI handles large cases by automatically routing them through chunked processing (Thorough mode). Click <strong>Retry</strong> &mdash; the pipeline resumes from the last completed stage, so no work is lost. If timeouts persist, try selecting <strong>Thorough</strong> mode manually when processing, or increase the <code>combined_timeout</code> value in <code>config.yaml</code>. A built-in watchdog automatically detects and recovers from stuck pipelines.</div>
+          </div>
+        </div>
+        <div class="faq-item animate-on-scroll" data-cat="troubleshooting">
+          <button class="faq-question">
+            <span>Pipeline shows "Processing" but nothing is happening</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">A pipeline watchdog runs in the background and automatically detects stuck pipelines. If a pipeline has been running for longer than 30 minutes (fast mode) or 90 minutes (thorough mode), it will be safely terminated and marked as failed with a <strong>Retry</strong> button. If the issue persists after retry, restart the application &mdash; any in-progress pipelines will be cleaned up on startup.</div>
+          </div>
+        </div>
+
+        <!-- Features -->
+        <div class="faq-item animate-on-scroll" data-cat="features">
+          <button class="faq-question">
+            <span>How large of a case can MedRecords AI handle?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">MedRecords AI is designed to handle cases of any size, including 500+ page records with dozens of files. Large cases are automatically split into manageable chunks and processed in parallel. If any chunk fails, the rest continue processing &mdash; you can retry only the failed portions. The system uses adaptive timeouts that scale with document size, so large cases receive the processing time they need.</div>
+          </div>
+        </div>
       </div>
 
       <div class="faq-no-results" id="faqNoResults">No matching questions found. Try a different search term or category.</div>
