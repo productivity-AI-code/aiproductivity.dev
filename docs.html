@@ -753,6 +753,29 @@
               <li><strong>Automatic Retries:</strong> If a temporary network or API error occurs, the system automatically retries the task before alerting you.</li>
             </ul>
 
+            <h3 id="vault-encryption">Ironclad Privacy: Vault Encryption</h3>
+            <p>Security is the core of MedRecords AI. All HIPAA-sensitive data is protected using industry-standard <strong>AES-256 encryption at rest</strong>.</p>
+            <ul>
+              <li><strong>Secure Storage:</strong> Every summary, audit log, and processed metadata file is encrypted before being written to your disk.</li>
+              <li><strong>Unique Local Keys:</strong> Encryption keys are derived uniquely for your specific installation and machine ID.</li>
+              <li><strong>Transparent Access:</strong> Files are decrypted in-memory only when viewed by an authorized user, ensuring no PHI is ever left exposed on the file system.</li>
+            </ul>
+
+            <h3 id="vector-chat">Instant Answers: RAG-based Chat</h3>
+            <p>The Chat interface uses a local <strong>Vector Store</strong> (Retrieval-Augmented Generation) to provide instant answers across your entire case history.</p>
+            <ul>
+              <li><strong>Local Indexing:</strong> As records are processed, they are automatically indexed into a local vector database using Ollama embeddings.</li>
+              <li><strong>High Speed:</strong> Search across thousands of pages in milliseconds without hitting cloud API limits.</li>
+              <li><strong>Citations:</strong> Every AI answer includes direct links to the source case and page number for immediate verification.</li>
+            </ul>
+
+            <h3 id="self-updater">Automatic Updates</h3>
+            <p>Stay up to date with the latest security patches and features using the built-in <strong>Self-Updater</strong>.</p>
+            <ul>
+              <li><strong>One-Click Check:</strong> Use the Admin dashboard to check for new versions against our official manifest.</li>
+              <li><strong>Safe Patching:</strong> Updates are downloaded and verified before being applied to your installation.</li>
+            </ul>
+
             <h3 id="summarization">AI Medical Summarization</h3>
             <p>MedRecords AI offers three processing modes to match your needs:</p>
             <ul>

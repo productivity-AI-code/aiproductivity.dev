@@ -1096,6 +1096,36 @@
           </div>
         </div>
 
+        <div class="faq-item animate-on-scroll" data-cat="security">
+          <button class="faq-question">
+            <span>Is my data encrypted on my computer?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Yes. As of v2.2.7, MedRecords AI uses <strong>AES-256 Encryption at Rest</strong> for all files stored in the vault. This includes summaries, audit logs, and de-identified data. Encryption keys are generated uniquely for your installation, meaning even if someone gains access to your files, they cannot read the medical records without your specific machine credentials.</div>
+          </div>
+        </div>
+
+        <div class="faq-item animate-on-scroll" data-cat="security">
+          <button class="faq-question">
+            <span>How does the AI Chat handle my data?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">When you process a case, the text is indexed into a local <strong>Vector Store</strong> on your machine. When you ask a question in chat, the system performs a high-speed local search to find only the most relevant snippets. This data is processed locally by Ollama or sent securely to Claude (if enabled) only when requested. No data is used to train external models.</div>
+          </div>
+        </div>
+
+        <div class="faq-item animate-on-scroll" data-cat="getting-started">
+          <button class="faq-question">
+            <span>How do I get the latest updates?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">MedRecords AI now includes an <strong>Automatic Self-Updater</strong>. You can check for updates directly from the Admin dashboard. If a new version is available, the app will download the patch and prompt you to restart to apply the latest security fixes and features.</div>
+          </div>
+        </div>
+
         <div class="faq-item animate-on-scroll" data-cat="features">
           <button class="faq-question">
             <span>How do I process my first medical record?</span>
