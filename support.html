@@ -816,6 +816,7 @@
     @media (max-width: 1024px) {
       .resources-grid { grid-template-columns: repeat(2, 1fr); }
       .tiers-grid { grid-template-columns: repeat(2, 1fr); }
+      .tiers-section [style*="grid-template-columns:repeat(3"] { grid-template-columns: repeat(2, 1fr) !important; }
       .videos-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 768px) {
@@ -835,6 +836,7 @@
 
       .resources-grid { grid-template-columns: 1fr; }
       .tiers-grid { grid-template-columns: 1fr; }
+      .tiers-section [style*="grid-template-columns:repeat(3"] { grid-template-columns: 1fr !important; }
       .videos-grid { grid-template-columns: 1fr; }
 
       .footer-content { flex-direction: column; text-align: center; }
@@ -897,7 +899,7 @@
         <div class="label">Support Plans</div>
         <h2>Choose Your Support Level</h2>
       </div>
-      <div class="tiers-grid animate-on-scroll">
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:0 auto;" class="animate-on-scroll">
         <!-- Community Support -->
         <div class="tier-card">
           <h3>Community Support</h3>
@@ -914,12 +916,12 @@
             <a href="#resources" class="btn btn-outline btn-sm">Browse Resources</a>
           </div>
         </div>
-        <!-- Priority Support -->
-        <div class="tier-card featured">
-          <span class="tier-badge">RECOMMENDED</span>
-          <h3>Priority Support</h3>
-          <div class="tier-price">$1,000</div>
-          <div class="tier-price-note">per year &mdash; add to any license</div>
+        <!-- Core Priority Support -->
+        <div class="tier-card">
+          <h3>Core Priority Support</h3>
+          <div class="tier-price"><span style="text-decoration:line-through;color:#999;font-size:0.55em;vertical-align:middle;">$1,200</span> $1,000</div>
+          <div class="tier-price-note" style="color:#e74c3c;font-weight:600;">Launch Sale &mdash; Save $200/yr</div>
+          <div class="tier-price-note">per year &mdash; for Core license holders</div>
           <ul class="tier-features">
             <li class="tier-separator">Everything in Community, plus:</li>
             <li><span class="check">&#10003;</span> Priority email (24-hour response)</li>
@@ -930,14 +932,35 @@
             <li><span class="check">&#10003;</span> Quarterly check-in calls</li>
           </ul>
           <div class="tier-cta">
-            <a href="https://buy.stripe.com/test_aFa7sEf6y56N6dFgj45wI02" target="_blank" class="btn btn-primary btn-sm">Add Priority Support</a>
-            <p style="margin-top:8px;font-size:0.75rem;color:var(--text-secondary);">By purchasing, you agree to the <a href="support-agreement.html" style="color:var(--green);">Support Service Agreement</a>.</p>
+            <a href="https://buy.stripe.com/test_8x2cMY2jMdDj6dF9UG5wI03" target="_blank" class="btn btn-outline btn-sm">Add Core Support</a>
+            <p style="margin-top:8px;font-size:0.75rem;color:var(--text-secondary);">Requires active Core license key. <a href="support-agreement.html" style="color:var(--green);">Support Agreement</a></p>
+          </div>
+        </div>
+        <!-- Pro Priority Support -->
+        <div class="tier-card featured">
+          <span class="tier-badge">BEST VALUE</span>
+          <h3>Pro Priority Support</h3>
+          <div class="tier-price">$2,400</div>
+          <div class="tier-price-note" style="color:var(--green);font-weight:700;">1st Year FREE with Pro License During Launch Sale</div>
+          <div class="tier-price-note">per year &mdash; for Pro license holders</div>
+          <ul class="tier-features">
+            <li class="tier-separator">Everything in Community, plus:</li>
+            <li><span class="check">&#10003;</span> Priority email (24-hour response)</li>
+            <li><span class="check">&#10003;</span> Phone support (business hours)</li>
+            <li><span class="check">&#10003;</span> Critical issue response (4-hour guarantee)</li>
+            <li><span class="check">&#10003;</span> All version upgrades included</li>
+            <li><span class="check">&#10003;</span> Dedicated onboarding call (1 hour)</li>
+            <li><span class="check">&#10003;</span> Quarterly check-in calls</li>
+          </ul>
+          <div class="tier-cta">
+            <a href="https://buy.stripe.com/test_fZufZa0bEfLr7hJ0k65wI04" target="_blank" class="btn btn-primary btn-sm">Add Pro Support</a>
+            <p style="margin-top:8px;font-size:0.75rem;color:var(--text-secondary);">Requires active Pro license key. <a href="support-agreement.html" style="color:var(--green);">Support Agreement</a></p>
           </div>
         </div>
       </div>
       <!-- Value Callout -->
       <div class="value-callout animate-on-scroll">
-        <p><strong>Priority Support pays for itself.</strong> One critical-issue response at 4 hours instead of 48 can save a case deadline &mdash; a $1,000 investment protecting your $4,000&ndash;$8,000 software investment.</p>
+        <p><strong>Priority Support pays for itself.</strong> One critical-issue response at 4 hours instead of 48 can save a case deadline. Pro license holders get the 1st year of Pro Priority Support included free during the launch sale &mdash; a $2,400 value.</p>
       </div>
     </div>
   </section>
@@ -1106,7 +1129,7 @@
             <span class="faq-toggle">+</span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer-inner">The only optional recurring costs are Priority Support ($1,000 per year) and Claude API usage if you choose cloud AI processing (typically $1&ndash;$2 per case). You can avoid all recurring costs entirely by using Ollama for free local AI processing.</div>
+            <div class="faq-answer-inner">The only optional recurring costs are Priority Support (Core: $1,000/yr launch sale, Pro: $2,400/yr &mdash; 1st year free with Pro license during launch sale) and Claude API usage if you choose cloud AI processing (typically $1&ndash;$2 per case). You can avoid all recurring costs entirely by using Ollama for free local AI processing.</div>
           </div>
         </div>
         <div class="faq-item animate-on-scroll" data-cat="billing">
@@ -1124,7 +1147,7 @@
             <span class="faq-toggle">+</span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer-inner">Priority Support costs $1,000 per year and includes a 24-hour email response SLA, phone support during business hours, a 4-hour critical issue response guarantee, all version upgrades, a dedicated onboarding call, and quarterly check-in calls. Pro license holders get the first year of Priority Support included free. It is especially valuable for firms where downtime directly impacts case deadlines.</div>
+            <div class="faq-answer-inner">Priority Support includes a 24-hour email response SLA, phone support during business hours, a 4-hour critical issue response guarantee, all version upgrades, a dedicated onboarding call, and quarterly check-in calls. <strong>Core Priority Support</strong> is $1,000/yr (launch sale, normally $1,200). <strong>Pro Priority Support</strong> is $2,400/yr, with the 1st year included free when you purchase a Pro license during the launch sale. It is especially valuable for firms where downtime directly impacts case deadlines.</div>
           </div>
         </div>
 
