@@ -733,20 +733,25 @@
             <p>For fully air-gapped processing with no internet dependency:</p>
             <ol>
               <li>Download Ollama from <a href="https://ollama.com" target="_blank" rel="noopener">ollama.com</a></li>
-              <li>Install Ollama and pull the recommended model:
-                <pre><code>ollama pull qwen2.5:7b</code></pre>
-              </li>
-              <li>In MedRecords AI, select <strong>"Local AI (Ollama)"</strong> during setup or in <strong>Settings &rarr; AI Backend</strong></li>
-              <li>No internet required after the model download</li>
+              <li>Install Ollama and launch it once.</li>
+              <li>MedRecords AI will <strong>automatically detect</strong> Ollama and pull the required models (<code>qwen2.5:7b</code> and <code>glm4:9b</code>) on first run.</li>
             </ol>
             <div class="info-box">
-              <strong>Security:</strong> With Ollama, your medical records are processed entirely on your machine. No data touches the internet &mdash; ever. This is the recommended option for maximum security.
+              <strong>Zero-Configuration:</strong> You no longer need to manually pull models via the command line. The built-in <strong>Dependency Manager</strong> handles model updates and health checks automatically.
             </div>
           </div>
 
           <!-- ==================== FEATURES ==================== -->
           <div class="content-section" id="features-section">
             <h2>Features</h2>
+
+            <h3 id="durable-processing">Durable Processing &amp; Task Queue</h3>
+            <p>MedRecords AI uses an enterprise-grade task queue system to ensure your records are processed reliably, even if the application is closed or your computer restarts.</p>
+            <ul>
+              <li><strong>Persistence:</strong> Tasks are stored in a local <strong>SQLite database</strong>. If processing is interrupted, it resumes automatically upon restart.</li>
+              <li><strong>Background Worker:</strong> A dedicated worker process handles the "heavy lifting" of OCR and AI analysis, keeping the UI fast and responsive.</li>
+              <li><strong>Automatic Retries:</strong> If a temporary network or API error occurs, the system automatically retries the task before alerting you.</li>
+            </ul>
 
             <h3 id="summarization">AI Medical Summarization</h3>
             <p>MedRecords AI offers three processing modes to match your needs:</p>

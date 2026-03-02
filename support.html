@@ -1075,7 +1075,27 @@
           </div>
         </div>
 
+        <div class="faq-item animate-on-scroll" data-cat="getting-started">
+          <button class="faq-question">
+            <span>Do I need to manually download Ollama models?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">No. As of v2.2.6, MedRecords AI includes an <strong>Automated Dependency Manager</strong>. Once Ollama is installed and running, the application will automatically detect it and pull the required medical models (Qwen and GLM) in the background. You will see a "Downloading" status in the logs during the first run.</div>
+          </div>
+        </div>
+
         <!-- Features -->
+        <div class="faq-item animate-on-scroll" data-cat="features">
+          <button class="faq-question">
+            <span>What happens if I close the app while it's processing?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Nothing is lost. The system now uses a <strong>Resilient Background Worker</strong>. If you close the browser or your computer restarts, the worker will automatically resume the task from the exact stage it was at once the application is reopened. All progress is stored in a local SQLite database for maximum durability.</div>
+          </div>
+        </div>
+
         <div class="faq-item animate-on-scroll" data-cat="features">
           <button class="faq-question">
             <span>How do I process my first medical record?</span>
