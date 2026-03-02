@@ -1868,22 +1868,18 @@ MedRecords AI is a trademark of Productivity AI, LLC.</div>
     });
 
     // --- Demo Download Handler ---
-    // --- Lead capture via Google Forms (silent, non-blocking) ---
-    // TO CONFIGURE: Create a Google Form with fields Name, Email, Firm Name.
-    // Then replace GOOGLE_FORM_ID and the entry.XXXXX IDs below with your form's values.
-    // To find entry IDs: open your form, click "Get pre-filled link", inspect the URL parameters.
-    const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/GOOGLE_FORM_ID/formResponse';
-    const FORM_FIELD_NAME = 'entry.XXXXX';   // Replace with your Name field entry ID
-    const FORM_FIELD_EMAIL = 'entry.YYYYY';  // Replace with your Email field entry ID
-    const FORM_FIELD_FIRM = 'entry.ZZZZZ';   // Replace with your Firm field entry ID
+    // --- Lead capture via MedRecords AI CRM (silent, non-blocking) ---
+    // Posts to the Sales CRM backend to track demo downloads as leads.
+    // Update CRM_API_URL when the backend is deployed publicly.
+    const CRM_API_URL = 'http://127.0.0.1:8080/api/crm/demo-download';
 
     function captureLead(name, email, firm) {
       try {
-        const formData = new FormData();
-        formData.append(FORM_FIELD_NAME, name);
-        formData.append(FORM_FIELD_EMAIL, email);
-        if (firm) formData.append(FORM_FIELD_FIRM, firm);
-        fetch(GOOGLE_FORM_URL, { method: 'POST', body: formData, mode: 'no-cors' });
+        fetch(CRM_API_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name: name, email: email, company: firm }),
+        });
       } catch (e) { /* silent fail — download is more important */ }
     }
 
