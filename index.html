@@ -1868,19 +1868,23 @@ MedRecords AI is a trademark of Productivity AI, LLC.</div>
     });
 
     // --- Demo Download Handler ---
-    // --- Lead capture via MedRecords AI CRM (silent, non-blocking) ---
-    // Posts to the Sales CRM backend to track demo downloads as leads.
-    // Update CRM_API_URL when the backend is deployed publicly.
-    const CRM_API_URL = 'http://127.0.0.1:8080/api/crm/demo-download';
+    // --- Lead capture via Google Sheets webhook (silent, non-blocking) ---
+    // Posts to a Google Apps Script web app that writes leads to a Google Sheet.
+    // See google-apps-script-leads.js for setup instructions.
+    const LEAD_WEBHOOK_URL = 'PASTE_YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
 
     function captureLead(name, email, firm) {
-      try {
-        fetch(CRM_API_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ name: name, email: email, company: firm }),
-        });
-      } catch (e) { /* silent fail — download is more important */ }
+      if (!LEAD_WEBHOOK_URL || LEAD_WEBHOOK_URL.indexOf('PASTE_YOUR') !== -1) {
+        console.warn('Lead capture not configured — set LEAD_WEBHOOK_URL in index.html');
+        return;
+      }
+      fetch(LEAD_WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain' },
+        body: JSON.stringify({ name: name, email: email, company: firm, source: 'demo_download' }),
+      })
+      .then(function(res) { if (!res.ok) console.warn('Lead capture returned', res.status); })
+      .catch(function(err) { console.warn('Lead capture failed:', err.message); });
     }
 
     // ── OS Detection & Platform Toggle ──────────────────────────────
