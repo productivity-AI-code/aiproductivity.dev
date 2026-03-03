@@ -587,7 +587,14 @@
               <li><a href="#ai-chat">AI Chat</a></li>
               <li><a href="#demand-packages">Demand Packages</a></li>
               <li><a href="#case-valuation">Case Valuation</a></li>
+              <li><a href="#negligence">Negligence Detection</a></li>
+              <li><a href="#auto-tasks">Auto Task Generation</a></li>
+              <li><a href="#injury-map">Injury Visualization</a></li>
               <li><a href="#billing">Billing Extraction</a></li>
+              <li><a href="#deposition">Deposition Summarizer</a></li>
+              <li><a href="#integrations">Platform Integrations</a></li>
+              <li><a href="#contacts">Contact Management</a></li>
+              <li><a href="#supported-formats">Supported File Formats</a></li>
             </ul>
           </div>
           <div class="sidebar-group">
@@ -842,16 +849,105 @@
             <ul>
               <li>Based on jurisdiction, injury type, and treatment duration</li>
               <li>Comparable verdict and settlement data</li>
-              <li>Range estimate with confidence level</li>
+              <li>Range estimate (low / mid / high) with confidence bands across five severity tiers</li>
+              <li>Multiplier-based calculations calibrated to case type and state</li>
+            </ul>
+
+            <h3 id="negligence">Negligence Detection <span class="pro-badge">PRO</span></h3>
+            <p>Analyzes processed cases for potential standard-of-care deviations:</p>
+            <ul>
+              <li>Detects timing rule violations (e.g., ER imaging delays, follow-up gaps)</li>
+              <li>Flags medication contraindications and documentation inconsistencies</li>
+              <li>Each finding includes severity level, citation, description, and recommendation</li>
+              <li>Accept or reject individual findings with one click &mdash; feedback is stored for continuous improvement</li>
+            </ul>
+
+            <h3 id="auto-tasks">Auto Task Generation <span class="pro-badge">PRO</span></h3>
+            <p>Generates a prioritized action list from case findings so nothing falls through the cracks:</p>
+            <ul>
+              <li>Tasks categorized by type: depositions, records requests, expert review, follow-up, and more</li>
+              <li>Five priority levels from Critical to Routine with assignee suggestions (Attorney vs. Paralegal)</li>
+              <li>Priority breakdown dashboard showing Critical / High / Medium counts at a glance</li>
+              <li>Export the full task list to <strong>CSV</strong> for import into your practice management system</li>
+            </ul>
+
+            <h3 id="injury-map">Injury Visualization <span class="pro-badge">PRO</span></h3>
+            <p>Generates an SVG body diagram highlighting every injury found in the medical records:</p>
+            <ul>
+              <li>Maps diagnoses to <strong>14 anatomical regions</strong> (head, cervical/thoracic/lumbar spine, arms, legs, abdomen, etc.)</li>
+              <li>Color-coded overlays show injury location and distribution</li>
+              <li>Download the diagram as an <strong>SVG</strong> file for inclusion in demand packages or trial exhibits</li>
             </ul>
 
             <h3 id="billing">Billing Extraction</h3>
             <p>Automatically extracts and organizes billing data from medical records:</p>
             <ul>
               <li>Identifies CPT codes, charges, payments, and adjustments</li>
-              <li>Generates a summary of total medical costs</li>
+              <li>Generates a summary of total medical costs and future medical estimates</li>
+              <li>Provider-level billing breakdown</li>
               <li>Export to <strong>Excel</strong> for review and inclusion in demand packages</li>
             </ul>
+
+            <h3 id="deposition">Deposition Summarizer</h3>
+            <p>Upload deposition transcripts for AI-powered analysis:</p>
+            <ul>
+              <li>Extracts key testimony, contradictions, and admissions from transcripts</li>
+              <li>Identifies statements that support or undermine the case</li>
+              <li>Cross-references deposition testimony with medical record findings</li>
+            </ul>
+
+            <h3 id="integrations">Platform Integrations</h3>
+            <p>Push summaries and case data directly into your existing practice management system:</p>
+            <ul>
+              <li><strong>Filevine:</strong> Direct API integration &mdash; push summaries into case records with API key and Organization ID</li>
+              <li><strong>CASEpeer:</strong> Case data sync and summary push via API key</li>
+              <li><strong>Litify:</strong> Salesforce-based integration using OAuth 2.0 authentication</li>
+              <li><strong>Webhook:</strong> Generic HTTP POST integration compatible with Zapier, Make, n8n, or any custom endpoint</li>
+            </ul>
+            <p>Configure integrations in <strong>Settings &rarr; Integrations</strong>. Use the built-in <strong>Test Connection</strong> button to verify connectivity before pushing data.</p>
+
+            <h3 id="contacts">Contact Management</h3>
+            <p>Manage contacts for medical records retrieval and case tracking:</p>
+            <ul>
+              <li>Add contacts individually or <strong>batch import</strong> from an Excel spreadsheet</li>
+              <li>Search and filter contacts with pagination</li>
+              <li>Download a pre-formatted <strong>Excel template</strong> for bulk import</li>
+              <li>Integrates with the Email Retrieval Bot for automated records requests with escalation tiers</li>
+            </ul>
+
+            <h3 id="supported-formats">Supported File Formats</h3>
+            <p>MedRecords AI processes a wide range of medical document formats:</p>
+            <table class="requirements-table">
+              <thead>
+                <tr>
+                  <th>Category</th>
+                  <th>Formats</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>PDF Documents</td>
+                  <td><code>.pdf</code> (native text and scanned with OCR)</td>
+                </tr>
+                <tr>
+                  <td>Images</td>
+                  <td><code>.png</code>, <code>.jpg</code>, <code>.jpeg</code>, <code>.tiff</code>, <code>.tif</code></td>
+                </tr>
+                <tr>
+                  <td>Medical Imaging</td>
+                  <td><code>.dcm</code>, <code>.dicom</code> (DICOM format)</td>
+                </tr>
+                <tr>
+                  <td>Office Documents</td>
+                  <td><code>.doc</code>, <code>.docx</code>, <code>.xlsx</code>, <code>.xls</code></td>
+                </tr>
+                <tr>
+                  <td>Plain Text &amp; Data</td>
+                  <td><code>.txt</code>, <code>.csv</code>, <code>.json</code>, <code>.xml</code>, <code>.log</code>, <code>.html</code>, <code>.htm</code></td>
+                </tr>
+              </tbody>
+            </table>
+            <p>Maximum upload size: <strong>100 MB</strong> per file.</p>
           </div>
 
           <!-- ==================== CONFIGURATION ==================== -->
@@ -866,8 +962,10 @@ llm_backend: claude          # claude | ollama
 # Claude API Settings
 claude:
   model: claude-sonnet-4-6
+  max_tokens: 32768          # max output tokens per call
   timeout: 300               # seconds per API call
   combined_timeout: 600      # seconds for multi-file cases
+  combined_max_tokens: 65536 # max output for combined mode
   retries: 3                 # retry attempts on failure
 
 # Pipeline Safety
@@ -878,7 +976,13 @@ pipeline:
 # Ollama Local AI Settings
 ollama:
   endpoint: http://localhost:11434
-  model: qwen2.5:7b</code></pre>
+  model: qwen2.5:7b
+  timeout: 900               # 15 min per call (local is slower)
+  retries: 3
+
+# Upload Limits
+web_ui:
+  max_upload_mb: 100         # max file size in megabytes</code></pre>
             <div class="info-box">
               <strong>Adaptive Timeouts:</strong> MedRecords AI automatically scales API timeouts based on document size. Large cases receive extended timeouts (up to 30 minutes per stage) so processing completes without interruption. A built-in watchdog monitors all running pipelines and safely terminates any that exceed the configured limits.
             </div>

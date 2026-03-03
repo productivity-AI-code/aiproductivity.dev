@@ -1141,7 +1141,7 @@
             <span class="faq-toggle">+</span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer-inner">MedRecords AI supports PDF (both native text and scanned documents via OCR), TIFF, PNG, JPG, DOCX, TXT, CSV, and XML. Scanned PDFs and image files are automatically processed through the built-in OCR engine before analysis.</div>
+            <div class="faq-answer-inner">MedRecords AI supports PDF (both native text and scanned documents via OCR), TIFF, PNG, JPG, DOCX, DOC, XLSX, XLS, TXT, CSV, JSON, XML, LOG, HTML, and medical DICOM imaging files (.dcm, .dicom). Scanned PDFs and image files are automatically processed through the built-in OCR engine with medical terminology correction. Maximum upload size is 100 MB per file.</div>
           </div>
         </div>
         <div class="faq-item animate-on-scroll" data-cat="features">
@@ -1285,6 +1285,62 @@
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">MedRecords AI is designed to handle cases of any size, including 500+ page records with dozens of files. Large cases are automatically split into manageable chunks and processed in parallel. If any chunk fails, the rest continue processing &mdash; you can retry only the failed portions. The system uses adaptive timeouts that scale with document size, so large cases receive the processing time they need.</div>
+          </div>
+        </div>
+
+        <!-- New feature FAQs -->
+        <div class="faq-item animate-on-scroll" data-cat="features">
+          <button class="faq-question">
+            <span>What does Negligence Detection do?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Negligence Detection (Pro) analyzes a processed case for standard-of-care deviations. It identifies timing rule violations (e.g., delayed ER imaging), medication contraindications, documentation inconsistencies, and treatment gaps. Each finding includes a severity level, citation to source records, and a recommendation. You can accept or reject individual findings with one click, and your feedback is stored for continuous improvement.</div>
+          </div>
+        </div>
+        <div class="faq-item animate-on-scroll" data-cat="features">
+          <button class="faq-question">
+            <span>How does the Auto Task Generator work?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Auto Task Generation (Pro) reads your completed summary and creates a prioritized list of action items &mdash; depositions to schedule, records to request, experts to retain, follow-ups needed, and more. Tasks are sorted by five priority levels (Critical through Routine) with suggested assignees (Attorney or Paralegal). You can export the full task list to CSV for import into your practice management system.</div>
+          </div>
+        </div>
+        <div class="faq-item animate-on-scroll" data-cat="features">
+          <button class="faq-question">
+            <span>What is the Injury Body Map?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Injury Visualization (Pro) generates an SVG body diagram that maps every diagnosed injury to one of 14 anatomical regions (head, cervical/thoracic/lumbar spine, arms, legs, abdomen, knees, etc.). The diagram uses color-coded overlays to highlight injury locations. You can download the SVG for inclusion in demand packages, settlement brochures, or trial exhibits.</div>
+          </div>
+        </div>
+        <div class="faq-item animate-on-scroll" data-cat="features">
+          <button class="faq-question">
+            <span>Can I summarize deposition transcripts?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Yes. The Deposition Summarizer analyzes uploaded deposition transcripts to extract key testimony, identify contradictions, flag admissions, and cross-reference statements against the medical records. Upload a transcript through the Depositions tab to get a structured summary of the most relevant testimony.</div>
+          </div>
+        </div>
+        <div class="faq-item animate-on-scroll" data-cat="features">
+          <button class="faq-question">
+            <span>Does MedRecords AI integrate with my case management software?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Yes. MedRecords AI offers built-in integrations with <strong>Filevine</strong>, <strong>CASEpeer</strong>, and <strong>Litify</strong>, plus a generic <strong>Webhook</strong> connector that works with Zapier, Make, n8n, or any custom endpoint. Configure integrations in Settings &rarr; Integrations, test the connection, and push summaries directly into your existing case records with one click.</div>
+          </div>
+        </div>
+        <div class="faq-item animate-on-scroll" data-cat="features">
+          <button class="faq-question">
+            <span>Can I import contacts in bulk?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Yes. Download the pre-formatted Excel template from the Contacts page, fill in your contact details (medical providers, insurance companies, etc.), and use the batch import feature to upload them all at once. Imported contacts integrate with the Email Retrieval Bot for automated records request follow-ups.</div>
           </div>
         </div>
       </div>
