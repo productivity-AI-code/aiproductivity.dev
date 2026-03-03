@@ -1446,23 +1446,23 @@
       <!-- Priority Support Add-ons -->
       <div style="max-width:900px;margin:40px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:24px;" class="animate-on-scroll">
         <!-- Core Priority Support -->
-        <div style="background:var(--card-bg);border:1px solid var(--card-border);border-radius:var(--radius-lg);padding:28px 28px;">
+        <div style="background:rgba(0,212,170,0.04);border:2px solid var(--green);border-radius:var(--radius-lg);padding:28px 28px;">
           <div style="font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:var(--green);margin-bottom:8px;">For Core License Holders</div>
           <strong style="font-size:1.1rem;color:var(--text-primary);">Core Priority Support</strong>
           <div style="margin:8px 0 4px;"><span style="text-decoration:line-through;color:#999;font-size:0.9rem;">$1,200/yr</span> <strong style="font-size:1.3rem;color:var(--text-primary);">$1,000/yr</strong></div>
           <div style="font-size:0.78rem;color:#e74c3c;font-weight:600;margin-bottom:12px;">Launch Sale &mdash; Save $200/yr</div>
           <p style="font-size:0.82rem;color:var(--text-secondary);line-height:1.6;margin-bottom:16px;">24-hour email SLA &bull; Phone support &bull; 4-hour critical response &bull; All upgrades &bull; Onboarding call</p>
-          <a href="https://buy.stripe.com/test_8x2cMY2jMdDj6dF9UG5wI03" target="_blank" class="btn btn-outline btn-sm" style="width:100%;justify-content:center;">Add Core Support</a>
+          <a href="https://buy.stripe.com/test_8x2cMY2jMdDj6dF9UG5wI03" target="_blank" class="btn btn-primary btn-sm" style="width:100%;justify-content:center;">Add Core Support</a>
           <p style="margin-top:8px;font-size:0.72rem;color:var(--text-secondary);text-align:center;">Requires active Core license key. <a href="support-agreement.html" style="color:var(--green);">Support Agreement</a></p>
         </div>
         <!-- Pro Priority Support -->
-        <div style="background:rgba(0,212,170,0.04);border:2px solid var(--green);border-radius:var(--radius-lg);padding:28px 28px;">
+        <div style="background:var(--card-bg);border:1px solid var(--card-border);border-radius:var(--radius-lg);padding:28px 28px;">
           <div style="font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:var(--green);margin-bottom:8px;">For Pro License Holders</div>
           <strong style="font-size:1.1rem;color:var(--text-primary);">Pro Priority Support</strong>
           <div style="margin:8px 0 4px;"><strong style="font-size:1.3rem;color:var(--text-primary);">$2,400/yr</strong></div>
           <div style="font-size:0.82rem;color:var(--green);font-weight:700;margin-bottom:12px;">1st Year FREE with Pro License During Launch Sale</div>
           <p style="font-size:0.82rem;color:var(--text-secondary);line-height:1.6;margin-bottom:16px;">24-hour email SLA &bull; Phone support &bull; 4-hour critical response &bull; All upgrades &bull; Onboarding call &bull; Quarterly reviews</p>
-          <a href="https://buy.stripe.com/test_fZufZa0bEfLr7hJ0k65wI04" target="_blank" class="btn btn-primary btn-sm" style="width:100%;justify-content:center;">Add Pro Support</a>
+          <a href="https://buy.stripe.com/test_fZufZa0bEfLr7hJ0k65wI04" target="_blank" class="btn btn-outline btn-sm" style="width:100%;justify-content:center;">Add Pro Support</a>
           <p style="margin-top:8px;font-size:0.72rem;color:var(--text-secondary);text-align:center;">Requires active Pro license key. <a href="support-agreement.html" style="color:var(--green);">Support Agreement</a></p>
         </div>
       </div>
@@ -1871,7 +1871,7 @@ MedRecords AI is a trademark of Productivity AI, LLC.</div>
     // --- Lead capture via Google Sheets webhook (silent, non-blocking) ---
     // Posts to a Google Apps Script web app that writes leads to a Google Sheet.
     // See google-apps-script-leads.js for setup instructions.
-    const LEAD_WEBHOOK_URL = 'PASTE_YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
+    const LEAD_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbxZX0SRqyCb5MQiV_T0Rd4-cVFnFwpjbiGyKp-eViazwj6HGnp3HlZmF4LMgldb-jM64w/exec';
 
     function captureLead(name, email, firm) {
       if (!LEAD_WEBHOOK_URL || LEAD_WEBHOOK_URL.indexOf('PASTE_YOUR') !== -1) {
