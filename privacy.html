@@ -748,7 +748,7 @@
     /* ===== Responsive ===== */
     @media (max-width: 1024px) {
       .airgap-grid { grid-template-columns: repeat(2, 1fr); }
-      .audience-grid { grid-template-columns: repeat(2, 1fr); }
+      .audience-grid { grid-template-columns: repeat(2, 1fr) !important; }
       .security-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 768px) {
@@ -937,7 +937,7 @@
             <tr>
               <td>BAA required</td>
               <td><span class="tag-red">Yes (often unavailable)</span></td>
-              <td class="highlight"><span class="tag-green">No (data never leaves you)</span></td>
+              <td class="highlight"><span class="tag-green">No vendor BAA needed &mdash; data never leaves your machine</span></td>
             </tr>
             <tr>
               <td>Audit trail</td>
@@ -1002,9 +1002,14 @@
       <div class="section-title animate-on-scroll">
         <div class="label">Who It's For</div>
         <h2>Built for Firms That Take Privacy Seriously</h2>
-        <p>On-premise AI is not a feature. It's a requirement for firms handling the most sensitive records.</p>
+        <p>On-premise AI is not a feature. It's a requirement for firms handling the most sensitive records. Unlike EvenUp and DigitalOwl, no vendor security risk.</p>
       </div>
-      <div class="audience-grid">
+      <div class="audience-grid" style="grid-template-columns:repeat(4,1fr);">
+        <div class="audience-card animate-on-scroll">
+          <div class="audience-icon">&#9878;&#65039;</div>
+          <h3>Small PI Firms (1&ndash;10 Attorneys)</h3>
+          <p>Stop paying $500/case to cloud vendors. Own your AI tool outright for a one-time fee. Process unlimited cases on your own machine &mdash; no per-case fees, no subscriptions, no vendor lock-in.</p>
+        </div>
         <div class="audience-card animate-on-scroll">
           <div class="audience-icon">&#127963;&#65039;</div>
           <h3>Government &amp; VA Firms</h3>
@@ -1072,10 +1077,10 @@
     <div class="container">
       <div class="cta-inner animate-on-scroll">
         <h2>Try It Risk-Free</h2>
-        <p>Your data stays on your machine even during the free demo. 14 days, 3 cases, full features.</p>
+        <p>Your data stays on your machine even during the free demo. 3 cases, full features, no credit card.</p>
         <div class="cta-buttons">
           <a href="index.html#demo" class="btn btn-primary">Download Free Demo</a>
-          <a href="index.html#pricing" class="btn btn-outline-light">See Pricing</a>
+          <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0BgIw4t3vuLvfdFV1xlCBZEhFre0Dumk-3QFY_oLoMLfJuIT0b6-6rvBy-NGsY1CFXFqiED0IP" target="_blank" class="btn btn-outline-light">Schedule a 15-min Demo</a>
         </div>
       </div>
     </div>
