@@ -1962,8 +1962,8 @@ MedRecords AI is a trademark of Productivity AI, LLC.</div>
         downloadLink.href = 'install-mac.sh';
         downloadLink.download = 'MedRecords-AI-Install.sh';
       } else {
-        downloadLink.href = 'install.bat';
-        downloadLink.download = 'MedRecords-AI-Install.bat';
+        downloadLink.href = 'dist/MedRecordsAI-DEMO-v2.2.9.zip';
+        downloadLink.download = 'MedRecordsAI-DEMO.zip';
       }
       downloadLink.style.display = 'none';
       document.body.appendChild(downloadLink);
@@ -1979,9 +1979,13 @@ MedRecords AI is a trademark of Productivity AI, LLC.</div>
           'chmod +x MedRecords-AI-Install.sh &amp;&amp; ./MedRecords-AI-Install.sh</pre>' +
           '<p style="font-size:0.85rem;color:var(--gray-400);">It will check for Python, download MedRecords AI, and launch the setup wizard.</p>';
       }
-      return '<p>Your installer is downloading now.<br>' +
-        '<strong>Right-click the downloaded file &rarr; Run as administrator.</strong><br>' +
-        'It will check for Python, download MedRecords AI, and launch the setup wizard automatically.</p>';
+      return '<p>Your download is starting now.</p>' +
+        '<ol style="text-align:left;margin:12px 0;padding-left:20px;font-size:0.9rem;line-height:1.8;">' +
+        '<li><strong>Extract</strong> the ZIP to any folder</li>' +
+        '<li><strong>Double-click</strong> <code>MedRecordsAI.bat</code></li>' +
+        '<li>Follow the <strong>setup wizard</strong> in your browser</li>' +
+        '</ol>' +
+        '<p style="font-size:0.85rem;color:var(--gray-400);">Python and all dependencies are installed automatically if missing.</p>';
     }
 
     function handleDemoDownload(event) {
@@ -2007,7 +2011,6 @@ MedRecords AI is a trademark of Productivity AI, LLC.</div>
         '<div class="demo-success-icon">&#10003;</div>' +
         '<h3>Download Started!</h3>' +
         getSuccessInstructions() +
-        '<p style="margin-top:16px;font-size:0.85rem;color:var(--gray-400);">Prefer a manual install? <a href="dist/MedRecordsAI-DEMO-v2.2.9.zip" style="color:var(--green);font-weight:600;" download>Download the ZIP instead</a></p>' +
         '</div>';
     }
 
@@ -2026,15 +2029,19 @@ MedRecords AI is a trademark of Productivity AI, LLC.</div>
       captureLead(name, email, '');
 
       // Replace form with confirmation
-      var fileName = selectedOS === 'mac' ? 'MedRecords-AI-Install.sh' : 'MedRecords-AI-Install.bat';
-      var runInstr = selectedOS === 'mac'
-        ? 'Open Terminal and run: <code>chmod +x ' + fileName + ' && ./' + fileName + '</code>'
-        : 'Right-click it &rarr; Run as administrator. The installer handles everything.';
       var ctaBox = event.target.closest('.cta-box');
-      ctaBox.innerHTML =
-        '<h2>&#10003; Your Download Has Started</h2>' +
-        '<p>Check your downloads folder for <strong>' + fileName + '</strong>.<br>' + runInstr + '</p>' +
-        '<p class="cta-note" style="margin-top:16px"><a href="dist/MedRecordsAI-DEMO-v2.2.9.zip" style="color:var(--green);font-weight:600;" download>Manual install (ZIP)</a> &bull; <a href="#demo" style="color:var(--green)">View setup details &darr;</a></p>';
+      if (selectedOS === 'mac') {
+        var fileName = 'MedRecords-AI-Install.sh';
+        ctaBox.innerHTML =
+          '<h2>&#10003; Your Download Has Started</h2>' +
+          '<p>Check your downloads folder for <strong>' + fileName + '</strong>.<br>' +
+          'Open Terminal and run: <code>chmod +x ' + fileName + ' && ./' + fileName + '</code></p>';
+      } else {
+        ctaBox.innerHTML =
+          '<h2>&#10003; Your Download Has Started</h2>' +
+          '<p>Check your downloads folder for <strong>MedRecordsAI-DEMO.zip</strong>.<br>' +
+          'Extract the ZIP, then double-click <strong>MedRecordsAI.bat</strong> to start setup.</p>';
+      }
     }
   </script>
 </body>
