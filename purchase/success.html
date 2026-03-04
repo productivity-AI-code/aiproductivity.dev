@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Purchase Complete — MedRecords AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: #0a1628;
+      color: #e2e8f0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+    }
+    .success-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #00d4aa, #00b894);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      font-size: 40px;
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+    .subtitle {
+      font-size: 1.1rem;
+      color: #94a3b8;
+      margin-bottom: 40px;
+    }
+    .card {
+      background: #0f1d35;
+      border: 1px solid #1a2d50;
+      border-radius: 12px;
+      padding: 32px;
+      text-align: left;
+      margin-bottom: 24px;
+    }
+    .card h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #00d4aa;
+      margin-bottom: 16px;
+    }
+    .steps {
+      list-style: none;
+      counter-reset: step;
+    }
+    .steps li {
+      counter-increment: step;
+      padding: 12px 0;
+      padding-left: 40px;
+      position: relative;
+      border-bottom: 1px solid #1a2d50;
+      line-height: 1.6;
+    }
+    .steps li:last-child { border-bottom: none; }
+    .steps li::before {
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 12px;
+      width: 28px;
+      height: 28px;
+      background: #1a2d50;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #00d4aa;
+    }
+    .steps li strong { color: #fff; }
+    .note {
+      background: #1a2d50;
+      border-left: 3px solid #00d4aa;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.9rem;
+      color: #94a3b8;
+      margin-top: 24px;
+    }
+    .note strong { color: #e2e8f0; }
+    .links {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+    .links a {
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #00d4aa, #00b894);
+      color: #0a1628;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(0,212,170,0.3); }
+    .btn-outline {
+      border: 1px solid #243a5e;
+      color: #94a3b8;
+    }
+    .btn-outline:hover { border-color: #00d4aa; color: #00d4aa; }
+    .footer {
+      margin-top: 48px;
+      font-size: 0.85rem;
+      color: #475569;
+    }
+    .footer a { color: #00d4aa; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="success-icon">&#10003;</div>
+    <h1>Purchase Complete!</h1>
+    <p class="subtitle">Your license key is on its way to your inbox.</p>
+
+    <div class="card">
+      <h2>Next Steps</h2>
+      <ol class="steps">
+        <li><strong>Check your email</strong> for your license key (arrives within a few minutes)</li>
+        <li>Open <strong>MedRecords AI</strong> and go to <strong>Settings &gt; License</strong></li>
+        <li>Click <strong>Activate License</strong> and paste the key from your email</li>
+        <li>Your features unlock immediately &mdash; no restart needed</li>
+      </ol>
+    </div>
+
+    <div class="note">
+      <strong>Don't have MedRecords AI installed yet?</strong><br>
+      <a href="/" style="color:#00d4aa;">Download from our homepage</a> and install it first. Then activate your license key from the Settings page.
+    </div>
+
+    <div class="links">
+      <a href="/" class="btn-primary">Back to Homepage</a>
+      <a href="mailto:support@aiproductivity.dev" class="btn-outline">Contact Support</a>
+    </div>
+
+    <div class="footer">
+      <p>Questions? Reach us at <a href="mailto:support@aiproductivity.dev">support@aiproductivity.dev</a></p>
+      <p style="margin-top:8px;">&copy; 2026 MedRecords AI. All rights reserved.</p>
+    </div>
+  </div>
+</body>
+</html>
