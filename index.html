@@ -1962,8 +1962,8 @@ MedRecords AI is a trademark of Productivity AI, LLC.</div>
         downloadLink.href = 'install-mac.sh';
         downloadLink.download = 'MedRecords-AI-Install.sh';
       } else {
-        downloadLink.href = 'dist/MedRecordsAI-DEMO-v2.2.9.zip';
-        downloadLink.download = 'MedRecordsAI-DEMO.zip';
+        downloadLink.href = 'install.bat';
+        downloadLink.download = 'MedRecordsAI-Install.bat';
       }
       downloadLink.style.display = 'none';
       document.body.appendChild(downloadLink);
@@ -1981,12 +1981,11 @@ MedRecords AI is a trademark of Productivity AI, LLC.</div>
       }
       return '<p>Your download is starting now.</p>' +
         '<ol style="text-align:left;margin:12px 0;padding-left:20px;font-size:0.9rem;line-height:1.8;">' +
-        '<li><strong>Open</strong> the downloaded ZIP file</li>' +
-        '<li><strong>Double-click</strong> <code>MedRecordsAI.bat</code> inside</li>' +
-        '<li>It auto-extracts, installs Python if needed, and opens the <strong>setup wizard</strong></li>' +
+        '<li><strong>Double-click</strong> <code>MedRecordsAI-Install.bat</code> in your Downloads folder</li>' +
+        '<li>It installs Python if needed, downloads MedRecords AI, and opens the <strong>setup wizard</strong></li>' +
         '</ol>' +
         '<p style="font-size:0.85rem;color:var(--gray-400);">Everything is automatic &mdash; no manual setup required.</p>' +
-        '<p style="margin-top:8px;font-size:0.82rem;color:var(--gray-400);">Prefer one-click? <a href="install.bat" style="color:var(--green);font-weight:600;" download>Download the one-click installer</a> (may trigger antivirus warning)</p>';
+        '<p style="margin-top:8px;font-size:0.82rem;color:var(--gray-400);">If your antivirus flags the file, click <strong>Allow</strong> or <strong>Keep</strong> &mdash; it\'s safe. <a href="dist/MedRecordsAI-DEMO-v2.2.10.zip" style="color:var(--green);font-weight:600;" download>Download ZIP instead</a></p>';
     }
 
     function handleDemoDownload(event) {
@@ -2040,8 +2039,8 @@ MedRecords AI is a trademark of Productivity AI, LLC.</div>
       } else {
         ctaBox.innerHTML =
           '<h2>&#10003; Your Download Has Started</h2>' +
-          '<p>Open the downloaded ZIP and double-click <strong>MedRecordsAI.bat</strong> inside.<br>' +
-          'It auto-extracts and handles everything automatically.</p>';
+          '<p>Double-click <strong>MedRecordsAI-Install.bat</strong> in your Downloads folder.<br>' +
+          'It installs Python if needed, downloads MedRecords AI, and opens the setup wizard.</p>';
       }
     }
   </script>
