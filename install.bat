@@ -11,7 +11,7 @@ echo  ================================================================
 echo.
 
 set "INSTALL_DIR=%USERPROFILE%\MedRecordsAI"
-set "ZIP_URL=https://aiproductivity.dev/dist/MedRecordsAI-DEMO-v2.2.11.zip"
+set "ZIP_URL=https://aiproductivity.dev/dist/MedRecordsAI-DEMO-v2.2.12.zip"
 set "ZIP_FILE=%TEMP%\MedRecordsAI-DEMO.zip"
 
 :: ── Step 1: Check / Install Python ─────────────────────────────────
@@ -133,8 +133,24 @@ echo  [3/4] Installing to %INSTALL_DIR%...
 
 :: Clean previous installation if exists
 if exist "%INSTALL_DIR%" (
+    echo        Stopping any running MedRecords AI processes...
+    :: Kill Python processes running from the install dir
+    powershell -NoProfile -Command "Get-Process python*, py* -ErrorAction SilentlyContinue | Where-Object { $_.Path -like '*MedRecordsAI*' -or $_.Path -like '*%INSTALL_DIR:\=\\%*' } | Stop-Process -Force -ErrorAction SilentlyContinue" 2>nul
+    :: Also kill any process holding port 8080 or 9876
+    for /f "tokens=5" %%P in ('netstat -aon 2^>nul ^| findstr ":8080 :9876" ^| findstr "LISTENING"') do (
+        taskkill /PID %%P /F >nul 2>&1
+    )
+    timeout /t 2 >nul
     echo        Removing previous installation...
     rmdir /s /q "%INSTALL_DIR%" 2>nul
+)
+
+:: If directory still exists (locked files), use a fallback location
+if exist "%INSTALL_DIR%" (
+    echo        Previous installation could not be fully removed.
+    echo        Installing to a new folder instead...
+    set "INSTALL_DIR=%USERPROFILE%\MedRecordsAI_new"
+    if exist "!INSTALL_DIR!" rmdir /s /q "!INSTALL_DIR!" 2>nul
 )
 
 :: Extract
