@@ -1981,11 +1981,12 @@ MedRecords AI is a trademark of Productivity AI, LLC.</div>
       }
       return '<p>Your download is starting now.</p>' +
         '<ol style="text-align:left;margin:12px 0;padding-left:20px;font-size:0.9rem;line-height:1.8;">' +
-        '<li><strong>Extract</strong> the ZIP to any folder</li>' +
-        '<li><strong>Double-click</strong> <code>MedRecordsAI.bat</code></li>' +
-        '<li>Follow the <strong>setup wizard</strong> in your browser</li>' +
+        '<li><strong>Open</strong> the downloaded ZIP file</li>' +
+        '<li><strong>Double-click</strong> <code>MedRecordsAI.bat</code> inside</li>' +
+        '<li>It auto-extracts, installs Python if needed, and opens the <strong>setup wizard</strong></li>' +
         '</ol>' +
-        '<p style="font-size:0.85rem;color:var(--gray-400);">Python and all dependencies are installed automatically if missing.</p>';
+        '<p style="font-size:0.85rem;color:var(--gray-400);">Everything is automatic &mdash; no manual setup required.</p>' +
+        '<p style="margin-top:8px;font-size:0.82rem;color:var(--gray-400);">Prefer one-click? <a href="install.bat" style="color:var(--green);font-weight:600;" download>Download the one-click installer</a> (may trigger antivirus warning)</p>';
     }
 
     function handleDemoDownload(event) {
@@ -2039,8 +2040,8 @@ MedRecords AI is a trademark of Productivity AI, LLC.</div>
       } else {
         ctaBox.innerHTML =
           '<h2>&#10003; Your Download Has Started</h2>' +
-          '<p>Check your downloads folder for <strong>MedRecordsAI-DEMO.zip</strong>.<br>' +
-          'Extract the ZIP, then double-click <strong>MedRecordsAI.bat</strong> to start setup.</p>';
+          '<p>Open the downloaded ZIP and double-click <strong>MedRecordsAI.bat</strong> inside.<br>' +
+          'It auto-extracts and handles everything automatically.</p>';
       }
     }
   </script>
