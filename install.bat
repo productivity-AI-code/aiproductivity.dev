@@ -11,31 +11,92 @@ echo  ================================================================
 echo.
 
 set "INSTALL_DIR=%USERPROFILE%\MedRecordsAI"
-set "ZIP_URL=https://aiproductivity.dev/dist/MedRecordsAI-DEMO-v2.2.8.zip"
+set "ZIP_URL=https://aiproductivity.dev/dist/MedRecordsAI-DEMO-v2.2.9.zip"
 set "ZIP_FILE=%TEMP%\MedRecordsAI-DEMO.zip"
 
-:: ── Step 1: Check Python ────────────────────────────────────────────
+:: ── Step 1: Check / Install Python ─────────────────────────────────
 echo  [1/4] Checking for Python...
+
+set "PYTHON_CMD="
 python --version >nul 2>&1
-if %ERRORLEVEL% NEQ 0 (
-    echo.
-    echo  ----------------------------------------------------------------
-    echo    Python is required but was not found on this computer.
-    echo  ----------------------------------------------------------------
-    echo.
-    echo  Opening the Python download page now...
-    echo.
-    echo  IMPORTANT: During Python installation, make sure to check
-    echo  the box that says "Add Python to PATH" at the bottom of
-    echo  the first screen. Then click "Install Now."
-    echo.
-    echo  After Python is installed, run this installer again.
-    echo.
-    start https://www.python.org/downloads/
-    pause
-    exit /b 1
+if !ERRORLEVEL! EQU 0 (
+    set "PYTHON_CMD=python"
+    goto :python_ready
 )
-for /f "tokens=2" %%V in ('python --version 2^>^&1') do set "PY_VER=%%V"
+py --version >nul 2>&1
+if !ERRORLEVEL! EQU 0 (
+    set "PYTHON_CMD=py"
+    goto :python_ready
+)
+
+:: Python not found — offer auto-install
+echo.
+echo  Python is required but was not found on this system.
+echo.
+choice /C YN /M "  Install Python automatically"
+if !ERRORLEVEL! EQU 2 goto :manual_python
+
+echo.
+:: Try winget first
+winget --version >nul 2>&1
+if !ERRORLEVEL! EQU 0 (
+    echo        Installing Python via winget ^(this may take a few minutes^)...
+    winget install Python.Python.3.12 --accept-package-agreements --accept-source-agreements --scope user
+    if !ERRORLEVEL! EQU 0 goto :python_installed
+    echo        winget did not succeed, trying direct download...
+)
+
+:: Fallback: download from python.org
+echo        Downloading Python from python.org...
+powershell -NoProfile -Command "Invoke-WebRequest -Uri 'https://www.python.org/ftp/python/3.12.9/python-3.12.9-amd64.exe' -OutFile '%TEMP%\python-installer.exe'"
+
+if not exist "%TEMP%\python-installer.exe" (
+    echo  [ERROR] Download failed.
+    goto :manual_python
+)
+
+echo        Installing Python ^(this may take a minute^)...
+"%TEMP%\python-installer.exe" /quiet InstallAllUsers=0 PrependPath=1 Include_test=0 Include_launcher=1
+del /q "%TEMP%\python-installer.exe" 2>nul
+
+:python_installed
+:: Refresh PATH from registry
+for /f "tokens=2*" %%A in ('reg query "HKCU\Environment" /v PATH 2^>nul') do set "PATH=%%B;!PATH!"
+for %%D in ("%LOCALAPPDATA%\Programs\Python\Python312" "%LOCALAPPDATA%\Programs\Python\Python311" "%LOCALAPPDATA%\Programs\Python\Python310") do (
+    if exist "%%~D\python.exe" set "PATH=%%~D;%%~D\Scripts;!PATH!"
+)
+
+python --version >nul 2>&1
+if !ERRORLEVEL! EQU 0 (
+    set "PYTHON_CMD=python"
+    echo        Python installed successfully.
+    goto :python_ready
+)
+py --version >nul 2>&1
+if !ERRORLEVEL! EQU 0 (
+    set "PYTHON_CMD=py"
+    echo        Python installed successfully.
+    goto :python_ready
+)
+
+echo.
+echo  [ERROR] Could not verify Python after installation.
+echo          Please close this window, then run the installer again.
+echo.
+pause
+exit /b 1
+
+:manual_python
+echo.
+echo  Please install Python 3.10+ from https://python.org
+echo  Make sure "Add Python to PATH" is checked during install.
+echo  Then run this installer again.
+echo.
+pause
+exit /b 1
+
+:python_ready
+for /f "tokens=2" %%V in ('!PYTHON_CMD! --version 2^>^&1') do set "PY_VER=%%V"
 echo        Python %PY_VER% found.
 echo.
 
