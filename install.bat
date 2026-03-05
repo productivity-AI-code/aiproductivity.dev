@@ -11,7 +11,7 @@ echo  ================================================================
 echo.
 
 set "INSTALL_DIR=%USERPROFILE%\MedRecordsAI"
-set "ZIP_URL=https://aiproductivity.dev/dist/MedRecordsAI-DEMO-v2.2.15.zip"
+set "ZIP_URL=https://aiproductivity.dev/dist/MedRecordsAI-DEMO-v2.2.16.zip"
 set "ZIP_FILE=%TEMP%\MedRecordsAI-DEMO.zip"
 
 :: ── Step 1: Check / Install Python ─────────────────────────────────
