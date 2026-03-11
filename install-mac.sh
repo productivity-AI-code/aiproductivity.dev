@@ -14,43 +14,108 @@ echo "  ================================================================"
 echo ""
 
 INSTALL_DIR="$HOME/MedRecordsAI"
-ZIP_URL="https://aiproductivity.dev/dist/MedRecordsAI-DEMO-v2.2.8.zip"
+ZIP_URL="https://aiproductivity.dev/dist/MedRecordsAI-DEMO-v2.2.24.zip"
 ZIP_FILE="/tmp/MedRecordsAI-DEMO.zip"
+REQUIRED_PY_MAJOR=3
+REQUIRED_PY_MINOR=10
 
-# ── Step 1: Check Python ──────────────────────────────────────────────
-echo "  [1/4] Checking for Python..."
+# ── Step 1: Check / Install Python ────────────────────────────────
+echo "  [1/4] Checking for Python ${REQUIRED_PY_MAJOR}.${REQUIRED_PY_MINOR}+..."
 
 PYTHON_CMD=""
-if command -v python3 >/dev/null 2>&1; then
-    PYTHON_CMD="python3"
-elif command -v python >/dev/null 2>&1; then
-    PY_VER=$(python -c "import sys; print(sys.version_info.major)" 2>/dev/null || echo "0")
-    if [ "$PY_VER" -ge 3 ]; then
-        PYTHON_CMD="python"
+for candidate in python3 python; do
+    if command -v "$candidate" >/dev/null 2>&1; then
+        PY_VER=$("$candidate" -c "import sys; print(f'{sys.version_info.major}.{sys.version_info.minor}')" 2>/dev/null || echo "0.0")
+        PY_MAJOR=$(echo "$PY_VER" | cut -d. -f1)
+        PY_MINOR=$(echo "$PY_VER" | cut -d. -f2)
+        if [ "$PY_MAJOR" -ge "$REQUIRED_PY_MAJOR" ] && [ "$PY_MINOR" -ge "$REQUIRED_PY_MINOR" ]; then
+            PYTHON_CMD="$candidate"
+            break
+        fi
     fi
-fi
+done
 
 if [ -z "$PYTHON_CMD" ]; then
     echo ""
-    echo "  ----------------------------------------------------------------"
-    echo "    Python 3 is required but was not found on this computer."
-    echo "  ----------------------------------------------------------------"
+    echo "  Python ${REQUIRED_PY_MAJOR}.${REQUIRED_PY_MINOR}+ is required but was not found."
     echo ""
-    echo "  Install Python using one of these methods:"
-    echo ""
-    echo "    Homebrew:  brew install python3"
-    echo "    Website:   https://www.python.org/downloads/"
-    echo ""
-    echo "  After installing Python, run this installer again."
-    echo ""
-    exit 1
+
+    # Try auto-install via Homebrew
+    if command -v brew >/dev/null 2>&1; then
+        echo "  Homebrew detected. Installing Python automatically..."
+        echo ""
+        brew install python@3.12
+        # Homebrew Python location
+        for candidate in python3 /opt/homebrew/bin/python3 /usr/local/bin/python3; do
+            if command -v "$candidate" >/dev/null 2>&1; then
+                PY_VER=$("$candidate" -c "import sys; print(f'{sys.version_info.major}.{sys.version_info.minor}')" 2>/dev/null || echo "0.0")
+                PY_MAJOR=$(echo "$PY_VER" | cut -d. -f1)
+                PY_MINOR=$(echo "$PY_VER" | cut -d. -f2)
+                if [ "$PY_MAJOR" -ge "$REQUIRED_PY_MAJOR" ] && [ "$PY_MINOR" -ge "$REQUIRED_PY_MINOR" ]; then
+                    PYTHON_CMD="$candidate"
+                    break
+                fi
+            fi
+        done
+    fi
+
+    # Try downloading the official macOS Python installer
+    if [ -z "$PYTHON_CMD" ]; then
+        echo "  Downloading Python 3.12 from python.org..."
+        PY_PKG_URL="https://www.python.org/ftp/python/3.12.9/python-3.12.9-macos11.pkg"
+        PY_PKG_FILE="/tmp/python-3.12.9-macos11.pkg"
+
+        if command -v curl >/dev/null 2>&1; then
+            curl -fSL --progress-bar "$PY_PKG_URL" -o "$PY_PKG_FILE"
+        elif command -v wget >/dev/null 2>&1; then
+            wget -q --show-progress "$PY_PKG_URL" -O "$PY_PKG_FILE"
+        else
+            echo "  [ERROR] Cannot download Python — neither curl nor wget found."
+            echo "          Please install Python 3.10+ manually:"
+            echo "          https://www.python.org/downloads/"
+            exit 1
+        fi
+
+        if [ -f "$PY_PKG_FILE" ]; then
+            echo ""
+            echo "  Installing Python 3.12 (you may be prompted for your password)..."
+            sudo installer -pkg "$PY_PKG_FILE" -target /
+            rm -f "$PY_PKG_FILE"
+
+            # Check again after install
+            for candidate in python3 /Library/Frameworks/Python.framework/Versions/3.12/bin/python3; do
+                if command -v "$candidate" >/dev/null 2>&1 || [ -x "$candidate" ]; then
+                    PYTHON_CMD="$candidate"
+                    break
+                fi
+            done
+        fi
+    fi
+
+    if [ -z "$PYTHON_CMD" ]; then
+        echo ""
+        echo "  ----------------------------------------------------------------"
+        echo "    Could not install Python automatically."
+        echo "  ----------------------------------------------------------------"
+        echo ""
+        echo "  Please install Python ${REQUIRED_PY_MAJOR}.${REQUIRED_PY_MINOR}+ manually:"
+        echo ""
+        echo "    Homebrew:  brew install python@3.12"
+        echo "    Website:   https://www.python.org/downloads/"
+        echo ""
+        echo "  After installing Python, run this installer again."
+        echo ""
+        exit 1
+    fi
+
+    echo "        Python installed successfully."
 fi
 
 PY_VERSION=$($PYTHON_CMD --version 2>&1 | awk '{print $2}')
 echo "        Python $PY_VERSION found."
 echo ""
 
-# ── Step 2: Download ──────────────────────────────────────────────────
+# ── Step 2: Download ──────────────────────────────────────────────
 echo "  [2/4] Downloading MedRecords AI..."
 echo "        This may take a minute depending on your connection."
 echo ""
@@ -77,7 +142,7 @@ fi
 echo "        Download complete."
 echo ""
 
-# ── Step 3: Extract ───────────────────────────────────────────────────
+# ── Step 3: Extract ───────────────────────────────────────────────
 echo "  [3/4] Installing to $INSTALL_DIR..."
 
 # Clean previous installation if exists
@@ -108,7 +173,7 @@ chmod +x "$INSTALL_DIR"/*.sh 2>/dev/null || true
 echo "        Installed successfully."
 echo ""
 
-# ── Step 4: Launch ────────────────────────────────────────────────────
+# ── Step 4: Launch ────────────────────────────────────────────────
 echo "  [4/4] Launching MedRecords AI setup..."
 echo ""
 echo "  ================================================================"
