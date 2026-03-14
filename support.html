@@ -933,7 +933,7 @@
             <li><span class="check">&#10003;</span> Quarterly check-in calls</li>
           </ul>
           <div class="tier-cta">
-            <a href="https://buy.stripe.com/test_8x2cMY2jMdDj6dF9UG5wI03" target="_blank" class="btn btn-primary btn-sm">Add Core Support</a>
+            <a href="https://buy.stripe.com/aFa7sEf6y56N6dFgj45wI02" target="_blank" class="btn btn-primary btn-sm">Add Core Support</a>
             <p style="margin-top:8px;font-size:0.75rem;color:var(--text-secondary);">Requires active Core license key. <a href="support-agreement.html" style="color:var(--green);">Support Agreement</a></p>
           </div>
         </div>
@@ -953,7 +953,7 @@
             <li><span class="check">&#10003;</span> Quarterly check-in calls</li>
           </ul>
           <div class="tier-cta">
-            <a href="https://buy.stripe.com/test_fZufZa0bEfLr7hJ0k65wI04" target="_blank" class="btn btn-outline btn-sm">Add Pro Support</a>
+            <a href="https://buy.stripe.com/8x2cMY2jMdDj6dF9UG5wI03" target="_blank" class="btn btn-outline btn-sm">Add Pro Support</a>
             <p style="margin-top:8px;font-size:0.75rem;color:var(--text-secondary);">Requires active Pro license key. <a href="support-agreement.html" style="color:var(--green);">Support Agreement</a></p>
           </div>
         </div>
@@ -1112,7 +1112,7 @@
             <span class="faq-toggle">+</span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer-inner">When you process a case, the text is indexed into a local <strong>Vector Store</strong> on your machine. When you ask a question in chat, the system performs a high-speed local search to find only the most relevant snippets. This data is processed locally by Ollama or sent securely to Claude (if enabled) only when requested. No data is used to train external models.</div>
+            <div class="faq-answer-inner">When you process a case, the text is indexed into a local <strong>Vector Store</strong> on your machine. When you ask a question in chat, the system performs a high-speed local search to find only the most relevant snippets. This data is processed locally by Ollama or sent securely to AWS Bedrock (if cloud AI is enabled) only when requested. No data is used to train external models.</div>
           </div>
         </div>
 
@@ -1179,7 +1179,7 @@
             <span class="faq-toggle">+</span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer-inner">The only optional recurring costs are Priority Support (Core: $1,000/yr launch sale, Pro: $2,400/yr &mdash; 1st year free with Pro license during launch sale) and Claude API usage if you choose cloud AI processing (typically $1&ndash;$2 per case). You can avoid all recurring costs entirely by using Ollama for free local AI processing.</div>
+            <div class="faq-answer-inner">The only optional recurring costs are Priority Support (Core: $1,000/yr launch sale, Pro: $2,400/yr &mdash; 1st year free with Pro license during launch sale) and AWS Bedrock usage if you choose cloud AI processing (typically $1&ndash;$2 per case). All cloud processing goes through HIPAA-eligible AWS Bedrock, covered by the AWS Business Associate Agreement. You can avoid all recurring costs entirely by using Ollama for free local AI processing.</div>
           </div>
         </div>
         <div class="faq-item animate-on-scroll" data-cat="billing">
@@ -1208,7 +1208,7 @@
             <span class="faq-toggle">+</span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer-inner">Yes. All medical records stay on your machine and are never uploaded to external servers. If you use the Claude API for processing, data is transmitted via encrypted TLS 1.3, processed, and immediately discarded &mdash; Anthropic does not store your data. All local data is protected with AES-256 encryption, and a HIPAA-compliant audit trail logs every access and action.</div>
+            <div class="faq-answer-inner">Yes. All medical records stay on your machine and are never uploaded to external servers. If you use cloud AI processing via AWS Bedrock, data is transmitted via encrypted TLS 1.3, processed, and immediately discarded &mdash; AWS Bedrock is covered by the AWS Business Associate Agreement for HIPAA-eligible workloads. All local data is protected with AES-256 encryption, and a HIPAA-compliant audit trail logs every access and action.</div>
           </div>
         </div>
         <div class="faq-item animate-on-scroll" data-cat="security">
@@ -1217,7 +1217,7 @@
             <span class="faq-toggle">+</span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer-inner">Only if you choose to use the Claude API for cloud-based AI processing. If you use Ollama for local AI, MedRecords AI operates in a fully air-gapped environment with zero internet connectivity required &mdash; ideal for high-security and government environments.</div>
+            <div class="faq-answer-inner">Only if you choose to use AWS Bedrock for cloud-based AI processing. If you use Ollama for local AI, MedRecords AI operates in a fully air-gapped environment with zero internet connectivity required &mdash; ideal for high-security and government environments.</div>
           </div>
         </div>
         <div class="faq-item animate-on-scroll" data-cat="security">

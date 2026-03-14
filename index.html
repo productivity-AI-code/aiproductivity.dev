@@ -1341,7 +1341,7 @@
       <div class="section-title animate-on-scroll">
         <div class="label">Demo</div>
         <h2>Try MedRecords AI Free</h2>
-        <p>Download the one-click installer and process up to 3 cases with your own records. No credit card. No sales call. Installs in 2 minutes.</p>
+        <p>Download the one-click installer and try it free for 14 days with your own records. No credit card. No sales call. Installs in 2 minutes.</p>
       </div>
       <div class="demo-box animate-on-scroll">
         <div class="demo-box-content">
@@ -1364,7 +1364,7 @@
               <h4>Demo Limitations</h4>
               <ul>
                 <li>14-day trial period</li>
-                <li>3 cases included</li>
+                <li>Unlimited cases during trial</li>
                 <li>Watermarked output</li>
               </ul>
             </div>
@@ -1390,7 +1390,7 @@
                 <input type="text" id="demoFirm" placeholder="Law firm name (optional)">
               </div>
               <button type="submit" class="btn btn-primary demo-submit-btn">Try MedRecords AI Free &rarr;</button>
-              <p class="demo-form-note">No credit card required. 3 cases included. By downloading, you agree to our <a href="#" onclick="event.preventDefault();document.getElementById('eulaOverlay').classList.add('open')">License Agreement</a>.</p>
+              <p class="demo-form-note">No credit card required. 14-day free trial. By downloading, you agree to our <a href="#" onclick="event.preventDefault();document.getElementById('eulaOverlay').classList.add('open')">License Agreement</a>.</p>
             </form>
           </div>
         </div>
@@ -1411,7 +1411,7 @@
         <div class="pricing-card animate-on-scroll">
           <div class="tier">Free Trial</div>
           <div class="price">$0</div>
-          <div class="price-note">3 cases free &bull; No credit card required</div>
+          <div class="price-note">14-day free trial &bull; No credit card required</div>
           <div class="divider"></div>
           <ul>
             <li><span class="check">&#10003;</span> All Pro Features Unlocked</li>
@@ -1419,7 +1419,7 @@
             <li><span class="check">&#10003;</span> Demand Packages, Case Valuation</li>
             <li><span class="check">&#10003;</span> Negligence Detection &amp; Injury Map</li>
             <li><span class="check">&#10003;</span> Interactive Timeline &amp; AI Chat</li>
-            <li><span class="check">&#10003;</span> Up to 3 cases &bull; 14-day trial</li>
+            <li><span class="check">&#10003;</span> Unlimited cases &bull; 14-day trial</li>
             <li><span class="check">&#10003;</span> Standard Support (Included Free)</li>
           </ul>
           <a href="#demo" class="btn btn-outline">Try MedRecords AI Free</a>
@@ -1625,7 +1625,7 @@
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              Yes. MedRecords AI supports both cloud-based AI (Claude API by Anthropic) and local AI models via Ollama. You can run models like Llama, Mistral, or other compatible models entirely on your own hardware. This gives you full control over data privacy and eliminates any dependency on external APIs.
+              Yes. MedRecords AI supports both cloud-based AI (via HIPAA-eligible AWS Bedrock) and local AI models via Ollama. You can run models like Llama, Mistral, or other compatible models entirely on your own hardware. This gives you full control over data privacy and eliminates any dependency on external APIs.
             </div>
           </div>
         </div>
@@ -1647,7 +1647,7 @@
           </button>
           <div class="faq-answer">
             <div class="faq-answer-inner">
-              It depends on your configuration. If you use local AI models via Ollama, MedRecords AI can operate fully offline &mdash; no internet required. If you choose to use the Claude API for cloud-based processing, you will need an internet connection for the AI analysis step. The application interface itself runs locally in your browser.
+              It depends on your configuration. If you use local AI models via Ollama, MedRecords AI can operate fully offline &mdash; no internet required. If you choose to use AWS Bedrock for cloud-based processing, you will need an internet connection for the AI analysis step. The application interface itself runs locally in your browser.
             </div>
           </div>
         </div>
@@ -1671,13 +1671,13 @@
     <div class="container">
       <div class="cta-box animate-on-scroll">
         <h2>Ready to Transform Your Practice?</h2>
-        <p>Process your first medical record in minutes. 3 cases free, no credit card required.</p>
+        <p>Process your first medical record in minutes. 14-day free trial, no credit card required.</p>
         <form class="cta-form" onsubmit="handleCtaDownload(event)">
           <input type="text" id="ctaName" placeholder="Your name" required aria-label="Full name">
           <input type="email" id="ctaEmail" placeholder="Work email" required aria-label="Email address">
           <button class="btn btn-primary" type="submit">Try MedRecords AI Free &rarr;</button>
         </form>
-        <p class="cta-note">One-click installer for Windows &amp; Mac. 2-minute setup. 3 cases included. No strings attached.</p>
+        <p class="cta-note">One-click installer for Windows &amp; Mac. 2-minute setup. 14-day free trial. No strings attached.</p>
       </div>
     </div>
   </section>
@@ -1744,7 +1744,7 @@ BY INSTALLING, COPYING, OR OTHERWISE USING THE SOFTWARE, YOU ACKNOWLEDGE THAT YO
 
 2.  LICENSE GRANT
 
-    2.1  Demo License. Subject to the terms of this Agreement, the Company grants you a non-exclusive, non-transferable, revocable license to install and use the Software for evaluation purposes for a period of fourteen (14) calendar days from the date of first installation. The Demo License is limited to processing a maximum of three (3) cases.
+    2.1  Demo License. Subject to the terms of this Agreement, the Company grants you a non-exclusive, non-transferable, revocable license to install and use the Software for evaluation purposes for a period of fourteen (14) calendar days from the date of first installation. The Demo License permits unlimited case processing during the evaluation period.
 
     2.2  Core/Pro License. Subject to the terms of this Agreement and upon activation with a valid License Key, the Company grants you a non-exclusive, non-transferable, perpetual license to install and use the Software on the number of systems specified in your purchase order, solely for your internal business operations. This license remains valid for as long as the License Key remains active and in good standing.
 
@@ -1798,11 +1798,11 @@ BY INSTALLING, COPYING, OR OTHERWISE USING THE SOFTWARE, YOU ACKNOWLEDGE THAT YO
 
     6.1  Time Limit. The Demo License expires fourteen (14) calendar days after first installation. Upon expiration, the Software will cease to function and Licensee must either purchase a Core or Pro License or uninstall the Software.
 
-    6.2  Case Limit. The Demo License permits processing of a maximum of three (3) cases. Once the case limit is reached, no additional cases may be processed.
+    6.2  Case Processing. The Demo License permits unlimited case processing during the fourteen (14) day evaluation period. Upon expiration, no additional cases may be processed.
 
     6.3  Watermarked Output. All documents and outputs generated under a Demo License will include a visible watermark indicating that they were produced by a demo version of the Software.
 
-    6.4  Feature Restrictions. Pro-tier features, including but not limited to advanced analytics, batch processing, and priority support integrations, are not available under the Demo License.
+    6.4  Feature Access. The Demo License provides access to the full feature set of the Software, including Pro-tier features, solely for the purpose of evaluation. Access to all features terminates upon expiration of the Demo License evaluation period.
 
     6.5  No Production Use. The Demo License is provided solely for the purpose of evaluating the Software.
 
@@ -1820,7 +1820,7 @@ BY INSTALLING, COPYING, OR OTHERWISE USING THE SOFTWARE, YOU ACKNOWLEDGE THAT YO
 
     8.1  Local Processing. The Software is designed to process data locally on the Licensee's systems.
 
-    8.2  Cloud AI Services. The Software integrates with third-party cloud-based AI services. Data transmitted to these services is governed by the respective terms of those third-party providers.
+    8.2  Cloud AI Services. The Software integrates with cloud-based AI services via AWS Bedrock (HIPAA BAA-eligible). Data transmitted to these services is governed by the respective terms of those providers. The Licensee may alternatively use locally-hosted AI models for fully air-gapped processing.
 
     8.3  The Company does not collect, store, or have access to any medical records, case data, or PHI processed by the Software.
 

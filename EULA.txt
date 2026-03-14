@@ -1,0 +1,354 @@
+END USER LICENSE AGREEMENT
+
+MedRecords AI - Intelligent Document Analysis Platform
+Version 2.1
+
+Productivity AI, LLC
+Effective Date: March 14, 2026
+
+IMPORTANT - READ CAREFULLY: This End User License Agreement ("Agreement") is a
+legally binding contract between you (either an individual or a single entity,
+referred to herein as "Licensee" or "you") and Productivity AI, LLC ("Company,"
+"we," or "us") for the MedRecords AI software product, which includes computer
+software, associated media, printed materials, and electronic documentation
+(collectively, the "Software").
+
+BY INSTALLING, COPYING, OR OTHERWISE USING THE SOFTWARE, YOU ACKNOWLEDGE THAT
+YOU HAVE READ, UNDERSTOOD, AND AGREE TO BE BOUND BY THE TERMS AND CONDITIONS
+OF THIS AGREEMENT. IF YOU DO NOT AGREE TO THESE TERMS, DO NOT INSTALL OR USE
+THE SOFTWARE AND PROMPTLY RETURN IT TO THE COMPANY.
+
+
+1.  DEFINITIONS
+
+    1.1  "Demo License" means a limited, time-restricted license for evaluation
+         purposes only, subject to the limitations described in Section 6.
+
+    1.2  "Core License" means a perpetual license to the core features of the
+         Software, activated via a valid license key.
+
+    1.3  "Pro License" means a perpetual license to the full feature set of the
+         Software, including all advanced and professional features, activated
+         via a valid license key.
+
+    1.4  "License Key" means the unique alphanumeric code provided by the
+         Company to activate a Core or Pro License.
+
+    1.5  "Authorized Users" means the individuals within Licensee's organization
+         who are permitted to access and use the Software under this Agreement.
+
+
+2.  LICENSE GRANT
+
+    2.1  Demo License. Subject to the terms of this Agreement, the Company
+         grants you a non-exclusive, non-transferable, revocable license to
+         install and use the Software for evaluation purposes for a period of
+         fourteen (14) calendar days from the date of first installation. The
+         Demo License permits unlimited case processing during the evaluation
+         period.
+
+    2.2  Core/Pro License. Subject to the terms of this Agreement and upon
+         activation with a valid License Key, the Company grants you a non-
+         exclusive, non-transferable, perpetual license to install and use the
+         Software on the number of systems specified in your purchase order,
+         solely for your internal business operations. This license remains
+         valid for as long as the License Key remains active and in good
+         standing.
+
+    2.3  Scope. All licenses granted hereunder are limited to the Licensee's
+         internal business use. The Software is licensed, not sold.
+
+
+3.  RESTRICTIONS
+
+    You shall NOT:
+
+    3.1  Copy, reproduce, or duplicate the Software or any portion thereof,
+         except for a single archival backup copy;
+
+    3.2  Distribute, sublicense, lease, rent, lend, sell, resell, or otherwise
+         transfer the Software or any rights therein to any third party;
+
+    3.3  Reverse engineer, decompile, disassemble, or otherwise attempt to
+         derive the source code, underlying algorithms, or structure of the
+         Software;
+
+    3.4  Modify, adapt, translate, or create derivative works based on the
+         Software;
+
+    3.5  Remove, alter, or obscure any proprietary notices, labels, or marks
+         on the Software;
+
+    3.6  Use a Demo License for any production, commercial, or client-facing
+         purposes; Demo Licenses are strictly for internal evaluation only;
+
+    3.7  Circumvent or attempt to circumvent any license enforcement mechanisms,
+         including but not limited to license key validation, demo time limits,
+         case count restrictions, or feature gating;
+
+    3.8  Use the Software in any manner that violates applicable federal, state,
+         or local laws and regulations, including but not limited to healthcare
+         privacy regulations.
+
+
+4.  INTELLECTUAL PROPERTY OWNERSHIP
+
+    4.1  The Software, including all copies, modifications, enhancements, and
+         derivative works, and all intellectual property rights therein,
+         including but not limited to patents, copyrights, trademarks, and
+         trade secrets, are and shall remain the sole and exclusive property
+         of Productivity AI, LLC.
+
+    4.2  This Agreement does not convey to you any interest in or to the
+         Software, but only a limited right of use revocable in accordance
+         with the terms of this Agreement.
+
+    4.3  All rights not expressly granted herein are reserved by the Company.
+
+
+5.  TRADE SECRETS AND CONFIDENTIALITY
+
+    5.1  The Licensee acknowledges that the Software contains valuable trade
+         secrets and proprietary information of the Company, including but not
+         limited to source code, algorithms, data structures, prompt
+         engineering techniques, document processing methods, and system
+         architecture.
+
+    5.2  The Licensee agrees to hold the Software in strict confidence and to
+         take all reasonable precautions to protect the confidentiality of the
+         Software, using at least the same degree of care it uses to protect
+         its own confidential information, but in no event less than reasonable
+         care.
+
+    5.3  The Licensee shall not disclose, publish, or otherwise disseminate
+         source code, configuration details, or technical implementation
+         specifics of the Software to any third party without the prior
+         written consent of the Company.
+
+    5.4  The Licensee shall restrict access to the Software to those Authorized
+         Users who have a need to know and who are bound by confidentiality
+         obligations no less protective than those set forth herein.
+
+    5.5  The obligations of confidentiality under this Section shall survive
+         termination or expiration of this Agreement.
+
+
+6.  DEMO LICENSE LIMITATIONS
+
+    6.1  Time Limit. The Demo License expires fourteen (14) calendar days after
+         first installation. Upon expiration, the Software will cease to
+         function and Licensee must either purchase a Core or Pro License or
+         uninstall the Software.
+
+    6.2  Case Processing. The Demo License permits unlimited case processing
+         during the fourteen (14) day evaluation period. Upon expiration,
+         no additional cases may be processed.
+
+    6.3  Watermarked Output. All documents and outputs generated under a Demo
+         License will include a visible watermark indicating that they were
+         produced by a demo version of the Software. Watermarked outputs must
+         not be used for production or client-facing purposes.
+
+    6.4  Feature Access. The Demo License provides access to the full feature
+         set of the Software, including Pro-tier features, solely for the
+         purpose of evaluation. Access to all features terminates upon
+         expiration of the Demo License evaluation period.
+
+    6.5  No Production Use. The Demo License is provided solely for the purpose
+         of evaluating the Software. Any use of the Demo License in a
+         production environment, or for processing actual client cases for
+         commercial purposes, is strictly prohibited.
+
+
+7.  HIPAA COMPLIANCE DISCLAIMER
+
+    7.1  The Software includes features designed to support compliance with the
+         Health Insurance Portability and Accountability Act of 1996 ("HIPAA")
+         and its implementing regulations, including access controls, audit
+         logging, and local data processing capabilities.
+
+    7.2  NOTWITHSTANDING THE FOREGOING, THE COMPANY IS NOT A BUSINESS ASSOCIATE
+         AS DEFINED UNDER HIPAA AND DOES NOT ENTER INTO BUSINESS ASSOCIATE
+         AGREEMENTS. The Company does not access, receive, maintain, or
+         transmit Protected Health Information ("PHI") on behalf of the
+         Licensee.
+
+    7.3  The Licensee is solely responsible for ensuring that its use of the
+         Software complies with HIPAA and all other applicable federal, state,
+         and local privacy and security regulations. This includes, but is not
+         limited to, implementing appropriate administrative, physical, and
+         technical safeguards.
+
+    7.4  The Licensee acknowledges that compliance with HIPAA and related
+         regulations requires a comprehensive program beyond the scope of any
+         single software product. The Company makes no representation or
+         warranty that use of the Software will, by itself, ensure HIPAA
+         compliance.
+
+
+8.  DATA PRIVACY AND PROCESSING
+
+    8.1  Local Processing. The Software is designed to process data locally on
+         the Licensee's systems. Medical records and case files are stored and
+         processed on the machine(s) where the Software is installed.
+
+    8.2  Cloud AI Services. The Software integrates with third-party cloud-based
+         AI services for document analysis and natural language processing.
+         The default cloud backend is Amazon Web Services ("AWS") Bedrock,
+         which is covered by the AWS Business Associate Agreement ("BAA") for
+         HIPAA-eligible workloads. Data transmitted to these services is
+         governed by the respective terms of service and privacy policies of
+         those third-party providers. The Licensee may alternatively configure
+         the Software to use locally-hosted AI models (e.g., Ollama) for
+         fully air-gapped processing where no data leaves the Licensee's
+         machine.
+
+    8.3  Licensee Responsibility. The Licensee is responsible for reviewing and
+         accepting the terms of any third-party services used in conjunction
+         with the Software. The Licensee is responsible for ensuring that any
+         data transmitted to cloud services complies with applicable privacy
+         regulations and the Licensee's own data governance policies.
+
+    8.4  The Company does not collect, store, or have access to any medical
+         records, case data, or PHI processed by the Software on the
+         Licensee's systems.
+
+    8.5  Data Security Measures. The Software incorporates the following
+         security measures for data processed locally:
+
+         (a) AES-256 Encryption at Rest. All files stored in the local vault,
+             including summaries, audit logs, and de-identified data, are
+             encrypted using AES-256. Encryption keys are derived from
+             machine-specific credentials unique to each installation.
+
+         (b) Automated PHI De-Identification. Prior to transmitting any data
+             to cloud AI services, the Software applies an automated privacy
+             pipeline that identifies and redacts Protected Health Information
+             from source materials.
+
+         (c) Cross-Model Verification. The Software may employ multiple
+             independent AI model families to verify the accuracy and
+             completeness of generated outputs, providing a second-opinion
+             check on all summaries.
+
+         (d) File Integrity and Tamper Detection. The Software uses
+             HMAC-SHA256 signatures to verify the integrity of installation
+             files and audit logs, ensuring tamper-evident operation.
+
+
+9.  DISCLAIMER OF WARRANTIES
+
+    THE SOFTWARE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTY OF
+    ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED
+    WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE,
+    ACCURACY, AND NON-INFRINGEMENT. THE COMPANY DOES NOT WARRANT THAT THE
+    SOFTWARE WILL MEET YOUR REQUIREMENTS, THAT OPERATION OF THE SOFTWARE
+    WILL BE UNINTERRUPTED OR ERROR-FREE, OR THAT DEFECTS IN THE SOFTWARE
+    WILL BE CORRECTED.
+
+    THE COMPANY MAKES NO WARRANTY REGARDING THE ACCURACY, COMPLETENESS, OR
+    RELIABILITY OF ANY OUTPUT GENERATED BY THE SOFTWARE, INCLUDING BUT NOT
+    LIMITED TO MEDICAL RECORD SUMMARIES, DEMAND PACKAGES, OR ANY OTHER
+    DOCUMENTS. ALL OUTPUTS SHOULD BE REVIEWED BY QUALIFIED PROFESSIONALS
+    BEFORE USE.
+
+
+10. LIMITATION OF LIABILITY
+
+    10.1 IN NO EVENT SHALL THE COMPANY, ITS OFFICERS, DIRECTORS, EMPLOYEES,
+         AGENTS, OR AFFILIATES BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL,
+         CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO
+         DAMAGES FOR LOSS OF PROFITS, LOSS OF DATA, BUSINESS INTERRUPTION, OR
+         LOSS OF BUSINESS INFORMATION, ARISING OUT OF OR IN CONNECTION WITH
+         THE USE OF OR INABILITY TO USE THE SOFTWARE, EVEN IF THE COMPANY HAS
+         BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+    10.2 THE COMPANY'S TOTAL CUMULATIVE LIABILITY UNDER THIS AGREEMENT, WHETHER
+         IN CONTRACT, TORT (INCLUDING NEGLIGENCE), OR OTHERWISE, SHALL NOT
+         EXCEED THE TOTAL AMOUNT OF LICENSE FEES ACTUALLY PAID BY THE LICENSEE
+         TO THE COMPANY FOR THE SOFTWARE DURING THE TWELVE (12) MONTHS
+         PRECEDING THE EVENT GIVING RISE TO THE CLAIM.
+
+    10.3 THE FOREGOING LIMITATIONS SHALL APPLY TO THE FULLEST EXTENT PERMITTED
+         BY APPLICABLE LAW, REGARDLESS OF WHETHER ANY REMEDY FAILS OF ITS
+         ESSENTIAL PURPOSE.
+
+
+11. TERMINATION
+
+    11.1 Demo License Termination. The Demo License shall automatically expire
+         and terminate fourteen (14) calendar days after first installation.
+
+    11.2 Termination for Breach. The Company may terminate this Agreement
+         immediately upon written notice if the Licensee breaches any term or
+         condition of this Agreement.
+
+    11.3 Termination for Violation. The Company reserves the right to
+         immediately terminate this Agreement and revoke the License Key if
+         the Licensee is found to have violated the restrictions set forth in
+         Section 3, including but not limited to unauthorized redistribution,
+         reverse engineering, or circumvention of license enforcement
+         mechanisms.
+
+    11.4 Effect of Termination. Upon termination or expiration of this
+         Agreement, the Licensee shall immediately cease all use of the
+         Software, uninstall and destroy all copies of the Software in its
+         possession or control, and, upon request, certify in writing to the
+         Company that such actions have been taken.
+
+    11.5 Survival. Sections 4, 5, 9, 10, 12, and 13 shall survive termination
+         or expiration of this Agreement.
+
+
+12. GOVERNING LAW AND DISPUTE RESOLUTION
+
+    12.1 This Agreement shall be governed by and construed in accordance with
+         the laws of the State of Delaware, United States of America, without
+         regard to its conflict of law principles.
+
+    12.2 Any dispute arising out of or in connection with this Agreement shall
+         be subject to the exclusive jurisdiction of the state and federal
+         courts located in the State of Delaware, and the parties hereby
+         consent to the personal jurisdiction and venue of such courts.
+
+    12.3 The prevailing party in any legal action or proceeding arising out of
+         this Agreement shall be entitled to recover its reasonable attorneys'
+         fees and costs.
+
+
+13. GENERAL PROVISIONS
+
+    13.1 Entire Agreement. This Agreement constitutes the entire agreement
+         between the parties with respect to the subject matter hereof and
+         supersedes all prior and contemporaneous understandings, agreements,
+         representations, and warranties, both written and oral, with respect
+         to such subject matter.
+
+    13.2 Amendment. This Agreement may not be modified or amended except by a
+         written instrument signed by both parties.
+
+    13.3 Severability. If any provision of this Agreement is held to be invalid,
+         illegal, or unenforceable, the remaining provisions shall continue in
+         full force and effect.
+
+    13.4 Waiver. The failure of either party to enforce any right or provision
+         of this Agreement shall not constitute a waiver of such right or
+         provision.
+
+    13.5 Assignment. The Licensee may not assign or transfer this Agreement or
+         any rights or obligations hereunder without the prior written consent
+         of the Company. The Company may assign this Agreement without
+         restriction.
+
+    13.6 Notices. All notices under this Agreement shall be in writing and shall
+         be deemed given when delivered personally, sent by confirmed email,
+         or sent by certified mail, return receipt requested, to the addresses
+         specified in the purchase order or registration.
+
+    13.7 Export Compliance. The Licensee shall comply with all applicable export
+         control laws and regulations in connection with the Software.
+
+
+Copyright (c) 2026 Productivity AI, LLC. All rights reserved.
+
+MedRecords AI is a trademark of Productivity AI, LLC.

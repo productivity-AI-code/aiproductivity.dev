@@ -572,7 +572,7 @@
             <ul>
               <li><a href="#windows-install">Windows Installation</a></li>
               <li><a href="#license-activation">License Activation</a></li>
-              <li><a href="#claude-api">Claude API Setup</a></li>
+              <li><a href="#claude-api">AWS Bedrock Setup</a></li>
               <li><a href="#ollama-setup">Ollama Local AI Setup</a></li>
             </ul>
           </div>
@@ -659,7 +659,7 @@
                 </tr>
                 <tr>
                   <td><strong>Internet</strong></td>
-                  <td>Required for Claude API</td>
+                  <td>Required for AWS Bedrock</td>
                   <td>Optional for Ollama local processing</td>
                 </tr>
               </tbody>
@@ -703,7 +703,7 @@
               <li>The <strong>Setup Wizard</strong> appears on first launch:
                 <ul>
                   <li>Accept the End User License Agreement (EULA)</li>
-                  <li>Enter your Claude API key or configure Ollama for local AI</li>
+                  <li>Configure AWS Bedrock credentials or Ollama for local AI</li>
                   <li>Set your login credentials (username and password)</li>
                   <li>Configure email settings (optional, for automated record retrieval)</li>
                 </ul>
@@ -724,16 +724,17 @@
               <li>License is tied to one machine &mdash; contact support for transfers</li>
             </ul>
 
-            <h3 id="claude-api">Claude API Setup</h3>
-            <p>MedRecords AI uses Anthropic's Claude API for cloud-based AI processing:</p>
+            <h3 id="claude-api">AWS Bedrock Setup</h3>
+            <p>MedRecords AI uses AWS Bedrock for HIPAA-eligible cloud-based AI processing:</p>
             <ol>
-              <li>Sign up at <a href="https://console.anthropic.com" target="_blank" rel="noopener">console.anthropic.com</a></li>
-              <li>Navigate to <strong>API Keys</strong> and generate a new key</li>
-              <li>Enter the key during the setup wizard or later in <strong>Settings &rarr; AI Backend</strong></li>
+              <li>Sign up for an AWS account at <a href="https://aws.amazon.com" target="_blank" rel="noopener">aws.amazon.com</a></li>
+              <li>Enable Bedrock model access in the AWS Console for Claude models</li>
+              <li>Create IAM credentials (Access Key ID + Secret Access Key) with Bedrock permissions</li>
+              <li>Enter the credentials during the setup wizard or later in <strong>Settings &rarr; AI Backend</strong></li>
               <li>Costs approximately <strong>$1&ndash;2 per case</strong> depending on record size</li>
             </ol>
             <div class="info-box">
-              <strong>Model:</strong> MedRecords AI uses <code>claude-sonnet-4-6</code> for optimal accuracy and cost balance. This is configured automatically.
+              <strong>HIPAA Coverage:</strong> AWS Bedrock is covered by the AWS Business Associate Agreement (BAA), making it suitable for processing medical data. MedRecords AI uses Claude via Bedrock's Converse API for optimal accuracy and HIPAA compliance.
             </div>
 
             <h3 id="ollama-setup">Ollama Local AI Setup</h3>
@@ -957,11 +958,11 @@
             <h3 id="config-reference">config.yaml Reference</h3>
             <p>The <code>config.yaml</code> file in your installation directory controls core application settings:</p>
             <pre><code># AI Backend
-llm_backend: claude          # claude | ollama
+llm_backend: bedrock         # bedrock | ollama
 
-# Claude API Settings
-claude:
-  model: claude-sonnet-4-6
+# AWS Bedrock Settings (HIPAA BAA-eligible)
+bedrock:
+  model: us.anthropic.claude-sonnet-4-6-20250514-v1:0
   max_tokens: 32768          # max output tokens per call
   timeout: 300               # seconds per API call
   combined_timeout: 600      # seconds for multi-file cases
@@ -993,7 +994,7 @@ web_ui:
             <h3 id="backend-selection">AI Backend Selection</h3>
             <p>MedRecords AI supports two AI backends that you can switch between at any time:</p>
             <ul>
-              <li><strong>Claude API:</strong> Fastest and most accurate. Requires internet connection and API key. Best for firms that prioritize speed and output quality.</li>
+              <li><strong>AWS Bedrock:</strong> Fastest and most accurate. Requires internet connection and AWS credentials. HIPAA BAA-eligible. Best for firms that prioritize speed and output quality.</li>
               <li><strong>Ollama (Local AI):</strong> Fully local and air-gapped. Free after initial setup. Slightly slower than Claude but offers maximum data security.</li>
             </ul>
             <p>Switch between backends in <strong>Settings &rarr; AI Backend</strong> or by editing the <code>llm_backend</code> value in <code>config.yaml</code>.</p>
@@ -1024,7 +1025,7 @@ web_ui:
             <p>Tesseract OCR is included in the MedRecords AI setup. If OCR fails, verify that Tesseract is installed and accessible in your system PATH.</p>
 
             <p><strong>Slow processing</strong></p>
-            <p>If processing is slow with Ollama, consider upgrading to the Claude API for faster results, or try a smaller/faster Ollama model. Ensure your system meets the recommended 16 GB RAM for local AI processing.</p>
+            <p>If processing is slow with Ollama, consider upgrading to AWS Bedrock for faster results, or try a smaller/faster Ollama model. Ensure your system meets the recommended 16 GB RAM for local AI processing.</p>
 
             <p><strong>Pipeline timed out on large case</strong></p>
             <p>Very large cases (500+ pages, 10+ files) may exceed default timeout limits. MedRecords AI automatically scales timeouts for large inputs, but if you still see timeouts:</p>
