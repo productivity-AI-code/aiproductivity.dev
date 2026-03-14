@@ -14,7 +14,7 @@ echo "  ================================================================"
 echo ""
 
 INSTALL_DIR="$HOME/MedRecordsAI"
-ZIP_URL="https://aiproductivity.dev/dist/MedRecordsAI-DEMO-v2.2.38.zip"
+ZIP_URL="https://aiproductivity.dev/dist/MedRecordsAI-DEMO-v2.2.39.zip"
 ZIP_FILE="/tmp/MedRecordsAI-DEMO.zip"
 REQUIRED_PY_MAJOR=3
 REQUIRED_PY_MINOR=10
